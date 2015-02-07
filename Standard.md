@@ -441,12 +441,12 @@ function Person()
 {
     this._name = null;
     
-    this.getName : function()
+    this.getName = function()
     {
         return this._name;
     };
     
-    this.setName : function(name)
+    this.setName = function(name)
     {
         this._name = name;
     };
