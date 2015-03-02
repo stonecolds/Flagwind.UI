@@ -28,15 +28,13 @@ body
 }
 
 /**
- * 1. 设置默认字体为：sans-serif
- * 2. 避免 iOS 设备在启用用户缩放时方向更改后自动调整文本大小
+ * 避免 iOS 设备在启用用户缩放时方向更改后自动调整文本大小
  */
 
 html
 {
-    font-family: sans-serif; /* 1 */
-    -ms-text-size-adjust: 100%; /* 2 */
-    -webkit-text-size-adjust: 100%; /* 2 */
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
 }
 
 /**
@@ -454,7 +452,7 @@ optgroup
  * ========================================================================== */
 
 /*
- * 删除表格里单元格间的间距。
+ * 删除表格里单元格间的间距
  */
  
 table
@@ -467,4 +465,22 @@ td,
 th
 {
     padding: 0;
+}
+
+/* ========================================================================== *
+ * 基础(Base)
+ * ========================================================================== */
+
+html
+{
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+body
+{
+    font-family: @font-family-base;
+    font-size: @font-size-base;
+    line-height: @line-height-base;
+    color: @color-text;
+    background-color: @color-body;
 }
