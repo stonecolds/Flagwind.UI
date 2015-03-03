@@ -1,13 +1,6 @@
-﻿/*!
- * Flagwind.UI v1.0.0
- * Copyright 2014 Flagwind Inc. All rights reserved.
- * Licensed under the MIT License.
- * https://github.com/Flagwind/Flagwind.UI/blob/master/LICENSE
-!*/
-
-/* ========================================================================== *
- * 颜色(Colors)
- * ========================================================================== */
+﻿// ==========================================================================
+// 颜色(Colors)
+// ==========================================================================
 
 // 基础颜色
 @color-base:                      #000;
@@ -27,28 +20,44 @@
 @color-warning:                   #f0ad4e;
 @color-danger:                    #d9534f;
 
-@color-body:                      #fff;
-@color-text:                      @color-gray-dark;
-@color-link:                      @color-primary;
+// 文本颜色
+@body-color:                      #fff;
+@text-color:                      @color-gray-dark;
 
-/* ========================================================================== *
- * 排版(Typography)
- * ========================================================================== */
+// 链接颜色
+@link-color:                      @color-primary;
+@link-hover-color:                darken(@link-color, 15%);
+@link-hover-decoration:           underline;
+
+// 其他颜色
+@hr-border-color:                 @color-gray-lighter;
+
+// ==========================================================================
+// 排版(Typography)
+// ==========================================================================
 
 // 基础字体
-@font-family-base:                "Lucida Grande", Helvetica, "Microsoft YaHei", Arial, sans-serif;
+@font-family-base:                "Helvetica Neue", Helvetica, "Microsoft YaHei", Arial, sans-serif;
 
 // 文本大小
 @font-size-base:                  14px;
 @font-size-large:                 ceil((@font-size-base * 1.25)); // ~18px
 @font-size-small:                 ceil((@font-size-base * 0.85)); // ~12px
 
+// 行高
+@line-height-base:                1.428571429; // 20/14
+@line-height-computed:            floor((@font-size-base * @line-height-base)); // ~20px
+
 // 标题大小
+@headings-font-family:            inherit;
+@headings-font-weight:            500;
+@headings-line-height:            1.1;
+@headings-color:                  inherit;
+@headings-small-color:            @color-gray-light;
+
 @font-size-h1:                    floor((@font-size-base * 2.6)); // ~36px
 @font-size-h2:                    floor((@font-size-base * 2.15)); // ~30px
 @font-size-h3:                    ceil((@font-size-base * 1.7)); // ~24px
 @font-size-h4:                    ceil((@font-size-base * 1.25)); // ~18px
 @font-size-h5:                    @font-size-base;
 @font-size-h6:                    ceil((@font-size-base * 0.85)); // ~12px
-
-@line-height-base:                1.428571429; // 20/14

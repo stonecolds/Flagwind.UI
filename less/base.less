@@ -1,13 +1,4 @@
-﻿/*!
- * Flagwind.UI v1.0.0
- * Copyright 2014 Flagwind Inc. All rights reserved.
- * Licensed under the MIT License.
- * https://github.com/Flagwind/Flagwind.UI/blob/master/LICENSE
-!*/
-
-/*! normalize.css v3.0.2 | MIT License | git.io/normalize */
-
-/**
+﻿/**
  * 统一盒模型组成模式
  */
 *,
@@ -26,6 +17,8 @@ body
 {
     min-height: 100%;
 }
+
+/*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 
 /**
  * 避免 iOS 设备在启用用户缩放时方向更改后自动调整文本大小
@@ -481,6 +474,56 @@ body
     font-family: @font-family-base;
     font-size: @font-size-base;
     line-height: @line-height-base;
-    color: @color-text;
-    background-color: @color-body;
+    color: @text-color;
+    background-color: @body-color;
+}
+
+body,
+input,
+textarea,
+select,
+button
+{
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -moz-font-feature-settings: "liga", "kern";
+}
+
+@media only screen and (max-width: 640px)
+{
+    body
+    {
+        word-wrap: break-word;
+        -webkit-hyphens: auto;
+        -ms-hyphens: auto;
+        -moz-hyphens: auto;
+        hyphens: auto;
+    }
+}
+
+a
+{
+    color: @link-color;
+    text-decoration: none;
+    
+    &:hover,
+    &:focus
+    {
+        color: @link-hover-color;
+        text-decoration: @link-hover-decoration;
+    }
+    
+    &:focus
+    {
+        .tab-focus();
+    }
+}
+
+hr
+{
+    margin-top: @line-height-computed;
+    margin-bottom: @line-height-computed;
+    border: 0;
+    border-top: 1px solid @hr-border-color;
 }

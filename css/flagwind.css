@@ -1,22 +1,9 @@
-/*!
+/*
  * Flagwind.UI v1.0.0
  * Copyright 2014 Flagwind Inc. All rights reserved.
  * Licensed under the MIT License.
  * https://github.com/Flagwind/Flagwind.UI/blob/master/LICENSE
-!*/
-/* ========================================================================== *
- * 颜色(Colors)
- * ========================================================================== */
-/* ========================================================================== *
- * 排版(Typography)
- * ========================================================================== */
-/*!
- * Flagwind.UI v1.0.0
- * Copyright 2014 Flagwind Inc. All rights reserved.
- * Licensed under the MIT License.
- * https://github.com/Flagwind/Flagwind.UI/blob/master/LICENSE
-!*/
-/*! normalize.css v3.0.2 | MIT License | git.io/normalize */
+*/
 /**
  * 统一盒模型组成模式
  */
@@ -33,6 +20,7 @@ html,
 body {
   min-height: 100%;
 }
+/*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 /**
  * 避免 iOS 设备在启用用户缩放时方向更改后自动调整文本大小
  */
@@ -382,9 +370,112 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "Lucida Grande", Helvetica, "Microsoft YaHei", Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, "Microsoft YaHei", Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
   color: #333333;
   background-color: #ffffff;
+}
+body,
+input,
+textarea,
+select,
+button {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-font-feature-settings: "liga", "kern";
+}
+@media only screen and (max-width: 640px) {
+  body {
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+  }
+}
+a {
+  color: #337ab7;
+  text-decoration: none;
+}
+a:hover,
+a:focus {
+  color: #22527b;
+  text-decoration: underline;
+}
+a:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid #eeeeee;
+}
+/* ========================================================================== *
+ * 排版(Typography)
+ * ========================================================================== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.1;
+  color: inherit;
+}
+h1 small,
+h2 small,
+h3 small,
+h4 small,
+h5 small,
+h6 small {
+  font-weight: normal;
+  line-height: 1;
+  color: #777777;
+}
+h1,
+h2,
+h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+h1 small,
+h2 small,
+h3 small {
+  font-size: 65%;
+}
+h4,
+h5,
+h6 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+h4 small,
+h5 small,
+h6 small {
+  font-size: 75%;
+}
+h1 {
+  font-size: 36px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 14px;
+}
+h6 {
+  font-size: 12px;
 }
