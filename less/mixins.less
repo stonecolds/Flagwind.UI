@@ -4,3 +4,23 @@
     outline: 5px auto -webkit-focus-ring-color;
     outline-offset: -2px;
 }
+
+.txt-emphasis-variant(@color)
+{
+    color: @color;
+    
+    a&:hover
+    {
+        color: darken(@color, 10%);
+    }
+}
+
+.bg-variant(@color)
+{
+    background-color: @color;
+    
+    a&:hover
+    {
+        background-color: darken(@color, 10%);
+    }
+}
