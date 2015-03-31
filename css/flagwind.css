@@ -1,45 +1,43 @@
-/*
+/*!
  * Flagwind.UI v1.0.0
  * Copyright 2014 Flagwind Inc. All rights reserved.
  * Licensed under the MIT License.
  * https://github.com/Flagwind/Flagwind.UI/blob/master/LICENSE
+!*/
+/*
+* 统一盒模型组成模式。
 */
-/**
- * 统一盒模型组成模式
- */
 *,
 *:before,
 *:after {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-/**
- * 继承 “viewport” 的高度
- */
+/*
+* 继承 “viewport” 的高度。
+*/
 html,
 body {
   min-height: 100%;
 }
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
-/**
- * 避免 iOS 设备在启用用户缩放时方向更改后自动调整文本大小
- */
+/*
+* 避免 iOS 设备在启用用户缩放时方向更改后自动调整文本大小。
+*/
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
-/**
- * 修正外边距处理不正确的问题
- */
+/*
+* 修正外边距处理不正确的问题。
+*/
 body {
   margin: 0;
 }
-/* ========================================================================== *
- * HTML5 显示定义
- * ========================================================================== */
-/**
- * 修正 IE 8/9 中未定义的 “block” 元素显示
- */
+/*============================== HTML5 定义 ==============================*/
+/*
+* 修正 IE 8/9 中未定义的 “block” 元素显示。
+*/
 article,
 aside,
 details,
@@ -55,10 +53,10 @@ section,
 summary {
   display: block;
 }
-/**
- * 1. 修正 IE 8/9 中未定义的 “inline-block” 元素显示
- * 2. 修正 Chrome，Firefox 和 Opera 中的垂直对齐方式
- */
+/*
+* 1. 修正 IE 8/9 中未定义的 “inline-block” 元素显示。
+* 2. 修正 Chrome，Firefox 和 Opera 中的垂直对齐方式。
+*/
 audio,
 canvas,
 progress,
@@ -68,70 +66,66 @@ video {
   vertical-align: baseline;
   /* 2 */
 }
-/**
- * 防止现代浏览器将没有 “controls” 属性的 “audio” 元素显示出来
- * 删除 iOS 5 设备中多余的高度
- */
+/*
+* 防止现代浏览器将没有 “controls” 属性的 “audio” 元素显示出来。
+* 删除 iOS 5 设备中多余的高度。
+*/
 audio:not([controls]) {
   display: none;
   height: 0;
 }
-/**
- * 修正 IE 8/9/10 中 “hidden” 属性不起作用的问题
- * 在 IE 8/9/10/11，Safari 和 Firefox 中隐藏 “template” 元素
- */
+/*
+* 修正 IE 8/9/10 中 “hidden” 属性不起作用的问题。
+* 在 IE 8/9/10/11，Safari 和 Firefox 中隐藏 “template” 元素。
+*/
 [hidden],
 template {
   display: none !important;
 }
-/* ========================================================================== *
- * 链接(Links)
- * ========================================================================== */
-/**
- * 删除 IE 10 中激活链接的背景颜色
- */
+/*============================== 链接(Links) =============================*/
+/*
+* 删除 IE 10 中激活链接的背景颜色。
+*/
 a {
   background-color: transparent;
 }
-/**
- * 改善所有浏览器中获取焦点和悬停时的可读性
- */
+/*
+* 改善所有浏览器中获取焦点和悬停时的可读性。
+*/
 a:active,
 a:hover {
   outline: 0;
 }
-/* ========================================================================== *
- * 排版(Typography)
- * ========================================================================== */
-/**
- * 修正 IE 8/9/10/11，Safari 和 Chrome 中样式不呈现的问题
- */
+/*=========================== 排版(Typography) ===========================*/
+/*
+* 修正 IE 8/9/10/11，Safari 和 Chrome 中样式不呈现的问题。
+*/
 abbr[title] {
   border-bottom: 1px dotted;
 }
-/**
- * 修正 Firefox 4+，Safari 和 Chrome 中的呈现问题
- */
+/*
+* 修正 Firefox 4+，Safari 和 Chrome 中的呈现问题。
+*/
 b,
 strong {
   font-weight: bold;
 }
-/**
- * 修正 IE 8/9 中样式不呈现的问题
- */
+/*
+* 修正 IE 8/9 中样式不呈现的问题。
+*/
 mark {
   background: #ff0;
   color: #000;
 }
-/**
- * 修正所有浏览器中易变且不一致的字体大小问题
- */
+/*
+* 修正所有浏览器中易变且不一致的字体大小问题。
+*/
 small {
   font-size: 80%;
 }
-/**
- * 防止所有浏览器中的上标和下标内容影响到行高
- */
+/*
+* 防止所有浏览器中的上标和下标内容影响到行高。
+*/
 sub,
 sup {
   font-size: 75%;
@@ -145,15 +139,13 @@ sup {
 sub {
   bottom: -0.25em;
 }
-/* ========================================================================== *
- * 嵌入内容(Embedded content)
- * ========================================================================== */
-/**
- * 1. 设置盒模型组成模式
- * 2. 设置一个最大宽度和相对于父元素的自动高度
- * 3. 删除图片和容器的底部之间的间隙
- * 4. 删除在 IE 8/9/10 中嵌入到 “a” 元素时的边框
- */
+/*====================== 嵌入内容(Embedded content) ======================*/
+/*
+* 1. 设置盒模型组成模式。
+* 2. 设置一个最大宽度和相对于父元素的自动高度。
+* 3. 删除图片和容器的底部之间的间隙。
+* 4. 删除在 IE 8/9/10 中嵌入到 “a” 元素时的边框。
+*/
 img {
   -webkit-box-sizing: border-box;
   /* 1 */
@@ -167,38 +159,36 @@ img {
   border: 0;
   /* 4 */
 }
-/**
- * 修正 IE 9/10/11 中的 “overflow” 表现(未隐藏的溢出)
- */
+/*
+* 修正 IE 9/10/11 中的 “overflow” 表现(未隐藏的溢出)。
+*/
 svg:not(:root) {
   overflow: hidden;
 }
-/* ========================================================================== *
- * 分组内容(Grouping content)
- * ========================================================================== */
-/**
- * 修正 IE 8/9 和 Safari 中外边距不呈现的问题
- */
+/*====================== 分组内容(Grouping content) ======================*/
+/*
+* 修正 IE 8/9 和 Safari 中外边距不呈现的问题。
+*/
 figure {
   margin: 0;
 }
-/**
- * 修正 Firefox 和其他浏览器间的差异
- */
+/*
+* 修正 Firefox 和其他浏览器间的差异。
+*/
 hr {
   -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0;
 }
-/**
- * 修正所有浏览器中 “overflow” 表现形式
- */
+/*
+* 修正所有浏览器中 “overflow” 表现形式。
+*/
 pre {
   overflow: auto;
 }
-/**
- * 修正所有浏览器中字体设置
- */
+/*
+* 修正所有浏览器中字体设置。
+*/
 code,
 kbd,
 pre,
@@ -206,14 +196,12 @@ samp {
   font-family: monospace, monospace;
   font-size: 1em;
 }
-/* ========================================================================== *
- * 表单(Forms)
- * ========================================================================== */
-/**
- * 1. 修正所有浏览器中非继承的颜色
- * 2. 修正所有浏览器中非继承的字体
- * 3. 修正 Firefox 4+，Safari 和 Chrome 中外边距不同的问题
- */
+/*============================== 表单(Forms) =============================*/
+/*
+* 1. 修正所有浏览器中非继承的颜色。
+* 2. 修正所有浏览器中非继承的字体。
+* 3. 修正 Firefox 4+，Safari 和 Chrome 中外边距不同的问题。
+*/
 button,
 input,
 optgroup,
@@ -226,27 +214,27 @@ textarea {
   margin: 0;
   /* 3 */
 }
-/**
- * 修正 IE 8/9/10/11 中 “overflow” 被设置为 “hidden” 的问题
- */
+/*
+* 修正 IE 8/9/10/11 中 “overflow” 被设置为 “hidden” 的问题。
+*/
 button {
   overflow: visible;
 }
-/**
- * 修正 “text-transform” 属性在 “button” 和 “select” 中的不一致
- * 所有其他形式的控制元素不继承 “text-transform” 属性值
- * 修正 IE 8/9/10/11，Firefox 和 Opera 中 “button” 样式不继承的问题
- * 修正 Firefox 中 “select” 样式不继承的问题
- */
+/*
+* 修正 “text-transform” 属性在 “button” 和 “select” 中的不一致。
+* 所有其他形式的控制元素不继承 “text-transform” 属性值。
+* 修正 IE 8/9/10/11，Firefox 和 Opera 中 “button” 样式不继承的问。
+* 修正 Firefox 中 “select” 样式不继承的问题。
+*/
 button,
 select {
   text-transform: none;
 }
-/**
- * 1. 避免 Android 4.0.* 中的 WebKit bug，该 bug 会破坏原生的 “audio” 和 “video” 控制器
- * 2. 允许 iOS 中可点击的表单元素的样式
- * 3. 改善图片类型以及其他类型的 “input” 中指针的可用性以及样式的一致性
- */
+/*
+* 1. 避免 Android 4.0.* 中的 WebKit bug，该 bug 会破坏原生的 “audio” 和 “video” 控制器。
+* 2. 允许 iOS 中可点击的表单元素的样式。
+* 3. 改善图片类型以及其他类型的 “input” 中指针的可用性以及样式的一致性。
+*/
 button,
 html input[type="button"],
 input[type="reset"],
@@ -256,31 +244,31 @@ input[type="submit"] {
   cursor: pointer;
   /* 3 */
 }
-/**
- * 重置 disabled 元素的默认指针样式
- */
+/*
+* 重置 disabled 元素的默认指针样式。
+*/
 button[disabled],
 html input[disabled] {
   cursor: default;
 }
-/**
- * 删除 Firefox 4+ 中的内边距和边框
- */
+/*
+* 删除 Firefox 4+ 中的内边距和边框。
+*/
 button::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
-/**
- * 修正 Firefox 4+ 用户代理样式表中在 “input” 上设置 “line-height” 时使用 “!important” 的问题
- */
+/*
+* 修正 Firefox 4+ 用户代理样式表中在 “input” 上设置 “line-height” 时使用 “!important” 的问题。
+*/
 input {
   line-height: normal;
 }
-/**
- * 1. 修正 IE 8/9/10 中 box sizing 被设置为 “content-box” 的问题
- * 2. 删除 IE 8/9/10 中多余的内边距
- */
+/*
+* 1. 修正 IE 8/9/10 中 box sizing 被设置为 “content-box” 的问题。
+* 2. 删除 IE 8/9/10 中多余的内边距。
+*/
 input[type="checkbox"],
 input[type="radio"] {
   box-sizing: border-box;
@@ -288,17 +276,17 @@ input[type="radio"] {
   padding: 0;
   /* 2 */
 }
-/**
- * 修正高度呈现的问题
- */
+/*
+* 修正高度呈现的问题。
+*/
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   height: auto;
 }
-/**
- * 1. 修正 Safari 和 Chrome 中 “appearance” 被设置为 “searchfield” 的问题
- * 2. 修正 Safari 和 Chrome 中 “box-sizing” 被设置为 “border-box” 的问题
- */
+/*
+* 1. 修正 Safari 和 Chrome 中 “appearance” 被设置为 “searchfield” 的问题。
+* 2. 修正 Safari 和 Chrome 中 “box-sizing” 被设置为 “border-box” 的问题。
+*/
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
@@ -307,35 +295,35 @@ input[type="search"] {
   /* 2 */
   box-sizing: content-box;
 }
-/**
- * 删除 OS X 中 Safari 和 Chrome 内部的内边距以及搜索框的取消按钮
- */
+/*
+* 删除 OS X 中 Safari 和 Chrome 内部的内边距以及搜索框的取消按钮。
+*/
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
-/**
- * 定义一致的边框、外边距和内边距
- */
+/*
+* 定义一致的边框、外边距和内边距。
+*/
 fieldset {
   border: 1px solid #c0c0c0;
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em;
 }
-/**
- * 1. 在 IE 8/9/10/11 中不继承 “color” 属性值
- * 2. 删除内边距
- */
+/*
+* 1. 在 IE 8/9/10/11 中不继承 “color” 属性值。
+* 2. 删除内边距。
+*/
 legend {
   border: 0;
   /* 1 */
   padding: 0;
   /* 2 */
 }
-/**
- * 1. 删除 IE 8/9/10/11 中的默认垂直滚动条
- * 2. 统一所有浏览器的对齐方式
- */
+/*
+* 1. 删除 IE 8/9/10/11 中的默认垂直滚动条。
+* 2. 统一所有浏览器的对齐方式。
+*/
 textarea {
   overflow: auto;
   /* 1 */
@@ -343,18 +331,16 @@ textarea {
   /* 2 */
   resize: vertical;
 }
-/**
- * 不继承 “font-weight” 属性值
- */
+/*
+* 不继承 “font-weight” 属性值。
+*/
 optgroup {
   font-weight: bold;
 }
-/* ========================================================================== *
- * 表格(Tables)
- * ========================================================================== */
+/*============================== 表格(Tables) ============================*/
 /*
- * 删除表格里单元格间的间距
- */
+* 删除表格里单元格间的间距。
+*/
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -363,14 +349,12 @@ td,
 th {
   padding: 0;
 }
-/* ========================================================================== *
- * 基础(Base)
- * ========================================================================== */
+/*============================== 基础(Base) ==============================*/
 html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "Helvetica Neue", Helvetica, "Microsoft YaHei", Arial, sans-serif;
+  font-family: "Lucida Grande", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
   color: #333333;
@@ -410,14 +394,12 @@ a:focus {
   outline-offset: -2px;
 }
 hr {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   border: 0;
   border-top: 1px solid #eeeeee;
 }
-/* ========================================================================== *
- * 排版(Typography)
- * ========================================================================== */
+/*=========================== 排版(Typography) ===========================*/
 h1,
 h2,
 h3,
@@ -443,7 +425,7 @@ h1,
 h2,
 h3 {
   margin-top: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 h1 small,
 h2 small,
@@ -675,4 +657,704 @@ blockquote.pull-right small:after,
 .blockquote-reverse .small:after,
 blockquote.pull-right .small:after {
   content: "\00A0 \2014";
+}
+/*============================== 布局(Layout) ============================*/
+/*
+* 自适应宽度布局。
+*/
+.layout {
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 768px) {
+  .layout {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .layout {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .layout {
+    width: 1170px;
+  }
+}
+.layout .layout {
+  margin-left: -15px;
+  margin-right: -15px;
+  width: auto;
+}
+/*
+* 百分百宽度布局。
+*/
+.layout-fluid {
+  width: 100%;
+}
+/*
+* 定义布局份数。
+*/
+.flex-xs-1, .flex-sm-1, .flex-md-1, .flex-lg-1, .flex-xs-2, .flex-sm-2, .flex-md-2, .flex-lg-2, .flex-xs-3, .flex-sm-3, .flex-md-3, .flex-lg-3, .flex-xs-4, .flex-sm-4, .flex-md-4, .flex-lg-4, .flex-xs-5, .flex-sm-5, .flex-md-5, .flex-lg-5, .flex-xs-6, .flex-sm-6, .flex-md-6, .flex-lg-6, .flex-xs-7, .flex-sm-7, .flex-md-7, .flex-lg-7, .flex-xs-8, .flex-sm-8, .flex-md-8, .flex-lg-8, .flex-xs-9, .flex-sm-9, .flex-md-9, .flex-lg-9, .flex-xs-10, .flex-sm-10, .flex-md-10, .flex-lg-10, .flex-xs-11, .flex-sm-11, .flex-md-11, .flex-lg-11, .flex-xs-12, .flex-sm-12, .flex-md-12, .flex-lg-12 {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+/*
+* 超小屏幕(xs)布局份数。
+*/
+.flex-xs-1, .flex-xs-2, .flex-xs-3, .flex-xs-4, .flex-xs-5, .flex-xs-6, .flex-xs-7, .flex-xs-8, .flex-xs-9, .flex-xs-10, .flex-xs-11, .flex-xs-12 {
+  float: left;
+}
+.flex-xs-12 {
+  width: 100%;
+}
+.flex-xs-11 {
+  width: 91.66666667%;
+}
+.flex-xs-10 {
+  width: 83.33333333%;
+}
+.flex-xs-9 {
+  width: 75%;
+}
+.flex-xs-8 {
+  width: 66.66666667%;
+}
+.flex-xs-7 {
+  width: 58.33333333%;
+}
+.flex-xs-6 {
+  width: 50%;
+}
+.flex-xs-5 {
+  width: 41.66666667%;
+}
+.flex-xs-4 {
+  width: 33.33333333%;
+}
+.flex-xs-3 {
+  width: 25%;
+}
+.flex-xs-2 {
+  width: 16.66666667%;
+}
+.flex-xs-1 {
+  width: 8.33333333%;
+}
+.flex-xs-push-12 {
+  left: 100%;
+}
+.flex-xs-push-11 {
+  left: 91.66666667%;
+}
+.flex-xs-push-10 {
+  left: 83.33333333%;
+}
+.flex-xs-push-9 {
+  left: 75%;
+}
+.flex-xs-push-8 {
+  left: 66.66666667%;
+}
+.flex-xs-push-7 {
+  left: 58.33333333%;
+}
+.flex-xs-push-6 {
+  left: 50%;
+}
+.flex-xs-push-5 {
+  left: 41.66666667%;
+}
+.flex-xs-push-4 {
+  left: 33.33333333%;
+}
+.flex-xs-push-3 {
+  left: 25%;
+}
+.flex-xs-push-2 {
+  left: 16.66666667%;
+}
+.flex-xs-push-1 {
+  left: 8.33333333%;
+}
+.flex-xs-push-0 {
+  left: auto;
+}
+.flex-xs-pull-12 {
+  right: 100%;
+}
+.flex-xs-pull-11 {
+  right: 91.66666667%;
+}
+.flex-xs-pull-10 {
+  right: 83.33333333%;
+}
+.flex-xs-pull-9 {
+  right: 75%;
+}
+.flex-xs-pull-8 {
+  right: 66.66666667%;
+}
+.flex-xs-pull-7 {
+  right: 58.33333333%;
+}
+.flex-xs-pull-6 {
+  right: 50%;
+}
+.flex-xs-pull-5 {
+  right: 41.66666667%;
+}
+.flex-xs-pull-4 {
+  right: 33.33333333%;
+}
+.flex-xs-pull-3 {
+  right: 25%;
+}
+.flex-xs-pull-2 {
+  right: 16.66666667%;
+}
+.flex-xs-pull-1 {
+  right: 8.33333333%;
+}
+.flex-xs-pull-0 {
+  right: auto;
+}
+.flex-xs-offset-12 {
+  margin-left: 100%;
+}
+.flex-xs-offset-11 {
+  margin-left: 91.66666667%;
+}
+.flex-xs-offset-10 {
+  margin-left: 83.33333333%;
+}
+.flex-xs-offset-9 {
+  margin-left: 75%;
+}
+.flex-xs-offset-8 {
+  margin-left: 66.66666667%;
+}
+.flex-xs-offset-7 {
+  margin-left: 58.33333333%;
+}
+.flex-xs-offset-6 {
+  margin-left: 50%;
+}
+.flex-xs-offset-5 {
+  margin-left: 41.66666667%;
+}
+.flex-xs-offset-4 {
+  margin-left: 33.33333333%;
+}
+.flex-xs-offset-3 {
+  margin-left: 25%;
+}
+.flex-xs-offset-2 {
+  margin-left: 16.66666667%;
+}
+.flex-xs-offset-1 {
+  margin-left: 8.33333333%;
+}
+.flex-xs-offset-0 {
+  margin-left: 0%;
+}
+/*
+* 小屏幕(sm)布局份数。
+*/
+@media (min-width: 768px) {
+  .flex-sm-1, .flex-sm-2, .flex-sm-3, .flex-sm-4, .flex-sm-5, .flex-sm-6, .flex-sm-7, .flex-sm-8, .flex-sm-9, .flex-sm-10, .flex-sm-11, .flex-sm-12 {
+    float: left;
+  }
+  .flex-sm-12 {
+    width: 100%;
+  }
+  .flex-sm-11 {
+    width: 91.66666667%;
+  }
+  .flex-sm-10 {
+    width: 83.33333333%;
+  }
+  .flex-sm-9 {
+    width: 75%;
+  }
+  .flex-sm-8 {
+    width: 66.66666667%;
+  }
+  .flex-sm-7 {
+    width: 58.33333333%;
+  }
+  .flex-sm-6 {
+    width: 50%;
+  }
+  .flex-sm-5 {
+    width: 41.66666667%;
+  }
+  .flex-sm-4 {
+    width: 33.33333333%;
+  }
+  .flex-sm-3 {
+    width: 25%;
+  }
+  .flex-sm-2 {
+    width: 16.66666667%;
+  }
+  .flex-sm-1 {
+    width: 8.33333333%;
+  }
+  .flex-sm-push-12 {
+    left: 100%;
+  }
+  .flex-sm-push-11 {
+    left: 91.66666667%;
+  }
+  .flex-sm-push-10 {
+    left: 83.33333333%;
+  }
+  .flex-sm-push-9 {
+    left: 75%;
+  }
+  .flex-sm-push-8 {
+    left: 66.66666667%;
+  }
+  .flex-sm-push-7 {
+    left: 58.33333333%;
+  }
+  .flex-sm-push-6 {
+    left: 50%;
+  }
+  .flex-sm-push-5 {
+    left: 41.66666667%;
+  }
+  .flex-sm-push-4 {
+    left: 33.33333333%;
+  }
+  .flex-sm-push-3 {
+    left: 25%;
+  }
+  .flex-sm-push-2 {
+    left: 16.66666667%;
+  }
+  .flex-sm-push-1 {
+    left: 8.33333333%;
+  }
+  .flex-sm-push-0 {
+    left: auto;
+  }
+  .flex-sm-pull-12 {
+    right: 100%;
+  }
+  .flex-sm-pull-11 {
+    right: 91.66666667%;
+  }
+  .flex-sm-pull-10 {
+    right: 83.33333333%;
+  }
+  .flex-sm-pull-9 {
+    right: 75%;
+  }
+  .flex-sm-pull-8 {
+    right: 66.66666667%;
+  }
+  .flex-sm-pull-7 {
+    right: 58.33333333%;
+  }
+  .flex-sm-pull-6 {
+    right: 50%;
+  }
+  .flex-sm-pull-5 {
+    right: 41.66666667%;
+  }
+  .flex-sm-pull-4 {
+    right: 33.33333333%;
+  }
+  .flex-sm-pull-3 {
+    right: 25%;
+  }
+  .flex-sm-pull-2 {
+    right: 16.66666667%;
+  }
+  .flex-sm-pull-1 {
+    right: 8.33333333%;
+  }
+  .flex-sm-pull-0 {
+    right: auto;
+  }
+  .flex-sm-offset-12 {
+    margin-left: 100%;
+  }
+  .flex-sm-offset-11 {
+    margin-left: 91.66666667%;
+  }
+  .flex-sm-offset-10 {
+    margin-left: 83.33333333%;
+  }
+  .flex-sm-offset-9 {
+    margin-left: 75%;
+  }
+  .flex-sm-offset-8 {
+    margin-left: 66.66666667%;
+  }
+  .flex-sm-offset-7 {
+    margin-left: 58.33333333%;
+  }
+  .flex-sm-offset-6 {
+    margin-left: 50%;
+  }
+  .flex-sm-offset-5 {
+    margin-left: 41.66666667%;
+  }
+  .flex-sm-offset-4 {
+    margin-left: 33.33333333%;
+  }
+  .flex-sm-offset-3 {
+    margin-left: 25%;
+  }
+  .flex-sm-offset-2 {
+    margin-left: 16.66666667%;
+  }
+  .flex-sm-offset-1 {
+    margin-left: 8.33333333%;
+  }
+  .flex-sm-offset-0 {
+    margin-left: 0%;
+  }
+}
+/*
+* 中等屏幕(md)布局份数。
+*/
+@media (min-width: 992px) {
+  .flex-md-1, .flex-md-2, .flex-md-3, .flex-md-4, .flex-md-5, .flex-md-6, .flex-md-7, .flex-md-8, .flex-md-9, .flex-md-10, .flex-md-11, .flex-md-12 {
+    float: left;
+  }
+  .flex-md-12 {
+    width: 100%;
+  }
+  .flex-md-11 {
+    width: 91.66666667%;
+  }
+  .flex-md-10 {
+    width: 83.33333333%;
+  }
+  .flex-md-9 {
+    width: 75%;
+  }
+  .flex-md-8 {
+    width: 66.66666667%;
+  }
+  .flex-md-7 {
+    width: 58.33333333%;
+  }
+  .flex-md-6 {
+    width: 50%;
+  }
+  .flex-md-5 {
+    width: 41.66666667%;
+  }
+  .flex-md-4 {
+    width: 33.33333333%;
+  }
+  .flex-md-3 {
+    width: 25%;
+  }
+  .flex-md-2 {
+    width: 16.66666667%;
+  }
+  .flex-md-1 {
+    width: 8.33333333%;
+  }
+  .flex-md-push-12 {
+    left: 100%;
+  }
+  .flex-md-push-11 {
+    left: 91.66666667%;
+  }
+  .flex-md-push-10 {
+    left: 83.33333333%;
+  }
+  .flex-md-push-9 {
+    left: 75%;
+  }
+  .flex-md-push-8 {
+    left: 66.66666667%;
+  }
+  .flex-md-push-7 {
+    left: 58.33333333%;
+  }
+  .flex-md-push-6 {
+    left: 50%;
+  }
+  .flex-md-push-5 {
+    left: 41.66666667%;
+  }
+  .flex-md-push-4 {
+    left: 33.33333333%;
+  }
+  .flex-md-push-3 {
+    left: 25%;
+  }
+  .flex-md-push-2 {
+    left: 16.66666667%;
+  }
+  .flex-md-push-1 {
+    left: 8.33333333%;
+  }
+  .flex-md-push-0 {
+    left: auto;
+  }
+  .flex-md-pull-12 {
+    right: 100%;
+  }
+  .flex-md-pull-11 {
+    right: 91.66666667%;
+  }
+  .flex-md-pull-10 {
+    right: 83.33333333%;
+  }
+  .flex-md-pull-9 {
+    right: 75%;
+  }
+  .flex-md-pull-8 {
+    right: 66.66666667%;
+  }
+  .flex-md-pull-7 {
+    right: 58.33333333%;
+  }
+  .flex-md-pull-6 {
+    right: 50%;
+  }
+  .flex-md-pull-5 {
+    right: 41.66666667%;
+  }
+  .flex-md-pull-4 {
+    right: 33.33333333%;
+  }
+  .flex-md-pull-3 {
+    right: 25%;
+  }
+  .flex-md-pull-2 {
+    right: 16.66666667%;
+  }
+  .flex-md-pull-1 {
+    right: 8.33333333%;
+  }
+  .flex-md-pull-0 {
+    right: auto;
+  }
+  .flex-md-offset-12 {
+    margin-left: 100%;
+  }
+  .flex-md-offset-11 {
+    margin-left: 91.66666667%;
+  }
+  .flex-md-offset-10 {
+    margin-left: 83.33333333%;
+  }
+  .flex-md-offset-9 {
+    margin-left: 75%;
+  }
+  .flex-md-offset-8 {
+    margin-left: 66.66666667%;
+  }
+  .flex-md-offset-7 {
+    margin-left: 58.33333333%;
+  }
+  .flex-md-offset-6 {
+    margin-left: 50%;
+  }
+  .flex-md-offset-5 {
+    margin-left: 41.66666667%;
+  }
+  .flex-md-offset-4 {
+    margin-left: 33.33333333%;
+  }
+  .flex-md-offset-3 {
+    margin-left: 25%;
+  }
+  .flex-md-offset-2 {
+    margin-left: 16.66666667%;
+  }
+  .flex-md-offset-1 {
+    margin-left: 8.33333333%;
+  }
+  .flex-md-offset-0 {
+    margin-left: 0%;
+  }
+}
+/*
+* 大屏幕(lg)布局份数。
+*/
+@media (min-width: 1200px) {
+  .flex-lg-1, .flex-lg-2, .flex-lg-3, .flex-lg-4, .flex-lg-5, .flex-lg-6, .flex-lg-7, .flex-lg-8, .flex-lg-9, .flex-lg-10, .flex-lg-11, .flex-lg-12 {
+    float: left;
+  }
+  .flex-lg-12 {
+    width: 100%;
+  }
+  .flex-lg-11 {
+    width: 91.66666667%;
+  }
+  .flex-lg-10 {
+    width: 83.33333333%;
+  }
+  .flex-lg-9 {
+    width: 75%;
+  }
+  .flex-lg-8 {
+    width: 66.66666667%;
+  }
+  .flex-lg-7 {
+    width: 58.33333333%;
+  }
+  .flex-lg-6 {
+    width: 50%;
+  }
+  .flex-lg-5 {
+    width: 41.66666667%;
+  }
+  .flex-lg-4 {
+    width: 33.33333333%;
+  }
+  .flex-lg-3 {
+    width: 25%;
+  }
+  .flex-lg-2 {
+    width: 16.66666667%;
+  }
+  .flex-lg-1 {
+    width: 8.33333333%;
+  }
+  .flex-lg-push-12 {
+    left: 100%;
+  }
+  .flex-lg-push-11 {
+    left: 91.66666667%;
+  }
+  .flex-lg-push-10 {
+    left: 83.33333333%;
+  }
+  .flex-lg-push-9 {
+    left: 75%;
+  }
+  .flex-lg-push-8 {
+    left: 66.66666667%;
+  }
+  .flex-lg-push-7 {
+    left: 58.33333333%;
+  }
+  .flex-lg-push-6 {
+    left: 50%;
+  }
+  .flex-lg-push-5 {
+    left: 41.66666667%;
+  }
+  .flex-lg-push-4 {
+    left: 33.33333333%;
+  }
+  .flex-lg-push-3 {
+    left: 25%;
+  }
+  .flex-lg-push-2 {
+    left: 16.66666667%;
+  }
+  .flex-lg-push-1 {
+    left: 8.33333333%;
+  }
+  .flex-lg-push-0 {
+    left: auto;
+  }
+  .flex-lg-pull-12 {
+    right: 100%;
+  }
+  .flex-lg-pull-11 {
+    right: 91.66666667%;
+  }
+  .flex-lg-pull-10 {
+    right: 83.33333333%;
+  }
+  .flex-lg-pull-9 {
+    right: 75%;
+  }
+  .flex-lg-pull-8 {
+    right: 66.66666667%;
+  }
+  .flex-lg-pull-7 {
+    right: 58.33333333%;
+  }
+  .flex-lg-pull-6 {
+    right: 50%;
+  }
+  .flex-lg-pull-5 {
+    right: 41.66666667%;
+  }
+  .flex-lg-pull-4 {
+    right: 33.33333333%;
+  }
+  .flex-lg-pull-3 {
+    right: 25%;
+  }
+  .flex-lg-pull-2 {
+    right: 16.66666667%;
+  }
+  .flex-lg-pull-1 {
+    right: 8.33333333%;
+  }
+  .flex-lg-pull-0 {
+    right: auto;
+  }
+  .flex-lg-offset-12 {
+    margin-left: 100%;
+  }
+  .flex-lg-offset-11 {
+    margin-left: 91.66666667%;
+  }
+  .flex-lg-offset-10 {
+    margin-left: 83.33333333%;
+  }
+  .flex-lg-offset-9 {
+    margin-left: 75%;
+  }
+  .flex-lg-offset-8 {
+    margin-left: 66.66666667%;
+  }
+  .flex-lg-offset-7 {
+    margin-left: 58.33333333%;
+  }
+  .flex-lg-offset-6 {
+    margin-left: 50%;
+  }
+  .flex-lg-offset-5 {
+    margin-left: 41.66666667%;
+  }
+  .flex-lg-offset-4 {
+    margin-left: 33.33333333%;
+  }
+  .flex-lg-offset-3 {
+    margin-left: 25%;
+  }
+  .flex-lg-offset-2 {
+    margin-left: 16.66666667%;
+  }
+  .flex-lg-offset-1 {
+    margin-left: 8.33333333%;
+  }
+  .flex-lg-offset-0 {
+    margin-left: 0%;
+  }
+}
+/*============================= 辅助(Utilitiy) ===========================*/
+/*
+* 清除浮动。
+*/
+.clearfix:before,
+.clearfix:after,
+.layout:before,
+.layout:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after,
+.layout:after {
+  clear: both;
 }

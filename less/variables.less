@@ -1,6 +1,11 @@
-﻿// ==========================================================================
-// 颜色(Colors)
-// ==========================================================================
+﻿//
+// * Flagwind.UI v1.0.0
+// * Copyright 2014 Flagwind Inc. All rights reserved.
+// * Licensed under the MIT License.
+// * https://github.com/Flagwind/Flagwind.UI/blob/master/LICENSE
+//
+
+//*============================= 颜色(Colors) ============================
 
 // 基础颜色
 @color-base:                      #000;
@@ -52,12 +57,10 @@
 @state-danger-bg:                 #f2dede;
 @state-danger-border:             darken(spin(@state-danger-bg, -10), 5%);
 
-// ==========================================================================
-// 排版(Typography)
-// ==========================================================================
+//*=========================== 排版(Typography) ==========================
 
 // 基础字体
-@font-family-base:                "Helvetica Neue", Helvetica, "Microsoft YaHei", Arial, sans-serif;
+@font-family-base:                "Lucida Grande", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 // 文本大小
 @font-size-base:                  14px;
@@ -86,15 +89,20 @@
 @blockquote-font-size:            (@font-size-base * 1.25);
 @blockquote-border-color:         @color-gray-lighter;
 
-// ==========================================================================
-// 媒体查询(Media query)
-// ==========================================================================
+//*========================= 媒体查询(Media query) =======================
 
-@screen-sm:                       768px;
-@screen-sm-min:                   @screen-sm;
+@screen-xs-min:                   480px;  // 超小屏幕（手机，等于等于 480px 并且小于 768px）
+@screen-sm-min:                   768px;  // 小屏幕（平板，大于等于 768px）
+@screen-md-min:                   992px;  // 中等屏幕（桌面显示器，大于等于 992px）
+@screen-lg-min:                   1200px; // 大屏幕（大桌面显示器，大于等于 1200px）
 
-// ==========================================================================
-// 表格(Grid)
-// ==========================================================================
+//*============================= 布局(Layout) ============================
 
-@grid-float-breakpoint:           @screen-sm-min;
+@layout-flexes:                   12;
+@layout-gutter-width:             30px;
+@layout-float-breakpoint:         @screen-sm-min;
+@layout-float-breakpoint-max:     (@layout-float-breakpoint - 1);
+
+@layout-sm:                       (720px + @layout-gutter-width);
+@layout-md:                       (940px + @layout-gutter-width);
+@layout-lg:                       (1140px + @layout-gutter-width);

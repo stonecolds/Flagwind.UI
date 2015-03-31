@@ -4,117 +4,76 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta name="viewport" content="width=device-width" />
-    
     <title>Flagwind.UI 1.0.0 - Flagwind Docs</title>
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
-    
-    <!-- 引入外部样式表 -->
     <link href="../css/flagwind.css" rel="stylesheet" />
-    
-    <!-- 申明内部样式表 -->
-    <style>
-    body
+	<style>
+    .box1, .box2, .box3, .box4
     {
+        height:200px;
     }
-    </style>
+    
+    .box1
+    {
+        background: #0e90d2;
+    }
+    
+    .box2
+    {
+        background: #5eb95e;
+    }
+    
+    .box3
+    {
+        background: #f37b1d;
+    }
+    
+    .box4
+    {
+        background: #dd514c;
+    }
+  </style>
 </head>
 
 <body>
     <header>
-        <h1>基础排版 <small>typography.less</small></h1>
+        <h1>布局 <small>layout.less</small></h1>
     </header>
     
     <hr />
     
-    <h1>Flagwind.UI <small>权威指南</small></h1>
-    <h2>Flagwind.UI <small>权威指南</small></h2>
-    <h3>Flagwind.UI <small>权威指南</small></h3>
-    <h4>Flagwind.UI <small>权威指南</small></h4>
-    <h5>Flagwind.UI <small>权威指南</small></h5>
-    <h6>Flagwind.UI <small>权威指南</small></h6>
+    <!-- 百分百宽度布局 -->
+    <div class="layout layout-fluid">
+        <div class="flex-md-8">
+            <div class="layout">
+                <div class="flex-md-4 box1">
+                    <h3>嵌套盒子1</h3>
+                </div>
+                <div class="flex-md-4 box2">
+                    <h3>嵌套盒子2</h3>
+                </div>
+                <div class="flex-md-4 box3">
+                    <h3>嵌套盒子3</h3>
+                </div>
+            </div>
+        </div>
+        <div class="flex-md-4 box4">
+            <h3>外层盒子</h3>
+        </div>
+    </div>
     
     <hr />
     
-    <span class="txt-primary">Flagwind.UI 权威指南</span><br />
-    <span class="txt-success">Flagwind.UI 权威指南</span><br />
-    <span class="txt-info">Flagwind.UI 权威指南</span><br />
-    <span class="txt-warning">Flagwind.UI 权威指南</span><br />
-    <span class="txt-danger">Flagwind.UI 权威指南</span>
-    
-    <hr />
-    
-    <p class="bg-primary">CSS 形式的注释在 LESS 中是依然保留的:</p>
-    <p class="bg-success">LESS 同样也支持双斜线的注释, 但是编译成 CSS 的时候自动过滤掉:</p>
-    <p class="txt-center bg-info">CSS 形式的注释在 LESS 中是依然保留的:</p>
-    <p class="bg-warning">LESS 同样也支持双斜线的注释, 但是编译成 CSS 的时候自动过滤掉:</p>
-    <p class="bg-danger">LESS 同样也支持双斜线的注释, 但是编译成 CSS 的时候自动过滤掉:</p>
-    
-    <hr />
-    
-    <p><abbr title="JavaScript 设计模式是一本专门讲解设计模式的专业书籍">JavaScript 设计模式</abbr></p>
-    
-    <hr />
-    
-    <address>
-        <strong>Flagwind, Inc.</strong><br />
-    </address>
-    
-    <hr />
-    
-    <blockquote>
-        <p>不幸是福者的攀登阶梯，奋斗是成功的必修之路。</p>
-    </blockquote>
-    
-    <blockquote>
-        <p>不幸是福者的攀登阶梯，奋斗是成功的必修之路。</p>
-        <small>出自 <cite title="网络">匿名</cite></small>
-    </blockquote>
-    
-     <blockquote class="pull-right">
-        <p>不幸是福者的攀登阶梯，奋斗是成功的必修之路。</p>
-        <small>出自 <cite title="网络">匿名</cite></small>
-    </blockquote>
-    
-    <hr />
-    
-    <!-- 去点列表 -->
-    <ul class="list-unstyled">
-        <li>Lorem ipsum dolor sit amet</li>
-        <li>Lorem ipsum dolor sit amet</li>
-        <li>Lorem ipsum dolor sit amet</li>
-        <li>Lorem ipsum dolor sit amet</li>
-        <li>Lorem ipsum dolor sit amet</li>
-    </ul>
-    
-    <hr />
-    
-    <!-- 内联列表 -->
-    <ul class="list-inline">
-        <li>Lorem ipsum</li>
-        <li>Lorem ipsum</li>
-        <li>Lorem ipsum</li>
-    </ul>
-    
-    <!-- 定义列表 -->
-    <dl>
-        <dt>Description lists</dt>
-        <dd>A description list is perfect for defining terms.</dd>
-        <dt>Euismod</dt>
-        <dd>A description list is perfect for defining terms.</dd>
-        <dt>Malesuada porta</dt>
-        <dd>A description list is perfect for defining terms.</dd>
-    </dl>
-    
-    <!-- 水平定义列表 -->
-    <dl class="dl-horizontal">
-        <dt>Description lists</dt>
-        <dd>A description list is perfect for defining terms.</dd>
-        <dt>Euismod</dt>
-        <dd>A description list is perfect for defining terms.</dd>
-        <dt>Malesuada porta</dt>
-        <dd>A description list is perfect for defining terms.</dd>
-    </dl>
-    
+    <!-- 自适应宽度布局 -->
+    <div class="layout">
+        <div class="flex-md-4 box1">
+            <h3>外层盒子1</h3>
+        </div>
+        <div class="flex-md-4 box3">
+            <h3>外层盒子2</h3>
+        </div>
+        <div class="flex-md-4 box2">
+            <h3>外层盒子3</h3>
+        </div>
+    </div>
 </body>
 </html>
