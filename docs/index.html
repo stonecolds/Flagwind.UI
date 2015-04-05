@@ -1,79 +1,30 @@
 ﻿<!DOCTYPE html>
 <html lang="zh-cn">
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Flagwind.UI 1.0.0 - Flagwind Docs</title>
-    <link href="../css/flagwind.css" rel="stylesheet" />
-	<style>
-    .box1, .box2, .box3, .box4
-    {
-        height:200px;
-    }
+    <meta charset="utf-8" />
+    <meta name="renderer" content="webkit" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     
-    .box1
-    {
-        background: #0e90d2;
-    }
+    <title>Docs - Flagwind.UI</title>
     
-    .box2
-    {
-        background: #5eb95e;
-    }
+    <!-- 核心 CSS 文件 -->
+    <link rel="stylesheet" href="../css/flagwind.min.css" />
     
-    .box3
-    {
-        background: #f37b1d;
-    }
-    
-    .box4
-    {
-        background: #dd514c;
-    }
-  </style>
+    <!-- HTML5 & Media Queries 向下兼容文件 -->
+    <!--[if lt IE 9]>
+    <script src="../js/html5shiv.min.js"></script>
+    <script src="../js/respond.min.js"></script>
+    <![endif]-->
 </head>
 
 <body>
-    <header>
-        <h1>布局 <small>layout.less</small></h1>
-    </header>
-    
-    <hr />
-    
-    <!-- 百分百宽度布局 -->
-    <div class="layout layout-fluid">
-        <div class="flex-md-8">
-            <div class="layout">
-                <div class="flex-md-4 box1">
-                    <h3>嵌套盒子1</h3>
-                </div>
-                <div class="flex-md-4 box2">
-                    <h3>嵌套盒子2</h3>
-                </div>
-                <div class="flex-md-4 box3">
-                    <h3>嵌套盒子3</h3>
-                </div>
-            </div>
-        </div>
-        <div class="flex-md-4 box4">
-            <h3>外层盒子</h3>
-        </div>
+    <div class="container">
+        ...
     </div>
     
-    <hr />
-    
-    <!-- 自适应宽度布局 -->
-    <div class="layout">
-        <div class="flex-md-4 box1">
-            <h3>外层盒子1</h3>
-        </div>
-        <div class="flex-md-4 box3">
-            <h3>外层盒子2</h3>
-        </div>
-        <div class="flex-md-4 box2">
-            <h3>外层盒子3</h3>
-        </div>
-    </div>
+    <!-- 核心 JavaScript 文件 -->
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/flagwind.min.js"></script>
 </body>
 </html>

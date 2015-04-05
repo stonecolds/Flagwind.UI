@@ -690,7 +690,7 @@ blockquote.pull-right .small:after {
 * 百分百宽度布局。
 */
 .layout-fluid {
-  width: 100%;
+  width: 100% !important;
 }
 /*
 * 定义布局份数。

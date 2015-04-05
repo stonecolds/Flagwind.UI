@@ -16,7 +16,7 @@
 
 - 用四个空格代替制表符（tab ）。
 - 保存文件时，删除尾部的空白符。
-- 设置文件编码为 UTF-8。
+- 设置文件编码为 utf-8。
 - 在文件结尾添加一个空白行。
 
 ## HTML 规范
@@ -35,40 +35,33 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8" />
+    <meta name="renderer" content="webkit" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     
-    <!-- 标题、描述、关键字 -->
     <title>Normal</title>
     <meta name="description" content="" />
     <meta name="keywords" content="" />
     
-    <!-- 引入外部样式表 -->
-    <link href="css/flagwind.css" rel="stylesheet" />
+    <!-- 核心 CSS 文件 -->
+    <link rel="stylesheet" href="css/flagwind.min.css" />
     
-    <!-- 申明内部样式表 -->
-    <style>
-        /* ... */
-    </style>
-    
-    <!-- 引入外部脚本文件 -->
-    <script src="js/jquery.js"></script>
-    <script src="js/flagwind.js"></script>
+    <!-- HTML5 & Media Queries 向下兼容文件 -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
 </head>
 
 <body>
-    <header>
-        <h1>Title</h1>
-    </header>
-    
     <div class="container">
         ...
     </div>
     
-    <footer>
-        <p>Footer</p>
-    </footer>
+    <!-- 核心 JavaScript 文件 -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/flagwind.min.js"></script>
 </body>
 </html>
 ```
@@ -98,10 +91,10 @@
 
 ### 字符编码
 
-通过声明字符编码，能够确保浏览器快速判断页面内容的渲染方式。这样做的好处是，可以避免在 HTML 中使用字符实体标记（character entity），从而全部与文档编码一致（强烈推荐 UTF-8 编码）。
+通过声明字符编码，能够确保浏览器快速判断页面内容的渲染方式。这样做的好处是，可以避免在 HTML 中使用字符实体标记（character entity），从而全部与文档编码一致（强烈推荐 utf-8 编码）。
 
 ``` html
-<meta charset="UTF-8" />
+<meta charset="utf-8" />
 ```
 
 ### IE 兼容模式
