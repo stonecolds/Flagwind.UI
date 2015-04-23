@@ -1,4 +1,4 @@
-﻿# 编码规范
+# 编码规范
 
 标签 ： Flagwind.UI
 
@@ -191,7 +191,7 @@ class 用于标识高度可复用组件，因此应该排在首位。id 用于�
 - 为选择器中的属性添加双引号，例如，`input[type="text"]`。
 - 避免为 0 值指定单位，例如，用 `margin: 0`; 代替 `margin: 0px`;。
 
-``` CSS
+``` css
 /* 糟糕的实例 */
 .selector, .selector-secondary, .selector[type=text] {
     padding:15px;
@@ -223,7 +223,7 @@ class 用于标识高度可复用组件，因此应该排在首位。id 用于�
 
 由于定位（positioning）可以从正常的文档流中移除元素，并且还能覆盖盒模型（box model）相关的样式，因此排在首位。盒模型排在第二位，因为它决定了组件的尺寸和位置。其他属性只是影响组件的内部（inside）或者是不影响前两组属性，因此排在后面。
 
-``` CSS
+``` css
 .declaration-order
 {
     /* 定位 */
@@ -264,7 +264,7 @@ class 用于标识高度可复用组件，因此应该排在首位。id 用于�
 - 通过 Sass 或 Less 类似的 CSS 预处理器将多个 CSS 文件编译为一个文件。
 - 通过 Rails、Jekyll 或其他系统中提供过 CSS 文件合并功能。
 
-``` HTML
+``` html
 <!-- 推荐使用 link 元素 -->
 <link rel="stylesheet" href="layout.css">
 
@@ -278,7 +278,7 @@ class 用于标识高度可复用组件，因此应该排在首位。id 用于�
 
 将媒体查询放在尽可能相关规则的附近。不要将他们放在文档底部或者打包放在一个单一样式文件中。如果你把他们分开了，将来只会被大家遗忘。下面给出一个典型的示例：
 
-``` CSS
+``` css
 .element { ... }
 .element-avatar { ... }
 .element-selected { ... }
@@ -295,7 +295,7 @@ class 用于标识高度可复用组件，因此应该排在首位。id 用于�
 
 当使用特定厂商的带有前缀的属性时，通过缩进的方式，让每个属性的值在垂直方向对齐，这样便于多行编辑。
 
-``` CSS
+``` css
 .selector
 {
     -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
@@ -316,7 +316,7 @@ class 用于标识高度可复用组件，因此应该排在首位。id 用于�
 
 大部分情况下，我们不需要为简写形式的属性声明指定所有值。例如，HTML 的 heading 元素只需要设置上、下边距（margin）的值，因此，在必要的时候，只需覆盖这两个值就可以。过度使用简写形式的属性声明会导致代码混乱，并且会对属性值带来不必要的覆盖从而引起意外的副作用。
 
-``` CSS
+``` css
 /* 糟糕的实例 */
 .element
 {
@@ -343,7 +343,7 @@ class 用于标识高度可复用组件，因此应该排在首位。id 用于�
 
 对于较长的注释，务必书写完整的句子；对于一般性注解，可以书写简洁的短语。
 
-``` CSS
+``` css
 /* 糟糕的实例 */
 /* Modal header */
 .modal-header
@@ -368,7 +368,7 @@ class 用于标识高度可复用组件，因此应该排在首位。id 用于�
 - 基于最近的父 class 或基本（base） class 作为新 class 的前缀。
 - 使用 `.js-*` class 来标识行为（与样式相对），并且不要将这些 class 包含到 CSS 文件中。
 
-``` CSS
+``` css
 /* 糟糕的实例 */
 .t { ... }
 .red { ... }
@@ -387,7 +387,7 @@ class 用于标识高度可复用组件，因此应该排在首位。id 用于�
 - 选择器要尽可能短，并且尽量限制组成选择器的元素个数，建议不要超过 3 个。
 - 只有在必要的时候才将 class 限制在最近的父元素内（也就是后代选择器）（例如，不使用带前缀的 class 时 -- 前缀类似于命名空间）。
 
-``` CSS
+``` css
 /* 糟糕的实例 */
 span { ... }
 .page-container #stream .stream-item .fw .fw-header .username { ... }
@@ -429,7 +429,7 @@ span { ... }
 - 常量名采用全大写形式，如：`var PI = 3.141592653;`
 - 使用一个下划线前缀来表示一个私有属性或方法。
 
-``` JavaScript
+``` js
 function Person()
 {
     this._name = null;
@@ -450,7 +450,7 @@ function Person()
 
 缩进的单位为四个空格，规则也很简单——花括号里面的东西。这就意味着函数体、循环 (do, while, for, for-in)、if、switch，以及对象字面量中的对象属性。下面的代码就是使用缩进的示例：
 
-``` JavaScript
+``` js
 function outer(a, b)
 {
     var c = 1,
@@ -497,7 +497,7 @@ function outer(a, b)
 
 想象下你有一个只有一条语句的 for 循环，你可以忽略花括号，而没有解析的错误。
 
-``` JavaScript
+``` js
 // 糟糕的实例
 for(var i = 0; i < 10; i++)
     alert(i);
@@ -505,7 +505,7 @@ for(var i = 0; i < 10; i++)
 
 但是，如果，后来，主体循环部分又增加了行代码：
 
-``` JavaScript
+``` js
 // 糟糕的实例
 for(var i = 0; i < 10; i++)
     alert(i);
@@ -514,7 +514,7 @@ for(var i = 0; i < 10; i++)
 
 第二个 alert 已经在循环之外，缩进可能欺骗了你。为了长远打算，最好总是使用花括号，即使只有一行代码：
 
-``` JavaScript
+``` js
 // 好的实例
 for(var i = 0; i < 10; i++)
 {
@@ -526,7 +526,7 @@ for(var i = 0; i < 10; i++)
 
 不要吝啬注释。给以后需要理解你代码的人们(或许就是你自己)留下信息是非常有用的。注释应该和它们所注释的代码一样是书写良好且清晰明了。
 
-``` JavaScript
+``` js
 /*!
  * Flagwind.UI 1.0.1
  * http://www.flagwind.org
