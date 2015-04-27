@@ -28,9 +28,9 @@
 
 ## 编辑器配置
 
-根据以下的设置来配置你的编辑器，来避免常见的代码不一致。
+根据以下设置来配置你的编辑器，避免代码不一致的问题。
 
-- 用四个空格代替制表符（tab ）。
+- 用4个空格代替制表符（tab ）。
 - 保存文件时，删除尾部的空白符。
 - 设置文件编码为 utf-8（无BOM）。
 - 在文件结尾添加一个空白行。
@@ -39,8 +39,8 @@
 
 ### 基础
 
-- 用四个空格来代替制表符（tab）。
-- 嵌套元素应当另起一行并缩进一次（即四个空格，head 和 body 元素不需要缩进）。
+- 用4个空格来代替制表符（tab）。
+- 嵌套元素应当另起一行并缩进一次（即4个空格，`head` 和 `body` 元素不需要缩进）。
 - 在大的模块之间用空行隔开，使模块更清晰。
 - 对于属性（attribute）的定义，确保全部使用双引号，而不是单引号。
 - 确保在自闭合（self-closing）（例如，`<img />` 或 `<input />`）元素的尾部添加斜线。
@@ -90,10 +90,6 @@
 ``` html
 
 <!DOCTYPE html>
-<html>
-    <head>
-    </head>
-</html>
 
 ```
 
@@ -109,7 +105,6 @@
 
 <!DOCTYPE html>
 <html lang="zh-cn">
-    <!-- ... -->
 </html>
 
 ```
@@ -128,6 +123,8 @@
 
 IE 通过特定的 `<meta>` 标签来确定绘制当前页面所采用的 IE 版本。除非有强烈的特殊需求，否则最好设置为 **Edge** 模式，从而通知 IE 采用其所支持的最新的模式。
 
+更多信息，请阅读这篇 [Stack Overflow](http://stackoverflow.com/questions/6771258/whats-the-difference-if-meta-http-equiv-x-ua-compatible-content-ie-edge-e) 文章。
+
 ``` html
 
 <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
@@ -137,6 +134,12 @@ IE 通过特定的 `<meta>` 标签来确定绘制当前页面所采用的 IE 版
 ### 引入 CSS 和 JavaScript 文件
 
 根据 HTML5 规范，在引入 CSS 和 JavaScript 文件时一般不需要指定 type 属性，因为 `text/css` 和 `text/javascript` 分别是它们的默认值。
+
+HTML5 规范链接：
+
+- [使用 link](http://www.w3.org/TR/2011/WD-html5-20110525/semantics.html#the-link-element)
+- [使用 style](http://www.w3.org/TR/2011/WD-html5-20110525/semantics.html#the-style-element)
+- [使用 script](http://www.w3.org/TR/2011/WD-html5-20110525/scripting-1.html#the-script-element)
 
 ``` html
 
@@ -185,6 +188,8 @@ class 用于标识高度可复用组件，理论上他们应该排在第一位�
 
 布尔型属性可在声明时不赋值（XHTML 规范要求为其赋值，但是 HTML5 规范不需要。），建议采用 **属性值=属性名** 的方式赋值。
 
+了解更多内容，请参考 [WhatWG section on boolean attributes](http://www.whatwg.org/specs/web-apps/current-work/multipage/common-microsyntaxes.html#boolean-attributes)。
+
 ``` html
 
 <!-- 不写属性代表属性为false -->
@@ -223,7 +228,7 @@ class 用于标识高度可复用组件，理论上他们应该排在第一位�
 
 ### 基础
 
-- 用四个空格来代替制表符（tab）。
+- 用4个空格来代替制表符（tab）。
 - 为选择器分组时，将单独的选择器单独放在一行。
 - 声明块的左花括号应当单独成行。
 - 每条声明语句的冒号（`:`）后应该插入一个空格。
@@ -259,6 +264,88 @@ class 用于标识高度可复用组件，理论上他们应该排在第一位�
     background-color: rgba(0,0,0,.5);
     box-shadow: 0 1px 2px #ccc, inset 0 1px 0 #fff;
 }
+
+```
+
+### class 命名
+
+- class 名称中只能出现小写字符和中划线（不是下划线，也不是驼峰命名法）。中划线应当用于相关 class 的命名（类似于命名空间）（例如，`.fw` 和 `.fw-header`）。
+- 避免过度任意的简写。`.fw` 代表 flagwind，但是 `.s` 不能表达任何意思。
+- class 名称应当尽可能短，并且意义明确。
+- 使用有意义的名称。使用有组织的或目的明确的名称，不要使用表现形式（presentational）的名称。
+- 基于最近的父 class 或基本（base） class 作为新 class 的前缀。
+- 使用 `.js-*` class 来标识行为（与样式相对），并且不要将这些 class 包含到 CSS 文件中。
+
+``` css
+
+/* 糟糕的实例 */
+.t { ... }
+.red { ... }
+.header { ... }
+
+/* 好的实例 */
+.fw { ... }
+.important { ... }
+.fw-header { ... }
+
+```
+
+### 选择器
+
+- 对于通用元素使用 class ，这样利于渲染性能的优化。
+- 对于经常出现的组件，避免使用属性选择器（例如，`[class^="..."]`）。浏览器的性能会受到这些因素的影响。
+- 选择器要尽可能短，并且尽量限制组成选择器的元素个数，建议不要超过 3 个。
+- 只有在必要的时候才将 class 限制在最近的父元素内（也就是后代选择器）（例如，不使用带前缀的 class 时 --前缀类似于命名空间）。
+
+扩展阅读:
+
+- [Scope CSS classes with prefixes](http://markdotto.com/2012/02/16/scope-css-classes-with-prefixes/)
+- [Stop the cascade](http://markdotto.com/2012/03/02/stop-the-cascade/)
+
+``` css
+
+/* 糟糕的实例 */
+span { ... }
+.page-container #stream .stream-item .fw .fw-header .username { ... }
+.avatar { ... }
+
+/* 好的实例 */
+.avatar { ... }
+.fw-header .username { ... }
+.fw .avatar { ... }
+
+```
+
+### 代码组织
+
+- 以组件为单位组织代码段。
+- 制定一致的注释规范。
+- 使用一致的空白符将代码分隔成块，这样利于阅读较大的文档。
+- 如果使用了多个 CSS 文件，将其按照组件而非页面的形式分拆，因为页面会被重组，而组件只会被移动。
+
+``` css
+
+/*
+ * Component section heading
+ */
+
+.element { ... }
+
+
+/*
+ * Component section heading
+ *
+ * Sometimes you need to include optional context for the entire component.
+ * Do that up here if it's important enough.
+ */
+
+.element { ... }
+
+/*
+ * Contextual sub-component or modifer
+ */
+
+.element-heading { ... }
 
 ```
 
@@ -607,7 +694,7 @@ Mozilla Developer Network 有一篇对不熟悉属性简写及其行为的人来
 
 ### 注释
 
-代码是由人编写并维护的。请确保你的代码能够自描述、注释良好并且易于他人理解。好的代码注释能够传达上下文关系和代码目的。不要简单地重申组件或 class 名称。
+代码是由人编写并维护的。请确保你的代码能够自然描述、注释良好并且易于他人理解。好的代码注释能够传达上下文关系和代码目的。不要简单地重申组件或 class 名称。
 
 对于较长的注释，务必书写完整的句子；对于一般性注解，可以书写简洁的短语。
 
@@ -635,97 +722,22 @@ Mozilla Developer Network 有一篇对不熟悉属性简写及其行为的人来
 
 ```
 
-### class 命名
-
-- class 名称中只能出现小写字符和破折号（dashe）（不是下划线，也不是驼峰命名法）。破折号应当用于相关 class 的命名（类似于命名空间）（例如，`.fw` 和 `.fw-header`）。
-- 避免过度任意的简写。`.fw` 代表 flagwind，但是 `.s` 不能表达任何意思。
-- class 名称应当尽可能短，并且意义明确。
-- 使用有意义的名称。使用有组织的或目的明确的名称，不要使用表现形式（presentational）的名称。
-- 基于最近的父 class 或基本（base） class 作为新 class 的前缀。
-- 使用 `.js-*` class 来标识行为（与样式相对），并且不要将这些 class 包含到 CSS 文件中。
-
-``` css
-
-/* 糟糕的实例 */
-.t { ... }
-.red { ... }
-.header { ... }
-
-/* 好的实例 */
-.fw { ... }
-.important { ... }
-.fw-header { ... }
-
-```
-
-### 选择器
-
-- 对于通用元素使用 class ，这样利于渲染性能的优化。
-- 对于经常出现的组件，避免使用属性选择器（例如，`[class^="..."]`）。浏览器的性能会受到这些因素的影响。
-- 选择器要尽可能短，并且尽量限制组成选择器的元素个数，建议不要超过 3 个。
-- 只有在必要的时候才将 class 限制在最近的父元素内（也就是后代选择器）（例如，不使用带前缀的 class 时 --前缀类似于命名空间）。
-
-``` css
-
-/* 糟糕的实例 */
-span { ... }
-.page-container #stream .stream-item .fw .fw-header .username { ... }
-.avatar { ... }
-
-/* 好的实例 */
-.avatar { ... }
-.fw-header .username { ... }
-.fw .avatar { ... }
-
-```
-
-### 代码组织
-
-- 以组件为单位组织代码段。
-- 制定一致的注释规范。
-- 使用一致的空白符将代码分隔成块，这样利于阅读较大的文档。
-- 如果使用了多个 CSS 文件，将其按照组件而非页面的形式分拆，因为页面会被重组，而组件只会被移动。
-
-``` css
-
-/*
- * Component section heading
- */
-
-.element { ... }
-
-
-/*
- * Component section heading
- *
- * Sometimes you need to include optional context for the entire component. Do that up here if it's important enough.
- */
-
-.element { ... }
-
-/*
- * Contextual sub-component or modifer
- */
-
-.element-heading { ... }
-
-```
-
 ## JavaScript 规范
 
 ### 基础
 
-- 用四个空格来代替制表符（tab）。
+- 用4个空格来代替制表符（tab）。
 - 代码块的左花括号应当单独成行。
 - 所有的变量必须在使用前声明。
 - 一般情况下使用双引号而不是单引号。
 - 尽量减少全局变量的使用，不要让局部变量覆盖全局变量。
-- `eval` 是 JavaScript 中最容易被滥用的方法，避免使用它。
+- `eval` 和 `with` 非特殊场景，应避免使用他们。
 - 不要给 `setTimeout` 或者 `setInterval` 传递字符串参数。
 - 使用 `{}` 代替 `new Object()`。使用 `[]` 代替 `new Array()`。
 - 使用 `===` 和 `!==` 操作符作比较运算。`==` 和 `!= ` 操作符会进行类型强制转换。特别是，不要将 `==` 与这些值比较： `false`，`null`，`undefined`，`""`，`0`，`NaN`。
 - 应该总是使用分号，即使他们可由 JavaScript 解析器隐式创建。
-- 避免每行超过 80 个字符，当一条语句一行写不下时，请考虑换行，并在下一行缩进 8 个空格。
+- 避免每行超过 80 个字符，当一条语句一行写不下时，请考虑换行，并相对上一行缩进4个空格。
+- `use strict` 必须放在函数的第一行，可以用自执行函数包含大的代码段。
 
 ### 命名
 
@@ -733,18 +745,27 @@ span { ... }
 - 变量名和方法名使用 Camel（首字母小写）命名方式，如：`var name = p1.getName();`
 - 常量名采用全大写形式，如：`var PI = 3.141592653;`
 - 使用一个下划线前缀来表示一个私有属性或方法。
+- 所有函数内变量声明放在函数内头部，并且只使用一个 `var`，一个变量一行，并在行末添加注释。
 
 ``` js
 
 function Animal()
 {
     this._name = null;
-    
+
     this.getName = function()
     {
+        var min = 111111,       //随机数最小值
+            max = 999999;       //随机数最大值
+
+        if(!this._name)
+        {
+            return Math.floor(Math.random() * (max - min)) + min;
+        }
+
         return this._name;
     };
-    
+
     this.setName = function(name)
     {
         this._name = name;
@@ -761,7 +782,7 @@ function Animal()
 
 ### 缩进
 
-缩进的单位为四个空格，规则也很简单——花括号里面的东西。这就意味着函数体、循环 (do, while, for, for-in)、if、switch，以及对象字面量中的对象属性。下面的代码就是使用缩进的示例：
+缩进的单位为4个空格，规则也很简单——花括号里面的东西。这就意味着函数体、循环 (do, while, for, for-in)、if、switch，以及对象字面量中的对象属性。下面的代码就是使用缩进的示例：
 
 ``` js
 
@@ -842,19 +863,75 @@ for(var i = 0; i < 10; i++)
 
 ```
 
-### null 的使用场景
+因此，涉及 `if`，`for`，`while`，`do...while`，`try...catch...finally` 的地方都必须使用花括号。
+
+### for 语句
+
+- 普通 `for` 循环，分号后留一个空格，前置条件如果有多个，逗号后面需留一个空格。
+- `for in` 循环一定要有 `hasOwnProperty` 的判断。
+
+``` js
+
+var name,                           // 属性名称
+    person,                         // Person 类的实例
+    list = [10, 12, 13, 14, 15];    // 整型数组
+
+// 普通循环实例
+for(var i = 0, length = list.length; i < length; i++)
+{
+    console.log(list[i]);
+}
+
+// for in 循环实例
+for(name in person)
+{
+    // 判断 person 对象是否拥有指定的属性。
+    if(person.hasOwnProperty(name))
+    {
+        console.log("Property name is " + name);
+        console.log("Property value is " + person[name]);
+    }
+}
+
+```
+
+### switch 语句
+
+`case` 需要缩进，在 `break` 与之后的 `case` 中间需要一个换行。
+
+``` js
+
+switch(condition)
+{
+    case "first":
+        // code
+        break;
+
+    case "third":
+        // code
+        break;
+
+    default:
+    // code
+}
+
+```
+
+### null 关键字
+
+#### 使用场景
 
 - 初始化一个将来可能被声明为一个对象的变量。
 - 与一个可能是对象或者非对象的初始化变量相比。
 - 传入一个对象待定的函数。
 - 作为一个对象待定的函数的返回值。
 
-### 不适合 null 的使用场景
+#### 非使用场景
 
 - 不要用 null 来测试一个变量是否存在。
 - 不要用 null 来测试一个没声明的变量。
 
-### undefined 使用场景
+### undefined 关键字
 
 - 不要直接使用 undefined 进行变量判断。
 - 使用 typeof 推断类型并用字符串 "undefined" 对变量进行判断。
@@ -920,15 +997,15 @@ var name = "jason";    // 双斜线距离分号一个缩进，双斜线后始终
 
 ```
 
-### 文档注释
+#### 文档注释
 
 请按照如下场景添加文档注释，具体用到的标签（例如：`@param`）请参考 [JSDoc](http://usejsdoc.org/)。
 
 - 所有的文件头部。
+- 所有的全局变量。
 - 所有的构造函数。
 - 所有的成员属性。
 - 所有的成员方法。
-- 所有的全局变量。
 
 ``` js
 
@@ -944,6 +1021,8 @@ var name = "jason";    // 双斜线距离分号一个缩进，双斜线后始终
 
 +function($)
 {
+    "use strict";
+
     /**
      * @public @class 初始化 Alert 类的新实例。
      * @param {object=} options 配置选项。
@@ -953,11 +1032,11 @@ var name = "jason";    // 双斜线距离分号一个缩进，双斜线后始终
     {
         return this;
     }
-    
+
     /**
      * @public @property {string} 版本号
      */
-    Alert.VERSION = "1.0.1"；
+    Alert.VERSION = "1.0.1";
 
     /**
      * @public 显示提示框。
@@ -972,5 +1051,3 @@ var name = "jason";    // 双斜线距离分号一个缩进，双斜线后始终
 }(jQuery);
 
 ```
-
-
