@@ -1,11 +1,11 @@
-﻿//
-// * Flagwind.UI v1.0.0
-// * Copyright 2014 Flagwind Inc. All rights reserved.
-// * Licensed under the MIT License.
-// * https://github.com/Flagwind/Flagwind.UI/blob/master/LICENSE
-//
+﻿/*!
+ * Flagwind.UI v1.0.0
+ * Copyright 2014 Flagwind Inc. All rights reserved.
+ * Licensed under the MIT License.
+ * https://github.com/Flagwind/Flagwind.UI/blob/master/LICENSE
+!*/
 
-/*=========================== 排版(Typography) ===========================*/
+/* =========================== 排版(Typography) =========================== */
 
 h1,
 h2,
@@ -18,7 +18,7 @@ h6
     font-weight: @headings-font-weight;
     line-height: @headings-line-height;
     color: @headings-color;
-    
+
     small
     {
         font-weight: normal;
@@ -33,7 +33,7 @@ h3
 {
     margin-top: @line-height-computed;
     margin-bottom: @line-height-computed;
-    
+
     small
     {
         font-size: 65%;
@@ -53,12 +53,12 @@ h6
     }
 }
 
-h1 {font-size: @font-size-h1;}
-h2 {font-size: @font-size-h2;}
-h3 {font-size: @font-size-h3;}
-h4 {font-size: @font-size-h4;}
-h5 {font-size: @font-size-h5;}
-h6 {font-size: @font-size-h6;}
+h1 { font-size: @font-size-h1; }
+h2 { font-size: @font-size-h2; }
+h3 { font-size: @font-size-h3; }
+h4 { font-size: @font-size-h4; }
+h5 { font-size: @font-size-h5; }
+h6 { font-size: @font-size-h6; }
 
 p
 {
@@ -78,14 +78,14 @@ mark,
     background-color: @state-warning-bg;
 }
 
-.txt-left {text-align: left;}
-.txt-right {text-align: right;}
-.txt-center {text-align: center;}
-.txt-justify {text-align: justify;}
-.txt-nowrap {white-space: nowrap;}
-.txt-lowercase {text-transform: lowercase;}
-.txt-uppercase {text-transform: uppercase;}
-.txt-capitalize {text-transform: capitalize;}
+.txt-left       { text-align: left; }
+.txt-right      { text-align: right; }
+.txt-center     { text-align: center; }
+.txt-justify    { text-align: justify; }
+.txt-nowrap     { white-space: nowrap; }
+.txt-lowercase  { text-transform: lowercase; }
+.txt-uppercase  { text-transform: uppercase; }
+.txt-capitalize { text-transform: capitalize; }
 
 .txt-muted
 {
@@ -120,7 +120,7 @@ mark,
 .bg-primary
 {
   color: #fff;
-  
+
   .bg-variant(@color-primary);
 }
 
@@ -163,7 +163,7 @@ ol
 {
     margin-top: 0;
     margin-bottom: (@line-height-computed / 2);
-    
+
     ul,
     ol
     {
@@ -185,8 +185,8 @@ ol
     > li
     {
         display: inline-block;
-        padding-left: 5px;
         padding-right: 5px;
+        padding-left: 5px;
     }
 }
 
@@ -214,11 +214,11 @@ dd
 
 blockquote
 {
-    margin: 0 0 @line-height-computed;
     padding: (@line-height-computed / 2) @line-height-computed;
+    margin: 0 0 @line-height-computed;
     font-size: @blockquote-font-size;
     border-left: 5px solid @blockquote-border-color;
-    
+
     p,
     ul,
     ol
@@ -228,7 +228,7 @@ blockquote
             margin-bottom: 0;
         }
     }
-    
+
     footer,
     small,
     .small
@@ -268,4 +268,3 @@ blockquote.pull-right
         }
     }
 }
-

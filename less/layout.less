@@ -1,81 +1,81 @@
-﻿//
-// * Flagwind.UI v1.0.0
-// * Copyright 2014 Flagwind Inc. All rights reserved.
-// * Licensed under the MIT License.
-// * https://github.com/Flagwind/Flagwind.UI/blob/master/LICENSE
-//
+﻿/*!
+ * Flagwind.UI v1.0.0
+ * Copyright 2014 Flagwind Inc. All rights reserved.
+ * Licensed under the MIT License.
+ * https://github.com/Flagwind/Flagwind.UI/blob/master/LICENSE
+!*/
 
-/*============================== 布局(Layout) ============================*/
+/* ============================== 布局(Layout) ============================ */
 
 /*
-* 自适应宽度布局。
-*/
+ * 自适应宽度布局。
+ */
 .layout
 {
     margin-right: auto;
     margin-left: auto;
     &:extend(.clearfix all);
-    
+
     @media(min-width: @screen-sm-min)
     {
         width: @layout-sm;
     }
-    
+
     @media(min-width: @screen-md-min)
     {
         width: @layout-md;
     }
-    
+
     @media(min-width: @screen-lg-min)
     {
         width: @layout-lg;
     }
-    
+
     .layout
     {
-        margin-left: -(@layout-gutter-width / 2);
-        margin-right: -(@layout-gutter-width / 2);
         width: auto;
+        margin-right: -(@layout-gutter-width / 2);
+        margin-left: -(@layout-gutter-width / 2);
     }
 }
 
 /*
-* 百分百宽度布局。
-*/
+ * 百分百宽度布局。
+ */
 .layout-fluid
 {
     width: 100% !important;
 }
 
 /*
-* 定义布局份数。
-*/
+ * 定义布局份数。
+ */
 .define-layout-flexes();
 
 /*
-* 超小屏幕(xs)布局份数。
-*/
+ * 超小屏幕(xs)布局份数。
+ */
 .build-layout-flexes(xs);
 
 /*
-* 小屏幕(sm)布局份数。
-*/
+ * 小屏幕(sm)布局份数。
+ */
 @media(min-width: @screen-sm-min)
 {
     .build-layout-flexes(sm);
 }
 
 /*
-* 中等屏幕(md)布局份数。
-*/
+ * 中等屏幕(md)布局份数。
+ */
 @media(min-width: @screen-md-min)
 {
     .build-layout-flexes(md);
 }
 
 /*
-* 大屏幕(lg)布局份数。
-*/
+ * 大屏幕(lg)布局份数。
+ */
 @media(min-width: @screen-lg-min)
 {
     .build-layout-flexes(lg);

@@ -1,51 +1,51 @@
-﻿//
-// * Flagwind.UI v1.0.0
-// * Copyright 2014 Flagwind Inc. All rights reserved.
-// * Licensed under the MIT License.
-// * https://github.com/Flagwind/Flagwind.UI/blob/master/LICENSE
-//
+﻿/*!
+ * Flagwind.UI v1.0.0
+ * Copyright 2014 Flagwind Inc. All rights reserved.
+ * Licensed under the MIT License.
+ * https://github.com/Flagwind/Flagwind.UI/blob/master/LICENSE
+!*/
 
-//*============================= 通用(Normal) ============================
+/* ============================= 通用(Normal) ============================ */
 
-//
-// #public 清除浮动。
-//
+/*
+ * #public 清除浮动。
+ */
 .clearfix()
 {
     &:before,
     &:after
     {
-        content: " ";
         display: table;
+        content: " ";
     }
-    
+
     &:after
     {
         clear: both;
     }
 }
 
-//*============================= 布局(Layout) ============================
+/* ============================= 布局(Layout) ============================ */
 
-//
-// #public 定义布局份数。
-//
+/*
+ * #public 定义布局份数。
+ */
 .define-layout-flexes()
 {
     .flex(@index)
     {
         @item: ~".flex-xs-@{index}, .flex-sm-@{index}, .flex-md-@{index}, .flex-lg-@{index}";
-        
+
         .flex((@index + 1), @item);
     }
-    
+
     .flex(@index, @list) when (@index =< @layout-flexes)
     {
         @item: ~".flex-xs-@{index}, .flex-sm-@{index}, .flex-md-@{index}, .flex-lg-@{index}";
-        
+
         .flex((@index + 1), ~"@{list}, @{item}");
     }
-    
+
     .flex(@index, @list) when (@index > @layout-flexes)
     {
         @{list}
@@ -56,15 +56,15 @@
             padding-right: (@layout-gutter-width / 2);
         }
     }
-    
+
     .flex(1);
 }
 
-//
-// #public 生成布局份数。
-//
-// #param @size [xs|sm|md|lg] 必选项，尺寸。
-//
+/*
+ * #public 生成布局份数。
+ *
+ * #param @size [xs|sm|md|lg] 必选项，尺寸。
+ */
 .build-layout-flexes(@size)
 {
     .float-layout-flexes(@size);
@@ -74,11 +74,11 @@
     .loop-layout-flexes(offset, @layout-flexes, @size);
 }
 
-//
-// #private 浮动布局份数。
-//
-// #param @size [xs|sm|md|lg] 必选项，尺寸。
-//
+/*
+ * #private 浮动布局份数。
+ *
+ * #param @size [xs|sm|md|lg] 必选项，尺寸。
+ */
 .float-layout-flexes(@size)
 {
     .flex(@index)
@@ -87,14 +87,14 @@
 
         .flex((@index + 1), @item);
     }
-    
+
     .flex(@index, @list) when (@index =< @layout-flexes)
     {
         @item: ~".flex-@{size}-@{index}";
-        
+
         .flex((@index + 1), ~"@{list}, @{item}");
     }
-    
+
     .flex(@index, @list) when (@index > @layout-flexes)
     {
         @{list}
@@ -102,17 +102,17 @@
             float: left;
         }
     }
-    
+
     .flex(1);
 }
 
-//
-// #private 计算布局份数的宽度。
-//
-// #param @type [width] 必选项，类型。
-// #param @index [number] 必选项，索引。
-// #param @size [xs|sm|md|lg] 必选项，尺寸。
-//
+/*
+ * #private 计算布局份数的宽度。
+ *
+ * #param @type [width] 必选项，类型。
+ * #param @index [number] 必选项，索引。
+ * #param @size [xs|sm|md|lg] 必选项，尺寸。
+ */
 .calc-layout-flex(@type, @index, @size) when (@type = width) and (@index > 0)
 {
     .flex-@{size}-@{index}
@@ -121,13 +121,13 @@
     }
 }
 
-//
-// #private 计算布局份数的排序。
-//
-// #param @type [push] 必选项，类型。
-// #param @index [number] 必选项，索引。
-// #param @size [xs|sm|md|lg] 必选项，尺寸。
-//
+/*
+ * #private 计算布局份数的排序。
+ *
+ * #param @type [push] 必选项，类型。
+ * #param @index [number] 必选项，索引。
+ * #param @size [xs|sm|md|lg] 必选项，尺寸。
+ */
 .calc-layout-flex(@type, @index, @size) when (@type = push) and (@index > 0)
 {
     .flex-@{size}-push-@{index}
@@ -136,13 +136,13 @@
     }
 }
 
-//
-// #private 计算布局份数的排序。
-//
-// #param @type [push] 必选项，类型。
-// #param @index [number] 必选项，索引。
-// #param @size [xs|sm|md|lg] 必选项，尺寸。
-//
+/*
+ * #private 计算布局份数的排序。
+ *
+ * #param @type [push] 必选项，类型。
+ * #param @index [number] 必选项，索引。
+ * #param @size [xs|sm|md|lg] 必选项，尺寸。
+ */
 .calc-layout-flex(@type, @index, @size) when (@type = push) and (@index = 0)
 {
     .flex-@{size}-push-0
@@ -151,13 +151,13 @@
     }
 }
 
-//
-// #private 计算布局份数的排序。
-//
-// #param @type [pull] 必选项，类型。
-// #param @index [number] 必选项，索引。
-// #param @size [xs|sm|md|lg] 必选项，尺寸。
-//
+/*
+ * #private 计算布局份数的排序。
+ *
+ * #param @type [pull] 必选项，类型。
+ * #param @index [number] 必选项，索引。
+ * #param @size [xs|sm|md|lg] 必选项，尺寸。
+ */
 .calc-layout-flex(@type, @index, @size) when (@type = pull) and (@index > 0)
 {
     .flex-@{size}-pull-@{index}
@@ -166,13 +166,13 @@
     }
 }
 
-//
-// #private 计算布局份数的排序。
-//
-// #param @type [pull] 必选项，类型。
-// #param @index [number] 必选项，索引。
-// #param @size [xs|sm|md|lg] 必选项，尺寸。
-//
+/*
+ * #private 计算布局份数的排序。
+ *
+ * #param @type [pull] 必选项，类型。
+ * #param @index [number] 必选项，索引。
+ * #param @size [xs|sm|md|lg] 必选项，尺寸。
+ */
 .calc-layout-flex(@type, @index, @size) when (@type = pull) and (@index = 0)
 {
     .flex-@{size}-pull-0
@@ -181,13 +181,13 @@
     }
 }
 
-//
-// #private 计算布局份数的排序。
-//
-// #param @type [pull] 必选项，类型。
-// #param @index [number] 必选项，索引。
-// #param @size [xs|sm|md|lg] 必选项，尺寸。
-//
+/*
+ * #private 计算布局份数的排序。
+ *
+ * #param @type [pull] 必选项，类型。
+ * #param @index [number] 必选项，索引。
+ * #param @size [xs|sm|md|lg] 必选项，尺寸。
+ */
 .calc-layout-flex(@type, @index, @size) when (@type = offset)
 {
     .flex-@{size}-offset-@{index}
@@ -196,21 +196,21 @@
     }
 }
 
-//
-// #private 递归计算布局份数。
-//
-// #param @type [width|pull|push|offset] 必选项，类型。
-// #param @index [number] 必选项，索引。
-// #param @size [xs|sm|md|lg] 必选项，尺寸。
-//
+/*
+ * #private 递归计算布局份数。
+ *
+ * #param @type [width|pull|push|offset] 必选项，类型。
+ * #param @index [number] 必选项，索引。
+ * #param @size [xs|sm|md|lg] 必选项，尺寸。
+ */
 .loop-layout-flexes(@type, @index, @size) when (@index >= 0)
 {
     .calc-layout-flex(@type, @index, @size);
-    
+
     .loop-layout-flexes(@type, (@index - 1), @size);
 }
 
-//*============================= 其他(Other) =============================
+/* ============================= 其他(Other) ============================= */
 
 .tab-focus()
 {
@@ -222,7 +222,7 @@
 .txt-emphasis-variant(@color)
 {
     color: @color;
-    
+
     a&:hover
     {
         color: darken(@color, 10%);
@@ -232,7 +232,7 @@
 .bg-variant(@color)
 {
     background-color: @color;
-    
+
     a&:hover
     {
         background-color: darken(@color, 10%);
