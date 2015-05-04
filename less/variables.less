@@ -5,7 +5,7 @@
 // * https://github.com/Flagwind/Flagwind.UI/blob/master/LICENSE
 //
 
-/* ============================= 颜色(Colors) ============================ */
+// ============================= 颜色(Colors) ============================ //
 
 // 基础颜色
 @color-base:                      #000;
@@ -57,7 +57,7 @@
 @state-danger-bg:                 #f2dede;
 @state-danger-border:             darken(spin(@state-danger-bg, -10), 5%);
 
-/* =========================== 排版(Typography) ========================== */
+// =========================== 排版(Typography) ========================== //
 
 // 基础字体
 @font-family-base:                "Lucida Grande", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -89,14 +89,18 @@
 @blockquote-font-size:            (@font-size-base * 1.25);
 @blockquote-border-color:         @color-gray-lighter;
 
-/* ========================= 媒体查询(Media query) ======================= */
+// ========================= 媒体查询(Media query) ======================= //
 
 @screen-xs-min:                   480px;  // 超小屏幕（手机，等于等于 480px 并且小于 768px）
 @screen-sm-min:                   768px;  // 小屏幕（平板，大于等于 768px）
 @screen-md-min:                   992px;  // 中等屏幕（桌面显示器，大于等于 992px）
 @screen-lg-min:                   1200px; // 大屏幕（大桌面显示器，大于等于 1200px）
 
-/* ============================= 布局(Layout) ============================ */
+@screen-xs-max:                   (@screen-sm-min - 1);
+@screen-sm-max:                   (@screen-md-min - 1);
+@screen-md-max:                   (@screen-lg-min - 1);
+
+// ============================= 布局(Layout) ============================ //
 
 @layout-flexes:                   12;
 @layout-gutter-width:             30px;
