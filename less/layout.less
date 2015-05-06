@@ -12,31 +12,7 @@
  */
 .layout
 {
-    margin-right: auto;
-    margin-left: auto;
-    &:extend(.clearfix all);
-
-    @media (min-width: @screen-sm-min)
-    {
-        width: @layout-sm;
-    }
-
-    @media (min-width: @screen-md-min)
-    {
-        width: @layout-md;
-    }
-
-    @media (min-width: @screen-lg-min)
-    {
-        width: @layout-lg;
-    }
-
-    .layout
-    {
-        width: auto;
-        margin-right: -(@layout-gutter-width / 2);
-        margin-left: -(@layout-gutter-width / 2);
-    }
+    .build-layout();
 }
 
 /*
@@ -55,14 +31,14 @@
 /*
  * 超小屏幕(xs)布局份数。
  */
-.build-layout-flexes(xs);
+.build-layout-flex(xs);
 
 /*
  * 小屏幕(sm)布局份数。
  */
 @media (min-width: @screen-sm-min)
 {
-    .build-layout-flexes(sm);
+    .build-layout-flex(sm);
 }
 
 /*
@@ -70,7 +46,7 @@
  */
 @media (min-width: @screen-md-min)
 {
-    .build-layout-flexes(md);
+    .build-layout-flex(md);
 }
 
 /*
@@ -78,7 +54,7 @@
  */
 @media (min-width: @screen-lg-min)
 {
-    .build-layout-flexes(lg);
+    .build-layout-flex(lg);
 }
 
 /* ======================= 布局辅助(Layout utilities) ===================== */

@@ -60,6 +60,38 @@
 }
 
 //
+// #public 生成一个布局。
+//
+.build-layout()
+{
+    margin-right: auto;
+    margin-left: auto;
+    &:extend(.clearfix all);
+
+    @media (min-width: @screen-sm-min)
+    {
+        width: @layout-sm;
+    }
+
+    @media (min-width: @screen-md-min)
+    {
+        width: @layout-md;
+    }
+
+    @media (min-width: @screen-lg-min)
+    {
+        width: @layout-lg;
+    }
+
+    .layout,
+    {
+        width: auto;
+        margin-right: -(@layout-gutter-width / 2);
+        margin-left: -(@layout-gutter-width / 2);
+    }
+}
+
+//
 // #public 定义布局份数。
 //
 .define-layout-flexes()
@@ -93,17 +125,176 @@
 }
 
 //
-// #public 生成布局份数。
+// #public 生成指定尺寸的布局份数。
 //
 // #param @size [xs|sm|md|lg] 必选项，尺寸。
 //
-.build-layout-flexes(@size)
+.build-layout-flex(@size)
 {
     .float-layout-flexes(@size);
     .loop-layout-flexes(width, @layout-flexes, @size);
     .loop-layout-flexes(push, @layout-flexes, @size);
     .loop-layout-flexes(pull, @layout-flexes, @size);
     .loop-layout-flexes(offset, @layout-flexes, @size);
+}
+
+//
+// #public 生成超小屏幕(xs)布局份数。
+//
+// #param @flexes [number] 必选项，所占数。
+//
+.build-layout-xs-flex(@flexes; @gutter: @layout-gutter-width)
+{
+    position: relative;
+    float: left;
+    width: percentage((@flexes / @layout-flexes));
+    min-height: 1px;
+    padding-left:  (@gutter / 2);
+    padding-right: (@gutter / 2);
+}
+
+.build-layout-xs-flex-offset(@flexes)
+{
+    margin-left: percentage((@flexes / @layout-flexes));
+}
+
+.build-layout-xs-flex-push(@flexes)
+{
+    left: percentage((@flexes / @layout-flexes));
+}
+
+.build-layout-xs-flex-pull(@flexes)
+{
+    right: percentage((@flexes / @layout-flexes));
+}
+
+//
+// #public 生成小屏幕(sm)布局份数。
+//
+// #param @flexes [number] 必选项，所占数。
+//
+.build-layout-sm-flex(@flexes; @gutter: @layout-gutter-width)
+{
+    position: relative;
+    min-height: 1px;
+    padding-left:  (@gutter / 2);
+    padding-right: (@gutter / 2);
+
+    @media (min-width: @screen-sm-min)
+    {
+        float: left;
+        width: percentage((@flexes / @layout-flexes));
+    }
+}
+
+.build-layout-sm-flex-offset(@flexes)
+{
+    @media (min-width: @screen-sm-min)
+    {
+        margin-left: percentage((@flexes / @layout-flexes));
+    }
+}
+
+.build-layout-sm-flex-push(@flexes)
+{
+    @media (min-width: @screen-sm-min)
+    {
+        left: percentage((@flexes / @layout-flexes));
+    }
+}
+
+.build-layout-sm-flex-pull(@flexes)
+{
+    @media (min-width: @screen-sm-min)
+    {
+        right: percentage((@flexes / @layout-flexes));
+    }
+}
+
+//
+// #public 生成中等屏幕(md)布局份数。
+//
+// #param @flexes [number] 必选项，所占数。
+//
+.build-layout-md-flex(@flexes; @gutter: @layout-gutter-width)
+{
+    position: relative;
+    min-height: 1px;
+    padding-left:  (@gutter / 2);
+    padding-right: (@gutter / 2);
+
+    @media (min-width: @screen-md-min)
+    {
+        float: left;
+        width: percentage((@flexes / @layout-flexes));
+    }
+}
+
+.build-layout-md-flex-offset(@flexes)
+{
+    @media (min-width: @screen-md-min)
+    {
+        margin-left: percentage((@flexes / @layout-flexes));
+    }
+}
+
+.build-layout-md-flex-push(@flexes)
+{
+    @media (min-width: @screen-md-min)
+    {
+        left: percentage((@flexes / @layout-flexes));
+    }
+}
+
+.build-layout-md-flex-pull(@flexes)
+{
+    @media (min-width: @screen-md-min)
+    {
+        right: percentage((@flexes / @layout-flexes));
+    }
+}
+
+//
+// #public 生成大屏幕(lg)布局份数。
+//
+// #param @flexes [number] 必选项，所占数。
+//
+.build-layout-lg-flex(@flexes; @gutter: @layout-gutter-width)
+{
+    position: relative;
+    min-height: 1px;
+    padding-left:  (@gutter / 2);
+    padding-right: (@gutter / 2);
+
+    @media (min-width: @screen-lg-min)
+    {
+        float: left;
+        width: percentage((@flexes / @layout-flexes));
+    }
+}
+
+.build-layout-lg-flex-offset(@flexes)
+{
+    @media (min-width: @screen-lg-min)
+    {
+        margin-left: percentage((@flexes / @layout-flexes));
+    }
+}
+
+.build-layout-lg-flex-push(@flexes)
+{
+    @media (min-width: @screen-lg-min)
+    {
+        left: percentage((@flexes / @layout-flexes));
+    }
+}
+
+.build-layout-lg-flex-pull(@flexes)
+{
+    @media (min-width: @screen-lg-min)
+    {
+        right: percentage((@flexes / @layout-flexes));
+    }
 }
 
 //
