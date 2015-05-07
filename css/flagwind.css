@@ -144,19 +144,14 @@ sub {
 /* ====================== 嵌入内容(Embedded content) ====================== */
 /*
  * 1. 设置盒模型组成模式。
- * 2. 设置一个最大宽度和相对于父元素的自动高度。
- * 3. 删除图片和容器的底部之间的间隙。
- * 4. 删除在 IE 8/9/10 中嵌入到 “a” 元素时的边框。
+ * 2. 删除图片和容器的底部之间的间隙。
+ * 3. 删除在 IE 8/9/10 中嵌入到 “a” 元素时的边框。
  */
 img {
-  height: auto;
-  /* 2 */
-  max-width: 100%;
-  /* 2 */
   vertical-align: middle;
-  /* 3 */
+  /* 2 */
   border: 0;
-  /* 4 */
+  /* 3 */
   -webkit-box-sizing: border-box;
   /* 1 */
   box-sizing: border-box;
@@ -199,6 +194,9 @@ samp {
   font-size: 1em;
 }
 /*============================== 表单(Forms) =============================*/
+[role="button"] {
+  cursor: pointer;
+}
 /*
  * 1. 修正所有浏览器中非继承的颜色。
  * 2. 修正所有浏览器中非继承的字体。
@@ -353,6 +351,7 @@ th {
 }
 /* ============================== 基础(Base) ============================== */
 html {
+  font-size: 10px;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
@@ -362,11 +361,13 @@ body {
   color: #333333;
   background-color: #ffffff;
 }
-body,
 input,
 textarea,
 select,
 button {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   -moz-font-feature-settings: "liga", "kern";
@@ -659,6 +660,31 @@ blockquote.pull-right small:after,
 .blockquote-reverse .small:after,
 blockquote.pull-right .small:after {
   content: "\00A0 \2014";
+}
+/* ============================== 图片(Image) ============================ */
+/*
+ * 响应式图片。
+ */
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+/*
+ * 缩略图。
+ */
+.img-thumbnail {
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+  padding: 2px;
+  line-height: 1.42857143;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 2px;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 /* ============================== 布局(Layout) ============================ */
 /*
@@ -1587,14 +1613,29 @@ blockquote.pull-right .small:after {
 /*
  * 清除浮动。
  */
-.clearfix:before,
-.clearfix:after,
-.layout:before,
-.layout:after {
+.clear:before,
+.clear:after {
   display: table;
   content: " ";
 }
-.clearfix:after,
-.layout:after {
+.clear:after {
   clear: both;
+}
+/*
+ * 正方形。
+ */
+.square {
+  border-radius: 0;
+}
+/*
+ * 圆角。
+ */
+.radius {
+  border-radius: 2px;
+}
+/*
+ * 圆形。
+ */
+.circle {
+  border-radius: 50%;
 }

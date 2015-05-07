@@ -1,0 +1,30 @@
+//
+// * Flagwind.UI v1.0.0
+// * Copyright 2014 Flagwind Inc. All rights reserved.
+// * Licensed under the MIT License.
+// * https://github.com/Flagwind/Flagwind.UI/blob/master/LICENSE
+//
+
+/* ============================== 图片(Image) ============================ */
+
+/*
+ * 响应式图片。
+ */
+.img-responsive
+{
+    .img-responsive();
+}
+
+/*
+ * 缩略图。
+ */
+.img-thumbnail
+{
+    .img-responsive(inline-block);
+    padding: @thumbnail-padding;
+    line-height: @line-height-base;
+    background-color: @thumbnail-body-color;
+    border: 1px solid @thumbnail-border-color;
+    border-radius: @thumbnail-border-radius;
+    .transition(all .2s ease-in-out);
+}

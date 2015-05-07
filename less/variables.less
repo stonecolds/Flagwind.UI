@@ -89,6 +89,11 @@
 @blockquote-font-size:            (@font-size-base * 1.25);
 @blockquote-border-color:         @color-gray-lighter;
 
+@border-color:                    #ddd;
+@border-radius-base:              2px;
+@border-radius-large:             5px;
+@border-radius-small:             1px;
+
 // ========================= 媒体查询(Media query) ======================= //
 
 @screen-xs-min:                   480px;    // 超小屏幕（手机，等于等于 480px 并且小于 768px）
@@ -110,3 +115,17 @@
 @layout-sm:                       (720px + @layout-gutter-width);
 @layout-md:                       (940px + @layout-gutter-width);
 @layout-lg:                       (1140px + @layout-gutter-width);
+
+// ============================= 组件(Components) ============================ //
+
+//
+// * 缩略图(Thumbnails)
+//
+
+@thumbnail-padding:               2px;
+@thumbnail-body-color:            @body-color;
+@thumbnail-border-color:          @border-color;
+@thumbnail-border-radius:         @border-radius-base;
+@thumbnail-caption-color:         @text-color;
+@thumbnail-caption-padding:       9px;
+

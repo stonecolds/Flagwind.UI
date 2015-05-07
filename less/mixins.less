@@ -7,6 +7,45 @@
 
 // ============================= 通用(Normal) ============================ //
 
+.transition(@transition)
+{
+    -webkit-transition: @transition;
+         -o-transition: @transition;
+            transition: @transition;
+}
+
+.transition-property(@transition-property)
+{
+    -webkit-transition-property: @transition-property;
+            transition-property: @transition-property;
+}
+
+.transition-delay(@transition-delay)
+{
+    -webkit-transition-delay: @transition-delay;
+            transition-delay: @transition-delay;
+}
+
+.transition-duration(@transition-duration)
+{
+    -webkit-transition-duration: @transition-duration;
+            transition-duration: @transition-duration;
+}
+
+.transition-timing-function(@timing-function)
+{
+    -webkit-transition-timing-function: @timing-function;
+            transition-timing-function: @timing-function;
+}
+
+.transition-transform(@transition)
+{
+    -webkit-transition: -webkit-transform @transition;
+       -moz-transition: -moz-transform @transition;
+         -o-transition: -o-transform @transition;
+            transition: transform @transition;
+}
+
 //
 // #public 清除浮动。
 //
@@ -23,6 +62,15 @@
     {
         clear: both;
     }
+}
+
+// ============================= 图片(Image) ============================= //
+
+.img-responsive(@display: block)
+{
+    display: @display;
+    max-width: 100%;
+    height: auto;
 }
 
 // ============================= 布局(Layout) ============================ //
