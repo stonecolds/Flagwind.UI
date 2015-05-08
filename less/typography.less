@@ -7,6 +7,56 @@
 
 /* =========================== 排版(Typography) =========================== */
 
+/*
+ * 非衬线字体。
+ */
+.font-sans-serif
+{
+    font-family: @font-family-sans-serif;
+}
+
+/*
+ * 衬线字体。
+ */
+.font-serif
+{
+  font-family: @font-family-serif;
+}
+
+/*
+ * 楷体。
+ */
+.font-kai
+{
+  font-family: @font-family-kai;
+}
+
+/*
+ * 等宽字体。
+ */
+.font-monospace
+{
+  font-family: @font-family-monospace;
+}
+
+p,
+hr,
+ul,
+ol,
+dl,
+blockquote,
+pre,
+address,
+fieldset,
+figure
+{
+    margin-top: 0;
+    margin-bottom: (@line-height-computed / 2);
+}
+
+/*
+ * 标题。
+ */
 h1,
 h2,
 h3,
@@ -60,17 +110,27 @@ h4 { font-size: @font-size-h4; }
 h5 { font-size: @font-size-h5; }
 h6 { font-size: @font-size-h6; }
 
-p
+/*
+ * 修正文本。
+ */
+ins
 {
-    margin: 0 0 (@line-height-computed / 2);
+    background: @state-warning-bg;
+    color: @color-gray-dark;
 }
 
+/*
+ * 小号文本
+ */
 small,
 .small
 {
     font-size: floor((100% * @font-size-small / @font-size-base));
 }
 
+/*
+ * 高亮文本
+ */
 mark,
 .mark
 {
@@ -78,79 +138,21 @@ mark,
     background-color: @state-warning-bg;
 }
 
-.txt-left       { text-align: left; }
-.txt-right      { text-align: right; }
-.txt-center     { text-align: center; }
-.txt-justify    { text-align: justify; }
-.txt-nowrap     { white-space: nowrap; }
-.txt-lowercase  { text-transform: lowercase; }
-.txt-uppercase  { text-transform: uppercase; }
-.txt-capitalize { text-transform: capitalize; }
-
-.txt-muted
-{
-    color: @text-muted-color;
-}
-
-.txt-primary
-{
-    .txt-emphasis-variant(@color-primary);
-}
-
-.txt-success
-{
-    .txt-emphasis-variant(@state-success-text);
-}
-
-.txt-info
-{
-    .txt-emphasis-variant(@state-info-text);
-}
-
-.txt-warning
-{
-    .txt-emphasis-variant(@state-warning-text);
-}
-
-.txt-danger
-{
-    .txt-emphasis-variant(@state-danger-text);
-}
-
-.bg-primary
-{
-  color: #fff;
-
-  .bg-variant(@color-primary);
-}
-
-.bg-success
-{
-    .bg-variant(@state-success-bg);
-}
-
-.bg-info
-{
-    .bg-variant(@state-info-bg);
-}
-
-.bg-warning
-{
-    .bg-variant(@state-warning-bg);
-}
-
-.bg-danger
-{
-    .bg-variant(@state-danger-bg);
-}
-
+/*
+ * 缩略语。
+ */
 abbr[title],
-abbr[data-original-title]
+abbr[data-original-title]，
+dfn[title],
+dfn[data-original-title]
 {
     cursor: help;
     border-bottom: 1px dotted @abbr-border-color;
 }
 
+/*
+ * 地址。
+ */
 address
 {
     margin-bottom: @line-height-computed;
@@ -158,12 +160,47 @@ address
     line-height: @line-height-base;
 }
 
+/*
+ * 文本对齐。
+ */
+.text-left          { text-align: left; }
+.text-right         { text-align: right; }
+.text-center        { text-align: center; }
+.text-justify       { text-align: justify; }
+.text-nowrap        { white-space: nowrap; }
+
+/*
+ * 文本转换。
+ */
+.text-lowercase     { text-transform: lowercase; }
+.text-uppercase     { text-transform: uppercase; }
+.text-capitalize    { text-transform: capitalize; }
+
+/*
+ * 文本颜色
+ */
+.text-muted{ color: @text-muted-color; }
+.text-primary{ .text-emphasis-variant(@color-primary); }
+.text-success{ .text-emphasis-variant(@state-success-text); }
+.text-info{ .text-emphasis-variant(@state-info-text); }
+.text-warning{ .text-emphasis-variant(@state-warning-text); }
+.text-danger{ .text-emphasis-variant(@state-danger-text); }
+
+/*
+ * 背景颜色。
+ */
+.bg-primary{ color: #fff;.bg-variant(@color-primary); }
+.bg-success{ .bg-variant(@state-success-bg); }
+.bg-info{ .bg-variant(@state-info-bg); }
+.bg-warning{ .bg-variant(@state-warning-bg); }
+.bg-danger{ .bg-variant(@state-danger-bg); }
+
+/*
+ * 无序&有序列表。
+ */
 ul,
 ol
 {
-    margin-top: 0;
-    margin-bottom: (@line-height-computed / 2);
-
     ul,
     ol
     {
@@ -171,12 +208,18 @@ ol
     }
 }
 
+/*
+ * 无样式列表。
+ */
 .list-unstyled
 {
     padding-left: 0;
     list-style: none;
 }
 
+/*
+ * 内联列表，将所有元素置于同一行。
+ */
 .list-inline
 {
     .list-unstyled();
@@ -190,6 +233,9 @@ ol
     }
 }
 
+/*
+ * 描述列表。
+ */
 dl
 {
     margin-top: 0;
@@ -212,16 +258,44 @@ dd
     margin-left: 0;
 }
 
+/*
+ * 水平描述列表。
+ */
+.dl-horizontal
+{
+    dd
+    {
+        &:extend(.clear all);
+    }
+
+    @media (min-width: @layout-float-breakpoint)
+    {
+        dt
+        {
+            float: left;
+            width: (@dl-horizontal-offset - 20);
+            clear: left;
+            text-align: right;
+            .text-overflow();
+        }
+
+        dd
+        {
+            margin-left: @dl-horizontal-offset;
+        }
+    }
+
+}
+
 blockquote
 {
     padding: (@line-height-computed / 2) @line-height-computed;
     margin: 0 0 @line-height-computed;
+    font-family: @font-family-kai;
     font-size: @blockquote-font-size;
     border-left: 5px solid @blockquote-border-color;
 
-    p,
-    ul,
-    ol
+    p
     {
         &:last-child
         {
@@ -230,41 +304,18 @@ blockquote
     }
 
     footer,
-    small,
-    .small
+    small
     {
         display: block;
         font-size: 80%;
+        text-align: right;
+        font-family: @font-family-sans-serif;
         line-height: @line-height-base;
         color: @blockquote-small-color;
 
         &:before
         {
             content: "\2014 \00A0";
-        }
-    }
-}
-
-.blockquote-reverse,
-blockquote.pull-right
-{
-    padding-right: 15px;
-    padding-left: 0;
-    border-right: 5px solid @blockquote-border-color;
-    border-left: 0;
-    text-align: right;
-
-    footer,
-    small,
-    .small
-    {
-        &:before
-        {
-            content: "";
-        }
-        &:after
-        {
-            content: "\00A0 \2014";
         }
     }
 }

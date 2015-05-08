@@ -49,7 +49,7 @@
 //
 // #public 清除浮动。
 //
-.clearfix()
+.clear()
 {
     &:before,
     &:after
@@ -114,7 +114,7 @@
 {
     margin-right: auto;
     margin-left: auto;
-    &:extend(.clearfix all);
+    &:extend(.clear all);
 
     @media (min-width: @screen-sm-min)
     {
@@ -490,7 +490,14 @@
     outline-offset: -2px;
 }
 
-.txt-emphasis-variant(@color)
+.text-overflow()
+{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.text-emphasis-variant(@color)
 {
     color: @color;
 

@@ -432,6 +432,7 @@ html
 
 body
 {
+    position: relative;
     font-family: @font-family-base;
     font-size: @font-size-base;
     line-height: @line-height-base;
@@ -439,30 +440,28 @@ body
     background-color: @body-color;
 }
 
+iframe
+{
+    border: 0;
+}
+
+body,
 input,
 textarea,
 select,
 button
 {
-    font-family: inherit;
-    font-size: inherit;
-    line-height: inherit;
     -moz-osx-font-smoothing: grayscale;
      -webkit-font-smoothing: antialiased;
     -moz-font-feature-settings: "liga", "kern";
     text-rendering: optimizeLegibility;
 }
 
-@media only screen and (max-width: 640px)
+button,
+input:not([type="radio"]):not([type="checkbox"]),
+select
 {
-    body
-    {
-        -webkit-hyphens: auto;
-            -ms-hyphens: auto;
-           -moz-hyphens: auto;
-                hyphens: auto;
-        word-wrap: break-word;
-    }
+    vertical-align: middle;
 }
 
 a

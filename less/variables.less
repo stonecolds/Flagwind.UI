@@ -9,13 +9,14 @@
 
 // 基础颜色
 @color-base:                      #000;
+@body-color:                      #fff;
 
 // 灰色系
-@color-gray:                      lighten(@color-base, 33.5%); // #555
-@color-gray-darker:               lighten(@color-base, 13.5%); // #222
-@color-gray-dark:                 lighten(@color-base, 20%);   // #333
-@color-gray-light:                lighten(@color-base, 46.7%); // #777
-@color-gray-lighter:              lighten(@color-base, 93.5%); // #eee
+@color-gray:                      lighten(@color-base, 33.5%);  // #555
+@color-gray-darker:               lighten(@color-base, 13.5%);  // #222
+@color-gray-dark:                 lighten(@color-base, 20%);    // #333
+@color-gray-light:                lighten(@color-base, 60%);    // #999
+@color-gray-lighter:              lighten(@color-base, 93.5%);  // #eee
 
 // 彩色系
 @color-primary:                   #337ab7;
@@ -26,7 +27,6 @@
 @color-danger:                    #d9534f;
 
 // 文本颜色
-@body-color:                      #fff;
 @text-color:                      @color-gray-dark;
 @text-muted-color:                @color-gray-light;
 
@@ -60,7 +60,11 @@
 // =========================== 排版(Typography) ========================== //
 
 // 基础字体
-@font-family-base:                "Lucida Grande", "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-base:                "Lucida Grande", "Helvetica Neue", Helvetica, "Microsoft YaHei", Arial, sans-serif;
+@font-family-sans-serif:          "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", sans-serif;
+@font-family-serif:               Georgia, "Times New Roman", Times, SimSun, "FontAwesome", serif;
+@font-family-monospace:           Monaco, Menlo, Consolas, "Courier New", "FontAwesome", monospace;
+@font-family-kai:                 Georgia, "Times New Roman", Times, Kai, "Kaiti SC", KaiTi, BiauKai, "FontAwesome", serif;
 
 // 文本大小
 @font-size-base:                  14px;
@@ -85,14 +89,18 @@
 @font-size-h5:                    @font-size-base;
 @font-size-h6:                    ceil((@font-size-base * 0.85));	// ~12px
 
+// 引用
 @blockquote-small-color:          @color-gray-light;
-@blockquote-font-size:            (@font-size-base * 1.25);
+@blockquote-font-size:            (@font-size-base * 1.2);
 @blockquote-border-color:         @color-gray-lighter;
 
 @border-color:                    #ddd;
 @border-radius-base:              2px;
 @border-radius-large:             5px;
 @border-radius-small:             1px;
+
+@component-offset-horizontal:     180px;
+@dl-horizontal-offset:            @component-offset-horizontal;
 
 // ========================= 媒体查询(Media query) ======================= //
 
@@ -128,4 +136,3 @@
 @thumbnail-border-radius:         @border-radius-base;
 @thumbnail-caption-color:         @text-color;
 @thumbnail-caption-padding:       9px;
-
