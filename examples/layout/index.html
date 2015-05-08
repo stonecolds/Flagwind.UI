@@ -9,93 +9,440 @@
     <title>Layout Example - Flagwind.UI</title>
 
     <!-- 核心 CSS 文件 -->
-    <link rel="stylesheet" href="../../css/flagwind.css" />
+    <link rel="stylesheet" href="css/flagwind.css" />
+    <link rel="stylesheet" href="css/index.css" />
 
     <!-- HTML5 & Media Queries 兼容文件 -->
     <!--[if lt IE 9]>
     <script src="../../js/html5shiv.min.js"></script>
     <script src="../../js/respond.min.js"></script>
     <![endif]-->
-
-    <style>
-    .box1, .box2, .box3, .box4
-    {
-        height:100px;
-    }
-
-    .box1
-    {
-        background: #0e90d2;
-    }
-
-    .box2
-    {
-        background: #5eb95e;
-    }
-
-    .box3
-    {
-        background: #f37b1d;
-    }
-
-    .box4
-    {
-        background: #dd514c;
-    }
-    </style>
 </head>
 
 <body>
+    <!-- 目录 -->
+    <!-- <div class="toc">
+        <h3>目录</h3>
+        <ul>
+            <li><a href="#item1">1.1 基本使用</a></li>
+            <li><a href="#item2">1.2 不同区间不同的划分比例</a></li>
+            <li><a href="#item3">1.3 百分百宽度</a></li>
+            <li><a href="#item4">1.4 多余列的显示</a></li>
+            <li><a href="#item5">1.5 列偏移</a></li>
+            <li><a href="#item6">1.6 列嵌套</a></li>
+            <li><a href="#item7">1.7 列排序</a></li>
+        </ul>
+    </div>
+    <hr /> -->
+
     <header>
-        <h1>布局 <small>layout.less</small></h1>
+        <h1>Flagwind.UI参考文档</h1>
     </header>
 
-    <hr />
+    <!-- 布局 -->
+    <section>
+        <!-- 布局模块 开始 -->
+        <h2>1 布局 <small>layout.less</small></h2>
+        <hr />
 
-    <!-- 1.1 基本用法 -->
-    <h3>1.1 基本用法</h3>
+        <!-- 简介 -->
+        <h3>简介</h3>
+        <p>Flagwind.UI使用了12列的响应式栅格系统。使用时需要在外围容器上加上<code>.layout</code>，在列上添加<code>.flex-[xs|sm|md|lg]-[1-12]</code>，然后根据不同的屏幕需求设置不同的宽度。</p>
+        <p>Flagwind.UI 以<strong>移动优先</strong>的理念开发， 如果不设置大屏的样式，应用到小屏幕的样式会继承到更大的屏幕上。</p>
 
-    <div class="layout">
-        <div class="flex-md-1 box1">md-1</div>
-        <div class="flex-md-1 box2">md-1</div>
-        <div class="flex-md-1 box3">md-1</div>
-        <div class="flex-md-1 box4">md-1</div>
-        <div class="flex-md-1 box3">md-1</div>
-        <div class="flex-md-1 box2">md-1</div>
-        <div class="flex-md-1 box1">md-1</div>
-        <div class="flex-md-1 box4">md-1</div>
-        <div class="flex-md-1 box1">md-1</div>
-        <div class="flex-md-1 box2">md-1</div>
-        <div class="flex-md-1 box3">md-1</div>
-        <div class="flex-md-1 box4">md-1</div>
-    </div>
+        <!-- 栅格参数 -->
+        <h3>栅格参数</h3>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th width="150px">类前缀</th>
+                    <th width="200px">区间</th>
+                    <th width="100px">宽度</th>
+                    <th>手机屏幕</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>.flex-xs-*</code></td>
+                    <td>0 - 767px</td>
+                    <td>自动</td>
+                    <td>超小屏</td>
+                </tr>
+                <tr>
+                    <td><code>.flex-sm-*</code></td>
+                    <td>768px - 991px</td>
+                    <td>750px</td>
+                    <td>小屏</td>
+                </tr>
+                <tr>
+                    <td><code>.flex-md-*</code></td>
+                    <td>992px - 1199px</td>
+                    <td>970px</td>
+                    <td>中屏</td>
+                </tr>
+                <tr>
+                    <td><code>.flex-lg-*</code></td>
+                    <td>1200px以上</td>
+                    <td>1170px</td>
+                    <td>大屏</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="tips">注意：代码中的类<code>.box1</code><code>.box2</code><code>.box2</code><code>.box4</code>是为了方便查看效果加的背景色，实际中没有。</p>
+        <hr />
 
-    <hr />
+        <!-- 1.1 基本用法 -->
+        <h3 id="item1">1.1 基本用法</h3>
+        <p>在<code>table</code>中，用<code>tr</code>划分行，用<code>td</code>划分列， Flagwind.UI中也类似：</p>
+        <ul>
+            <li>行 - <code>.layout</code>代表行，用于包裹列，清除列的浮动。</li>
+            <li>列 - <code>.flex-[xs|sm|md|lg]-*</code>代表列，<code>xs|sm|md|lg</code>代表视口的区间，<code>*</code>表示该列所占的份数，如<code>*</code>的值为<code>3</code>时，表示这一列占整行宽度的<code>3/12</code>，即<code>1/4</code>。</li>
+        </ul>
+        <p>下面示例为一行12列布局</p>
+        <!-- demo -->
+        <div class="layout">
+            <div class="flex-md-1 box1">md-1</div>
+            <div class="flex-md-1 box2">md-1</div>
+            <div class="flex-md-1 box3">md-1</div>
+            <div class="flex-md-1 box4">md-1</div>
+            <div class="flex-md-1 box3">md-1</div>
+            <div class="flex-md-1 box2">md-1</div>
+            <div class="flex-md-1 box1">md-1</div>
+            <div class="flex-md-1 box4">md-1</div>
+            <div class="flex-md-1 box1">md-1</div>
+            <div class="flex-md-1 box2">md-1</div>
+            <div class="flex-md-1 box3">md-1</div>
+            <div class="flex-md-1 box4">md-1</div>
+        </div>
+        <!-- 代码 -->
+        <pre>
+        &lt;div class="layout"&gt;
+            &lt;div class="flex-md-1 box1"&gt;md-1&lt;/div&gt;
+            &lt;div class="flex-md-1 box2"&gt;md-1&lt;/div&gt;
+            &lt;div class="flex-md-1 box3"&gt;md-1&lt;/div&gt;
+            &lt;div class="flex-md-1 box4"&gt;md-1&lt;/div&gt;
+            &lt;div class="flex-md-1 box3"&gt;md-1&lt;/div&gt;
+            &lt;div class="flex-md-1 box2"&gt;md-1&lt;/div&gt;
+            &lt;div class="flex-md-1 box1"&gt;md-1&lt;/div&gt;
+            &lt;div class="flex-md-1 box4"&gt;md-1&lt;/div&gt;
+            &lt;div class="flex-md-1 box1"&gt;md-1&lt;/div&gt;
+            &lt;div class="flex-md-1 box2"&gt;md-1&lt;/div&gt;
+            &lt;div class="flex-md-1 box3"&gt;md-1&lt;/div&gt;
+            &lt;div class="flex-md-1 box4"&gt;md-1&lt;/div&gt;
+        &lt;/div&gt;
+        </pre>
+        <hr />
 
-    <div class="layout">
-        <div class="flex-md-6 box3">md-6</div>
-        <div class="flex-md-4 box2">md-4</div>
-        <div class="flex-md-2 box1">md-2</div>
-    </div>
+        <!-- 1.2 不同区间不同的划分比例 -->
+        <h3 id="item2">1.2 不同区间不同的划分比例</h3>
+        <p>下面示例划分了不同区间的显示方式</p>
+        <p>中大屏（992px以上），<code>.flex-md-3</code>表示占整行的<code>3/12</code>，<code>.flex-md-9</code>表示占整行的<code>9/12</code>，即<code>1:3</code>。</p>
+        <p>小屏（768px-992px），<code>.flex-sm-4</code>表示占整行的<code>4/12</code>，<code>.flex-sm-8</code>表示占整行的<code>8/12</code>，即<code>1:2</code>。</p>
+        <p>超小屏（0-767px），<code>.flex-xs-6</code>表示占整行的<code>6/12</code>，<code>.flex-xs-6</code>表示占整行的<code>6/12</code>，即<code>1:1</code>等分。</p>
+        <!-- demo -->
+        <div class="layout">
+            <div class="flex-xs-6 flex-sm-4 flex-md-3 box1">md-3</div>
+            <div class="flex-xs-6 flex-sm-8 flex-md-9 box2">md-9</div>
+        </div>
+        <!-- 代码 -->
+        <pre>
+        &lt;div class="layout"&gt;
+            &lt;div class="flex-xs-6 flex-sm-4 flex-md-3 box1"&gt;md-3&lt;/div&gt;
+            &lt;div class="flex-xs-6 flex-sm-8 flex-md-9 box2"&gt;md-9&lt;/div&gt;
+        &lt;/div&gt;
+        </pre>
+        <hr />
 
-    <hr />
+        <!-- 1.3 百分百宽度 -->
+        <h3 id="item3">1.3 百分百宽度</h3>
+        <p>Flagwind.UI中，<code>.layout-fluid</code>的宽度被设置为100%，会随着窗口大小自动缩放。</p>
+        <!-- demo -->
+        <div class="layout layout-fluid">
+            <div class="flex-md-6 box1">md-6</div>
+            <div class="flex-md-6 box2">md-6</div>
+        </div>
+        <!-- 代码 -->
+        <pre>
+        &lt;div class="layout layout-fluid"&gt;
+            &lt;div class="flex-md-6 box1"&gt;md-6&lt;/div&gt;
+            &lt;div class="flex-md-6 box2"&gt;md-6&lt;/div&gt;
+        &lt;/div&gt;
+        </pre>
+        <hr />
 
-    <!-- 1.2 不同区间不同的划分比例 -->
-    <h3>1.2 不同区间不同的划分比例</h3>
+        <!-- 1.4 多余列的显示 -->
+        <h3 id="item4">1.4 多余列的显示</h3>
+        <p>如果在一个<code>.layout</code>内包含的列（column）大于12个，多余的列（column）的将作为一个整体单元另起一行排列。</p>
+        <!-- demo -->
+        <div class="layout">
+            <div class="flex-md-6 box1">md-6</div>
+            <div class="flex-md-6 box2">md-6</div>
+            <div class="flex-md-6 box3">md-6</div>
+        </div>
+        <!-- 代码 -->
+        <pre>
+        &lt;div class="layout">
+            &lt;div class="flex-md-6 box1">md-6&lt;/div>
+            &lt;div class="flex-md-6 box2">md-6&lt;/div>
+            &lt;div class="flex-md-6 box3">md-6&lt;/div>
+        &lt;/div>
+        </pre>
+        <hr />
 
-    <div class="layout">
-        <div class="flex-xs-6 flex-sm-4 flex-md-3 box3">md-3</div>
-        <div class="flex-xs-6 flex-sm-8 flex-md-9 box2">md-9</div>
-    </div>
+        <!-- 1.5 列偏移 -->
+        <h3 id="item5">1.5 列偏移</h3>
+        <p>使用<code>.flex-[xs|sm|md|lg]-offset-*</code>类可以将列向右侧偏移。这些类实际是通过使用<code>*</code>选择器为当前元素增加了左侧的边距（margin-left）。</p>
+        <p>例1：<code>.flex-md-offset-4</code>类将<code>md-4</code>元素向右侧偏移了4个列（column）的宽度。</p>
+        <!-- demo -->
+        <div class="layout">
+            <div class="flex-md-4 box1">md-4</div>
+            <div class="flex-md-4 flex-md-offset-4 box2">md-4 md-offset-4</div>
+        </div>
+        <!-- 代码 -->
+        <pre>
+        &lt;div class="layout">
+            &lt;div class="flex-md-4 box1">md-4&lt;/div>
+            &lt;div class="flex-md-4 flex-md-offset-4 box2">md-4 md-offset-4&lt;/div>
+        &lt;/div>
+        </pre>
+        <p>例2：<code>.flex-md-offset-3</code>类将<code>md-3</code>元素向右侧偏移了3个列（column）的宽度。</p>
+        <!-- demo -->
+        <div class="layout">
+            <div class="flex-md-3 flex-md-offset-3 box1">md-3 md-offset-3</div>
+            <div class="flex-md-3 flex-md-offset-3 box2">md-3 md-offset-3</div>
+        </div>
+        <!-- 代码 -->
+        <pre>
+        &lt;div class="layout">
+            &lt;div class="flex-md-3 flex-md-offset-3 box1">md-3 md-offset-3&lt;/div>
+            &lt;div class="flex-md-3 flex-md-offset-3 box2">md-3 md-offset-3&lt;/div>
+        &lt;/div>
+        </pre>
+        <p>例3：<code>.flex-md-offset-3</code>类将<code>md-6</code>元素向右侧偏移了3个列（column）的宽度。</p>
+        <!-- demo -->
+        <div class="layout">
+            <div class="flex-md-6 flex-md-offset-3 box3">md-6 md-offset-3</div>
+        </div>
+        <!-- 代码 -->
+        <pre>
+        &lt;div class="layout">
+            &lt;div class="flex-md-6 flex-md-offset-3 box3">md-6 md-offset-3&lt;/div>
+        &lt;/div>
+        </pre>
+        <hr />
 
-    <hr />
+        <!-- 1.6 列嵌套 -->
+        <h3 id="item6">1.6 列嵌套</h3>
+        <p>要实现列中再嵌套一层内容，可以通过添加一个新的<code>.layout</code>和一系列的<code>.flex-sm-*</code>到已经存在的列内，被嵌套的<code>.layout</code>所包含的列（column）的个数不能超过12个，也不要求一定要满12个。</p>
+        <p>为了更好的看到效果，这里将第二层的<code>sm-2</code>向右偏移了2列</p>
+        <!-- demo -->
+        <div class="layout">
+            <div class="flex-sm-12 box3">第一层 sm-12
+                <div class="layout">
+                    <div class="flex-sm-4 flex-sm-offset-2 box2">第二层 sm-4 sm-offset-2</div>
+                </div>
+            </div>
+        </div>
+        <!-- 代码 -->
+        <pre>
+        &lt;div class="layout"&gt;
+            &lt;div class="flex-sm-12 box3"&gt;第一层 sm-12
+                &lt;div class="layout"&gt;
+                    &lt;div class="flex-sm-4 flex-sm-offset-2 box2"&gt;第二层 sm-4 sm-offset-2&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div>
+        </pre>
+        <hr />
 
-    <!-- 1.3 百分百宽度 -->
-    <h3>1.3 百分百宽度</h3>
+        <!-- 1.7 列排序 -->
+        <h3 id="item7">1.7 列排序</h3>
+        <p>列排序其实就是改变列的方向，也就是改变左右浮动，通过使用<code>.flex-md-push-*</code>和<code>.flex-md-pull-*</code>类就可以很容易的改变列（column）的顺序。</p>
+        <p>默认情况下，<code>.md-9</code>在左边，<code>.md-3</code>在右边，如果要互换位置，需要将<code>.md-9</code>向右移动3个列的距离，也就是推3个列的offset，样式用<code>.flex-md-offset-push-3</code>；而<code>.md-3</code>需要向左移动9个列的距离，也就是拉9个列的offset，样式用<code>.flex-md-pull-9</code>。</p>
+        <p>排序前：<code>.md-9</code>在左边，<code>.md-3</code>在右边</p>
+        <!-- demo -->
+        <div class="layout">
+            <div class="flex-md-9 box1">md-9</div>
+            <div class="flex-md-3 box2">md-3</div>
+        </div>
+        <!-- 代码 -->
+        <pre>
+        &lt;div class="layout"&gt;
+            &lt;div class="flex-md-9 box1"&gt;md-9&lt;/div&gt;
+            &lt;div class="flex-md-3 box2"&gt;md-3&lt;/div&gt;
+        &lt;/div&gt;
+        </pre>
+        <p>排序后：<code>.md-9</code>在右边，<code>.md-3</code>在左边</p>
+        <!-- demo -->
+        <div class="layout">
+            <div class="flex-md-9 flex-md-push-3 box1">md-9 md-push-3</div>
+            <div class="flex-md-3 flex-md-pull-9 box2">md-3 md-pull-9</div>
+        </div>
+        <!-- 代码 -->
+        <pre>
+        &lt;div class="layout"&gt;
+            &lt;div class="flex-md-9 flex-md-push-3 box1"&gt;md-9 md-push-3&lt;/div&gt;
+            &lt;div class="flex-md-3 flex-md-pull-9 box2"&gt;md-3 md-pull-9&lt;/div&gt;
+        &lt;/div&gt;
+        </pre>
+        <!-- 布局模块 结束 -->
+    </section>
 
-    <div class="layout layout-fluid">
-        <div class="flex-md-6 box1">md-6</div>
-        <div class="flex-md-6 box2">md-6</div>
-    </div>
+    <!-- 排版 -->
+    <section>
+        <!-- 排版 模块开始 -->
+        <h2>2 排版 <small>typography.less</small></h2>
+        <hr />
+
+        <h3>2.1 标题</h3>
+        <p>HTML 中的所有标题标签，<code>h1</code> 到 <code>h6</code> 均可使用。</p>
+        <!-- demo -->
+        <h1>h1 一级标题</h1>
+        <h2>h2 二级标题</h2>
+        <h3>h3 三级标题</h3>
+        <h4>h4 四级标题</h4>
+        <h5>h5 五级标题</h5>
+        <h6>h6 六级标题</h6>
+        <!-- 代码 -->
+        <pre>
+        &lt;h1&gt;h1 一级标题&lt;/h1&gt;
+        &lt;h2&gt;h2 二级标题&lt;/h2&gt;
+        &lt;h3&gt;h3 三级标题&lt;/h3&gt;
+        &lt;h4&gt;h4 四级标题&lt;/h4&gt;
+        &lt;h5&gt;h5 五级标题&lt;/h5&gt;
+        &lt;h6&gt;h6 六级标题&lt;/h6&gt;
+        </pre>
+        <p>在标题内还可以包含 <code>small</code> 标签或赋予<code>.small</code> 类的元素，可以用来标记副标题。</p>
+        <!-- demo -->
+        <h1>h1 一级标题 <small>副标题</small></h1>
+        <h2>h2 二级标题 <small>副标题</small></h2>
+        <h3>h3 三级标题 <small>副标题</small></h3>
+        <h4>h4 四级标题 <small>副标题</small></h4>
+        <h5>h5 五级标题 <small>副标题</small></h5>
+        <h6>h6 六级标题 <small>副标题</small></h6>
+        <!-- 代码 -->
+        <pre>
+        &lt;h1&gt;h1 一级标题 &lt;small&gt;副标题&lt;/small&gt;&lt;/h1&gt;
+        &lt;h2&gt;h2 二级标题 &lt;small&gt;副标题&lt;/small&gt;&lt;/h2&gt;
+        &lt;h3&gt;h3 三级标题 &lt;small&gt;副标题&lt;/small&gt;&lt;/h3&gt;
+        &lt;h4&gt;h4 四级标题 &lt;small&gt;副标题&lt;/small&gt;&lt;/h4&gt;
+        &lt;h5&gt;h5 五级标题 &lt;small&gt;副标题&lt;/small&gt;&lt;/h5&gt;
+        &lt;h6&gt;h6 六级标题 &lt;small&gt;副标题&lt;/small&gt;&lt;/h6&gt;
+        </pre>
+        <hr />
+
+        <h3>2.2 内联文本元素</h3>
+        <p>使用<code>mark</code>标签或类<code>.mark</code>高亮显示内联文本元素。</p>
+        <!-- demo -->
+        <p>我被贴上<mark>mark</mark>标签了。</p>
+        <p>我被贴上<span class="mark">mark</span>标签了。</p>
+        <!-- 代码 -->
+        <pre>
+        &lt;p&gt;我被贴上&lt;mark&gt;mark&lt;/mark&gt;标签了。&lt;/p&gt;
+        &lt;p&gt;我被贴上&lt;span class="mark"&gt;mark&lt;/span&gt;标签了。&lt;/p&gt;
+        </pre>
+        <hr />
+
+        <h3>2.3 对齐</h3>
+        <p>通过文本对齐类，可以简单方便的将文字重新对齐。</p>
+        <!-- demo -->
+        <p class="txt-left">Left aligned text.</p>
+        <p class="txt-center">Center aligned text.</p>
+        <p class="txt-right">Right aligned text.</p>
+        <p class="txt-justify">Justified text.</p>
+        <p class="txt-nowrap">No wrap text.</p>
+        <!-- 代码 -->
+        <pre>
+        &lt;p class="txt-left"&gt;Left aligned text.&lt;/p&gt;
+        &lt;p class="txt-center"&gt;Center aligned text.&lt;/p&gt;
+        &lt;p class="txt-right"&gt;Right aligned text.&lt;/p&gt;
+        &lt;p class="txt-justify"&gt;Justified text.&lt;/p&gt;
+        &lt;p class="txt-nowrap"&gt;No wrap text.&lt;/p&gt;
+        </pre>
+        <hr />
+
+        <h3>2.3 缩略语</h3>
+        <!-- demo -->
+        <abbr title="attribute">attr</abbr>
+        <!-- 代码 -->
+        <pre>
+        &lt;abbr title="attribute"&gt;attr&lt;/abbr&gt;
+        </pre>
+        <hr />
+
+        <h3>2.4 地址</h3>
+        <p>让联系信息以最接近日常使用的格式呈现。在每行结尾添加<code>br</code>可以保留需要的样式。</p>
+        <!-- demo -->
+        <address>
+            <strong>Twitter, Inc.</strong><br />
+            795 Folsom Ave, Suite 600<br />
+            San Francisco, CA 94107<br />
+            <abbr title="Phone">P:</abbr> (123) 456-7890
+        </address>
+        <address>
+          <strong>Full Name</strong><br />
+          <a href="mailto:#">first.last@example.com</a>
+        </address>
+        <!-- 代码 -->
+        <pre>
+        &lt;address&gt;
+            &lt;strong&gt;Twitter, Inc.&lt;/strong&gt;&lt;br /&gt;
+            795 Folsom Ave, Suite 600&lt;br /&gt;
+            San Francisco, CA 94107&lt;br /&gt;
+            &lt;abbr title="Phone"&gt;P:&lt;/abbr&gt; (123) 456-7890
+        &lt;/address&gt;
+        &lt;address&gt;
+          &lt;strong&gt;Full Name&lt;/strong&gt;&lt;br /&gt;
+          &lt;a href="mailto:#"&gt;first.last@example.com&lt;/a&gt;
+        &lt;/address&gt;
+        </pre>
+        <hr />
+
+        <h3>2.5 引用</h3>
+        <p>在你的文档中引用其他来源的内容。</p>
+        <h4>2.5.1 默认引用样式</h4>
+        <p>将任何 HTML 元素包裹在<code>blockquote</code>中即可表现为引用样式。对于直接引用，我们建议用<code>p</code>标签。</p>
+        <!-- demo -->
+        <blockquote>
+            <p>飞光飞光，劝尔一杯酒。</p>
+        </blockquote>
+        <!-- 代码 -->
+        <pre>
+        &lt;blockquote&gt;
+            &lt;p&gt;飞光飞光，劝尔一杯酒。&lt;/p&gt;
+        &lt;/blockquote&gt;
+        </pre>
+        <h4>2.5.2 多种引用样式</h4>
+        <p>对于标准样式的<code>blockquote</code>，可以通过几个简单的变体就能改变风格和内容</p>
+        <p>添加<code>footer</code>用于标明引用来源。来源的名称可以包裹进<code>cite</code>标签中。</p>
+        <!-- demo -->
+        <blockquote>
+            <p>飞光飞光，劝尔一杯酒。</p>
+            <footer>古诗出自<cite title="苦昼短">苦昼短</cite></footer>
+        </blockquote>
+        <!-- 代码 -->
+        <pre>
+        &lt;blockquote&gt;
+            &lt;p&gt;飞光飞光，劝尔一杯酒。&lt;/p&gt;
+            &lt;footer&gt;古诗出自&lt;cite title="苦昼短"&gt;苦昼短&lt;/cite&gt;&lt;/footer&gt;
+        &lt;/blockquote&gt;
+        </pre>
+        <h4>2.5.2 另一种展示风格</h4>
+        <p>通过<code>.blockquote-reverse</code>类可以让引用呈现内容右对齐的效果。</p>
+        <!-- demo -->
+        <blockquote class="blockquote-reverse">
+            <p>飞光飞光，劝尔一杯酒。</p>
+            <footer>古诗出自<cite title="苦昼短">苦昼短</cite></footer>
+        </blockquote>
+        <!-- 代码 -->
+        <pre>
+        &lt;blockquote class="blockquote-reverse"&gt;
+            &lt;p&gt;飞光飞光，劝尔一杯酒。&lt;/p&gt;
+            &lt;footer&gt;古诗出自&lt;cite title="苦昼短"&gt;苦昼短&lt;/cite&gt;&lt;/footer&gt;
+        &lt;/blockquote&gt;
+        </pre>
+        <hr />
+        <!-- 排版模块 结束 -->
+    </section>
 </body>
 </html>

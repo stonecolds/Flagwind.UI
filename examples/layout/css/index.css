@@ -1,0 +1,80 @@
+/**
+ * 基本
+ */
+body {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 20px;
+    font-family: "Lucida Grande","Helvetica Neue",Helvetica,"Microsoft YaHei",Arial,sans-serif;
+    font-size: 16px;
+    background-color: #fff;
+}
+
+.box1, .box2, .box3, .box4 {
+    min-height:40px;
+    line-height: 40px;
+}
+.box1 { background-color: #0e90d2; }
+.box2 { background-color: #5eb95e; }
+.box3 { background-color: #f37b1d; }
+.box4 { background-color: #dd514c; }
+
+/**
+ * 类名
+ */
+code {
+    padding: 0 4px;
+    margin-left: 2px;
+    margin-right: 2px;
+    color: #c7254e;
+    background-color: #f9f2f4;
+    border-radius: 4px;
+}
+
+/**
+ * 代码
+ */
+pre {
+    padding-top: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    word-wrap: normal;
+    background-color: #f5f5f5;
+}
+
+/**
+ * 表格
+ */
+.table {
+    width: 100%;
+    border: 1px solid #eee;
+}
+
+.table th, .table td {
+    padding: 4px;
+    height: 40px;
+    text-align: left;
+    border: 1px solid #eee;
+}
+.table tbody tr:nth-child(odd) td,
+.table tbody tr:nth-child(odd) th { background-color: #fdfdfd; }
+
+/**
+ * tips
+ */
+.tips {
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #f37b1d;
+    border-color: #e56c0c;
+    color: #fff;
+}
+
+/**
+ * 目录
+ */
+.toc {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f8f8f8;
+}
