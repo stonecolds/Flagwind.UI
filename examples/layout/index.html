@@ -96,7 +96,7 @@
         <p>在<code>table</code>中，用<code>tr</code>划分行，用<code>td</code>划分列， Flagwind.UI中也类似：</p>
         <ul>
             <li>行 - <code>.layout</code>代表行，用于包裹列，清除列的浮动。</li>
-            <li>列 - <code>.flex-[xs|sm|md|lg]-*</code>代表列，<code>xs|sm|md|lg</code>代表视口的区间，<code>*</code>表示该列所占的份数，如<code>*</code>的值为<code>3</code>时，表示这一列占整行宽度的<code>3/12</code>，即<code>1/4</code>。</li>
+            <li>列 - <code>.flex-[xs|sm|md|lg]-*</code>代表列，<code>xs|sm|md|lg</code>代表视口的区间，<code>*</code>表示该列所占的份数，如<code>*</code>的值为<code>3</code>时，表示这一列占整行宽度的<code>3/12</code>。</li>
         </ul>
         <p>下面示例为一行12列布局</p>
         <!-- demo -->
@@ -136,9 +136,9 @@
         <!-- 1.2 不同区间不同的划分比例 -->
         <h3 id="item2">1.2 不同区间不同的划分比例</h3>
         <p>下面示例划分了不同区间的显示方式</p>
-        <p>中大屏（992px以上），<code>.flex-md-3</code>表示占整行的<code>3/12</code>，<code>.flex-md-9</code>表示占整行的<code>9/12</code>，即<code>1:3</code>。</p>
-        <p>小屏（768px-992px），<code>.flex-sm-4</code>表示占整行的<code>4/12</code>，<code>.flex-sm-8</code>表示占整行的<code>8/12</code>，即<code>1:2</code>。</p>
-        <p>超小屏（0-767px），<code>.flex-xs-6</code>表示占整行的<code>6/12</code>，<code>.flex-xs-6</code>表示占整行的<code>6/12</code>，即<code>1:1</code>等分。</p>
+        <p>中大屏（992px以上），<code>.flex-md-3</code>表示占整行的<code>3/12</code>，<code>.flex-md-9</code>表示占整行的<code>9/12</code>。</p>
+        <p>小屏（768px-992px），<code>.flex-sm-4</code>表示占整行的<code>4/12</code>，<code>.flex-sm-8</code>表示占整行的<code>8/12</code>。</p>
+        <p>超小屏（0-767px），<code>.flex-xs-6</code>表示占整行的<code>6/12</code>，<code>.flex-xs-6</code>表示占整行的<code>6/12</code>。</p>
         <!-- demo -->
         <div class="layout">
             <div class="flex-xs-6 flex-sm-4 flex-md-3 box1">md-3</div>
@@ -480,14 +480,14 @@
         </ol>
         <!-- 代码 -->
         <pre>
-        &lt;ul&gt;
+        &lt;ol&gt;
             &lt;li&gt;苹果&lt;/li&gt;
             &lt;li&gt;橘子&lt;/li&gt;
             &lt;li&gt;西瓜&lt;/li&gt;
             &lt;li&gt;桃子&lt;/li&gt;
             &lt;li&gt;梨子&lt;/li&gt;
             &lt;li&gt;菠萝&lt;/li&gt;
-        &lt;/ul&gt;
+        &lt;/ol&gt;
         </pre>
 
         <h4>2.6.3 无样式列表</h4>
