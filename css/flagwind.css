@@ -365,6 +365,9 @@ body {
 iframe {
   border: 0;
 }
+/*
+ * 开启反锯齿。
+ */
 body,
 input,
 textarea,
@@ -400,6 +403,9 @@ hr {
   border: 0;
   border-top: 1px solid #eeeeee;
 }
+/*
+ * 默认边距。
+ */
 p,
 hr,
 ul,
@@ -525,6 +531,9 @@ figure {
 .text-bottom {
   vertical-align: bottom;
 }
+/*
+ * 文本修剪.
+ */
 /* ========================== 文本颜色(Text color) ========================== */
 /*
  * 文本主要色。
@@ -627,7 +636,7 @@ a.bg-warning:hover {
 /*
  * 背景危险色。
  */
-.bg-danger {
+.bg-danger {text-overflow
   background-color: #f2dede;
 }
 a.bg-danger:hover {
@@ -860,9 +869,11 @@ dd {
     width: 160px;
     clear: left;
     text-align: right;
-    overflow: hidden;
+    display: block;
+    word-wrap: normal;
     text-overflow: ellipsis;
     white-space: nowrap;
+    overflow: hidden;
   }
   .dl-horizontal dd {
     margin-left: 180px;
@@ -1932,12 +1943,21 @@ blockquote small:before {
   font-size: 14px;
   max-width: 100%;
 }
+/*
+ * 垂直居中对齐。
+ */
 .vertical-align-middle {
   vertical-align: middle;
 }
+/*
+ * 垂直底部对齐。
+ */
 .vertical-align-bottom {
   vertical-align: bottom;
 }
+/*
+ * 响应式宽度。
+ */
 .responsive-width {
   box-sizing: border-box;
   max-width: 100%;

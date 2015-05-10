@@ -7,39 +7,56 @@
 
 // ============================= 颜色(Colors) ============================ //
 
-// 基础颜色
+//
+// * 基色(Base color)
+//
 @color-base:                      #000;
 @body-color:                      #fff;
 
-// 灰色系
+//
+// * 灰色洗(Gray)
+//
 @color-gray:                      lighten(@color-base, 33.5%);  // #555
 @color-gray-darker:               lighten(@color-base, 13.5%);  // #222
 @color-gray-dark:                 lighten(@color-base, 20%);    // #333
 @color-gray-light:                lighten(@color-base, 46.7%);  // #777
 @color-gray-lighter:              lighten(@color-base, 93.5%);  // #eee
 
-// 彩色系
+//
+// * 前景色(Front color)
+//
 @color-primary:                   #337ab7;
 @color-secondary:                 #5bc0de;
 @color-success:                   #5cb85c;
 @color-warning:                   #f0ad4e;
 @color-danger:                    #d9534f;
 
-// 文本颜色
+//
+// * 文本颜色(Text color)
+//
 @text-color:                      @color-gray-dark;
 @text-muted-color:                @color-gray-light;
 
-// 链接颜色
+//
+// * 链接颜色(Link color)
+//
 @link-color:                      @color-primary;
 @link-hover-color:                darken(@link-color, 15%);
 @link-hover-decoration:           underline;
 
-// 水平线颜色
+//
+// * 水平线颜色(hr color)
+//
 @hr-border-color:                 @color-gray-lighter;
 
+//
+// * 缩写颜色(Abbr color)
+//
 @abbr-border-color:               @color-gray-light;
 
-// 状态颜色
+//
+// * 状态颜色(State color)
+//
 @state-primary-bg:                @color-primary;
 
 @state-success-text:              #3c763d;
@@ -60,14 +77,18 @@
 
 // =========================== 排版(Typography) ========================== //
 
-// 基础字体
+//
+// * 字体(Font)
+//
 @font-family-base:                "Lucida Grande", "Helvetica Neue", Helvetica, "Microsoft YaHei", Arial, sans-serif;
 @font-family-sans-serif:          "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", sans-serif;
 @font-family-serif:               Georgia, "Times New Roman", Times, SimSun, "FontAwesome", serif;
 @font-family-monospace:           Monaco, Menlo, Consolas, "Courier New", "FontAwesome", monospace;
 @font-family-kai:                 Georgia, "Times New Roman", Times, Kai, "Kaiti SC", KaiTi, BiauKai, "FontAwesome", serif;
 
-// 文本大小
+//
+// * 文本大小(Fontsize)
+//
 @font-size-base:                  14px;
 @font-size-xs:                    ceil((@font-size-base * 0.65));   // ~10px
 @font-size-sm:                    ceil((@font-size-base * 0.85));   // ~12px
@@ -76,18 +97,24 @@
 @font-size-xxl:                   floor((@font-size-base * 2.15));  // ~30px
 @font-size-xxxl:                  floor((@font-size-base * 2.6));   // ~36px
 
-
-// 行高
+//
+// * 行高(Line height)
+//
 @line-height-base:                1.428571429; // 20/14
 @line-height-computed:            floor((@font-size-base * @line-height-base)); // ~20px
 
-// 标题大小
+//
+// * 标题尺寸(Headings size)
+//
 @headings-font-family:            inherit;
 @headings-font-weight:            500;
 @headings-line-height:            1.1;
 @headings-color:                  inherit;
 @headings-small-color:            @color-gray-light;
 
+//
+// * 标题尺寸(Font size)
+//
 @font-size-h1:                    @font-size-xxxl;      // ~36px
 @font-size-h2:                    @font-size-xxl;       // ~30px
 @font-size-h3:                    @font-size-xl;        // ~24px
@@ -95,11 +122,16 @@
 @font-size-h5:                    @font-size-base;      // ~14px
 @font-size-h6:                    @font-size-sm;        // ~12px
 
-// 引用
+//
+// * 引用(Blockquote)
+//
 @blockquote-small-color:          @color-gray-light;
 @blockquote-font-size:            (@font-size-base * 1.2);
 @blockquote-border-color:         @color-gray-lighter;
 
+//
+// * 边框(Border)
+//
 @border-color:                    #ddd;
 @border-radius-base:              2px;
 @border-radius-large:             5px;
@@ -142,7 +174,6 @@
 //
 // * 缩略图(Thumbnails)
 //
-
 @thumbnail-padding:               2px;
 @thumbnail-body-color:            @body-color;
 @thumbnail-border-color:          @border-color;

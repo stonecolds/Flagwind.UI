@@ -47,6 +47,9 @@
     border: 0;
 }
 
+//
+// #public tab 焦点。
+//
 .tab-focus()
 {
     outline: thin dotted;
@@ -54,11 +57,16 @@
     outline-offset: -2px;
 }
 
-.text-overflow()
+//
+// #public 文本截取。
+//
+.text-overflow(@display: block)
 {
-    overflow: hidden;
+    display: @display;
+    word-wrap: normal;
     text-overflow: ellipsis;
     white-space: nowrap;
+    overflow: hidden;
 }
 
 .text-emphasis-variant(@color)
