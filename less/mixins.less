@@ -7,6 +7,104 @@
 
 // ============================= 通用(Normal) ============================ //
 
+//
+// #public 清除浮动。
+//
+.clear()
+{
+    &:before,
+    &:after
+    {
+        display: table;
+        content: " ";
+    }
+
+    &:after
+    {
+        clear: both;
+    }
+}
+
+//
+// #public 内容块居中。
+//
+.center-block()
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+//
+// #public 隐藏文本。
+//
+.text-hide()
+{
+    font: ~"0/0" a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+.tab-focus()
+{
+    outline: thin dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+}
+
+.text-overflow()
+{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.text-emphasis-variant(@color)
+{
+    color: @color;
+
+    a&:hover
+    {
+        color: darken(@color, 10%);
+    }
+}
+
+.bg-variant(@backcolor)
+{
+    background-color: @backcolor;
+
+    a&:hover
+    {
+        background-color: darken(@backcolor, 10%);
+    }
+}
+
+.bg-variant(@color, @backcolor)
+{
+    color: @color;
+
+    .bg-variant(@backcolor);
+}
+
+.scrollable-horizontal(@width: @horizontal-scrollable-width)
+{
+    width: @width;
+    overflow-y: hidden;
+    overflow-x: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    -webkit-overflow-scrolling: touch;
+}
+
+.scrollable-vertical(@height: @vertical-scrollable-height)
+{
+    height: @height;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    resize: vertical;
+}
+
 .transition(@transition)
 {
     -webkit-transition: @transition;
@@ -46,24 +144,6 @@
             transition: transform @transition;
 }
 
-//
-// #public 清除浮动。
-//
-.clear()
-{
-    &:before,
-    &:after
-    {
-        display: table;
-        content: " ";
-    }
-
-    &:after
-    {
-        clear: both;
-    }
-}
-
 // ============================= 图片(Image) ============================= //
 
 .img-responsive(@display: block)
@@ -76,7 +156,7 @@
 // ============================= 布局(Layout) ============================ //
 
 //
-// #public 显示元素。
+// #public 响应式显示辅助。
 //
 .responsive-visibility()
 {
@@ -100,7 +180,7 @@
 }
 
 //
-// #public 隐藏元素。
+// #public 响应式隐藏辅助。
 //
 .responsive-invisibility()
 {
@@ -108,13 +188,55 @@
 }
 
 //
-// #public 生成一个布局。
+// #private 布局基础。
 //
-.build-layout()
+.layout-base()
 {
     margin-right: auto;
     margin-left: auto;
     &:extend(.clear all);
+
+    .layout,
+    {
+        width: auto;
+        margin-right: -(@layout-gutter-width / 2);
+        margin-left: -(@layout-gutter-width / 2);
+    }
+}
+
+//
+// #internal 百分百布局。
+//
+.layout-fluid()
+{
+    width: 100% !important;
+}
+
+//
+// #internal 填充式布局。
+//
+.layout-fill()
+{
+    position: relative;
+    min-height: 1px;
+    padding-left: (@layout-gutter-width / 2);
+    padding-right: (@layout-gutter-width / 2);
+}
+
+//
+// #public 生成一个默认(响应式)布局。
+//
+.build-layout()
+{
+    .build-layout(responsive);
+}
+
+//
+// #public 生成一个响应式布局。
+//
+.build-layout(@type) when (@type = responsive)
+{
+    .layout-base();
 
     @media (min-width: @screen-sm-min)
     {
@@ -130,13 +252,28 @@
     {
         width: @layout-lg;
     }
+}
 
-    .layout,
-    {
-        width: auto;
-        margin-right: -(@layout-gutter-width / 2);
-        margin-left: -(@layout-gutter-width / 2);
-    }
+//
+// #public 生成一个百分百布局。
+//
+.build-layout(@type) when (@type = fluid)
+{
+    .layout-base();
+
+    .layout-fluid();
+}
+
+//
+// #public 生成一个填充式布局。
+//
+// #param @type [responsive|fluid] 必选项，尺寸。
+//
+.build-layout(@type, @method) when (@method = fill)
+{
+    .build-layout(@type);
+
+    .layout-fill();
 }
 
 //
@@ -479,40 +616,4 @@
     .calc-layout-flex(@type, @index, @size);
 
     .loop-layout-flexes(@type, (@index - 1), @size);
-}
-
-// ============================= 其他(Other) ============================= //
-
-.tab-focus()
-{
-    outline: thin dotted;
-    outline: 5px auto -webkit-focus-ring-color;
-    outline-offset: -2px;
-}
-
-.text-overflow()
-{
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-.text-emphasis-variant(@color)
-{
-    color: @color;
-
-    a&:hover
-    {
-        color: darken(@color, 10%);
-    }
-}
-
-.bg-variant(@color)
-{
-    background-color: @color;
-
-    a&:hover
-    {
-        background-color: darken(@color, 10%);
-    }
 }

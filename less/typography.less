@@ -5,7 +5,22 @@
 // * https://github.com/Flagwind/Flagwind.UI/blob/master/LICENSE
 //
 
-/* =========================== 排版(Typography) =========================== */
+p,
+hr,
+ul,
+ol,
+dl,
+blockquote,
+pre,
+address,
+fieldset,
+figure
+{
+    margin-top: 0;
+    margin-bottom: (@line-height-computed / 2);
+}
+
+/*============================== 字体(Font) ============================== */
 
 /*
  * 非衬线字体。
@@ -39,24 +54,312 @@
   font-family: @font-family-monospace;
 }
 
-p,
-hr,
-ul,
-ol,
-dl,
-blockquote,
-pre,
-address,
-fieldset,
-figure
+/* ========================== 文本大小(Text size) ========================== */
+
+/*
+ * 超小尺寸文本。
+ */
+.text-xs
 {
-    margin-top: 0;
-    margin-bottom: (@line-height-computed / 2);
+    font-size: @font-size-xs;
 }
 
 /*
- * 标题。
+ * 小尺寸文本。
  */
+.text-sm
+{
+    font-size: @font-size-sm;
+}
+
+/*
+ * 中等(默认)尺寸文本。
+ */
+.text-md,
+.text-default
+{
+    font-size: @font-size-base;
+}
+
+/*
+ * 大尺寸文本。
+ */
+.text-lg
+{
+    font-size: @font-size-lg;
+}
+
+/*
+ * 超大尺寸文本。
+ */
+.text-xl
+{
+    font-size: @font-size-xl;
+}
+
+/*
+ * 超超大尺寸文本。
+ */
+.text-xxl
+{
+    font-size: @font-size-xxl;
+}
+
+/*
+ * 最大尺寸文本。
+ */
+.text-xxxl
+{
+    font-size: @font-size-xxxl;
+}
+
+/* ========================== 文本对齐(Text align) ========================== */
+
+/*
+ * 文本左对齐。
+ */
+.text-left
+{
+    text-align: left;
+}
+
+/*
+ * 文本右对齐。
+ */
+.text-right
+{
+    text-align: right;
+}
+
+/*
+ * 文本居中对齐。
+ */
+.text-center
+{
+    text-align: center;
+}
+
+/*
+ * 文本自适应对齐。
+ */
+.text-justify
+{
+    text-align: justify;
+}
+
+/*
+ * 文本顶部对齐。
+ */
+.text-top
+{
+    vertical-align: top;
+}
+
+/*
+ * 文本垂直居中对齐。
+ */
+.text-middle
+{
+    vertical-align: middle;
+}
+
+/*
+ * 文本底部对齐。
+ */
+.text-bottom
+{
+    vertical-align: bottom;
+}
+
+/* ========================== 文本颜色(Text color) ========================== */
+
+/*
+ * 文本主要色。
+ */
+.text-primary
+{
+    .text-emphasis-variant(@color-primary);
+}
+
+/*
+ * 文本次要色。
+ */
+.text-secondary
+{
+    .text-emphasis-variant(@state-secondary-text);
+}
+
+/*
+* 文本成功色。
+ */
+.text-success
+{
+    .text-emphasis-variant(@state-success-text);
+}
+
+/*
+ * 文本警告色。
+ */
+.text-warning
+{
+    .text-emphasis-variant(@state-warning-text);
+}
+
+/*
+ * 文本危险色。
+ */
+.text-danger
+{
+    .text-emphasis-variant(@state-danger-text);
+}
+
+/*
+ * 文本减弱色。
+ */
+.text-muted
+{
+    .text-emphasis-variant(@text-muted-color);
+
+    a
+    {
+        color: @text-muted-color;
+
+        &:hover
+        {
+            color: darken(@text-muted-color, 10%);
+        }
+    }
+}
+
+/* =========================== 背景颜色(Backcolor) ========================== */
+
+/*
+ * 背景主要色。
+ */
+.bg-primary
+{
+    .bg-variant(#fff, @state-primary-bg);
+}
+
+/*
+ * 背景次要色。
+ */
+.bg-secondary
+{
+    .bg-variant(@state-secondary-bg);
+}
+
+/*
+ * 背景成功色。
+ */
+.bg-success
+{
+    .bg-variant(@state-success-bg);
+}
+
+/*
+ * 背景警告色。
+ */
+.bg-warning
+{
+    .bg-variant(@state-warning-bg);
+}
+
+/*
+ * 背景危险色。
+ */
+.bg-danger
+{
+    .bg-variant(@state-danger-bg);
+}
+
+/* =========================== 文字换行(Text wrap) ========================== */
+
+/*
+ * 禁止换行，不截断超出容器宽度部分。
+ */
+.text-nowrap
+{
+    white-space: nowrap;
+}
+
+/*
+ * 禁止换行，超出容器部分截断。（以 ... 结束）
+ */
+.text-truncate
+{
+    word-wrap: normal;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/*
+ * 超出文字容器宽度时强制换行，主要用于英文排版。
+ */
+.text-break
+{
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+}
+
+/* ========================== 文本辅助(Text utility) ======================== */
+
+/*
+ * 隐藏文本。
+ */
+.text-hide
+{
+    .text-hide();
+}
+
+/*
+ * 转换文本为全小写。
+ */
+.text-lowercase
+{
+    text-transform: lowercase;
+}
+
+/*
+ * 转换文本为全大写。
+ */
+.text-uppercase
+{
+    text-transform: uppercase;
+}
+
+/*
+ * 转换文本为首字母大写。
+ */
+.text-capitalize
+{
+    text-transform: capitalize;
+}
+
+/*
+ * 图文混排中左对齐。
+ */
+.align-left
+{
+    margin-right: 10px;
+    float: left;
+}
+
+/*
+ * 图文混排中右对齐。
+ */
+.align-right
+{
+    margin-left: 10px;
+    float: right;
+}
+
+/* ============================== 标题(Headings) =========================== */
+
 h1,
 h2,
 h3,
@@ -110,6 +413,8 @@ h4 { font-size: @font-size-h4; }
 h5 { font-size: @font-size-h5; }
 h6 { font-size: @font-size-h6; }
 
+/* ================================ 杂项(Misc) ============================= */
+
 /*
  * 修正文本。
  */
@@ -125,7 +430,7 @@ ins
 small,
 .small
 {
-    font-size: floor((100% * @font-size-small / @font-size-base));
+    font-size: floor((100% * @font-size-sm / @font-size-base));
 }
 
 /*
@@ -160,40 +465,7 @@ address
     line-height: @line-height-base;
 }
 
-/*
- * 文本对齐。
- */
-.text-left          { text-align: left; }
-.text-right         { text-align: right; }
-.text-center        { text-align: center; }
-.text-justify       { text-align: justify; }
-.text-nowrap        { white-space: nowrap; }
-
-/*
- * 文本转换。
- */
-.text-lowercase     { text-transform: lowercase; }
-.text-uppercase     { text-transform: uppercase; }
-.text-capitalize    { text-transform: capitalize; }
-
-/*
- * 文本颜色
- */
-.text-muted{ color: @text-muted-color; }
-.text-primary{ .text-emphasis-variant(@color-primary); }
-.text-success{ .text-emphasis-variant(@state-success-text); }
-.text-info{ .text-emphasis-variant(@state-info-text); }
-.text-warning{ .text-emphasis-variant(@state-warning-text); }
-.text-danger{ .text-emphasis-variant(@state-danger-text); }
-
-/*
- * 背景颜色。
- */
-.bg-primary{ color: #fff;.bg-variant(@color-primary); }
-.bg-success{ .bg-variant(@state-success-bg); }
-.bg-info{ .bg-variant(@state-info-bg); }
-.bg-warning{ .bg-variant(@state-warning-bg); }
-.bg-danger{ .bg-variant(@state-danger-bg); }
+/* ================================ 列表(List) ============================= */
 
 /*
  * 无序&有序列表。
@@ -286,6 +558,8 @@ dd
     }
 
 }
+
+/* ============================= 引用(Blockquote) ========================== */
 
 blockquote
 {
