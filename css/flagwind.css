@@ -531,9 +531,6 @@ figure {
 .text-bottom {
   vertical-align: bottom;
 }
-/*
- * 文本修剪.
- */
 /* ========================== 文本颜色(Text color) ========================== */
 /*
  * 文本主要色。
@@ -636,7 +633,7 @@ a.bg-warning:hover {
 /*
  * 背景危险色。
  */
-.bg-danger {text-overflow
+.bg-danger {
   background-color: #f2dede;
 }
 a.bg-danger:hover {
@@ -1020,31 +1017,6 @@ blockquote small:before {
   .hidden-print {
     display: none !important;
   }
-}
-/* ============================== 图片(Image) ============================ */
-/*
- * 响应式图片。
- */
-.img-responsive {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-/*
- * 缩略图。
- */
-.img-thumbnail {
-  display: inline-block;
-  max-width: 100%;
-  height: auto;
-  padding: 2px;
-  line-height: 1.42857143;
-  background-color: #ffffff;
-  border: 1px solid #dddddd;
-  border-radius: 2px;
-  -webkit-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
 }
 /* ============================== 布局(Layout) ============================ */
 /*
@@ -1887,7 +1859,46 @@ blockquote small:before {
   overflow: visible;
   clip: auto;
 }
-/* ============================= 辅助(Utilitiy) =========================== */
+/* ============================== 图片(Images) =========================== */
+/*
+ * 响应式图片。
+ */
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+/*
+ * 缩略图。
+ */
+.img-thumbnail {
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+  padding: 2px;
+  line-height: 1.42857143;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 2px;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+/* ============================== 按钮(Buttons) =========================== */
+.btn {
+  display: inline-block;
+  margin-bottom: 0;
+  vertical-align: middle;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.2;
+  text-align: center;
+  white-space: nowrap;
+  background-image: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+/* ============================ 辅助(Utilities) ========================== */
 /*
  * 清除浮动。
  */

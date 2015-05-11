@@ -152,15 +152,6 @@
             transition: transform @transition;
 }
 
-// ============================= 图片(Image) ============================= //
-
-.img-responsive(@display: block)
-{
-    display: @display;
-    max-width: 100%;
-    height: auto;
-}
-
 // ============================= 布局(Layout) ============================ //
 
 //
@@ -624,4 +615,26 @@
     .calc-layout-flex(@type, @index, @size);
 
     .loop-layout-flexes(@type, (@index - 1), @size);
+}
+
+// ============================= 图片(Images) ============================ //
+
+.img-responsive(@display: block)
+{
+    display: @display;
+    max-width: 100%;
+    height: auto;
+}
+
+// ============================= 按钮(Buttons) =========================== //
+
+//
+// #public 按钮尺寸。
+//
+.button-size(@padding-vertical; @padding-horizontal; @font-size; @line-height; @border-radius)
+{
+    padding: @padding-vertical @padding-horizontal;
+    font-size: @font-size;
+    line-height: @line-height;
+    border-radius: @border-radius;
 }
