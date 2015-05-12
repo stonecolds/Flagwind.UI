@@ -8,7 +8,7 @@
 /* ============================== 布局(Layout) ============================ */
 
 /*
- * 自适应宽度布局。
+ * 响应式布局。
  */
 .layout
 {
@@ -16,11 +16,19 @@
 }
 
 /*
- * 百分百宽度布局。
+ * 百分百布局。
  */
 .layout-fluid
 {
-    width: 100% !important;
+    .layout-fluid();
+}
+
+/*
+ * 填充式布局。
+ */
+.layout-fill
+{
+    .layout-fill();
 }
 
 /*
@@ -64,19 +72,15 @@
     width: device-width;
 }
 
-.visible-xs,
 .visible-xs-block,
 .visible-xs-inline,
 .visible-xs-inline-block,
-.visible-sm,
 .visible-sm-block,
 .visible-sm-inline,
 .visible-sm-inline-block,
-.visible-md,
 .visible-md-block,
 .visible-md-inline,
 .visible-md-inline-block,
-.visible-lg
 .visible-lg-block,
 .visible-lg-inline,
 .visible-lg-inline-block
@@ -87,14 +91,6 @@
 /*
  * 元素显示辅助类，当屏幕为超小屏幕(xs)时显示。
  */
-.visible-xs
-{
-    @media (max-width: @screen-xs-max)
-    {
-        .responsive-visibility();
-    }
-}
-
 .visible-xs-block
 {
     @media (max-width: @screen-xs-max)
@@ -122,14 +118,6 @@
 /*
  * 元素显示辅助类，当屏幕为小屏幕(sm)时显示。
  */
-.visible-sm
-{
-    @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max)
-    {
-        .responsive-visibility();
-    }
-}
-
 .visible-sm-block
 {
     @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max)
@@ -157,14 +145,6 @@
 /*
  * 元素显示辅助类，当屏幕为中等屏幕(md)时显示。
  */
-.visible-md
-{
-    @media (min-width: @screen-md-min) and (max-width: @screen-md-max)
-    {
-        .responsive-visibility();
-    }
-}
-
 .visible-md-block
 {
     @media (min-width: @screen-md-min) and (max-width: @screen-md-max)
@@ -192,14 +172,6 @@
 /*
  * 元素显示辅助类，当屏幕为大屏幕(lg)时显示。
  */
-.visible-lg
-{
-    @media (min-width: @screen-lg-min)
-    {
-        .responsive-visibility();
-    }
-}
-
 .visible-lg-block
 {
     @media (min-width: @screen-lg-min)
@@ -269,55 +241,33 @@
 }
 
 /*
- * 元素显示辅助类，当处于打印模式时显示。
+ * 仅在使用屏幕阅读器时呈现。
  */
-.visible-print
+.sr-only
 {
-    display: none !important;
-
-    @media print
-    {
-        .responsive-visibility();
-    }
-}
-
-.visible-print-block
-{
-    display: none !important;
-
-    @media print
-    {
-        display: block !important;
-    }
-}
-
-.visible-print-inline
-{
-    display: none !important;
-
-    @media print
-    {
-        display: inline !important;
-    }
-}
-
-.visible-print-inline-block
-{
-    display: none !important;
-
-    @media print
-    {
-        display: inline-block !important;
-    }
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
 }
 
 /*
- * 元素隐藏辅助类，当处于打印模式时隐藏。
+ * 仅在使用屏幕阅读器并获得焦点时呈现。
  */
-.hidden-print
+.sr-only-focusable
 {
-    @media print
+    &:active,
+    &:focus
     {
-        .responsive-invisibility();
+        position: static;
+        width: auto;
+        height: auto;
+        margin: 0;
+        overflow: visible;
+        clip: auto;
     }
 }

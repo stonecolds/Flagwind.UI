@@ -355,32 +355,33 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "Lucida Grande", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  position: relative;
+  font-family: "Lucida Grande", "Helvetica Neue", Helvetica, "Microsoft YaHei", Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
   color: #333333;
   background-color: #ffffff;
 }
+iframe {
+  border: 0;
+}
+/*
+ * 开启反锯齿。
+ */
+body,
 input,
 textarea,
 select,
 button {
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   -moz-font-feature-settings: "liga", "kern";
   text-rendering: optimizeLegibility;
 }
-@media only screen and (max-width: 640px) {
-  body {
-    -webkit-hyphens: auto;
-    -ms-hyphens: auto;
-    -moz-hyphens: auto;
-    hyphens: auto;
-    word-wrap: break-word;
-  }
+button,
+input:not([type="radio"]):not([type="checkbox"]),
+select {
+  vertical-align: middle;
 }
 a {
   color: #337ab7;
@@ -402,7 +403,312 @@ hr {
   border: 0;
   border-top: 1px solid #eeeeee;
 }
-/* =========================== 排版(Typography) =========================== */
+/*
+ * 默认边距。
+ */
+p,
+hr,
+ul,
+ol,
+dl,
+blockquote,
+pre,
+address,
+fieldset,
+figure {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+/*============================== 字体(Font) ============================== */
+/*
+ * 非衬线字体。
+ */
+.font-sans-serif {
+  font-family: "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", sans-serif;
+}
+/*
+ * 衬线字体。
+ */
+.font-serif {
+  font-family: Georgia, "Times New Roman", Times, SimSun, "FontAwesome", serif;
+}
+/*
+ * 楷体。
+ */
+.font-kai {
+  font-family: Georgia, "Times New Roman", Times, Kai, "Kaiti SC", KaiTi, BiauKai, "FontAwesome", serif;
+}
+/*
+ * 等宽字体。
+ */
+.font-monospace {
+  font-family: Monaco, Menlo, Consolas, "Courier New", "FontAwesome", monospace;
+}
+/* ========================== 文本大小(Text size) ========================== */
+/*
+ * 超小尺寸文本。
+ */
+.text-xs {
+  font-size: 10px;
+}
+/*
+ * 小尺寸文本。
+ */
+.text-sm {
+  font-size: 12px;
+}
+/*
+ * 中等(默认)尺寸文本。
+ */
+.text-md,
+.text-default {
+  font-size: 14px;
+}
+/*
+ * 大尺寸文本。
+ */
+.text-lg {
+  font-size: 18px;
+}
+/*
+ * 超大尺寸文本。
+ */
+.text-xl {
+  font-size: 24px;
+}
+/*
+ * 超超大尺寸文本。
+ */
+.text-xxl {
+  font-size: 30px;
+}
+/*
+ * 最大尺寸文本。
+ */
+.text-xxxl {
+  font-size: 36px;
+}
+/* ========================== 文本对齐(Text align) ========================== */
+/*
+ * 文本左对齐。
+ */
+.text-left {
+  text-align: left;
+}
+/*
+ * 文本右对齐。
+ */
+.text-right {
+  text-align: right;
+}
+/*
+ * 文本居中对齐。
+ */
+.text-center {
+  text-align: center;
+}
+/*
+ * 文本自适应对齐。
+ */
+.text-justify {
+  text-align: justify;
+}
+/*
+ * 文本顶部对齐。
+ */
+.text-top {
+  vertical-align: top;
+}
+/*
+ * 文本垂直居中对齐。
+ */
+.text-middle {
+  vertical-align: middle;
+}
+/*
+ * 文本底部对齐。
+ */
+.text-bottom {
+  vertical-align: bottom;
+}
+/* ========================== 文本颜色(Text color) ========================== */
+/*
+ * 文本主要色。
+ */
+.text-primary {
+  color: #337ab7;
+}
+a.text-primary:hover {
+  color: #285f8f;
+}
+/*
+ * 文本次要色。
+ */
+.text-secondary {
+  color: #31708f;
+}
+a.text-secondary:hover {
+  color: #245269;
+}
+/*
+* 文本成功色。
+ */
+.text-success {
+  color: #3c763d;
+}
+a.text-success:hover {
+  color: #2b542c;
+}
+/*
+ * 文本警告色。
+ */
+.text-warning {
+  color: #8a6d3b;
+}
+a.text-warning:hover {
+  color: #66512c;
+}
+/*
+ * 文本危险色。
+ */
+.text-danger {
+  color: #a94442;
+}
+a.text-danger:hover {
+  color: #843534;
+}
+/*
+ * 文本减弱色。
+ */
+.text-muted {
+  color: #777777;
+}
+a.text-muted:hover {
+  color: #5e5e5e;
+}
+.text-muted a {
+  color: #777777;
+}
+.text-muted a:hover {
+  color: #5e5e5e;
+}
+/* =========================== 背景颜色(Backcolor) ========================== */
+/*
+ * 背景主要色。
+ */
+.bg-primary {
+  color: #ffffff;
+  background-color: #337ab7;
+}
+a.bg-primary:hover {
+  background-color: #285f8f;
+}
+/*
+ * 背景次要色。
+ */
+.bg-secondary {
+  background-color: #d9edf7;
+}
+a.bg-secondary:hover {
+  background-color: #afd9ee;
+}
+/*
+ * 背景成功色。
+ */
+.bg-success {
+  background-color: #dff0d8;
+}
+a.bg-success:hover {
+  background-color: #c1e2b3;
+}
+/*
+ * 背景警告色。
+ */
+.bg-warning {
+  background-color: #fcf8e3;
+}
+a.bg-warning:hover {
+  background-color: #f7ecb5;
+}
+/*
+ * 背景危险色。
+ */
+.bg-danger {
+  background-color: #f2dede;
+}
+a.bg-danger:hover {
+  background-color: #e4b9b9;
+}
+/* =========================== 文字换行(Text wrap) ========================== */
+/*
+ * 禁止换行，不截断超出容器宽度部分。
+ */
+.text-nowrap {
+  white-space: nowrap;
+}
+/*
+ * 禁止换行，超出容器部分截断。（以 ... 结束）
+ */
+.text-truncate {
+  word-wrap: normal;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+/*
+ * 超出文字容器宽度时强制换行，主要用于英文排版。
+ */
+.text-break {
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+}
+/* ========================== 文本辅助(Text utility) ======================== */
+/*
+ * 隐藏文本。
+ */
+.text-hide {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+/*
+ * 转换文本为全小写。
+ */
+.text-lowercase {
+  text-transform: lowercase;
+}
+/*
+ * 转换文本为全大写。
+ */
+.text-uppercase {
+  text-transform: uppercase;
+}
+/*
+ * 转换文本为首字母大写。
+ */
+.text-capitalize {
+  text-transform: capitalize;
+}
+/*
+ * 图文混排中左对齐。
+ */
+.align-left {
+  margin-right: 10px;
+  float: left;
+}
+/*
+ * 图文混排中右对齐。
+ */
+.align-right {
+  margin-left: 10px;
+  float: right;
+}
+/* ============================== 标题(Headings) =========================== */
 h1,
 h2,
 h3,
@@ -464,131 +770,66 @@ h5 {
 h6 {
   font-size: 12px;
 }
-p {
-  margin: 0 0 10px;
+/* ================================ 杂项(Misc) ============================= */
+/*
+ * 修正文本。
+ */
+ins {
+  background: #fcf8e3;
+  color: #333333;
 }
+/*
+ * 小号文本
+ */
 small,
 .small {
   font-size: 85%;
 }
+/*
+ * 高亮文本
+ */
 mark,
 .mark {
   padding: .2em;
   background-color: #fcf8e3;
 }
-.txt-left {
-  text-align: left;
-}
-.txt-right {
-  text-align: right;
-}
-.txt-center {
-  text-align: center;
-}
-.txt-justify {
-  text-align: justify;
-}
-.txt-nowrap {
-  white-space: nowrap;
-}
-.txt-lowercase {
-  text-transform: lowercase;
-}
-.txt-uppercase {
-  text-transform: uppercase;
-}
-.txt-capitalize {
-  text-transform: capitalize;
-}
-.txt-muted {
-  color: #777777;
-}
-.txt-primary {
-  color: #337ab7;
-}
-a.txt-primary:hover {
-  color: #285f8f;
-}
-.txt-success {
-  color: #3c763d;
-}
-a.txt-success:hover {
-  color: #2b542c;
-}
-.txt-info {
-  color: #31708f;
-}
-a.txt-info:hover {
-  color: #245269;
-}
-.txt-warning {
-  color: #8a6d3b;
-}
-a.txt-warning:hover {
-  color: #66512c;
-}
-.txt-danger {
-  color: #a94442;
-}
-a.txt-danger:hover {
-  color: #843534;
-}
-.bg-primary {
-  color: #fff;
-  background-color: #337ab7;
-}
-a.bg-primary:hover {
-  background-color: #285f8f;
-}
-.bg-success {
-  background-color: #dff0d8;
-}
-a.bg-success:hover {
-  background-color: #c1e2b3;
-}
-.bg-info {
-  background-color: #d9edf7;
-}
-a.bg-info:hover {
-  background-color: #afd9ee;
-}
-.bg-warning {
-  background-color: #fcf8e3;
-}
-a.bg-warning:hover {
-  background-color: #f7ecb5;
-}
-.bg-danger {
-  background-color: #f2dede;
-}
-a.bg-danger:hover {
-  background-color: #e4b9b9;
-}
+/*
+ * 缩略语。
+ */
 abbr[title],
-abbr[data-original-title] {
+abbr[data-original-title]， dfn[title],
+dfn[data-original-title] {
   cursor: help;
   border-bottom: 1px dotted #777777;
 }
+/*
+ * 地址。
+ */
 address {
   margin-bottom: 20px;
   font-style: normal;
   line-height: 1.42857143;
 }
-ul,
-ol {
-  margin-top: 0;
-  margin-bottom: 10px;
-}
+/* ================================ 列表(List) ============================= */
+/*
+ * 无序&有序列表。
+ */
 ul ul,
 ol ul,
 ul ol,
 ol ol {
   margin-bottom: 0;
 }
+/*
+ * 无样式列表。
+ */
 .list-unstyled {
   padding-left: 0;
   list-style: none;
 }
+/*
+ * 内联列表，将所有元素置于同一行。
+ */
 .list-inline {
   padding-left: 0;
   list-style: none;
@@ -599,6 +840,9 @@ ol ol {
   padding-right: 5px;
   padding-left: 5px;
 }
+/*
+ * 描述列表。
+ */
 dl {
   margin-top: 0;
   margin-bottom: 20px;
@@ -613,86 +857,179 @@ dt {
 dd {
   margin-left: 0;
 }
+/*
+ * 水平描述列表。
+ */
+@media (min-width: 768px) {
+  .dl-horizontal dt {
+    float: left;
+    width: 160px;
+    clear: left;
+    text-align: right;
+    display: block;
+    word-wrap: normal;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .dl-horizontal dd {
+    margin-left: 180px;
+  }
+}
+/* ============================= 引用(Blockquote) ========================== */
 blockquote {
   padding: 10px 20px;
   margin: 0 0 20px;
-  font-size: 17.5px;
+  font-family: Georgia, "Times New Roman", Times, Kai, "Kaiti SC", KaiTi, BiauKai, "FontAwesome", serif;
+  font-size: 16.8px;
   border-left: 5px solid #eeeeee;
 }
-blockquote p:last-child,
-blockquote ul:last-child,
-blockquote ol:last-child {
+blockquote p:last-child {
   margin-bottom: 0;
 }
 blockquote footer,
-blockquote small,
-blockquote .small {
+blockquote small {
   display: block;
   font-size: 80%;
+  text-align: right;
+  font-family: "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", sans-serif;
   line-height: 1.42857143;
   color: #777777;
 }
 blockquote footer:before,
-blockquote small:before,
-blockquote .small:before {
+blockquote small:before {
   content: "\2014 \00A0";
 }
-.blockquote-reverse,
-blockquote.pull-right {
-  padding-right: 15px;
-  padding-left: 0;
-  border-right: 5px solid #eeeeee;
-  border-left: 0;
-  text-align: right;
+/* ============================== 打印(Print) ============================ */
+@media print {
+  *,
+  *:before,
+  *:after {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: "";
+  }
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  thead {
+    display: table-header-group;
+  }
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+  img {
+    max-width: 100% !important;
+  }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+  @page {
+    margin: 0.5cm;
+  }
+  select {
+    background: #fff !important;
+  }
+  .navbar {
+    display: none;
+  }
+  .btn > .caret,
+  .dropup > .btn > .caret {
+    border-top-color: #000 !important;
+  }
+  .label {
+    border: 1px solid #000;
+  }
+  .table {
+    border-collapse: collapse !important;
+  }
+  .table td,
+  .table th {
+    background-color: #fff !important;
+  }
+  .table-bordered th,
+  .table-bordered td {
+    border: 1px solid #ddd !important;
+  }
 }
-.blockquote-reverse footer:before,
-blockquote.pull-right footer:before,
-.blockquote-reverse small:before,
-blockquote.pull-right small:before,
-.blockquote-reverse .small:before,
-blockquote.pull-right .small:before {
-  content: "";
-}
-.blockquote-reverse footer:after,
-blockquote.pull-right footer:after,
-.blockquote-reverse small:after,
-blockquote.pull-right small:after,
-.blockquote-reverse .small:after,
-blockquote.pull-right .small:after {
-  content: "\00A0 \2014";
-}
-/* ============================== 图片(Image) ============================ */
 /*
- * 响应式图片。
+ * 当处于打印模式时以块级元素显示。
  */
-.img-responsive {
-  display: block;
-  max-width: 100%;
-  height: auto;
+.visible-print-block {
+  display: none !important;
+}
+@media print {
+  .visible-print-block {
+    display: block !important;
+  }
 }
 /*
- * 缩略图。
+ * 当处于打印模式时以内联元素显示。
  */
-.img-thumbnail {
-  display: inline-block;
-  max-width: 100%;
-  height: auto;
-  padding: 2px;
-  line-height: 1.42857143;
-  background-color: #ffffff;
-  border: 1px solid #dddddd;
-  border-radius: 2px;
-  -webkit-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
+.visible-print-inline {
+  display: none !important;
+}
+@media print {
+  .visible-print-inline {
+    display: inline !important;
+  }
+}
+/*
+ * 当处于打印模式时以行内块元素显示。
+ */
+.visible-print-inline-block {
+  display: none !important;
+}
+@media print {
+  .visible-print-inline-block {
+    display: inline-block !important;
+  }
+}
+/*
+ * 当处于打印模式时隐藏。
+ */
+@media print {
+  .hidden-print {
+    display: none !important;
+  }
 }
 /* ============================== 布局(Layout) ============================ */
 /*
- * 自适应宽度布局。
+ * 响应式布局。
  */
 .layout {
   margin-right: auto;
   margin-left: auto;
+}
+.layout .layout {
+  width: auto;
+  margin-right: -15px;
+  margin-left: -15px;
 }
 @media (min-width: 768px) {
   .layout {
@@ -709,16 +1046,20 @@ blockquote.pull-right .small:after {
     width: 1170px;
   }
 }
-.layout .layout {
-  width: auto;
-  margin-right: -15px;
-  margin-left: -15px;
-}
 /*
- * 百分百宽度布局。
+ * 百分百布局。
  */
 .layout-fluid {
   width: 100% !important;
+}
+/*
+ * 填充式布局。
+ */
+.layout-fill {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 /*
  * 定义布局份数。
@@ -1375,19 +1716,16 @@ blockquote.pull-right .small:after {
 @-ms-viewport {
   width: device-width;
 }
-.visible-xs,
 .visible-xs-block,
 .visible-xs-inline,
 .visible-xs-inline-block,
-.visible-sm,
 .visible-sm-block,
 .visible-sm-inline,
 .visible-sm-inline-block,
-.visible-md,
 .visible-md-block,
 .visible-md-inline,
 .visible-md-inline-block,
-.visible-lg .visible-lg-block,
+.visible-lg-block,
 .visible-lg-inline,
 .visible-lg-inline-block {
   display: none !important;
@@ -1395,21 +1733,6 @@ blockquote.pull-right .small:after {
 /*
  * 元素显示辅助类，当屏幕为超小屏幕(xs)时显示。
  */
-@media (max-width: 767px) {
-  .visible-xs {
-    display: block !important;
-  }
-  table.visible-xs {
-    display: table;
-  }
-  tr.visible-xs {
-    display: table-row !important;
-  }
-  th.visible-xs,
-  td.visible-xs {
-    display: table-cell !important;
-  }
-}
 @media (max-width: 767px) {
   .visible-xs-block {
     display: block !important;
@@ -1429,21 +1752,6 @@ blockquote.pull-right .small:after {
  * 元素显示辅助类，当屏幕为小屏幕(sm)时显示。
  */
 @media (min-width: 768px) and (max-width: 991px) {
-  .visible-sm {
-    display: block !important;
-  }
-  table.visible-sm {
-    display: table;
-  }
-  tr.visible-sm {
-    display: table-row !important;
-  }
-  th.visible-sm,
-  td.visible-sm {
-    display: table-cell !important;
-  }
-}
-@media (min-width: 768px) and (max-width: 991px) {
   .visible-sm-block {
     display: block !important;
   }
@@ -1462,21 +1770,6 @@ blockquote.pull-right .small:after {
  * 元素显示辅助类，当屏幕为中等屏幕(md)时显示。
  */
 @media (min-width: 992px) and (max-width: 1199px) {
-  .visible-md {
-    display: block !important;
-  }
-  table.visible-md {
-    display: table;
-  }
-  tr.visible-md {
-    display: table-row !important;
-  }
-  th.visible-md,
-  td.visible-md {
-    display: table-cell !important;
-  }
-}
-@media (min-width: 992px) and (max-width: 1199px) {
   .visible-md-block {
     display: block !important;
   }
@@ -1494,21 +1787,6 @@ blockquote.pull-right .small:after {
 /*
  * 元素显示辅助类，当屏幕为大屏幕(lg)时显示。
  */
-@media (min-width: 1200px) {
-  .visible-lg {
-    display: block !important;
-  }
-  table.visible-lg {
-    display: table;
-  }
-  tr.visible-lg {
-    display: table-row !important;
-  }
-  th.visible-lg,
-  td.visible-lg {
-    display: table-cell !important;
-  }
-}
 @media (min-width: 1200px) {
   .visible-lg-block {
     display: block !important;
@@ -1557,69 +1835,188 @@ blockquote.pull-right .small:after {
   }
 }
 /*
- * 元素显示辅助类，当处于打印模式时显示。
+ * 仅在使用屏幕阅读器时呈现。
  */
-.visible-print {
-  display: none !important;
-}
-@media print {
-  .visible-print {
-    display: block !important;
-  }
-  table.visible-print {
-    display: table;
-  }
-  tr.visible-print {
-    display: table-row !important;
-  }
-  th.visible-print,
-  td.visible-print {
-    display: table-cell !important;
-  }
-}
-.visible-print-block {
-  display: none !important;
-}
-@media print {
-  .visible-print-block {
-    display: block !important;
-  }
-}
-.visible-print-inline {
-  display: none !important;
-}
-@media print {
-  .visible-print-inline {
-    display: inline !important;
-  }
-}
-.visible-print-inline-block {
-  display: none !important;
-}
-@media print {
-  .visible-print-inline-block {
-    display: inline-block !important;
-  }
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }
 /*
- * 元素隐藏辅助类，当处于打印模式时隐藏。
+ * 仅在使用屏幕阅读器并获得焦点时呈现。
  */
-@media print {
-  .hidden-print {
-    display: none !important;
-  }
+.sr-only-focusable:active,
+.sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
 }
-/* ============================= 辅助(Utilitiy) =========================== */
+/* ============================== 图片(Images) =========================== */
+/*
+ * 响应式图片。
+ */
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+/*
+ * 缩略图。
+ */
+.img-thumbnail {
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+  padding: 2px;
+  line-height: 1.42857143;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 2px;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+/* ============================== 按钮(Buttons) =========================== */
+.btn {
+  display: inline-block;
+  margin-bottom: 0;
+  vertical-align: middle;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.2;
+  text-align: center;
+  white-space: nowrap;
+  background-image: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+/* ============================ 辅助(Utilities) ========================== */
 /*
  * 清除浮动。
  */
 .clear:before,
-.clear:after {
+.clear:after,
+.dl-horizontal dd:before,
+.dl-horizontal dd:after,
+.layout:before,
+.layout:after {
   display: table;
   content: " ";
 }
-.clear:after {
+.clear:after,
+.dl-horizontal dd:after,
+.layout:after {
   clear: both;
+}
+/*
+ * 左浮动。
+ */
+.pull-left {
+  float: left !important;
+}
+/*
+ * 右浮动。
+ */
+.pull-right {
+  float: right !important;
+}
+/*
+ * 内容块居中。
+ */
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+/*
+ * 垂直对齐。
+ */
+.vertical-align {
+  font-size: 0.001px;
+}
+.vertical-align:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+.vertical-align-middle,
+.vertical-align-bottom {
+  display: inline-block;
+  font-size: 14px;
+  max-width: 100%;
+}
+/*
+ * 垂直居中对齐。
+ */
+.vertical-align-middle {
+  vertical-align: middle;
+}
+/*
+ * 垂直底部对齐。
+ */
+.vertical-align-bottom {
+  vertical-align: bottom;
+}
+/*
+ * 响应式宽度。
+ */
+.responsive-width {
+  box-sizing: border-box;
+  max-width: 100%;
+  height: auto;
+}
+/*
+ * 显示元素。
+ */
+.show {
+  display: block !important;
+}
+/*
+ * 隐藏元素。
+ */
+.hide {
+  display: none !important;
+}
+/*
+ * 隐藏元素，并保留文档流。
+ */
+.invisible {
+  visibility: hidden;
+}
+/*
+ * 横屏(显示/隐藏)辅助。
+ */
+@media only screen and (orientation: landscape) {
+  .show-landscape,
+  .hide-portrait {
+    display: inherit !important;
+  }
+  .hide-landscape,
+  .show-portrait {
+    display: none !important;
+  }
+}
+/*
+ * 竖屏(显示/隐藏)辅助。
+ */
+@media only screen and (orientation: portrait) {
+  .show-portrait,
+  .hide-landscape {
+    display: inherit !important;
+  }
+  .hide-portrait,
+  .show-landscape {
+    display: none !important;
+  }
 }
 /*
  * 正方形。
@@ -1634,8 +2031,33 @@ blockquote.pull-right .small:after {
   border-radius: 2px;
 }
 /*
+ * 椭圆。
+ */
+.round {
+  border-radius: 1000px;
+}
+/*
  * 圆形。
  */
 .circle {
   border-radius: 50%;
+}
+/*
+ * 水平滚动，内容超出容器宽度时显示水平滚动条。
+ */
+.scrollable-horizontal {
+  width: 100%;
+  overflow-y: hidden;
+  overflow-x: auto;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  -webkit-overflow-scrolling: touch;
+}
+/*
+ * 垂直滚动，内容超出容器高度时显示垂直滚动条。
+ */
+.scrollable-vertical {
+  height: 240px;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  resize: vertical;
 }

@@ -5,14 +5,148 @@
 // * https://github.com/Flagwind/Flagwind.UI/blob/master/LICENSE
 //
 
-/* ============================= 辅助(Utilitiy) =========================== */
+/* ============================ 辅助(Utilities) ========================== */
 
 /*
  * 清除浮动。
  */
 .clear
 {
-    .clearfix();
+    .clear();
+}
+
+/*
+ * 左浮动。
+ */
+.pull-left
+{
+    float: left !important;
+}
+
+/*
+ * 右浮动。
+ */
+.pull-right
+{
+    float: right !important;
+}
+
+/*
+ * 内容块居中。
+ */
+.center-block
+{
+    .center-block();
+}
+
+/*
+ * 垂直对齐。
+ */
+.vertical-align
+{
+    font-size: 0.001px;
+}
+
+.vertical-align:before
+{
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.vertical-align-middle,
+.vertical-align-bottom
+{
+    display: inline-block;
+    font-size: @font-size-base;
+    max-width: 100%;
+}
+
+/*
+ * 垂直居中对齐。
+ */
+.vertical-align-middle
+{
+    vertical-align: middle;
+}
+
+/*
+ * 垂直底部对齐。
+ */
+.vertical-align-bottom
+{
+    vertical-align: bottom;
+}
+
+/*
+ * 响应式宽度。
+ */
+.responsive-width
+{
+    box-sizing: border-box;
+    max-width: 100%;
+    height: auto;
+}
+
+/*
+ * 显示元素。
+ */
+.show
+{
+    display: block !important;
+}
+
+/*
+ * 隐藏元素。
+ */
+.hide
+{
+    display: none !important;
+}
+
+/*
+ * 隐藏元素，并保留文档流。
+ */
+.invisible
+{
+    visibility: hidden;
+}
+
+/*
+ * 横屏(显示/隐藏)辅助。
+ */
+@media @screen-landscape
+{
+    .show-landscape,
+    .hide-portrait
+    {
+        display: inherit !important;
+    }
+
+    .hide-landscape,
+    .show-portrait
+    {
+        display: none !important;
+    }
+}
+
+/*
+ * 竖屏(显示/隐藏)辅助。
+ */
+@media @screen-portrait
+{
+    .show-portrait,
+    .hide-landscape
+    {
+        display: inherit !important;
+    }
+
+    .hide-portrait,
+    .show-landscape
+    {
+        display: none !important;
+    }
 }
 
 /*
@@ -20,7 +154,7 @@
  */
 .square
 {
-    border-radius: 0;
+    border-radius: @border-square;
 }
 
 /*
@@ -32,9 +166,33 @@
 }
 
 /*
+ * 椭圆。
+ */
+.round
+{
+    border-radius: @border-rounded;
+}
+
+/*
  * 圆形。
  */
 .circle
 {
     border-radius: 50%;
+}
+
+/*
+ * 水平滚动，内容超出容器宽度时显示水平滚动条。
+ */
+.scrollable-horizontal
+{
+    .scrollable-horizontal();
+}
+
+/*
+ * 垂直滚动，内容超出容器高度时显示垂直滚动条。
+ */
+.scrollable-vertical
+{
+    .scrollable-vertical();
 }
