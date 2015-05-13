@@ -5,11 +5,14 @@
 // * https://github.com/Flagwind/Flagwind.UI/blob/master/LICENSE
 //
 
+
 // ============================= 通用(Normal) ============================ //
+
 
 //
 // #public 清除浮动。
 //
+
 .clear()
 {
     &:before,
@@ -28,6 +31,7 @@
 //
 // #public 内容块居中。
 //
+
 .center-block()
 {
     display: block;
@@ -38,6 +42,7 @@
 //
 // #public 隐藏文本。
 //
+
 .text-hide()
 {
     font: ~"0/0" a;
@@ -50,6 +55,7 @@
 //
 // #public tab 焦点。
 //
+
 .tab-focus()
 {
     outline: thin dotted;
@@ -60,6 +66,7 @@
 //
 // #public 文本截取。
 //
+
 .text-overflow(@display: block)
 {
     display: @display;
@@ -93,7 +100,17 @@
 {
     color: @color;
 
-    .bg-variant(@backcolor);
+    background-color: @backcolor;
+
+    a&
+    {
+        color: @color;
+
+        :hover
+        {
+            background-color: darken(@backcolor, 10%);
+        }
+    }
 }
 
 .scrollable-horizontal(@width: @horizontal-scrollable-width)
@@ -152,11 +169,14 @@
             transition: transform @transition;
 }
 
+
 // ============================= 布局(Layout) ============================ //
+
 
 //
 // #public 响应式显示辅助。
 //
+
 .responsive-visibility()
 {
     display: block !important;
@@ -181,6 +201,7 @@
 //
 // #public 响应式隐藏辅助。
 //
+
 .responsive-invisibility()
 {
     display: none !important;
@@ -189,6 +210,7 @@
 //
 // #private 布局基础。
 //
+
 .layout-base()
 {
     margin-right: auto;
@@ -206,6 +228,7 @@
 //
 // #internal 百分百布局。
 //
+
 .layout-fluid()
 {
     width: 100% !important;
@@ -214,6 +237,7 @@
 //
 // #internal 填充式布局。
 //
+
 .layout-fill()
 {
     position: relative;
@@ -225,6 +249,7 @@
 //
 // #public 生成一个默认(响应式)布局。
 //
+
 .build-layout()
 {
     .build-layout(responsive);
@@ -233,6 +258,7 @@
 //
 // #public 生成一个响应式布局。
 //
+
 .build-layout(@type) when (@type = responsive)
 {
     .layout-base();
@@ -256,6 +282,7 @@
 //
 // #public 生成一个百分百布局。
 //
+
 .build-layout(@type) when (@type = fluid)
 {
     .layout-base();
@@ -268,6 +295,7 @@
 //
 // #param @type [responsive|fluid] 必选项，尺寸。
 //
+
 .build-layout(@type, @method) when (@method = fill)
 {
     .build-layout(@type);
@@ -278,6 +306,7 @@
 //
 // #public 定义布局份数。
 //
+
 .define-layout-flexes()
 {
     .flex(@index)
@@ -313,6 +342,7 @@
 //
 // #param @size [xs|sm|md|lg] 必选项，尺寸。
 //
+
 .build-layout-flex(@size)
 {
     .float-layout-flexes(@size);
@@ -327,6 +357,7 @@
 //
 // #param @flexes [number] 必选项，所占数。
 //
+
 .build-layout-xs-flex(@flexes; @gutter: @layout-gutter-width)
 {
     position: relative;
@@ -357,6 +388,7 @@
 //
 // #param @flexes [number] 必选项，所占数。
 //
+
 .build-layout-sm-flex(@flexes; @gutter: @layout-gutter-width)
 {
     position: relative;
@@ -400,6 +432,7 @@
 //
 // #param @flexes [number] 必选项，所占数。
 //
+
 .build-layout-md-flex(@flexes; @gutter: @layout-gutter-width)
 {
     position: relative;
@@ -443,6 +476,7 @@
 //
 // #param @flexes [number] 必选项，所占数。
 //
+
 .build-layout-lg-flex(@flexes; @gutter: @layout-gutter-width)
 {
     position: relative;
@@ -486,6 +520,7 @@
 //
 // #param @size [xs|sm|md|lg] 必选项，尺寸。
 //
+
 .float-layout-flexes(@size)
 {
     .flex(@index)
@@ -520,6 +555,7 @@
 // #param @index [number] 必选项，索引。
 // #param @size [xs|sm|md|lg] 必选项，尺寸。
 //
+
 .calc-layout-flex(@type, @index, @size) when (@type = width) and (@index > 0)
 {
     .flex-@{size}-@{index}
@@ -535,6 +571,7 @@
 // #param @index [number] 必选项，索引。
 // #param @size [xs|sm|md|lg] 必选项，尺寸。
 //
+
 .calc-layout-flex(@type, @index, @size) when (@type = push) and (@index > 0)
 {
     .flex-@{size}-push-@{index}
@@ -550,6 +587,7 @@
 // #param @index [number] 必选项，索引。
 // #param @size [xs|sm|md|lg] 必选项，尺寸。
 //
+
 .calc-layout-flex(@type, @index, @size) when (@type = push) and (@index = 0)
 {
     .flex-@{size}-push-0
@@ -565,6 +603,7 @@
 // #param @index [number] 必选项，索引。
 // #param @size [xs|sm|md|lg] 必选项，尺寸。
 //
+
 .calc-layout-flex(@type, @index, @size) when (@type = pull) and (@index > 0)
 {
     .flex-@{size}-pull-@{index}
@@ -580,6 +619,7 @@
 // #param @index [number] 必选项，索引。
 // #param @size [xs|sm|md|lg] 必选项，尺寸。
 //
+
 .calc-layout-flex(@type, @index, @size) when (@type = pull) and (@index = 0)
 {
     .flex-@{size}-pull-0
@@ -595,6 +635,7 @@
 // #param @index [number] 必选项，索引。
 // #param @size [xs|sm|md|lg] 必选项，尺寸。
 //
+
 .calc-layout-flex(@type, @index, @size) when (@type = offset)
 {
     .flex-@{size}-offset-@{index}
@@ -610,6 +651,7 @@
 // #param @index [number] 必选项，索引。
 // #param @size [xs|sm|md|lg] 必选项，尺寸。
 //
+
 .loop-layout-flexes(@type, @index, @size) when (@index >= 0)
 {
     .calc-layout-flex(@type, @index, @size);
@@ -617,7 +659,9 @@
     .loop-layout-flexes(@type, (@index - 1), @size);
 }
 
+
 // ============================= 图片(Images) ============================ //
+
 
 .img-responsive(@display: block)
 {
@@ -626,11 +670,14 @@
     height: auto;
 }
 
+
 // ============================= 按钮(Buttons) =========================== //
+
 
 //
 // #public 按钮尺寸。
 //
+
 .button-size(@padding-vertical; @padding-horizontal; @font-size; @line-height; @border-radius)
 {
     padding: @padding-vertical @padding-horizontal;

@@ -551,7 +551,7 @@ a.text-secondary:hover {
   color: #245269;
 }
 /*
-* 文本成功色。
+ * 文本成功色。
  */
 .text-success {
   color: #3c763d;
@@ -600,7 +600,10 @@ a.text-muted:hover {
   color: #ffffff;
   background-color: #337ab7;
 }
-a.bg-primary:hover {
+a.bg-primary {
+  color: #ffffff;
+}
+a.bg-primary :hover {
   background-color: #285f8f;
 }
 /*
@@ -1731,72 +1734,96 @@ blockquote small:before {
   display: none !important;
 }
 /*
- * 元素显示辅助类，当屏幕为超小屏幕(xs)时显示。
+ * 元素显示辅助类，当屏幕为超小屏幕(xs)将显示为块级元素。
  */
 @media (max-width: 767px) {
   .visible-xs-block {
     display: block !important;
   }
 }
+/*
+ * 元素显示辅助类，当屏幕为超小屏幕(xs)将显示为内联元素。
+ */
 @media (max-width: 767px) {
   .visible-xs-inline {
     display: inline !important;
   }
 }
+/*
+ * 元素显示辅助类，当屏幕为超小屏幕(xs)将显示为行内块元素。
+ */
 @media (max-width: 767px) {
   .visible-xs-inline-block {
     display: inline-block !important;
   }
 }
 /*
- * 元素显示辅助类，当屏幕为小屏幕(sm)时显示。
+ * 元素显示辅助类，当屏幕为小屏幕(sm)将显示为块级元素。
  */
 @media (min-width: 768px) and (max-width: 991px) {
   .visible-sm-block {
     display: block !important;
   }
 }
+/*
+ * 元素显示辅助类，当屏幕为小屏幕(sm)将显示为内联元素。
+ */
 @media (min-width: 768px) and (max-width: 991px) {
   .visible-sm-inline {
     display: inline !important;
   }
 }
+/*
+ * 元素显示辅助类，当屏幕为小屏幕(sm)将显示为行内块元素。
+ */
 @media (min-width: 768px) and (max-width: 991px) {
   .visible-sm-inline-block {
     display: inline-block !important;
   }
 }
 /*
- * 元素显示辅助类，当屏幕为中等屏幕(md)时显示。
+ * 元素显示辅助类，当屏幕为中等屏幕(md)将显示为块级元素。
  */
 @media (min-width: 992px) and (max-width: 1199px) {
   .visible-md-block {
     display: block !important;
   }
 }
+/*
+ * 元素显示辅助类，当屏幕为中等屏幕(md)将显示为内联元素。
+ */
 @media (min-width: 992px) and (max-width: 1199px) {
   .visible-md-inline {
     display: inline !important;
   }
 }
+/*
+ * 元素显示辅助类，当屏幕为中等屏幕(md)将显示为行内块元素。
+ */
 @media (min-width: 992px) and (max-width: 1199px) {
   .visible-md-inline-block {
     display: inline-block !important;
   }
 }
 /*
- * 元素显示辅助类，当屏幕为大屏幕(lg)时显示。
+ * 元素显示辅助类，当屏幕为大屏幕(lg)将显示为块级元素。
  */
 @media (min-width: 1200px) {
   .visible-lg-block {
     display: block !important;
   }
 }
+/*
+ * 元素显示辅助类，当屏幕为大屏幕(lg)将显示为内联元素。
+ */
 @media (min-width: 1200px) {
   .visible-lg-inline {
     display: inline !important;
   }
 }
+/*
+ * 元素显示辅助类，当屏幕为大屏幕(lg)将显示为行内块元素。
+ */
 @media (min-width: 1200px) {
   .visible-lg-inline-block {
     display: inline-block !important;
@@ -1879,7 +1906,7 @@ blockquote small:before {
   line-height: 1.42857143;
   background-color: #ffffff;
   border: 1px solid #dddddd;
-  border-radius: 2px;
+  border-radius: 4px;
   -webkit-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
@@ -1889,9 +1916,6 @@ blockquote small:before {
   display: inline-block;
   margin-bottom: 0;
   vertical-align: middle;
-  font-size: 14px;
-  font-weight: normal;
-  line-height: 1.2;
   text-align: center;
   white-space: nowrap;
   background-image: none;
@@ -2028,7 +2052,7 @@ blockquote small:before {
  * 圆角。
  */
 .radius {
-  border-radius: 2px;
+  border-radius: 4px;
 }
 /*
  * 椭圆。
