@@ -5,11 +5,14 @@
 // * https://github.com/Flagwind/Flagwind.UI/blob/master/LICENSE
 //
 
+
 /* ============================== 布局(Layout) ============================ */
+
 
 /*
  * 响应式布局。
  */
+
 .layout
 {
     .build-layout();
@@ -18,6 +21,7 @@
 /*
  * 百分百布局。
  */
+
 .layout-fluid
 {
     .layout-fluid();
@@ -26,6 +30,7 @@
 /*
  * 填充式布局。
  */
+
 .layout-fill
 {
     .layout-fill();
@@ -34,16 +39,19 @@
 /*
  * 定义布局份数。
  */
+
 .define-layout-flexes();
 
 /*
  * 超小屏幕(xs)布局份数。
  */
+
 .build-layout-flex(xs);
 
 /*
  * 小屏幕(sm)布局份数。
  */
+
 @media (min-width: @screen-sm-min)
 {
     .build-layout-flex(sm);
@@ -52,6 +60,7 @@
 /*
  * 中等屏幕(md)布局份数。
  */
+
 @media (min-width: @screen-md-min)
 {
     .build-layout-flex(md);
@@ -60,12 +69,15 @@
 /*
  * 大屏幕(lg)布局份数。
  */
+
 @media (min-width: @screen-lg-min)
 {
     .build-layout-flex(lg);
 }
 
+
 /* ======================= 布局辅助(Layout utilities) ===================== */
+
 
 @-ms-viewport
 {
@@ -89,8 +101,9 @@
 }
 
 /*
- * 元素显示辅助类，当屏幕为超小屏幕(xs)时显示。
+ * 元素显示辅助类，当屏幕为超小屏幕(xs)将显示为块级元素。
  */
+
 .visible-xs-block
 {
     @media (max-width: @screen-xs-max)
@@ -99,6 +112,10 @@
     }
 }
 
+/*
+ * 元素显示辅助类，当屏幕为超小屏幕(xs)将显示为内联元素。
+ */
+
 .visible-xs-inline
 {
     @media (max-width: @screen-xs-max)
@@ -106,6 +123,10 @@
         display: inline !important;
     }
 }
+
+/*
+ * 元素显示辅助类，当屏幕为超小屏幕(xs)将显示为行内块元素。
+ */
 
 .visible-xs-inline-block
 {
@@ -116,8 +137,9 @@
 }
 
 /*
- * 元素显示辅助类，当屏幕为小屏幕(sm)时显示。
+ * 元素显示辅助类，当屏幕为小屏幕(sm)将显示为块级元素。
  */
+
 .visible-sm-block
 {
     @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max)
@@ -126,6 +148,10 @@
     }
 }
 
+/*
+ * 元素显示辅助类，当屏幕为小屏幕(sm)将显示为内联元素。
+ */
+
 .visible-sm-inline
 {
     @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max)
@@ -133,6 +159,10 @@
         display: inline !important;
     }
 }
+
+/*
+ * 元素显示辅助类，当屏幕为小屏幕(sm)将显示为行内块元素。
+ */
 
 .visible-sm-inline-block
 {
@@ -143,8 +173,9 @@
 }
 
 /*
- * 元素显示辅助类，当屏幕为中等屏幕(md)时显示。
+ * 元素显示辅助类，当屏幕为中等屏幕(md)将显示为块级元素。
  */
+
 .visible-md-block
 {
     @media (min-width: @screen-md-min) and (max-width: @screen-md-max)
@@ -153,6 +184,10 @@
     }
 }
 
+/*
+ * 元素显示辅助类，当屏幕为中等屏幕(md)将显示为内联元素。
+ */
+
 .visible-md-inline
 {
     @media (min-width: @screen-md-min) and (max-width: @screen-md-max)
@@ -160,6 +195,10 @@
         display: inline !important;
     }
 }
+
+/*
+ * 元素显示辅助类，当屏幕为中等屏幕(md)将显示为行内块元素。
+ */
 
 .visible-md-inline-block
 {
@@ -170,8 +209,9 @@
 }
 
 /*
- * 元素显示辅助类，当屏幕为大屏幕(lg)时显示。
+ * 元素显示辅助类，当屏幕为大屏幕(lg)将显示为块级元素。
  */
+
 .visible-lg-block
 {
     @media (min-width: @screen-lg-min)
@@ -180,6 +220,10 @@
     }
 }
 
+/*
+ * 元素显示辅助类，当屏幕为大屏幕(lg)将显示为内联元素。
+ */
+
 .visible-lg-inline
 {
     @media (min-width: @screen-lg-min)
@@ -187,6 +231,10 @@
         display: inline !important;
     }
 }
+
+/*
+ * 元素显示辅助类，当屏幕为大屏幕(lg)将显示为行内块元素。
+ */
 
 .visible-lg-inline-block
 {
@@ -199,6 +247,7 @@
 /*
  * 元素隐藏辅助类，当屏幕为超小屏幕(xs)时隐藏。
  */
+
 .hidden-xs
 {
     @media (max-width: @screen-xs-max)
@@ -210,6 +259,7 @@
 /*
  * 元素隐藏辅助类，当屏幕为小屏幕(sm)时隐藏。
  */
+
 .hidden-sm
 {
     @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max)
@@ -221,6 +271,7 @@
 /*
  * 元素隐藏辅助类，当屏幕为中等屏幕(md)时隐藏。
  */
+
 .hidden-md
 {
     @media (min-width: @screen-md-min) and (max-width: @screen-md-max)
@@ -232,6 +283,7 @@
 /*
  * 元素隐藏辅助类，当屏幕为大屏幕(lg)时隐藏。
  */
+
 .hidden-lg
 {
     @media (min-width: @screen-lg-min)
@@ -243,6 +295,7 @@
 /*
  * 仅在使用屏幕阅读器时呈现。
  */
+
 .sr-only
 {
     position: absolute;
@@ -258,6 +311,7 @@
 /*
  * 仅在使用屏幕阅读器并获得焦点时呈现。
  */
+
 .sr-only-focusable
 {
     &:active,

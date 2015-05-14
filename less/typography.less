@@ -8,6 +8,7 @@
 /*
  * 默认边距。
  */
+
 p,
 hr,
 ul,
@@ -23,11 +24,14 @@ figure
     margin-bottom: (@line-height-computed / 2);
 }
 
+
 /*============================== 字体(Font) ============================== */
+
 
 /*
  * 非衬线字体。
  */
+
 .font-sans-serif
 {
     font-family: @font-family-sans-serif;
@@ -36,6 +40,7 @@ figure
 /*
  * 衬线字体。
  */
+
 .font-serif
 {
   font-family: @font-family-serif;
@@ -44,6 +49,7 @@ figure
 /*
  * 楷体。
  */
+
 .font-kai
 {
   font-family: @font-family-kai;
@@ -52,16 +58,20 @@ figure
 /*
  * 等宽字体。
  */
+
 .font-monospace
 {
   font-family: @font-family-monospace;
 }
 
+
 /* ========================== 文本大小(Text size) ========================== */
+
 
 /*
  * 超小尺寸文本。
  */
+
 .text-xs
 {
     font-size: @font-size-xs;
@@ -70,6 +80,7 @@ figure
 /*
  * 小尺寸文本。
  */
+
 .text-sm
 {
     font-size: @font-size-sm;
@@ -78,15 +89,17 @@ figure
 /*
  * 中等(默认)尺寸文本。
  */
+
 .text-md,
 .text-default
 {
-    font-size: @font-size-base;
+    font-size: @font-size-md;
 }
 
 /*
  * 大尺寸文本。
  */
+
 .text-lg
 {
     font-size: @font-size-lg;
@@ -95,6 +108,7 @@ figure
 /*
  * 超大尺寸文本。
  */
+
 .text-xl
 {
     font-size: @font-size-xl;
@@ -103,6 +117,7 @@ figure
 /*
  * 超超大尺寸文本。
  */
+
 .text-xxl
 {
     font-size: @font-size-xxl;
@@ -111,16 +126,20 @@ figure
 /*
  * 最大尺寸文本。
  */
+
 .text-xxxl
 {
     font-size: @font-size-xxxl;
 }
 
+
 /* ========================== 文本对齐(Text align) ========================== */
+
 
 /*
  * 文本左对齐。
  */
+
 .text-left
 {
     text-align: left;
@@ -129,6 +148,7 @@ figure
 /*
  * 文本右对齐。
  */
+
 .text-right
 {
     text-align: right;
@@ -137,6 +157,7 @@ figure
 /*
  * 文本居中对齐。
  */
+
 .text-center
 {
     text-align: center;
@@ -145,6 +166,7 @@ figure
 /*
  * 文本自适应对齐。
  */
+
 .text-justify
 {
     text-align: justify;
@@ -153,6 +175,7 @@ figure
 /*
  * 文本顶部对齐。
  */
+
 .text-top
 {
     vertical-align: top;
@@ -161,6 +184,7 @@ figure
 /*
  * 文本垂直居中对齐。
  */
+
 .text-middle
 {
     vertical-align: middle;
@@ -169,16 +193,20 @@ figure
 /*
  * 文本底部对齐。
  */
+
 .text-bottom
 {
     vertical-align: bottom;
 }
 
+
 /* ========================== 文本颜色(Text color) ========================== */
+
 
 /*
  * 文本主要色。
  */
+
 .text-primary
 {
     .text-emphasis-variant(@color-primary);
@@ -187,14 +215,16 @@ figure
 /*
  * 文本次要色。
  */
+
 .text-secondary
 {
     .text-emphasis-variant(@state-secondary-text);
 }
 
 /*
-* 文本成功色。
+ * 文本成功色。
  */
+
 .text-success
 {
     .text-emphasis-variant(@state-success-text);
@@ -203,6 +233,7 @@ figure
 /*
  * 文本警告色。
  */
+
 .text-warning
 {
     .text-emphasis-variant(@state-warning-text);
@@ -211,6 +242,7 @@ figure
 /*
  * 文本危险色。
  */
+
 .text-danger
 {
     .text-emphasis-variant(@state-danger-text);
@@ -219,6 +251,7 @@ figure
 /*
  * 文本减弱色。
  */
+
 .text-muted
 {
     .text-emphasis-variant(@text-muted-color);
@@ -234,11 +267,14 @@ figure
     }
 }
 
+
 /* =========================== 背景颜色(Backcolor) ========================== */
+
 
 /*
  * 背景主要色。
  */
+
 .bg-primary
 {
     .bg-variant(#fff, @state-primary-bg);
@@ -247,6 +283,7 @@ figure
 /*
  * 背景次要色。
  */
+
 .bg-secondary
 {
     .bg-variant(@state-secondary-bg);
@@ -255,6 +292,7 @@ figure
 /*
  * 背景成功色。
  */
+
 .bg-success
 {
     .bg-variant(@state-success-bg);
@@ -263,6 +301,7 @@ figure
 /*
  * 背景警告色。
  */
+
 .bg-warning
 {
     .bg-variant(@state-warning-bg);
@@ -271,16 +310,20 @@ figure
 /*
  * 背景危险色。
  */
+
 .bg-danger
 {
     .bg-variant(@state-danger-bg);
 }
 
+
 /* =========================== 文字换行(Text wrap) ========================== */
+
 
 /*
  * 禁止换行，不截断超出容器宽度部分。
  */
+
 .text-nowrap
 {
     white-space: nowrap;
@@ -289,6 +332,7 @@ figure
 /*
  * 禁止换行，超出容器部分截断。（以 ... 结束）
  */
+
 .text-truncate
 {
     word-wrap: normal;
@@ -300,6 +344,7 @@ figure
 /*
  * 超出文字容器宽度时强制换行，主要用于英文排版。
  */
+
 .text-break
 {
     word-wrap: break-word;
@@ -309,11 +354,14 @@ figure
     hyphens: auto;
 }
 
+
 /* ========================== 文本辅助(Text utility) ======================== */
+
 
 /*
  * 隐藏文本。
  */
+
 .text-hide
 {
     .text-hide();
@@ -322,6 +370,7 @@ figure
 /*
  * 转换文本为全小写。
  */
+
 .text-lowercase
 {
     text-transform: lowercase;
@@ -330,6 +379,7 @@ figure
 /*
  * 转换文本为全大写。
  */
+
 .text-uppercase
 {
     text-transform: uppercase;
@@ -338,6 +388,7 @@ figure
 /*
  * 转换文本为首字母大写。
  */
+
 .text-capitalize
 {
     text-transform: capitalize;
@@ -346,6 +397,7 @@ figure
 /*
  * 图文混排中左对齐。
  */
+
 .align-left
 {
     margin-right: 10px;
@@ -355,13 +407,16 @@ figure
 /*
  * 图文混排中右对齐。
  */
+
 .align-right
 {
     margin-left: 10px;
     float: right;
 }
 
+
 /* ============================== 标题(Headings) =========================== */
+
 
 h1,
 h2,
@@ -416,11 +471,14 @@ h4 { font-size: @font-size-h4; }
 h5 { font-size: @font-size-h5; }
 h6 { font-size: @font-size-h6; }
 
+
 /* ================================ 杂项(Misc) ============================= */
+
 
 /*
  * 修正文本。
  */
+
 ins
 {
     background: @state-warning-bg;
@@ -430,15 +488,17 @@ ins
 /*
  * 小号文本
  */
+
 small,
 .small
 {
-    font-size: floor((100% * @font-size-sm / @font-size-base));
+    font-size: floor((100% * @font-size-sm / @font-size-md));
 }
 
 /*
  * 高亮文本
  */
+
 mark,
 .mark
 {
@@ -449,6 +509,7 @@ mark,
 /*
  * 缩略语。
  */
+
 abbr[title],
 abbr[data-original-title]，
 dfn[title],
@@ -461,6 +522,7 @@ dfn[data-original-title]
 /*
  * 地址。
  */
+
 address
 {
     margin-bottom: @line-height-computed;
@@ -468,11 +530,14 @@ address
     line-height: @line-height-base;
 }
 
+
 /* ================================ 列表(List) ============================= */
+
 
 /*
  * 无序&有序列表。
  */
+
 ul,
 ol
 {
@@ -486,6 +551,7 @@ ol
 /*
  * 无样式列表。
  */
+
 .list-unstyled
 {
     padding-left: 0;
@@ -495,6 +561,7 @@ ol
 /*
  * 内联列表，将所有元素置于同一行。
  */
+
 .list-inline
 {
     .list-unstyled();
@@ -511,6 +578,7 @@ ol
 /*
  * 描述列表。
  */
+
 dl
 {
     margin-top: 0;
@@ -536,6 +604,7 @@ dd
 /*
  * 水平描述列表。
  */
+
 .dl-horizontal
 {
     dd
@@ -562,7 +631,9 @@ dd
 
 }
 
+
 /* ============================= 引用(Blockquote) ========================== */
+
 
 blockquote
 {
