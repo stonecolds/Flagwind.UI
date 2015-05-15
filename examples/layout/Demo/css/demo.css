@@ -1,0 +1,13 @@
+body {
+	margin: 0;
+}
+.box1, .box2, .box3, .box4, .box5, .box6 {
+    min-height:40px;
+    line-height: 40px;
+}
+.box1 { background-color: #0e90d2; }
+.box2 { background-color: #5eb95e; }
+.box3 { background-color: #f37b1d; }
+.box4 { background-color: #dd514c; }
+.box5 { background-color: #9370DB; }
+.box6 { background-color: #c0c0c0;}

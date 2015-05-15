@@ -1,0 +1,110 @@
+/**
+ * 基本样式
+ */
+html, body {
+	min-height: 100%;
+}
+
+body, ul {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	font-family: "Lucida Grande","Helvetica Neue",Helvetica,"Microsoft YaHei",Arial,sans-serif;
+	color: #333;
+	/*background-color: #f4f7f9;*/
+	font-size: 16px;
+	/*padding-left: 280px;*/
+}
+
+ul {
+	list-style: none;
+}
+
+
+/**
+ * code
+ */
+code {
+	padding: 0 4px;
+	margin-left: 2px;
+	margin-right: 2px;
+	color: #c7254e;
+	background-color: #f9f2f4;
+	border-radius: 4px;
+}
+
+/**
+ * container
+ */
+.container {
+	margin: 10px 10px 10px 270px;
+}
+
+/**
+ * 表格
+ */
+table {
+	margin-bottom: 10px;
+    width: 100%;
+    border: 1px solid #eee;
+}
+
+table th, table td {
+    padding: 4px;
+    height: 40px;
+    text-align: left;
+    border: 1px solid #ccc;
+}
+table tbody tr:nth-child(odd) td,
+table tbody tr:nth-child(odd) th { background-color: #fdfdfd; }
+
+/**
+ * demo
+ */
+.demo {
+	display: inline-block;
+	padding: 10px 15px;
+	margin-bottom: 5px;
+	background-color: #0e90d2;
+	color: #fff;
+	border-radius: 2px;
+}
+
+/**
+ * 颜色
+ */
+.color {
+	padding: 5px;
+}
+
+/*section {
+	border-bottom: 1px solid #aaa;
+}*/
+
+/**
+ * tips
+ */
+.tips {
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #f37b1d;
+    border-color: #e56c0c;
+    color: #fff;
+}
+
+/**
+ * 嵌入页面样式
+ */
+.show-demo iframe {
+	width: 100%;
+	border: 2px solid #e56c0c;
+	padding-top: 10px;
+}
+
+.ztree{
+	height:100%;
+	min-height: 200px;
+	top: 0px;
+}
