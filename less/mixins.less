@@ -28,6 +28,13 @@
     }
 }
 
+.opacity(@opacity)
+{
+    opacity: @opacity;
+    @opacity-ie: (@opacity * 100);
+    filter: ~"alpha(opacity=@{opacity-ie})";
+}
+
 //
 // #public 内容块居中。
 //
@@ -167,6 +174,27 @@
        -moz-transition: -moz-transform @transition;
          -o-transition: -o-transform @transition;
             transition: transform @transition;
+}
+
+.user-select(@select)
+{
+    -webkit-user-select: @select;
+       -moz-user-select: @select;
+        -ms-user-select: @select;
+            user-select: @select;
+}
+
+.box-shadow(@shadow)
+{
+    -webkit-box-shadow: @shadow;
+            box-shadow: @shadow;
+}
+
+.box-sizing(@boxmodel)
+{
+    -webkit-box-sizing: @boxmodel;
+       -moz-box-sizing: @boxmodel;
+            box-sizing: @boxmodel;
 }
 
 
@@ -684,4 +712,52 @@
     font-size: @font-size;
     line-height: @line-height;
     border-radius: @border-radius;
+}
+
+.button-variant(@color; @backcolor; @border)
+{
+    color: @color;
+    background-color: @backcolor;
+    border-color: @border;
+
+    &:hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active,
+    .open > .dropdown-toggle&
+    {
+        color: @color;
+        background-color: darken(@backcolor, 10%);
+        border-color: darken(@border, 12%);
+    }
+
+    &:active,
+    &.active,
+    .open > .dropdown-toggle&
+    {
+        background-image: none;
+    }
+
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] &
+    {
+        &,
+        &:hover,
+        &:focus,
+        &.focus,
+        &:active,
+        &.active
+        {
+            background-color: @backcolor;
+            border-color: @border;
+        }
+    }
+
+    .badge
+    {
+        color: @backcolor;
+        background-color: @color;
+    }
 }

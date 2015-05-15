@@ -93,7 +93,7 @@
 // * 字体集
 //
 
-@font-family-base:                "Lucida Grande", "Helvetica Neue", Helvetica, "Microsoft YaHei", Arial, sans-serif;
+@font-family-base:                "Helvetica Neue", Helvetica, "Microsoft YaHei", Arial, sans-serif;
 @font-family-sans-serif:          "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", sans-serif;
 @font-family-serif:               Georgia, "Times New Roman", Times, SimSun, "FontAwesome", serif;
 @font-family-monospace:           Monaco, Menlo, Consolas, "Courier New", "FontAwesome", monospace;
@@ -115,8 +115,10 @@
 // * 行高
 //
 
-@line-height-base:                1.428571429; // 20/14
-@line-height-computed:            floor((@font-size-md * @line-height-base)); // ~20px
+@line-height-sm:                  1.5;
+@line-height-md:                  1.428571429;
+@line-height-lg:                  1.3333333;
+@line-height-computed:            floor((@font-size-md * @line-height-md)); // ~20px
 
 //
 // * 边框
@@ -133,17 +135,17 @@
 // * 填充值
 //
 
-@padding-xs-vertical:             1px;
-@padding-xs-horizontal:           5px;
+@padding-vertical-xs:             1px;
+@padding-horizontal-xs:           5px;
 
-@padding-sm-vertical:             5px;
-@padding-sm-horizontal:           10px;
+@padding-vertical-sm:             5px;
+@padding-horizontal-sm:           10px;
 
-@padding-md-vertical:             6px;
-@padding-md-horizontal:           12px;
+@padding-vertical-md:             6px;
+@padding-horizontal-md:           12px;
 
-@padding-lg-vertical:             10px;
-@padding-lg-horizontal:           16px;
+@padding-vertical-lg:             10px;
+@padding-horizontal-lg:           16px;
 
 //
 // * 标题定义
@@ -163,7 +165,7 @@
 @font-size-h2:                    @font-size-xxl;       // ~30px
 @font-size-h3:                    @font-size-xl;        // ~24px
 @font-size-h4:                    @font-size-lg;        // ~18px
-@font-size-h5:                    @font-size-md;      // ~14px
+@font-size-h5:                    @font-size-md;        // ~14px
 @font-size-h6:                    @font-size-sm;        // ~12px
 
 //
@@ -177,6 +179,19 @@
 @component-offset-horizontal:     180px;
 @dl-horizontal-offset:            @component-offset-horizontal;
 
+
+// ============================== 图标(Icons) ============================ //
+
+@icon-font-path:                  "../fonts";
+@icon-font-version:               "4.3.0";
+
+@icon-font-size-sm:               150%;
+@icon-font-size-md:               200%;
+@icon-font-size-lg:               250%;
+
+@icon-vertical-align-sm:          -10%;
+@icon-vertical-align-md:          -16%;
+@icon-vertical-align-lg:          -22%;
 
 // ========================= 媒体查询(Media query) ======================= //
 
@@ -210,14 +225,38 @@
 
 // =========================== 组件(Components) ========================== //
 
+@cursor-disabled:                 not-allowed;
 
 //
 // * 按钮
 //
 
-@btn-font-size:                   @font-size-md;
 @btn-font-weight:                 normal;
-@btn-line-height:                 1.2;
+@btn-link-disabled-color:         @color-gray-light;
+
+@btn-default-color:               #333;
+@btn-default-bg:                  #fff;
+@btn-default-border:              #ccc;
+
+@btn-primary-color:               #fff;
+@btn-primary-bg:                  @color-primary;
+@btn-primary-border:              darken(@btn-primary-bg, 5%);
+
+@btn-secondary-color:             #fff;
+@btn-secondary-bg:                @color-secondary;
+@btn-secondary-border:            darken(@btn-secondary-bg, 5%);
+
+@btn-success-color:               #fff;
+@btn-success-bg:                  @color-success;
+@btn-success-border:              darken(@btn-success-bg, 5%);
+
+@btn-warning-color:               #fff;
+@btn-warning-bg:                  @color-warning;
+@btn-warning-border:              darken(@btn-warning-bg, 5%);
+
+@btn-danger-color:                #fff;
+@btn-danger-bg:                   @color-danger;
+@btn-danger-border:               darken(@btn-danger-bg, 5%);
 
 //
 // * 缩略图

@@ -9,12 +9,15 @@
  * 统一盒模型组成模式。
  */
 
-*,
+*
+{
+    .box-sizing(border-box);
+}
+
 *:before,
 *:after
 {
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    .box-sizing(border-box);
 }
 
 /*
@@ -488,7 +491,7 @@ body
     position: relative;
     font-family: @font-family-base;
     font-size: @font-size-md;
-    line-height: @line-height-base;
+    line-height: @line-height-md;
     color: @text-color;
     background-color: @body-color;
 }
@@ -501,7 +504,6 @@ iframe
 /*
  * 开启反锯齿。
  */
-
 body,
 input,
 textarea,
@@ -541,8 +543,8 @@ a
 
 hr
 {
-    margin-top: (@line-height-computed / 2);
-    margin-bottom: (@line-height-computed / 2);
+    margin-top: @line-height-computed;
+    margin-bottom: @line-height-computed;
     border: 0;
     border-top: 1px solid @hr-border-color;
 }
