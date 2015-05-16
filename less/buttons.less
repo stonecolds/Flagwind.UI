@@ -13,14 +13,184 @@
 {
     display: inline-block;
     margin-bottom: 0;
-    vertical-align: middle;
-    //font-size: @btn-font-size;
-    //font-weight: @btn-font-weight;
-    //line-height: @btn-line-height;
+    font-weight: @btn-font-weight;
     text-align: center;
-    white-space: nowrap;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
     background-image: none;
     border: 1px solid transparent;
-    cursor: pointer;
-    //.button-size(@padding-md-vertical; @padding-md-horizontal; @font-size-base; @line-height-base; @border-radius-base);
+    white-space: nowrap;
+    -webkit-appearance: none;
+    .button-size(@padding-vertical-md; @padding-horizontal-md; @font-size-md; @line-height-md; @border-radius-md);
+    .user-select(none);
+    transition: background-color 300ms ease-out, border-color 300ms ease-out;
+
+    &,
+    &:active,
+    &.active
+    {
+        &:focus,
+        &.focus
+        {
+            .tab-focus();
+        }
+    }
+
+    &:hover,
+    &:focus,
+    &.focus
+    {
+        color: @btn-default-color;
+        text-decoration: none;
+    }
+
+    &:active,
+    &.active
+    {
+        outline: 0;
+        background-image: none;
+        .box-shadow(inset 0 3px 5px rgba(0,0,0,.125));
+    }
+
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] &
+    {
+        cursor: @cursor-disabled;
+        border-color: transparent;
+        pointer-events: none;
+        .opacity(.65);
+        .box-shadow(none);
+    }
+}
+
+.btn-link
+{
+    color: @link-color;
+    font-weight: normal;
+    border-radius: 0;
+
+    &,
+    &:active,
+    &.active,
+    &[disabled],
+    fieldset[disabled] &
+    {
+        background-color: transparent;
+        .box-shadow(none);
+    }
+
+    &,
+    &:hover,
+    &:focus,
+    &:active
+    {
+        border-color: transparent;
+    }
+
+    &:hover,
+    &:focus
+    {
+        color: @link-hover-color;
+        text-decoration: @link-hover-decoration;
+        background-color: transparent;
+    }
+
+    &[disabled],
+    fieldset[disabled] &
+    {
+        &:hover,
+        &:focus
+        {
+            color: @btn-link-disabled-color;
+            text-decoration: none;
+        }
+    }
+}
+
+/*
+ * 默认按钮。
+ */
+.btn-default
+{
+    .button-variant(@btn-default-color; @btn-default-bg; @btn-default-border);
+}
+
+/*
+ * 主要色按钮。
+ */
+.btn-primary
+{
+    .button-variant(@btn-primary-color; @btn-primary-bg; @btn-primary-border);
+}
+
+/*
+ * 次要色按钮。
+ */
+.btn-secondary
+{
+    .button-variant(@btn-secondary-color; @btn-secondary-bg; @btn-secondary-border);
+}
+
+/*
+ * 成功色按钮。
+ */
+.btn-success
+{
+    .button-variant(@btn-success-color; @btn-success-bg; @btn-success-border);
+}
+
+/*
+ * 警告色按钮。
+ */
+.btn-warning
+{
+    .button-variant(@btn-warning-color; @btn-warning-bg; @btn-warning-border);
+}
+
+/*
+ * 危险色按钮。
+ */
+.btn-danger
+{
+    .button-variant(@btn-danger-color; @btn-danger-bg; @btn-danger-border);
+}
+
+.btn-xs
+{
+    .button-size(@padding-vertical-xs; @padding-horizontal-xs; @font-size-sm; @line-height-sm; @border-radius-sm);
+}
+
+.btn-sm
+{
+    .button-size(@padding-vertical-sm; @padding-horizontal-sm; @font-size-sm; @line-height-sm; @border-radius-sm);
+}
+
+.btn-lg
+{
+    .button-size(@padding-vertical-lg; @padding-horizontal-lg; @font-size-lg; @line-height-lg; @border-radius-lg);
+}
+
+.btn-block
+{
+    display: block;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.btn-block + .btn-block
+{
+    margin-top: 5px;
+}
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"]
+{
+    &.btn-block
+    {
+        width: 100%;
+    }
 }
