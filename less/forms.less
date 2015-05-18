@@ -1,0 +1,546 @@
+//
+// * Flagwind.UI v1.0.0
+// * Copyright 2014 Flagwind Inc. All rights reserved.
+// * Licensed under the MIT License.
+// * https://github.com/Flagwind/Flagwind.UI/blob/master/LICENSE
+//
+
+
+/* =============================== 表单(Forms) ============================ */
+
+
+fieldset
+{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    min-width: 0;
+}
+
+legend
+{
+    display: block;
+    width: 100%;
+    margin-bottom: @line-height-computed;
+    padding-bottom: 5px;
+    font-size: (@font-size-md * 1.25);
+    line-height: inherit;
+    color: @legend-color;
+    border: 0;
+    border-bottom: 1px solid @legend-border-color;
+}
+
+label
+{
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="search"]
+{
+    .box-sizing(border-box);
+    -webkit-appearance: none;
+}
+
+input[type="radio"],
+input[type="checkbox"]
+{
+    margin: 4px 0 0;
+    margin-top: 1px \9;
+    line-height: normal;
+}
+
+input[type="file"]
+{
+    display: block;
+}
+
+input[type="range"]
+{
+    display: block;
+    width: 100%;
+}
+
+select[multiple],
+select[size]
+{
+    height: auto;
+}
+
+select optgroup
+{
+    font-size: inherit;
+    font-style: inherit;
+    font-family: inherit;
+}
+
+input[type="file"]:focus,
+input[type="radio"]:focus,
+input[type="checkbox"]:focus
+{
+    .tab-focus();
+}
+
+input[type="number"]
+{
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button
+    {
+        height: auto;
+    }
+}
+
+output
+{
+    display: block;
+    padding-top: (@padding-vertical-md + 1);
+    font-size: @font-size-md;
+    line-height: @line-height-md;
+    color: @input-color;
+    vertical-align: middle;
+}
+
+.form-control
+{
+    display: block;
+    width: 100%;
+    height: @input-height-md;
+    padding: @padding-vertical-md @padding-horizontal-md;
+    font-size: @font-size-md;
+    line-height: @line-height-md;
+    color: @input-color;
+    background-color: @input-bg;
+    background-image: none;
+    border: 1px solid @input-border;
+    border-radius: @input-border-radius-md;
+    -webkit-appearance: none;
+    .box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
+    .transition(~"border-color .15s ease-in-out, box-shadow .15s ease-in-out");
+    .form-control-focus();
+    .placeholder();
+
+    &[disabled],
+    &[readonly],
+    fieldset[disabled] &
+    {
+        background-color: @input-bg-disabled;
+        opacity: 1;
+    }
+
+    &[disabled],
+    fieldset[disabled] &
+    {
+        cursor: @cursor-disabled;
+    }
+
+    textarea &
+    {
+        height: auto;
+    }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0)
+{
+    input[type="date"],
+    input[type="time"],
+    input[type="datetime-local"],
+    input[type="month"]
+    {
+        line-height: @input-height-md;
+
+        &.input-sm,
+        .input-group-sm &
+        {
+            line-height: @input-height-sm;
+        }
+
+        &.input-lg,
+        .input-group-lg &
+        {
+            line-height: @input-height-lg;
+        }
+    }
+}
+
+.form-group
+{
+    margin-bottom: @form-group-margin-bottom;
+}
+
+.form-file
+{
+    position: relative;
+    overflow: hidden;
+
+    input[type="file"]
+    {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 1;
+        width: 100%;
+        opacity: 0;
+        cursor: pointer;
+        font-size: 50rem;
+    }
+}
+
+.radio,
+.checkbox
+{
+    position: relative;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    label
+    {
+        min-height: @line-height-computed;
+        padding-left: 20px;
+        margin-bottom: 0;
+        font-weight: normal;
+        cursor: pointer;
+    }
+}
+
+.radio input[type="radio"],
+.radio-inline input[type="radio"],
+.checkbox input[type="checkbox"],
+.checkbox-inline input[type="checkbox"]
+{
+    position: absolute;
+    margin-left: -20px;
+    margin-top: 4px \9;
+}
+
+.radio + .radio,
+.checkbox + .checkbox
+{
+    margin-top: -5px;
+}
+
+.radio-inline,
+.checkbox-inline
+{
+    position: relative;
+    display: inline-block;
+    padding-left: 20px;
+    margin-bottom: 0;
+    vertical-align: middle;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.radio-inline + .radio-inline,
+.checkbox-inline + .checkbox-inline
+{
+    margin-top: 0;
+    margin-left: 10px;
+}
+
+input[type="radio"],
+input[type="checkbox"]
+{
+    &[disabled],
+    &.disabled,
+    fieldset[disabled] &
+    {
+        cursor: @cursor-disabled;
+    }
+}
+
+.radio-inline,
+.checkbox-inline
+{
+    &.disabled,
+    fieldset[disabled] &
+    {
+        cursor: @cursor-disabled;
+    }
+}
+
+.radio,
+.checkbox
+{
+    &.disabled,
+    fieldset[disabled] &
+    {
+        label
+        {
+            cursor: @cursor-disabled;
+        }
+    }
+}
+
+.form-control-static
+{
+    padding-top: (@padding-vertical-md + 1);
+    padding-bottom: (@padding-vertical-md + 1);
+    margin-bottom: 0;
+    min-height: (@line-height-computed + @font-size-md);
+
+    &.input-lg,
+    &.input-sm
+    {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.input-sm
+{
+    .input-size(@input-height-sm; @padding-vertical-sm; @padding-horizontal-sm; @font-size-sm; @line-height-sm; @input-border-radius-sm);
+}
+
+.form-group-sm
+{
+    .form-control
+    {
+        .input-size(@input-height-sm; @padding-vertical-sm; @padding-horizontal-sm; @font-size-sm; @line-height-sm; @input-border-radius-sm);
+    }
+
+    .form-control-static
+    {
+        height: @input-height-sm;
+        padding: @padding-vertical-sm @padding-horizontal-sm;
+        font-size: @font-size-sm;
+        line-height: @line-height-sm;
+        min-height: (@line-height-computed + @font-size-sm);
+    }
+}
+
+.input-lg
+{
+    .input-size(@input-height-lg; @padding-vertical-lg; @padding-horizontal-lg; @font-size-lg; @line-height-lg; @input-border-radius-lg);
+}
+
+.form-group-lg
+{
+    .form-control
+    {
+        .input-size(@input-height-lg; @padding-vertical-lg; @padding-horizontal-lg; @font-size-lg; @line-height-lg; @input-border-radius-lg);
+    }
+
+    .form-control-static
+    {
+        height: @input-height-lg;
+        padding: @padding-vertical-lg @padding-horizontal-lg;
+        font-size: @font-size-lg;
+        line-height: @line-height-lg;
+        min-height: (@line-height-computed + @font-size-lg);
+    }
+}
+
+.has-feedback
+{
+    position: relative;
+
+    .form-control
+    {
+        padding-right: (@input-height-md * 1.25);
+    }
+}
+
+.form-control-feedback
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    display: block;
+    width: @input-height-md;
+    height: @input-height-md;
+    line-height: @input-height-md;
+    text-align: center;
+    pointer-events: none;
+}
+
+.input-lg + .form-control-feedback
+{
+    width: @input-height-lg;
+    height: @input-height-lg;
+    line-height: @input-height-lg;
+}
+
+.input-sm + .form-control-feedback
+{
+    width: @input-height-sm;
+    height: @input-height-sm;
+    line-height: @input-height-sm;
+}
+
+.has-success
+{
+    .form-control-validation(@state-success-text; @state-success-text; @state-success-bg);
+}
+
+.has-warning
+{
+    .form-control-validation(@state-warning-text; @state-warning-text; @state-warning-bg);
+}
+
+.has-error
+{
+    .form-control-validation(@state-danger-text; @state-danger-text; @state-danger-bg);
+}
+
+.has-feedback label
+{
+
+    & ~ .form-control-feedback
+    {
+        top: (@line-height-computed + 5);
+    }
+
+    &.sr-only ~ .form-control-feedback
+    {
+        top: 0;
+    }
+}
+
+.form-help
+{
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    color: lighten(@text-color, 25%);
+}
+
+.form-inline
+{
+    @media (min-width: @screen-sm-min)
+    {
+        .form-group
+        {
+            display: inline-block;
+            margin-bottom: 0;
+            vertical-align: middle;
+        }
+
+        .form-control
+        {
+            display: inline-block;
+            width: auto;
+            vertical-align: middle;
+        }
+
+        .form-control-static
+        {
+            display: inline-block;
+        }
+
+        .input-group
+        {
+            display: inline-table;
+            vertical-align: middle;
+
+            .input-group-addon,
+            .input-group-btn,
+            .form-control
+            {
+                width: auto;
+            }
+        }
+
+        .input-group > .form-control
+        {
+            width: 100%;
+        }
+
+        .control-label
+        {
+            margin-bottom: 0;
+            vertical-align: middle;
+        }
+
+        .radio,
+        .checkbox
+        {
+            display: inline-block;
+            margin-top: 0;
+            margin-bottom: 0;
+            vertical-align: middle;
+
+            label
+            {
+                padding-left: 0;
+            }
+        }
+
+        .radio input[type="radio"],
+        .checkbox input[type="checkbox"]
+        {
+            position: relative;
+            margin-left: 0;
+        }
+
+        .has-feedback .form-control-feedback
+        {
+          top: 0;
+        }
+    }
+}
+
+
+.form-horizontal
+{
+    .radio,
+    .checkbox,
+    .radio-inline,
+    .checkbox-inline
+    {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-top: (@padding-vertical-md + 1);
+    }
+
+    .radio,
+    .checkbox
+    {
+        min-height: (@line-height-computed + (@padding-vertical-md + 1));
+    }
+
+    .form-group
+    {
+        .build-layout();
+    }
+
+    @media (min-width: @screen-sm-min)
+    {
+        .control-label
+        {
+            text-align: right;
+            margin-bottom: 0;
+            padding-top: (@padding-vertical-md + 1)
+        }
+    }
+
+    .has-feedback .form-control-feedback
+    {
+        right: (@layout-gutter-width / 2);
+    }
+
+    .form-group-sm
+    {
+        @media (min-width: @screen-sm-min)
+        {
+            .control-label
+            {
+                padding-top: (@padding-vertical-sm + 1);
+            }
+        }
+    }
+
+    .form-group-lg
+    {
+        @media (min-width: @screen-sm-min)
+        {
+            .control-label
+            {
+                padding-top: ((@padding-vertical-lg * @line-height-lg) + 1);
+            }
+        }
+    }
+}
