@@ -1,0 +1,218 @@
+//
+// * Flagwind.UI v1.0.0
+// * Copyright 2014 Flagwind Inc. All rights reserved.
+// * Licensed under the MIT License.
+// * https://github.com/Flagwind/Flagwind.UI/blob/master/LICENSE
+//
+
+
+/* ============================== 表格(Tables) =========================== */
+
+table {
+    max-width: 100%;
+    background-color: @table-bg;
+}
+
+caption {
+    padding-top: @table-cell-padding;
+    padding-bottom: @table-cell-padding;
+    color: @text-color;
+    text-align: left;
+}
+
+th {
+    text-align: left;
+}
+
+/**
+ * 基本样式
+ */
+
+.table {
+    width: 100%;
+    margin-bottom: @line-height-computed;
+
+    > thead,
+    > tbody,
+    > tfoot {
+        > tr {
+            > th,
+            > td {
+                padding: @table-cell-padding;
+                line-height: @line-height-md;
+                vertical-align: top;
+                border-top: 1px solid @table-border-color;
+            }
+        }
+    }
+
+    > thead > tr > th {
+        vertical-align: bottom;
+        border-bottom: 2px solid @table-border-color;
+    }
+
+    > caption + thead,
+    > colgroup + thead,
+    > thead:first-child {
+        > tr:first-child {
+            > th,
+            > td {
+                border-top: 0;
+            }
+        }
+    }
+
+    > tbody + tbody {
+        border-top: 2px solid @table-border-color;
+    }
+}
+
+/**
+ * 条纹状表格
+ */
+
+.table-striped {
+    > tbody > tr:nth-of-type(odd) {
+        background-color: @table-bg-accent;
+    }
+}
+
+/**
+ * 紧凑型表格
+ */
+
+.table-condensed {
+    > thead,
+    > tbody,
+    > tfoot {
+        > tr {
+            > th,
+            > td {
+                padding: @table-condensed-cell-padding;
+            }
+        }
+    }
+}
+
+/**
+ * 带基本边框的表格
+ */
+
+.table-bordered {
+    border: 1px solid @table-border-color;
+    > thead,
+    > tbody,
+    > tfoot {
+        > tr {
+            > th,
+            > td {
+                border: 1px solid @table-border-color;
+            }
+        }
+    }
+
+    > thead > tr {
+        > th,
+        > td {
+            border-bottom-width: 2px;
+        }
+    }
+}
+
+/**
+ * 带圆角边框的表格
+ */
+.table-bordered-radius {
+    border-collapse: separate;
+    border: 1px solid @table-border-color;
+    border-radius: @table-bordered-radius;
+    > thead,
+    > tbody {
+        > tr {
+            > th,
+            > td {
+                border-left: 1px solid @table-border-color;
+            }
+        }
+    }
+
+    > thead {
+        > tr {
+            > th,
+            > td {
+                border-bottom-width: 1px;
+            }
+        }
+
+        > tr:first-child {
+            > th:first-child,
+            > td:first-child {
+                border-top-left-radius: @table-bordered-radius;
+                border-left: none;
+            }
+
+            > th:last-child,
+            > td:last-child {
+                border-top-right-radius: @table-bordered-radius;
+                border-right: none;
+            }
+        }
+    }
+
+    > tbody {
+        > tr {
+            > th:first-child,
+            > td:first-child {
+                border-left: none;
+            }
+
+            > th:last-child,
+            > td:last-child {
+                border-right: none;
+            }
+        }
+
+        > tr:last-child {
+            > th,
+            > td {
+                border-bottom: none;
+            }
+
+            > th:first-child,
+            > td:first-child {
+                border-bottom-left-radius: @table-bordered-radius;
+            }
+
+            > th:last-child,
+            > td:last-child {
+                border-bottom-right-radius: @table-bordered-radius;
+            }
+        }
+    }
+}
+
+/**
+ * 鼠标悬浮效果
+ */
+
+.table-hover {
+    > tbody > tr:hover {
+        background-color: @table-bg-hover;
+    }
+}
+
+table col[class*="col-"] {
+    position: static;
+    display: table-column;
+}
+
+table {
+    th,
+    td {
+        &[class*="col-"] {
+            position: static;
+            float: none;
+            display: table-cell;
+       }
+    }
+}
