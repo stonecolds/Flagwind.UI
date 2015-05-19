@@ -1,0 +1,162 @@
+//
+// * Flagwind.UI v1.0.0
+// * Copyright 2014 Flagwind Inc. All rights reserved.
+// * Licensed under the MIT License.
+// * https://github.com/Flagwind/Flagwind.UI/blob/master/LICENSE
+//
+
+
+/* ============================== 分页(Pagination) =========================== */
+
+
+/*
+ * 默认分页
+ */
+
+.pagination
+{
+    padding-left: 0;
+    margin: @line-height-computed 0;
+    list-style: none;
+    text-align: left;
+
+    &:extend(.clear all);
+
+    > li
+    {
+        display: inline-block;
+
+        > a,
+        > span
+        {
+            position: relative;
+            display: block;
+            padding: @padding-vertical-md @padding-horizontal-md;
+            line-height: @line-height-md;
+            text-decoration: none;
+            color: @pagination-color;
+            background-color: @pagination-bg;
+            border: 1px solid @pagination-border;
+            margin-bottom: 5px;
+            transition: background-color 300ms ease-out, border-color 300ms ease-out;
+        }
+
+        > a,
+        > span
+        {
+            &:hover,
+            &:focus
+            {
+                background-color: @pagination-hover-bg;
+            }
+        }
+    }
+}
+
+/*
+ * 紧凑型
+ */
+
+.pagination-condensed
+{
+    > li
+    {
+        display: inline-block;
+        float: left;
+        margin-left: -1px;
+
+        &:first-child
+        {
+            > a,
+            > span
+            {
+                margin-left: 0;
+                .border-left-radius(@border-radius-md);
+            }
+        }
+
+        &:last-child
+        {
+            > a,
+            > span
+            {
+                .border-right-radius(@border-radius-md);
+            }
+        }
+    }
+}
+
+/*
+ * 圆角分页
+ */
+
+.pagination-radius
+{
+    > li
+    {
+        > a,
+        > span
+        {
+            border-radius: @border-radius-md;
+        }
+    }
+}
+
+/*
+ * 居中对齐的分页
+ */
+
+.pagination-centered
+{
+    text-align: center;
+}
+
+/*
+ * 右对齐的分页
+ */
+
+.pagination-right
+{
+    text-align: right;
+}
+
+/*
+ * 小尺寸分页
+ */
+
+.pagination-sm
+{
+    .pagination-size(@padding-vertical-sm, @padding-horizontal-sm, @font-size-sm);
+}
+
+/*
+ * 大尺寸分页
+ */
+
+.pagination-lg
+{
+    .pagination-size(@padding-vertical-lg, @padding-horizontal-lg, @font-size-lg);
+}
+
+/*
+ * 左右分布
+ */
+
+.pagination-prev
+{
+    float: left;
+}
+
+.pagination-next
+{
+    float: right;
+}
+
+.pagination-bordered-radius
+{
+    > a,
+    > span
+    {
+        border-radius: @pagination-border-radius;
+    }
+}

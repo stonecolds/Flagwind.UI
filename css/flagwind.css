@@ -4166,19 +4166,19 @@ textarea .form-control {
   width: 100%;
   opacity: 0;
   cursor: pointer;
-  font-size: 500px;
+  font-size: 50rem;
 }
 .radio,
 .checkbox {
   position: relative;
   display: block;
-  min-height: 20px;
   margin-top: 10px;
   margin-bottom: 10px;
-  padding-left: 20px;
 }
 .radio label,
 .checkbox label {
+  min-height: 20px;
+  padding-left: 20px;
   margin-bottom: 0;
   font-weight: normal;
   cursor: pointer;
@@ -4562,14 +4562,17 @@ select[multiple].form-group-lg .form-control {
 .layout:before,
 .layout:after,
 .form-horizontal .form-group:before,
-.form-horizontal .form-group:after {
+.form-horizontal .form-group:after,
+.pagination:before,
+.pagination:after {
   display: table;
   content: " ";
 }
 .clear:after,
 .dl-horizontal dd:after,
 .layout:after,
-.form-horizontal .form-group:after {
+.form-horizontal .form-group:after,
+.pagination:after {
   clear: both;
 }
 /*
@@ -4716,4 +4719,248 @@ select[multiple].form-group-lg .form-control {
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
   resize: vertical;
+}
+/* ============================== 表格(Tables) =========================== */
+table {
+  max-width: 100%;
+  background-color: transparent;
+}
+caption {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  color: #333333;
+  text-align: left;
+}
+th {
+  text-align: left;
+}
+/*
+ * 基本样式
+ */
+.table {
+  width: 100%;
+  margin-bottom: 20px;
+}
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+  padding: 8px;
+  line-height: 1.42857143;
+  vertical-align: top;
+  border-top: 1px solid #dddddd;
+}
+.table > thead > tr > th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #dddddd;
+}
+.table > caption + thead > tr:first-child > th,
+.table > colgroup + thead > tr:first-child > th,
+.table > thead:first-child > tr:first-child > th,
+.table > caption + thead > tr:first-child > td,
+.table > colgroup + thead > tr:first-child > td,
+.table > thead:first-child > tr:first-child > td {
+  border-top: 0;
+}
+.table > tbody + tbody {
+  border-top: 2px solid #dddddd;
+}
+/*
+ * 条纹状表格
+ */
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: #f9f9f9;
+}
+/*
+ * 紧凑型表格
+ */
+.table-condensed > thead > tr > th,
+.table-condensed > tbody > tr > th,
+.table-condensed > tfoot > tr > th,
+.table-condensed > thead > tr > td,
+.table-condensed > tbody > tr > td,
+.table-condensed > tfoot > tr > td {
+  padding: 5px;
+}
+/*
+ * 带基本边框的表格
+ */
+.table-bordered {
+  border: 1px solid #dddddd;
+}
+.table-bordered > thead > tr > th,
+.table-bordered > tbody > tr > th,
+.table-bordered > tfoot > tr > th,
+.table-bordered > thead > tr > td,
+.table-bordered > tbody > tr > td,
+.table-bordered > tfoot > tr > td {
+  border: 1px solid #dddddd;
+}
+.table-bordered > thead > tr > th,
+.table-bordered > thead > tr > td {
+  border-bottom-width: 2px;
+}
+/*
+ * 带圆角边框的表格
+ */
+.table-bordered-radius {
+  border-collapse: separate;
+  border: 1px solid #dddddd;
+  border-radius: 2px;
+}
+.table-bordered-radius > thead > tr > th,
+.table-bordered-radius > tbody > tr > th,
+.table-bordered-radius > thead > tr > td,
+.table-bordered-radius > tbody > tr > td {
+  border-left: 1px solid #dddddd;
+}
+.table-bordered-radius > thead > tr > th,
+.table-bordered-radius > thead > tr > td {
+  border-bottom-width: 1px;
+}
+.table-bordered-radius > thead > tr:first-child > th:first-child,
+.table-bordered-radius > thead > tr:first-child > td:first-child {
+  border-top-left-radius: 2px;
+  border-left: none;
+}
+.table-bordered-radius > thead > tr:first-child > th:last-child,
+.table-bordered-radius > thead > tr:first-child > td:last-child {
+  border-top-right-radius: 2px;
+  border-right: none;
+}
+.table-bordered-radius > tbody > tr > th:first-child,
+.table-bordered-radius > tbody > tr > td:first-child {
+  border-left: none;
+}
+.table-bordered-radius > tbody > tr > th:last-child,
+.table-bordered-radius > tbody > tr > td:last-child {
+  border-right: none;
+}
+.table-bordered-radius > tbody > tr:last-child > th,
+.table-bordered-radius > tbody > tr:last-child > td {
+  border-bottom: none;
+}
+.table-bordered-radius > tbody > tr:last-child > th:first-child,
+.table-bordered-radius > tbody > tr:last-child > td:first-child {
+  border-bottom-left-radius: 2px;
+}
+.table-bordered-radius > tbody > tr:last-child > th:last-child,
+.table-bordered-radius > tbody > tr:last-child > td:last-child {
+  border-bottom-right-radius: 2px;
+}
+/*
+ * 鼠标悬浮效果
+ */
+.table-hover > tbody > tr:hover {
+  background-color: #f5f5f5;
+}
+table col[class*="col-"] {
+  position: static;
+  display: table-column;
+}
+table th[class*="col-"],
+table td[class*="col-"] {
+  position: static;
+  float: none;
+  display: table-cell;
+}
+/* ============================== 分页(Pagination) =========================== */
+/*
+ * 默认分页
+ */
+.pagination {
+  padding-left: 0;
+  margin: 20px 0;
+  list-style: none;
+  text-align: left;
+}
+.pagination > li {
+  display: inline-block;
+}
+.pagination > li > a,
+.pagination > li > span {
+  position: relative;
+  display: block;
+  padding: 6px 12px;
+  line-height: 1.42857143;
+  text-decoration: none;
+  color: #337ab7;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  margin-bottom: 5px;
+}
+.pagination > li > a:hover,
+.pagination > li > span:hover,
+.pagination > li > a:focus,
+.pagination > li > span:focus {
+  background-color: #eeeeee;
+}
+/*
+ * 紧凑型
+ */
+.pagination-condensed > li {
+  display: inline-block;
+  float: left;
+  margin-left: -1px;
+}
+.pagination-condensed > li:first-child > a,
+.pagination-condensed > li:first-child > span {
+  margin-left: 0;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+}
+.pagination-condensed > li:last-child > a,
+.pagination-condensed > li:last-child > span {
+  border-bottom-right-radius: 4px;
+  border-top-right-radius: 4px;
+}
+/*
+ * 圆角分页
+ */
+.pagination-radius > li > a,
+.pagination-radius > li > span {
+  border-radius: 4px;
+}
+/*
+ * 居中对齐的分页
+ */
+.pagination-centered {
+  text-align: center;
+}
+/*
+ * 右对齐的分页
+ */
+.pagination-right {
+  text-align: right;
+}
+/*
+ * 小尺寸分页
+ */
+.pagination-sm > li > a,
+.pagination-sm > li > span {
+  padding: 5px 10px;
+  font-size: 12px;
+}
+/*
+ * 大尺寸分页
+ */
+.pagination-lg > li > a,
+.pagination-lg > li > span {
+  padding: 10px 16px;
+  font-size: 18px;
+}
+/*
+ * 左右分布
+ */
+.pagination-prev {
+  float: left;
+}
+.pagination-next {
+  float: right;
+}
+.pagination-bordered-radius > a,
+.pagination-bordered-radius > span {
+  border-radius: 15px;
 }

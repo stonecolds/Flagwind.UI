@@ -197,6 +197,34 @@
             box-sizing: @boxmodel;
 }
 
+//
+// #public 圆角边框。
+//
+
+.border-top-radius(@radius)
+{
+    border-top-right-radius: @radius;
+    border-top-left-radius: @radius;
+}
+
+.border-right-radius(@radius)
+{
+    border-bottom-right-radius: @radius;
+    border-top-right-radius: @radius;
+}
+
+.border-bottom-radius(@radius)
+{
+    border-bottom-right-radius: @radius;
+    border-bottom-left-radius: @radius;
+}
+
+.border-left-radius(@radius)
+{
+    border-bottom-left-radius: @radius;
+    border-top-left-radius: @radius;
+}
+
 
 // ============================= 布局(Layout) ============================ //
 
@@ -860,3 +888,23 @@
     }
 }
 
+
+// ============================= 分页(Pagination) =========================== //
+
+
+//
+// #public 分页尺寸。
+//
+
+.pagination-size(@padding-vertical, @padding-horizontal, @font-size)
+{
+    > li
+    {
+        > a,
+        > span
+        {
+            padding: @padding-vertical @padding-horizontal;
+            font-size: @font-size;
+        }
+    }
+}

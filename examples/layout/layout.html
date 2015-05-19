@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8" />
+	<meta name="renderer" content="webkit" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<title>Flagwind.UI 参考文档</title>
+
+	<!-- 核心 CSS 文件 -->
+	<link rel="stylesheet" href="css/flagwind.min.css" />
+	<link rel="stylesheet" href="css/layout.min.css" />
+
+	<!-- 代码高亮css文件 -->
+	<link rel="stylesheet" href="css/tomorrow-night.min.css" />
+	<link rel="stylesheet" href="css/zTreeStyle.min.css" />
+</head>
+
+<body>
+
+	<!-- 侧边栏 -->
+	<aside class="clear">
+		<ul id="tree" class="ztree"></ul>
+	</aside>
+
+	<!-- 文档内容 -->
+	<div class="container">
+	<section>
+		<h1>全局CSS样式</h1>
+		<!-- ***************************** 简介 ************************************** -->
+		<section>
+			<h2>简介</h2>
+			<p>Flagwind.UI使用了12列的响应式栅格系统。使用时需要在外围容器上加上<code>.layout</code>，在列上添加<code>.flex-[xs|sm|md|lg]-[1-12]</code>，然后根据不同的屏幕需求设置不同的宽度。</p>
+
+			<p>Flagwind.UI 以<strong>移动优先</strong>的理念开发， 如果不设置大屏的样式，应用到小屏幕的样式会继承到更大的屏幕上。</p>
+
+			<p class="tips">注意：代码中的类<code>.box1</code><code>.box2</code><code>.box2</code><code>.box4</code><code>.box5</code><code>.box6</code>是为了方便查看效果加的背景色，实际中没有。</p>
+		</section>
+
+		<!-- ***************************** 基本样式 ************************************** -->
+		<section>
+			<h2>基本样式</h2>
+
+			<!-- 文字排版 -->
+			<h3>文字排版</h3>
+
+			<!-- 标题 -->
+			<h4>标题</h4>
+			<p>HTML 中的所有标题标签，<code>&lt;h1&gt;</code>到<code>&lt;h6&gt;</code>均可使用。</p>
+			<!-- 展现 -->
+			<div class="show-demo">
+				<iframe onload="Javascript:SetCwinHeight(this, 50)" frameborder="0" src="Demo/TypographyDemo/demo1.html"></iframe>
+			</div>
+			<!-- demo -->
+			<a class="demo" href="Demo/TypographyDemo/demo1.html" target="_blank">Demo</a>
+			<!-- 代码 -->
+<pre><code class="language-markup">&lt;h1&gt;h1 一级标题&lt;/h1&gt;
+&lt;h2&gt;h2 二级标题&lt;/h2&gt;
+&lt;h3&gt;h3 三级标题&lt;/h3&gt;
+&lt;h4&gt;h4 四级标题&lt;/h4&gt;
+&lt;h5&gt;h5 五级标题&lt;/h5&gt;
+&lt;h6&gt;h6 六级标题&lt;/h6&gt;</code></pre>
+			<p>在标题内还可以包含<code>&lt;small&gt;</code>标签或赋予<code>.small</code>类的元素，用来标记副标题。</p>
+			<!-- 代码 -->
+<pre><code class="language-markup">&lt;h1&gt;h1 一级标题 &lt;small&gt;副标题&lt;/small&gt;&lt;/h1&gt;
+&lt;h2&gt;h2 二级标题 &lt;small&gt;副标题&lt;/small&gt;&lt;/h2&gt;
+&lt;h3&gt;h3 三级标题 &lt;small&gt;副标题&lt;/small&gt;&lt;/h3&gt;
+&lt;h4&gt;h4 四级标题 &lt;small&gt;副标题&lt;/small&gt;&lt;/h4&gt;
+&lt;h5&gt;h5 五级标题 &lt;small&gt;副标题&lt;/small&gt;&lt;/h5&gt;
+&lt;h6&gt;h6 六级标题 &lt;small&gt;副标题&lt;/small&gt;&lt;/h6&gt;</code></pre>
+
+			<h4>内联文本</h4>
+			<p>使用<code>&lt;mark&gt;</code>标签或类<code>.mark</code>高亮显示内联文本元素。</p>
+			<!-- 展现 -->
+			<div class="show-demo">
+				<iframe onload="Javascript:SetCwinHeight(this, 50)" frameborder="0" src="Demo/TypographyDemo/demo2.html"></iframe>
+			</div>
+			<!-- demo -->
+			<a class="demo" href="Demo/TypographyDemo/demo2.html" target="_blank">Demo</a>
+			<!-- 代码 -->
+<pre><code class="language-markup">&lt;p&gt;我被贴上&lt;mark&gt;mark&lt;/mark&gt;标签了。&lt;/p&gt;
+&lt;p&gt;我被贴上&lt;span class=&quot;mark&quot;&gt;mark&lt;/span&gt;标签了。&lt;/p&gt;</code></pre>
+
+			<h4>文本对齐</h4>
+			<p>通过文本对齐类，可以简单方便的将文字重新对齐。</p>
+			<!-- 表格 文本对齐 -->
+			<table>
+				<thead>
+					<tr>
+						<th width="15%">类</th>
+						<th>说明</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><code>.text-left</code></td>
+						<td>文本左对齐</td>
+					</tr>
+					<tr>
+						<td><code>.text-right</code></td>
+						<td>文本右对齐</td>
+					</tr>
+					<tr>
+						<td><code>.text-center</code></td>
+						<td>文本居中对齐</td>
+					</tr>
+					<tr>
+						<td><code>.text-justify</code></td>
+						<td>文本自适应</td>
+					</tr>
+					<tr>
+						<td><code>.text-top</code></td>
+						<td>文本顶部对齐</td>
+					</tr>
+					<tr>
+						<td><code>.text-middle</code></td>
+						<td>文本垂直居中对齐</td>
+					</tr>
+					<tr>
+						<td><code>.text-bottom</code></td>
+						<td>文本底部对齐</td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- 展现 -->
+			<div class="show-demo">
+				<iframe onload="Javascript:SetCwinHeight(this, 50)" frameborder="0" src="Demo/TypographyDemo/demo3.html"></iframe>
+			</div>
+			<!-- demo -->
+			<a class="demo" href="Demo/TypographyDemo/demo3.html" target="_blank">Demo</a>
+			<!-- 代码 -->
+<pre><code class="language-markup">&lt;p class=&quot;text-left box1&quot;&gt;把文本排列到左边。默认值：由浏览器决定。&lt;/p&gt;&lt;p class=&quot;text-center box2&quot;&gt;把文本排列到中间。&lt;/p&gt;
+&lt;p class=&quot;text-right box3&quot;&gt;把文本排列到右边。&lt;/p&gt;
+&lt;p class=&quot;text-justify box4&quot;&gt;文本自适应对齐。&lt;/p&gt;
+&lt;p class=&quot;text-top box5&quot;&gt;文本顶部对齐。&lt;img src=&quot;../../images/a1.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p class=&quot;text-middle box6&quot;&gt;文本垂直居中对齐。&lt;img src=&quot;../../images/a1.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p class=&quot;text-bottom box1&quot;&gt;文本底部对齐。&lt;img src=&quot;../../images/a1.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;</code></pre>
+
+			<h4>缩略语</h4>
+			<!-- 展现 -->
+			<div class="show-demo">
+				<iframe onload="Javascript:SetCwinHeight(this, 50)" frameborder="0" src="Demo/TypographyDemo/demo4.html"></iframe>
+			</div>
+			<!-- demo -->
+			<a class="demo" href="Demo/TypographyDemo/demo4.html" target="_blank">Demo</a>
+			<!-- 代码 -->
+<pre><code class="language-markup">&lt;abbr title=&quot;attribute&quot;&gt;缩略语&lt;/abbr&gt;</code></pre>
+
+			<h4>地址</h4>
+			<p>让联系信息以最接近日常使用的格式呈现。在每行结尾添加<code>&lt;br /&gt;</code>标签可以保留需要的样式。</p>
+			<!-- 展现 -->
+			<div class="show-demo">
+				<iframe onload="Javascript:SetCwinHeight(this, 70)" frameborder="0" src="Demo/TypographyDemo/demo5.html"></iframe>
+			</div>
+			<!-- demo -->
+			<a class="demo" href="Demo/TypographyDemo/demo5.html" target="_blank">Demo</a>
+			<!-- 代码 -->
+<pre><code class="language-markup">&lt;address&gt;
+    &lt;strong&gt;Twitter, Inc.&lt;/strong&gt;&lt;br /&gt;
+    795 Folsom Ave, Suite 600&lt;br /&gt;
+    San Francisco, CA 94107&lt;br /&gt;
+    &lt;abbr title=&quot;Phone&quot;&gt;P:&lt;/abbr&gt; (123) 456-7890
+&lt;/address&gt;
+&lt;address&gt;
+    &lt;strong&gt;Full Name&lt;/strong&gt;&lt;br /&gt;
+    &lt;a href=&quot;mailto:#&quot;&gt;first.last@example.com&lt;/a&gt;
+&lt;/address&gt;</code></pre>
+
+			<h4>引用</h4>
+			<p>在你的文档中引用其他来源的内容。</p>
+			<p><strong>默认引用</strong></p>
+			<!-- 展现 -->
+			<div class="show-demo">
+				<iframe onload="Javascript:SetCwinHeight(this, 150)" frameborder="0" src="Demo/TypographyDemo/demo6.html"></iframe>
+			</div>
+			<!-- demo -->
+			<a class="demo" href="Demo/TypographyDemo/demo6.html" target="_blank">Demo</a>
+			<!-- 代码 -->
+<pre><code class="language-markup">&lt;!-- 默认引用样式 --&gt;
+&lt;blockquote&gt;
+    &lt;p&gt;飞光飞光，劝尔一杯酒。&lt;/p&gt;
+&lt;/blockquote&gt;</code></pre>
+			<p><strong>标明引用来源</strong></p>
+			<p>对于标准样式的<code>&lt;blockquote&gt;</code>，可以通过几个简单的变体就能改变风格和内容。</p>
+			<p>添加<code>&lt;footer&gt;</code>用于标明引用来源。来源的名称可以包裹进<code>&lt;cite&gt;</code>标签中。</p>
+			<!-- 代码 -->
+<pre><code class="language-markup">&lt;!-- 标明引用来源 --&gt;
+&lt;blockquote&gt;
+    &lt;p&gt;飞光飞光，劝尔一杯酒。&lt;/p&gt;
+    &lt;footer&gt;古诗出自&lt;cite title=&quot;苦昼短&quot;&gt;苦昼短&lt;/cite&gt;&lt;/footer&gt;
+&lt;/blockquote&gt;</code></pre>
+
+			<h4>改变大小写</h4>
+			<p>通过这几个类可以改变文本的大小写。</p>
+			<!-- 表格 改变大小写 -->
+			<table>
+				<thead>
+					<tr>
+						<th width="25%">类</th>
+						<th>说明</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><code>.text-lowercase</code></td>
+						<td>改变文本为小写</td>
+					</tr>
+					<tr>
+						<td><code>.text-uppercase</code></td>
+						<td>改变文本为大写</td>
+					</tr>
+					<tr>
+						<td><code>.text-capitalize</code></td>
+						<td>改变文本为首字母大写</td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- 展现 -->
+			<div class="show-demo">
+				<iframe onload="Javascript:SetCwinHeight(this, 190)" frameborder="0" src="Demo/TypographyDemo/demo7.html"></iframe>
+			</div>
+			<!-- demo -->
+			<a class="demo" href="Demo/TypographyDemo/demo7.html" target="_blank">Demo</a>
+			<!-- 代码 -->
+<pre><code class="language-markup">&lt;!-- 改变文本为小写 --&gt;
+&lt;p class=&quot;text-lowercase box1&quot;&gt;Lowercased Text.&lt;/p&gt;
+&lt;!-- 改变文本为大写 --&gt;
+&lt;p class=&quot;text-uppercase box2&quot;&gt;Uppercased text.&lt;/p&gt;
+&lt;!-- 改变文本为首字母大写 --&gt;
+&lt;p class=&quot;text-capitalize box3&quot;&gt;capitalized text.&lt;/p&gt;</code></pre>
+
+
+			<h4>隐藏文本</h4>
+			<p>使用类<code>.text-hide</code>隐藏文本。</p>
+			<!-- 展现 -->
+			<div class="show-demo">
+				<iframe onload="Javascript:SetCwinHeight(this, 100)" frameborder="0" src="Demo/TypographyDemo/demo8.html"></iframe>
+			</div>
+			<!-- demo -->
+			<a class="demo" href="Demo/TypographyDemo/demo8.html" target="_blank">Demo</a>
+			<!-- 代码 -->
+<pre><code class="language-markup">&lt;p class=&quot;text-hide box1&quot;&gt;你看不见我~&lt;/p&gt;</code></pre>
+
+
+			<h4>图文混排中对齐方式</h4>
+			<p><strong>图文混排中左对齐</strong></p>
+			<p>使用类<code>.align-left</code>实现左对齐。</p>
+			<!-- 展现 -->
+			<div class="show-demo">
+				<!-- <iframe id="iframe9" name="iframe9" src="Demo/TypographyDemo/demo9.html" this.onload="this.height=iframe9.document.body.scrollHeight"></iframe> -->
+				<iframe onload="Javascript:SetCwinHeight(this, 50)" frameborder="0" src="Demo/TypographyDemo/demo9.html"></iframe>
+			</div>
+			<!-- demo -->
+			<a class="demo" href="Demo/TypographyDemo/demo9.html" target="_blank">Demo</a>
+			<!-- 代码 -->
+<pre><code class="language-markup">&lt;img class=&quot;align-left&quot; src=&quot;../../images/a1.jpg&quot; alt=&quot;&quot; /&gt;</code></pre>
+
+			<p><strong>图文混排中右对齐</strong></p>
+			<p>使用类<code>.align-right</code>实现左对齐。</p>
+			<!-- 展现 -->
+			<div class="show-demo">
+				<!-- <iframe id="iframe10" name="iframe10" src="Demo/TypographyDemo/demo10.html" this.onload="this.height=iframe10.document.body.scrollHeight"></iframe> -->
+				<iframe onload="Javascript:SetCwinHeight(this, 50)" frameborder="0" src="Demo/TypographyDemo/demo10.html"></iframe>
+			</div>
+			<!-- demo -->
+			<a class="demo" href="Demo/TypographyDemo/demo10.html" target="_blank">Demo</a>
+			<!-- 代码 -->
+<pre><code class="language-markup">&lt;img class=&quot;align-right&quot; src=&quot;../../images/a1.jpg&quot; alt=&quot;&quot; /&gt;</code></pre>
+
+			<h4>文本尺寸</h4>
+			<p>通过这几个类可以改变文本的尺寸。</p>
+			<!-- 表格 改变大小写 -->
+			<table>
+				<thead>
+					<tr>
+						<th width="25%">类</th>
+						<th>说明</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><code>&lt;small&gt;</code>标签 <code>.small</code></td>
+						<td>小号文本</td>
+					</tr>
+					<tr>
+						<td><code>.text-xs</code></td>
+						<td>超小尺寸文本</td>
+					</tr>
+					<tr>
+						<td><code>.text-sm</code></td>
+						<td>小尺寸文本</td>
+					</tr>
+					<tr>
+						<td><code>.text-md</code> <code>.text-default</code></td>
+						<td>中等(默认)尺寸文本</td>
+					</tr>
+					<tr>
+						<td><code>.text-lg</code></td>
+						<td>大尺寸文本</td>
+					</tr>
+					<tr>
+						<td><code>.text-xl</code></td>
+						<td>超大尺寸文本</td>
+					</tr>
+					<tr>
+						<td><code>.text-xxl</code></td>
+						<td>超超大尺寸文本</td>
+					</tr>
+					<tr>
+						<td><code>.text-xxxl</code></td>
+						<td>最大尺寸文本</td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- 展现 -->
+			<div class="show-demo">
+				<!-- <iframe id="iframe11" name="iframe11" src="Demo/TypographyDemo/demo11.html" this.onload="this.height=iframe11.document.body.scrollHeight+50"></iframe> -->
+				<iframe onload="Javascript:SetCwinHeight(this, 50)" frameborder="0" src="Demo/TypographyDemo/demo11.html"></iframe>
+			</div>
+			<!-- demo -->
+			<a class="demo" href="Demo/TypographyDemo/demo11.html" target="_blank">Demo</a>
+			<!-- 代码 -->
+<pre><code class="language-markup">&lt;small&gt;文本尺寸&lt;/small&gt;
+&lt;p class=&quot;small&quot;&gt;文本尺寸&lt;/p&gt;
+&lt;p class=&quot;text-xs&quot;&gt;文本尺寸&lt;/p&gt;
+&lt;p class=&quot;text-sm&quot;&gt;文本尺寸&lt;/p&gt;
+&lt;p class=&quot;text-md&quot;&gt;文本尺寸&lt;/p&gt;
+&lt;p class=&quot;text-lg&quot;&gt;文本尺寸&lt;/p&gt;
+&lt;p class=&quot;text-xl&quot;&gt;文本尺寸&lt;/p&gt;
+&lt;p class=&quot;text-xxl&quot;&gt;文本尺寸&lt;/p&gt;
+&lt;p class=&quot;text-xxxl&quot;&gt;文本尺寸&lt;/p&gt;</code></pre>
+
+			<h4>文本颜色</h4>
+			<!-- 表格 文本颜色 -->
+			<table>
+				<thead>
+					<tr>
+						<th width="15%">类</th>
+						<th>说明</th>
+						<th>颜色</th>
+						<th>鼠标悬浮颜色（链接）</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><code>.text-primary</code></td>
+						<td>文本主要色</td>
+						<td><span class="color" style="color: #337ab7;">#337ab7</span></td>
+						<td><span class="color" style="color: #285f8f;">#285f8f</span></td>
+					</tr>
+					<tr>
+						<td><code>.text-secondary</code></td>
+						<td>文本次要颜色</td>
+						<td><span class="color" style="color: #31708f;">#31708f</span></td>
+						<td><span class="color" style="color: #245269;">#245269</span></td>
+					</tr>
+					<tr>
+						<td><code>.text-success</code></td>
+						<td>文本成功色</td>
+						<td><span class="color" style="color: #3c763d;">#3c763d</span></td>
+						<td><span class="color" style="color: #2b542c;">#2b542c</span></td>
+					</tr>
+					<tr>
+						<td><code>.text-warning</code></td>
+						<td>文本警告色</td>
+						<td><span class="color" style="color: #8a6d3b;">#8a6d3b</span></td>
+						<td><span class="color" style="color: #66512c;">#66512c</span></td>
+					</tr>
+					<tr>
+						<td><code>.text-danger</code></td>
+						<td>文本危险色</td>
+						<td><span class="color" style="color: #a94442;">#a94442</span></td>
+						<td><span class="color" style="color: #843534;">#843534</span></td>
+					</tr>
+					<tr>
+						<td><code>.text-muted</code></td>
+						<td>文本减弱色</td>
+						<td><span class="color" style="color: #777777;">#777777</span></td>
+						<td><span class="color" style="color: #5e5e5e;">#5e5e5e</span></td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- 展现 -->
+			<div class="show-demo">
+				<!-- <iframe id="iframe12" name="iframe12" src="Demo/TypographyDemo/demo12.html" this.onload="this.height=iframe12.document.body.scrollHeight"></iframe> -->
+				<iframe onload="Javascript:SetCwinHeight(this, 50)" frameborder="0" src="Demo/TypographyDemo/demo12.html"></iframe>
+			</div>
+			<!-- demo -->
+			<a class="demo" href="Demo/TypographyDemo/demo12.html" target="_blank">Demo</a>
+			<!-- 代码 -->
+<pre><code class="language-markup">&lt;!-- 纯文本 --&gt;
+&lt;p class=&quot;text-primary&quot;&gt;文本主要颜色&lt;/p&gt;
+&lt;p class=&quot;text-secondary&quot;&gt;文本次要颜色&lt;/p&gt;
+&lt;p class=&quot;text-success&quot;&gt;文本成功色&lt;/p&gt;
+&lt;p class=&quot;text-warning&quot;&gt;文本警告色&lt;/p&gt;
+&lt;p class=&quot;text-danger&quot;&gt;文本危险色&lt;/p&gt;
+&lt;p class=&quot;text-muted&quot;&gt;文本减弱色&lt;/p&gt;
+
+&lt;!-- 链接 --&gt;
+&lt;p&gt;&lt;a class=&quot;text-primary&quot; href=&quot;#&quot;&gt;文本主要颜色&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&quot;text-secondary&quot; href=&quot;#&quot;&gt;文本次要颜色&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&quot;text-success&quot; href=&quot;#&quot;&gt;文本成功色&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&quot;text-warning&quot; href=&quot;#&quot;&gt;文本警告色&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&quot;text-danger&quot; href=&quot;#&quot;&gt;文本危险色&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&quot;text-muted&quot; href=&quot;#&quot;&gt;文本减弱色&lt;/a&gt;&lt;/p&gt;</code></pre>
+
+			<h4>文本换行</h4>
+			<p>使用以下几个类可设置文本的换行。</p>
+			<table>
+				<thead>
+					<tr>
+						<th width="15%">类</th>
+						<th>说明</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><code>.text-nowrap</code></td>
+						<td>禁止换行，不截断超出容器宽度部分</td>
+					</tr>
+					<tr>
+						<td><code>.text-truncate</code></td>
+						<td>禁止换行，超出容器部分截断。（以 ... 结束）</td>
+					</tr>
+					<tr>
+						<td><code>.text-break</code></td>
+						<td>超出文字容器宽度时强制换行，主要用于英文排版</td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- 展现 -->
+			<div class="show-demo">
+				<!-- <iframe id="iframe13" name="iframe13" src="Demo/TypographyDemo/demo13.html" this.onload="this.height=iframe13.document.body.scrollHeight+160"></iframe> -->
+				<iframe onload="Javascript:SetCwinHeight(this, 200)" frameborder="0" src="Demo/TypographyDemo/demo13.html"></iframe>
+			</div>
+			<!-- demo -->
+			<a class="demo" href="Demo/TypographyDemo/demo13.html" target="_blank">Demo</a>
+			<!-- 代码 -->
+<pre><code class="language-markup">&lt;p class=&quot;text-nowrap box1&quot;&gt;暮色清风里，道不尽多少殇离，独寞月色冷清，抚琴对月吟唱，恋逝花尽惘，一世烟雨，慢慢将铅华洗尽。谁为谁重温昨天的故事，谁为谁依然将一切熟悉得那么具体；谁把谁谱写成一段心碎的旋律，谁把谁遗失在那个无雪的冬季。&lt;/p&gt;
+&lt;p class=&quot;text-truncate box2&quot;&gt;暮色清风里，道不尽多少殇离，独寞月色冷清，抚琴对月吟唱，恋逝花尽惘，一世烟雨，慢慢将铅华洗尽。谁为谁重温昨天的故事，谁为谁依然将一切熟悉得那么具体；谁把谁谱写成一段心碎的旋律，谁把谁遗失在那个无雪的冬季。&lt;/p&gt;
+&lt;p class=&quot;text-break box3&quot;&gt;暮色清风里，道不尽多少殇离，独寞月色冷清，抚琴对月吟唱，恋逝花尽惘，一世烟雨，慢慢将铅华洗尽。谁为谁重温昨天的故事，谁为谁依然将一切熟悉得那么具体；谁把谁谱写成一段心碎的旋律，谁把谁遗失在那个无雪的冬季。&lt;/p&gt;
+&lt;p class=&quot;text-break box4&quot;&gt;If you love someone, you will know everything about her without asking her; if you don&#39;t love someone, you will forget everything even if she told you everything.If you love someone, you will know everything about her without asking her; if you don&#39;t love someone, you will forget everything even if she told you everything.&lt;/p&gt;</code></pre>
+
+			<h4>被删除的文本</h4>
+			<p>对于被删除的文本，使用<code>&lt;del&gt;</code>标签。</p>
+			<!-- 展示 -->
+			<div class="show-demo">
+				<!-- <iframe id="iframe14" name="iframe14" src="Demo/TypographyDemo/demo14.html" this.onload="this.height=iframe14.document.body.scrollHeight"></iframe> -->
+				<iframe onload="Javascript:SetCwinHeight(this, 50)" frameborder="0" src="Demo/TypographyDemo/demo14.html"></iframe>
+			</div>
+			<!-- demo -->
+			<a class="demo" href="Demo/TypographyDemo/demo14.html" target="_blank">Demo</a>
+			<!-- 代码 -->
+<pre><code class="language-markup">&lt;del&gt;这一行是被删除的文本。&lt;/del&gt;</code></pre>
+
+			<h4>插入文本</h4>
+			<p>额外插入的文本（也可以叫做修正文本）使用<code>&lt;ins&gt;</code>标签。</p>
+			<p>删除和修正可以一起使用。</p>
+			<!-- 展示 -->
+			<div class="show-demo">
+				<!-- <iframe id="iframe15" name="iframe15" src="Demo/TypographyDemo/demo15.html" this.onload="this.height=iframe15.document.body.scrollHeight"></iframe> -->
+				<iframe onload="Javascript:SetCwinHeight(this, 50)" frameborder="0" src="Demo/TypographyDemo/demo15.html"></iframe>
+			</div>
+			<!-- demo -->
+			<a class="demo" href="Demo/TypographyDemo/demo15.html" target="_blank">Demo</a>
+			<!-- 代码 -->
+<pre><code class="language-markup">&lt;ins&gt;这一行是额外插入的文本，也可以叫做修正文本。&lt;/ins&gt;
+&lt;p&gt;“我能想到最浪漫的事，就是和你一起&lt;del&gt;卖卖电脑&lt;/del&gt;&lt;ins&gt;慢慢变老&lt;/ins&gt;！”&lt;/p&gt;</code></pre>
+
+			<!-- 背景颜色 -->
+			<h3>背景颜色</h3>
+			<p>背景色和文字色的设置基本相同，不同的是类的名称前缀是<code>bg</code>。</p>
+			<p>以下这些类用来设置背景色。</p>
+			<!-- 表格 背景色 -->
+			<table>
+				<thead>
+					<tr>
+						<th width="15%">类</th>
+						<th>说明</th>
+						<th>颜色</th>
+						<th>鼠标悬浮颜色（链接）</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><code>.bg-primary</code></td>
+						<td>背景主要色</td>
+						<td><span class="color" style="background-color: #337ab7; color: #fff;">#337ab7</span></td>
+						<td><span class="color" style="background-color: #285f8f; color: #fff;">#285f8f</span></td>
+					</tr>
+					<tr>
+						<td><code>.bg-secondary</code></td>
+						<td>背景次要颜色</td>
+						<td><span class="color" style="background-color: #d9edf7;">#d9edf7</span></td>
+						<td><span class="color" style="background-color: #afd9ee;">#afd9ee</span></td>
+					</tr>
+					<tr>
+						<td><code>.bg-success</code></td>
+						<td>背景成功色</td>
+						<td><span class="color" style="background-color: #dff0d8;">#dff0d8</span></td>
+						<td><span class="color" style="background-color: #c1e2b3;">#c1e2b3</span></td>
+					</tr>
+					<tr>
+						<td><code>.bg-warning</code></td>
+						<td>背景警告色</td>
+						<td><span class="color" style="background-color: #fcf8e3;">#fcf8e3</span></td>
+						<td><span class="color" style="background-color: #f7ecb5;">#f7ecb5</span></td>
+					</tr>
+					<tr>
+						<td><code>.bg-danger</code></td>
+						<td>背景危险色</td>
+						<td><span class="color" style="background-color: #f2dede;">#f2dede</span></td>
+						<td><span class="color" style="background-color: #e4b9b9;">#e4b9b9</span></td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- 展现 -->
+			<div class="show-demo">
+				<!-- <iframe id="iframe16" name="iframe16" src="Demo/TypographyDemo/demo16.html" this.onload="this.height=iframe16.document.body.scrollHeight"></iframe> -->
+				<iframe onload="Javascript:SetCwinHeight(this, 50)" frameborder="0" src="Demo/TypographyDemo/demo16.html"></iframe>
+			</div>
+			<!-- demo -->
+			<a class="demo" href="Demo/TypographyDemo/demo16.html" target="_blank">Demo</a>
+			<!-- 代码 -->
+<pre><code class="language-markup">&lt;!-- 纯文本 --&gt;
+&lt;p class=&quot;bg-primary&quot;&gt;背景主要颜色&lt;/p&gt;
+&lt;p class=&quot;bg-secondary&quot;&gt;背景次要颜色&lt;/p&gt;
+&lt;p class=&quot;bg-success&quot;&gt;背景成功色&lt;/p&gt;
+&lt;p class=&quot;bg-warning&quot;&gt;背景警告色&lt;/p&gt;
+&lt;p class=&quot;bg-danger&quot;&gt;背景危险色&lt;/p&gt;
+
+&lt;!-- 链接 --&gt;
+&lt;p&gt;&lt;a class=&quot;bg-primary&quot; href=&quot;#&quot;&gt;背景主要颜色&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&quot;bg-secondary&quot; href=&quot;#&quot;&gt;背景次要颜色&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&quot;bg-success&quot; href=&quot;#&quot;&gt;背景成功色&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&quot;bg-warning&quot; href=&quot;#&quot;&gt;背景警告色&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&quot;bg-danger&quot; href=&quot;#&quot;&gt;背景危险色&lt;/a&gt;&lt;/p&gt;</code></pre>
+
+			<h3>列表</h3>
+			<h4>无序列表</h4>
+			<p>排列顺序无关紧要的一列元素。</p>
+			<!-- 展示 -->
+			<div class="show-demo">
+				<!-- <iframe id="iframe17" name="iframe17" src="Demo/TypographyDemo/demo17.html" this.onload="this.height=iframe17.document.body.scrollHeight+50"></iframe> -->
+				<iframe onload="Javascript:SetCwinHeight(this, 50)" frameborder="0" src="Demo/TypographyDemo/demo17.html"></iframe>
+			</div>
+			<!-- demo -->
+			<a class="demo" href="Demo/TypographyDemo/demo17.html" target="_blank">Demo</a>
+			<!-- 代码 -->
+<pre><code class="language-markup">&lt;ul&gt;
+    &lt;li&gt;iPod&lt;/li&gt;
+    &lt;li&gt;iPad&lt;/li&gt;
+    &lt;li&gt;iPhone
+        &lt;ul&gt;
+            &lt;li&gt;iPhone 4s&lt;/li&gt;
+            &lt;li&gt;iPhone 5&lt;/li&gt;
+            &lt;li&gt;iPhone 5S&lt;/li&gt;
+            &lt;li&gt;iPhone 5C&lt;/li&gt;
+            &lt;li&gt;iPhone 6&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;MacBook Air&lt;/li&gt;
+    &lt;li&gt;iMac&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+			<h4>有序列表</h4>
+			<p>顺序至关重要的一组元素。</p>
+			<!-- 展示 -->
+			<div class="show-demo">
+				<!-- <iframe id="iframe18" name="iframe18" src="Demo/TypographyDemo/demo18.html" this.onload="this.height=iframe18.document.body.scrollHeight+50"></iframe> -->
+				<iframe onload="Javascript:SetCwinHeight(this, 50)" frameborder="0" src="Demo/TypographyDemo/demo18.html"></iframe>
+			</div>
+			<!-- demo -->
+			<a class="demo" href="Demo/TypographyDemo/demo18.html" target="_blank">Demo</a>
+			<!-- 代码 -->
+<pre><code class="language-markup">&lt;ol&gt;
+    &lt;li&gt;iPod&lt;/li&gt;
+    &lt;li&gt;iPad&lt;/li&gt;
+    &lt;li&gt;iPhone
+        &lt;ol&gt;
+            &lt;li&gt;iPhone 4s&lt;/li&gt;
+            &lt;li&gt;iPhone 5&lt;/li&gt;
+            &lt;li&gt;iPhone 5S&lt;/li&gt;
+            &lt;li&gt;iPhone 5C&lt;/li&gt;
+            &lt;li&gt;iPhone 6&lt;/li&gt;
+        &lt;/ol&gt;
+    &lt;/li&gt;
+    &lt;li&gt;MacBook Air&lt;/li&gt;
+    &lt;li&gt;iMac&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+
+			<h4>无样式列表</h4>
+			<p>使用<code>.list-unstyled</code>类可实现无样式列表，移除左边的列表符号，只针对直接子元素。</p>
+			<!-- 展示 -->
+			<div class="show-demo">
+				<!-- <iframe id="iframe19" name="iframe19" src="Demo/TypographyDemo/demo19.html" this.onload="this.height=iframe19.document.body.scrollHeight+50"></iframe> -->
+				<iframe onload="Javascript:SetCwinHeight(this, 50)" frameborder="0" src="Demo/TypographyDemo/demo19.html"></iframe>
+			</div>
+			<!-- demo -->
+			<a class="demo" href="Demo/TypographyDemo/demo19.html" target="_blank">Demo</a>
+			<!-- 代码 -->
+<pre><code class="language-markup">&lt;ul class=&quot;list-unstyled&quot;&gt;
+    &lt;li&gt;iPod&lt;/li&gt;
+    &lt;li&gt;iPad&lt;/li&gt;
+    &lt;li&gt;iPhone
+        &lt;ul&gt;
+            &lt;li&gt;iPhone 4s&lt;/li&gt;
+            &lt;li&gt;iPhone 5&lt;/li&gt;
+            &lt;li&gt;iPhone 5S&lt;/li&gt;
+            &lt;li&gt;iPhone 5C&lt;/li&gt;
+            &lt;li&gt;iPhone 6&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;MacBook Air&lt;/li&gt;
+    &lt;li&gt;iMac&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+			<h4>内联列表</h4>
+			<p>使用<code>.list-inline</code>类可内联列表，将所有元素放置于同一行。</p>
+			<!-- 展示 -->
+			<div class="show-demo">
+				<!-- <iframe id="iframe20" name="iframe20" src="Demo/TypographyDemo/demo20.html" this.onload="this.height=iframe20.document.body.scrollHeight"></iframe> -->
+				<iframe onload="Javascript:SetCwinHeight(this, 50)" frameborder="0" src="Demo/TypographyDemo/demo20.html"></iframe>
+			</div>
+			<!-- demo -->
+			<a class="demo" href="Demo/TypographyDemo/demo20.html" target="_blank">Demo</a>
+			<!-- 代码 -->
+<pre><code class="language-markup">&lt;ul class=&quot;list-inline&quot;&gt;
+    &lt;li&gt;iPod&lt;/li&gt;
+    &lt;li&gt;iPad&lt;/li&gt;
+    &lt;li&gt;iPhone&lt;/li&gt;
+    &lt;li&gt;MacBook Air&lt;/li&gt;
+    &lt;li&gt;iMac&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+			<h4>定义（描述）列表</h4>
+			<p>带有描述的短语列表。</p>
+			<!-- 展示 -->
+			<div class="show-demo">
+				<!-- <iframe id="iframe21" name="iframe21" src="Demo/TypographyDemo/demo21.html" this.onload="this.height=iframe21.document.body.scrollHeight+50"></iframe> -->
+				<iframe onload="Javascript:SetCwinHeight(this, 50)" frameborder="0" src="Demo/TypographyDemo/demo21.html"></iframe>
+			</div>
+			<!-- demo -->
+			<a class="demo" href="Demo/TypographyDemo/demo21.html" target="_blank">Demo</a>
+			<!-- 代码 -->
+<pre><code class="language-markup">&lt;dl&gt;
+    &lt;dt&gt;奇葩&lt;/dt&gt;
+    &lt;dd&gt;奇葩，本意是指奇特而美丽的花朵，常用来比喻某人（或某事物）十分离奇，不落世俗，个性十足，世间罕至。&lt;/dd&gt;
+    &lt;dt&gt;图样图森破&lt;/dt&gt;
+    &lt;dd&gt;图样图森破，是一个流行于百度贴吧、微博、人人的一个热门网络词语。为英文 Too young,too simple的中文谐音。意思为：太年轻，很傻很天真。&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+
+			<h4>水平定义（描述）列表</h4>
+			<p>使用<code>.dl-horizontal</code>类可实现水平定义（描述）列表。当屏幕宽度小于768px时，自动以垂直方式显示。</p>
+			<!-- 展示 -->
+			<div class="show-demo">
+				<!-- <iframe id="iframe22" name="iframe22" src="Demo/TypographyDemo/demo22.html" this.onload="this.height=iframe22.document.body.scrollHeight"></iframe> -->
+				<iframe onload="Javascript:SetCwinHeight(this, 50)" frameborder="0" src="Demo/TypographyDemo/demo22.html"></iframe>
+			</div>
+			<!-- demo -->
+			<a class="demo" href="Demo/TypographyDemo/demo22.html" target="_blank">Demo</a>
+			<!-- 代码 -->
+<pre><code class="language-markup">&lt;dl class=&quot;dl-horizontal&quot;&gt;
+    &lt;dt&gt;奇葩&lt;/dt&gt;
+    &lt;dd&gt;奇葩，本意是指奇特而美丽的花朵，常用来比喻某人（或某事物）十分离奇，不落世俗，个性十足，世间罕至。&lt;/dd&gt;
+    &lt;dt&gt;图样图森破&lt;/dt&gt;
+    &lt;dd&gt;图样图森破，是一个流行于百度贴吧、微博、人人的一个热门网络词语。为英文 Too young,too simple的中文谐音。意思为：太年轻，很傻很天真。&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+
+			<h3>打印样式</h3>
+			<p>打印样式组件，打印时将<code>color</code>设置成黑色，删除<code>background</code><code>text-shadow</code><code>box-shadow</code>样式，以节省打印机耗材，加快打印速度。</p>
+			<h4>显示 URL 链接</h4>
+			<p>利用 CSS3 content 属性，将<code>&lt;a&gt;</code>和<code>&lt;abbr&gt;</code>的标题、链接显示在后面。</p>
+			<p>点击浏览器菜单里的【打印】，预览打印样式，效果如下：</p>
+			<p>Flagwind.UI(http://www.test.com)</p>
+			<p>Flagwind.UI(http://www.test.com)</p>
+			<!-- 展示 -->
+			<div class="show-demo">
+				<iframe onload="Javascript:SetCwinHeight(this, 50)" frameborder="0" src="Demo/TypographyDemo/demo23.html"></iframe>
+			</div>
+			<!-- demo -->
+			<a class="demo" href="Demo/TypographyDemo/demo23.html" target="_blank">Demo</a>
+			<!-- 代码 -->
+<pre><code class="language-markup">&lt;div class=&quot;layout&quot;&gt;
+    &lt;div class=&quot;flex-md-12&quot;&gt;
+        &lt;!-- 点击浏览器菜单里的【打印】，预览打印样式 --&gt;
+        &lt;a href=&quot;http://www.test.com&quot;&gt;Flagwind.UI&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;flex-md-12&quot;&gt;
+        &lt;abbr title=&quot;http://www.test.com&quot;&gt;Flagwind.UI&lt;/abbr&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+			<h4>打印辅助类（Class）</h4>
+			<!-- 表格 打印辅助类 -->
+			<table>
+				<thead>
+					<tr>
+						<th width="30%">类</th>
+						<th>说明</th>
+						<th>浏览器</th>
+						<th>打印机</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><code>.hidden-print</code></td>
+						<td>处于打印模式时隐藏</td>
+						<td>可见</td>
+						<td>隐藏</td>
+					</tr>
+					<tr>
+						<td><code>.visible-print-block</code></td>
+						<td>当处于打印模式时以块级元素显示</td>
+						<td>隐藏</td>
+						<td>可见</td>
+					</tr>
+					<tr>
+						<td><code>.visible-print-inline</code></td>
+						<td>当处于打印模式时以内联元素显示</td>
+						<td>隐藏</td>
+						<td>可见</td>
+					</tr>
+					<tr>
+						<td><code>.visible-print-inline-block</code></td>
+						<td>当处于打印模式时以行内块元素显示</td>
+						<td>隐藏</td>
+						<td>可见</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+
+		<!-- ***************************** 布局相关 ************************************** -->
+		<section>
+			<h2>布局相关</h2>
+
+			<!-- 栅格参数 -->
+			<h3>栅格参数</h3>
+			<!-- 表格 栅格参数 -->
+			<table>
+				<thead>
+					<tr>
+						<th>类前缀</th>
+						<th>区间</th>
+						<th>宽度</th>
+						<th>屏幕</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><code>.flex-xs-*</code></td>
+						<td>0 - 767px</td>
+						<td>自动</td>
+						<td>超小屏</td>
+					</tr>
+					<tr>
+						<td><code>.flex-sm-*</code></td>
+						<td>768px - 991px</td>
+						<td>750px</td>
+						<td>小屏</td>
+					</tr>
+					<tr>
+						<td><code>.flex-md-*</code></td>
+						<td>992px - 1199px</td>
+						<td>970px</td>
+						<td>中屏</td>
+					</tr>
+					<tr>
+						<td><code>.flex-lg-*</code></td>
+						<td>1200px以上</td>
+						<td>1170px</td>
+						<td>大屏</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h3>基本使用</h3>
+			<p>在<code>&lt;table&gt;</code>中，用<code>&lt;tr&gt;</code>划分行，用<code>&lt;td&gt;</code>划分列，Flagwind.UI中也类似：</p>
+			<ul>
+				<li>行 - <code>.layout</code>代表行，用于包裹列，清除列的浮动。</li>
+				<li>列 - <code>.flex-[xs|sm|md|lg]-*</code>代表列，<code>xs|sm|md|lg</code>代表视口的区间，<code>*</code>表示该列所占的份数，如<code>*</code>的值为<code>3</code>时，表示这一列占整行宽度的<code>3/12</code>。</li>
+			</ul>
+			<!-- 展示 -->
+			<div class="show-demo">
+				<iframe onload="Javascript:SetCwinHeight(this, 50)" frameborder="0" src="Demo/LayoutDemo/demo1.html"></iframe>
+			</div>
+			<!-- demo -->
+			<a class="demo" href="Demo/LayoutDemo/demo1.html" target="_blank">Demo</a>
+			<!-- 代码 -->
+<pre><code class="language-markup">&lt;div class=&quot;layout&quot;&gt;
+    &lt;div class=&quot;flex-md-1 box1&quot;&gt;md-1&lt;/div&gt;
+    &lt;div class=&quot;flex-md-1 box2&quot;&gt;md-1&lt;/div&gt;
+    &lt;div class=&quot;flex-md-1 box3&quot;&gt;md-1&lt;/div&gt;
+    &lt;div class=&quot;flex-md-1 box4&quot;&gt;md-1&lt;/div&gt;
+    &lt;div class=&quot;flex-md-1 box3&quot;&gt;md-1&lt;/div&gt;
+    &lt;div class=&quot;flex-md-1 box2&quot;&gt;md-1&lt;/div&gt;
+    &lt;div class=&quot;flex-md-1 box1&quot;&gt;md-1&lt;/div&gt;
+    &lt;div class=&quot;flex-md-1 box4&quot;&gt;md-1&lt;/div&gt;
+    &lt;div class=&quot;flex-md-1 box1&quot;&gt;md-1&lt;/div&gt;
+    &lt;div class=&quot;flex-md-1 box2&quot;&gt;md-1&lt;/div&gt;
+    &lt;div class=&quot;flex-md-1 box3&quot;&gt;md-1&lt;/div&gt;
+    &lt;div class=&quot;flex-md-1 box4&quot;&gt;md-1&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+			<h3>不同区间不同的划分比例</h3>
+			<p>下面示例划分了不同区间的显示方式</p>
+			<p>中大屏（992px以上），<code>.flex-md-3</code>表示占整行的<code>3/12</code>，<code>.flex-md-9</code>表示占整行的<code>9/12</code>。</p>
+			<p>小屏（768px-992px），<code>.flex-sm-4</code>表示占整行的<code>4/12</code>，<code>.flex-sm-8</code>表示占整行的<code>8/12</code>。</p>
+			<p>超小屏（0-767px），<code>.flex-xs-6</code>表示占整行的<code>6/12</code>，<code>.flex-xs-6</code>表示占整行的<code>6/12</code>。</p>
+			<!-- 展示 -->
+			<div class="show-demo">
+				<iframe onload="Javascript:SetCwinHeight(this, 50)" frameborder="0" src="Demo/LayoutDemo/demo2.html"></iframe>
+			</div>
+			<!-- demo -->
+			<a class="demo" href="Demo/LayoutDemo/demo2.html" target="_blank">Demo</a>
+			<!-- 代码 -->
+<pre><code class="language-markup">&lt;div class=&quot;layout&quot;&gt;
+    &lt;div class=&quot;flex-xs-6 flex-sm-4 flex-md-3 box1&quot;&gt;md-3&lt;/div&gt;
+    &lt;div class=&quot;flex-xs-6 flex-sm-8 flex-md-9 box2&quot;&gt;md-9&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+			<h3>百分百宽度</h3>
+			<p>Flagwind.UI中，<code>.layout-fluid</code>的宽度被设置为100%，会随着窗口大小自动缩放。</p>
+			<!-- 展示 -->
+			<div class="show-demo">
+				<iframe onload="Javascript:SetCwinHeight(this, 50)" frameborder="0" src="Demo/LayoutDemo/demo3.html"></iframe>
+			</div>
+			<!-- demo -->
+			<a class="demo" href="Demo/LayoutDemo/demo3.html" target="_blank">Demo</a>
+			<!-- 代码 -->
+<pre><code class="language-markup">&lt;div class=&quot;layout layout-fluid&quot;&gt;
+    &lt;div class=&quot;flex-md-6 box1&quot;&gt;md-6&lt;/div&gt;
+    &lt;div class=&quot;flex-md-6 box2&quot;&gt;md-6&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+			<h3>填充式布局</h3>
+			<p>使用<code>.layout-fill</code>类实现填充式布局，左右添加15px的内边距（padding）。</p>
+			<p>例1和例2是基本布局和填充式布局的区别。</p>
+			<!-- 展示 -->
+			<div class="show-demo">
+				<iframe onload="Javascript:SetCwinHeight(this, 100)" frameborder="0" src="Demo/LayoutDemo/demo4.html"></iframe>
+			</div>
+			<!-- demo -->
+			<a class="demo" href="Demo/LayoutDemo/demo4.html" target="_blank">Demo</a>
+			<!-- 代码 -->
+<pre><code class="language-markup">&lt;div class=&quot;layout&quot;&gt;
+    &lt;h3&gt;例1：基本布局&lt;/h3&gt;
+    &lt;div class=&quot;layout&quot;&gt;
+        &lt;div class=&quot;flex-md-12 box1&quot;&gt;md-12&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;h3&gt;例2：填充布局&lt;/h3&gt;
+    &lt;div class=&quot;layout layout-fill&quot;&gt;
+        &lt;div class=&quot;flex-md-12 box2&quot;&gt;md-12&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+			<h3>多余列的显示</h3>
+			<p>如果在一个<code>.layout</code>内包含的列（column）大于12个，多余的列（column）的将作为一个整体单元另起一行排列。</p>
+			<!-- 展示 -->
+			<div class="show-demo">
+				<iframe onload="Javascript:SetCwinHeight(this, 50)" frameborder="0" src="Demo/LayoutDemo/demo5.html"></iframe>
+			</div>
+			<!-- demo -->
+			<a class="demo" href="Demo/LayoutDemo/demo5.html" target="_blank">Demo</a>
+			<!-- 代码 -->
+<pre><code class="language-markup">&lt;div class=&quot;layout&quot;&gt;
+    &lt;div class=&quot;flex-md-6 box1&quot;&gt;md-6&lt;/div&gt;
+    &lt;div class=&quot;flex-md-6 box2&quot;&gt;md-6&lt;/div&gt;
+    &lt;div class=&quot;flex-md-6 box3&quot;&gt;md-6&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+			<h3>列偏移</h3>
+			<p>使用<code>.flex-[xs|sm|md|lg]-offset-*</code>类可以将列向右侧偏移。这些类实际是通过使用*选择器为当前元素增加了左侧的边距（margin-left）。</p>
+			<p>例1：<code>.flex-md-offset-4</code>类将md-4元素向右侧偏移了4个列（column）的宽度。</p>
+			<p>例2：<code>.flex-md-offset-3</code>类将<code>md-3</code>元素向右侧偏移了3个列（column）的宽度。</p>
+			<p>例3：<code>.flex-md-offset-3</code>类将<code>md-6</code>元素向右侧偏移了3个列（column）的宽度。</p>
+			<!-- 展示 -->
+			<div class="show-demo">
+				<iframe onload="Javascript:SetCwinHeight(this, 100)" frameborder="0" src="Demo/LayoutDemo/demo6.html"></iframe>
+			</div>
+			<!-- demo -->
+			<a class="demo" href="Demo/LayoutDemo/demo6.html" target="_blank">Demo</a>
+			<!-- 代码 -->
+<pre><code class="language-markup">&lt;h3&gt;例1&lt;/h3&gt;
+&lt;div class=&quot;layout&quot;&gt;
+    &lt;div class=&quot;flex-md-4 box1&quot;&gt;md-4&lt;/div&gt;
+    &lt;div class=&quot;flex-md-4 flex-md-offset-4 box2&quot;&gt;md-4 md-offset-4&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;例2&lt;/h3&gt;
+&lt;div class=&quot;layout&quot;&gt;
+    &lt;div class=&quot;flex-md-3 flex-md-offset-3 box1&quot;&gt;md-3 md-offset-3&lt;/div&gt;
+    &lt;div class=&quot;flex-md-3 flex-md-offset-3 box2&quot;&gt;md-3 md-offset-3&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;例3&lt;/h3&gt;
+&lt;div class=&quot;layout&quot;&gt;
+    &lt;div class=&quot;flex-md-6 flex-md-offset-3 box3&quot;&gt;md-6 md-offset-3&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+			<h3>列嵌套</h3>
+			<p>要实现列中再嵌套一层内容，可以通过添加一个新的<code>.layout</code>和一系列的<code>.flex-sm-*</code>到已经存在的列内，被嵌套的<code>.layout</code>所包含的列（column）的个数不能超过12个，也不要求一定要满12个。</p>
+			<p>为了更好的看到效果，这里将第二层的<code>sm-2</code>向右偏移了2列。</p>
+			<!-- 展示 -->
+			<div class="show-demo">
+				<iframe onload="Javascript:SetCwinHeight(this, 80)" frameborder="0" src="Demo/LayoutDemo/demo7.html"></iframe>
+			</div>
+			<!-- demo -->
+			<a class="demo" href="Demo/LayoutDemo/demo7.html" target="_blank">Demo</a>
+			<!-- 代码 -->
+<pre><code class="language-markup">&lt;div class=&quot;layout&quot;&gt;
+    &lt;div class=&quot;flex-sm-12 box3&quot;&gt;第一层 sm-12
+        &lt;div class=&quot;layout&quot;&gt;
+            &lt;div class=&quot;flex-sm-4 flex-sm-offset-2 box2&quot;&gt;第二层 sm-4 sm-offset-2&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+			<h3>列排序</h3>
+			<p>列排序其实就是改变列的方向，也就是改变左右浮动，通过使用<code>.flex-md-push-*</code>和<code>.flex-md-pull-*</code>类就可以很容易的改变列（column）的顺序。</p>
+			<p>默认情况下，<code>.md-9</code>在左边，<code>.md-3</code>在右边，如果要互换位置，需要将<code>.md-9</code>向右移动3个列的距离，也就是推3个列的offset，样式用<code>.flex-md-offset-push-3</code>；而<code>.md-3</code>需要向左移动9个列的距离，也就是拉9个列的offset，样式用<code>.flex-md-pull-9</code>。</p>
+			<p>例1：排序前，<code>.md-9</code>在左边，<code>.md-3</code>在右边。</p>
+			<p>例2：排序后，<code>.md-9</code>在右边，<code>.md-3</code>在左边</p>
+			<!-- 展示 -->
+			<div class="show-demo">
+				<iframe onload="Javascript:SetCwinHeight(this, 80)" frameborder="0" src="Demo/LayoutDemo/demo8.html"></iframe>
+			</div>
+			<!-- demo -->
+			<a class="demo" href="Demo/LayoutDemo/demo8.html" target="_blank">Demo</a>
+			<!-- 代码 -->
+<pre><code class="language-markup">&lt;div class=&quot;layout&quot;&gt;
+    &lt;h3&gt;例1：&lt;/h3&gt;
+    &lt;div class=&quot;layout&quot;&gt;
+        &lt;div class=&quot;flex-md-9 box1&quot;&gt;md-9&lt;/div&gt;
+        &lt;div class=&quot;flex-md-3 box2&quot;&gt;md-3&lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;h3&gt;例2：&lt;/h3&gt;
+    &lt;div class=&quot;layout&quot;&gt;
+        &lt;div class=&quot;flex-md-9 flex-md-push-3 box1&quot;&gt;md-9 md-push-3&lt;/div&gt;
+        &lt;div class=&quot;flex-md-3 flex-md-pull-9 box2&quot;&gt;md-3 md-pull-9&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+			<h3>响应式布局辅助类</h3>
+			<p>通过单独或联合使用以下列出的类，可以针对不同屏幕尺寸隐藏或显示页面内容。</p>
+			<!-- 表格 响应式布局辅助类 -->
+			<table>
+				<thead>
+					<tr>
+						<th width="25%">类</th>
+						<th>说明</th>
+						<th>屏幕尺寸</th>
+					</tr>
+				</thead>
+				<tbody>
+					<!-- xs -->
+					<tr>
+						<td><code>.visible-xs-block</code></td>
+						<td>当屏幕为超小屏(xs)将显示为块级元素</td>
+						<td rowspan="4">超小屏（0-767px）</td>
+					</tr>
+					<tr>
+						<td><code>.visible-xs-inline</code></td>
+						<td>当屏幕为超小屏(xs)将显示为内联元素</td>
+					</tr>
+					<tr>
+						<td><code>.visible-xs-inline-block</code></td>
+						<td>当屏幕为超小屏(xs)将显示为行内块元素</td>
+					</tr>
+					<tr>
+						<td><code>.hidden-xs</code></td>
+						<td>当屏幕为超小屏(xs)时隐藏</td>
+					</tr>
+					<!-- sm -->
+					<tr>
+						<td><code>.visible-sm-block</code></td>
+						<td>当屏幕为小屏(sm)将显示为块级元素</td>
+						<td rowspan="4">小屏（768px-991px）</td>
+					</tr>
+					<tr>
+						<td><code>.visible-sm-inline</code></td>
+						<td>当屏幕为小屏(sm)将显示为内联元素</td>
+					</tr>
+					<tr>
+						<td><code>.visible-sm-inline-block</code></td>
+						<td>当屏幕为小屏(sm)将显示为行内块元素</td>
+					</tr>
+					<tr>
+						<td><code>.hidden-sm</code></td>
+						<td>当屏幕为小屏(sm)时隐藏</td>
+					</tr>
+					<!-- md -->
+					<tr>
+						<td><code>.visible-md-block</code></td>
+						<td>当屏幕为中屏(md)将显示为块级元素</td>
+						<td rowspan="4">中屏（992px-1199px）</td>
+					</tr>
+					<tr>
+						<td><code>.visible-md-inline</code></td>
+						<td>当屏幕为中屏(md)将显示为内联元素</td>
+					</tr>
+					<tr>
+						<td><code>.visible-md-inline-block</code></td>
+						<td>当屏幕为中屏(md)将显示为行内块元素</td>
+					</tr>
+					<tr>
+						<td><code>.hidden-md</code></td>
+						<td>当屏幕为中屏(xs)时隐藏</td>
+					</tr>
+					<!-- lg -->
+					<tr>
+						<td><code>.visible-lg-block</code></td>
+						<td>当屏幕为大屏(lg)将显示为块级元素</td>
+						<td rowspan="4">大屏（1200px以上）</td>
+					</tr>
+					<tr>
+						<td><code>.visible-lg-inline</code></td>
+						<td>当屏幕为大屏(lg)将显示为内联元素</td>
+					</tr>
+					<tr>
+						<td><code>.visible-lg-inline-block</code></td>
+						<td>当屏幕为大屏(lg)将显示为行内块元素</td>
+					</tr>
+					<tr>
+						<td><code>.hidden-xs</code></td>
+						<td>当屏幕为大屏(lg)时隐藏</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+
+		<!-- ***************************** 图片 ************************************** -->
+		<section>
+			<h2>图片</h2>
+			<h3>基本样式</h3>
+			<!-- 展示 -->
+			<div class="show-demo">
+				<iframe onload="Javascript:SetCwinHeight(this, 80)" frameborder="0" src="Demo/ImgDemo/demo1.html"></iframe>
+			</div>
+			<!-- demo -->
+			<a class="demo" href="Demo/ImgDemo/demo1.html" target="_blank">Demo</a>
+			<!-- 代码 -->
+<pre><code class="language-markup">&lt;div class=&quot;layout&quot;&gt;
+    &lt;p class=&quot;flex-md-12 text-center&quot;&gt;
+        &lt;img src=&quot;../../images/a2.jpg&quot; alt=&quot;&quot;/&gt;
+    &lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+			<h3>响应式图片</h3>
+			<p>使用<code>.img-responsive</code>类可实现响应式图片效果，响应式图片会随着浏览器窗口的缩放按比例缩放，最大宽度100%。</p>
+			<p>可在Demo中缩放浏览器窗口查看效果。</p>
+			<!-- 展示 -->
+			<div class="show-demo">
+				<iframe onload="Javascript:SetCwinHeight(this, 50)" frameborder="0" src="Demo/ImgDemo/demo2.html"></iframe>
+			</div>
+			<!-- demo -->
+			<a class="demo" href="Demo/ImgDemo/demo2.html" target="_blank">Demo</a>
+			<!-- 代码 -->
+<pre><code class="language-markup">&lt;div class=&quot;layout&quot;&gt;
+    &lt;p class=&quot;flex-md-12 text-center&quot;&gt;
+        &lt;img class=&quot;img-responsive&quot; src=&quot;../../images/a2.jpg&quot; alt=&quot;&quot;/&gt;
+    &lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+			<h3>缩略图</h3>
+			<p>使用<code>.img-thumbnail</code>类可实现缩略图效果。</p>
+			<!-- 展示 -->
+			<div class="show-demo">
+				<iframe onload="Javascript:SetCwinHeight(this, 50)" frameborder="0" src="Demo/ImgDemo/demo3.html"></iframe>
+			</div>
+			<!-- demo -->
+			<a class="demo" href="Demo/ImgDemo/demo3.html" target="_blank">Demo</a>
+			<!-- 代码 -->
+<pre><code class="language-markup">&lt;div class=&quot;layout&quot;&gt;
+    &lt;p class=&quot;flex-md-12 text-center&quot;&gt;
+        &lt;img class=&quot;img-thumbnail&quot; src=&quot;../../images/a2.jpg&quot; alt=&quot;&quot;/&gt;
+    &lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+			<h3>增强样式</h3>
+			<p>通过这几个类可以增强图片样式。</p>
+			<!-- 表格 增强样式 -->
+			<table>
+				<thead>
+					<tr>
+						<th width="25%">类</th>
+						<th>说明</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><code>.square</code></td>
+						<td>正方形</td>
+					</tr>
+					<tr>
+						<td><code>.radius</code></td>
+						<td>圆角</td>
+					</tr>
+					<tr>
+						<td><code>.round</code></td>
+						<td>椭圆</td>
+					</tr>
+					<tr>
+						<td><code>.circle</code></td>
+						<td>圆形</td>
+					</tr>
+					<tr>
+						<td><code>.img-thumbnail</code></td>
+						<td>缩略图/边框</td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- 展示 -->
+			<div class="show-demo">
+				<iframe onload="Javascript:SetCwinHeight(this, 50)" frameborder="0" src="Demo/ImgDemo/demo4.html"></iframe>
+			</div>
+			<!-- demo -->
+			<a class="demo" href="Demo/ImgDemo/demo4.html" target="_blank">Demo</a>
+			<!-- 代码 -->
+<pre><code class="language-markup">&lt;div class=&quot;layout&quot;&gt;
+    &lt;p class=&quot;flex-md-1&quot;&gt;正方形&lt;/p&gt;
+    &lt;p class=&quot;flex-md-2&quot;&gt;
+        &lt;img class=&quot;square&quot; src=&quot;../../images/a2.jpg&quot; alt=&quot;500*342&quot; width=&quot;140&quot; height=&quot;140&quot; /&gt;
+    &lt;/p&gt;
+    &lt;p class=&quot;flex-md-1&quot;&gt;圆角&lt;/p&gt;
+    &lt;p class=&quot;flex-md-2&quot;&gt;
+        &lt;img class=&quot;radius&quot; src=&quot;../../images/a2.jpg&quot; alt=&quot;500*342&quot; width=&quot;140&quot; height=&quot;140&quot; /&gt;
+    &lt;/p&gt;
+    &lt;p class=&quot;flex-md-1&quot;&gt;椭圆&lt;/p&gt;
+    &lt;p class=&quot;flex-md-2&quot;&gt;
+        &lt;img class=&quot;round&quot; src=&quot;../../images/a2.jpg&quot; alt=&quot;500*342&quot; width=&quot;140&quot; height=&quot;80&quot; /&gt;
+    &lt;/p&gt;
+    &lt;p class=&quot;flex-md-1&quot;&gt;圆形&lt;/p&gt;
+    &lt;p class=&quot;flex-md-2&quot;&gt;
+        &lt;img class=&quot;circle&quot; src=&quot;../../images/a2.jpg&quot; alt=&quot;500*342&quot; width=&quot;140&quot; height=&quot;140&quot; /&gt;
+    &lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+			<!-- ***************************** 辅助类 ************************************** -->
+			<h2>辅助类</h2>
+			<h3>清除浮动</h3>
+			<p>使用<code>.clear</code>类清除浮动。</p>
+			<!-- 代码 -->
+<pre><code class="language-markup">&lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;&lt;/div&gt;</code></pre>
+
+			<h3>左右浮动</h3>
+			<p>使用<code>.pull-left</code>类实现左浮动。</p>
+			<p>使用<code>.pull-right</code>类实现右浮动。</p>
+			<!-- 展示 -->
+			<div class="show-demo">
+				<iframe onload="Javascript:SetCwinHeight(this, 50)" frameborder="0" src="Demo/UtilitiesDemo/demo1.html"></iframe>
+			</div>
+			<!-- demo -->
+			<a class="demo" href="Demo/UtilitiesDemo/demo1.html" target="_blank">Demo</a>
+			<!-- 代码 -->
+<pre><code class="language-markup">&lt;div class=&quot;layout&quot;&gt;
+    &lt;div class=&quot;flex-md-12 clear&quot;&gt;
+        &lt;button class=&quot;btn pull-left&quot;&gt;左浮动&lt;/button&gt;
+        &lt;button class=&quot;btn pull-right&quot;&gt;右浮动&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+			<h3>内容块居中</h3>
+			<p>使用<code>.center-block</code>类实现内容块居中。</p>
+			<p>需要指定内容块的宽度。</p>
+			<!-- 展示 -->
+			<div class="show-demo">
+				<iframe onload="Javascript:SetCwinHeight(this, 50)" frameborder="0" src="Demo/UtilitiesDemo/demo2.html"></iframe>
+			</div>
+			<!-- demo -->
+			<a class="demo" href="Demo/UtilitiesDemo/demo2.html" target="_blank">Demo</a>
+			<!-- 代码 -->
+<pre><code class="language-markup">&lt;div class=&quot;layout&quot;&gt;
+    &lt;div class=&quot;flex-md-12&quot;&gt;
+        &lt;div class=&quot;center-block box1&quot; style=&quot;width: 200px;&quot;&gt;内容块居中&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+			<h3>垂直居中对齐</h3>
+			<p>添加<code>.vertical-align</code>类到父容器实现垂直对齐。父容器需要指定高度。</p>
+			<p>在子元素上添加<code>.vertical-align-middle</code>类实现垂直居中对齐。</p>
+			<p>垂直对齐的原理是把父容器内的 “幽灵”元素（使用伪元素）高度设置为<code>100%</code>，再通过设置需要对齐的元素<code>vertical-align</code>属性实现。</p>
+			<!-- 展示 -->
+			<div class="show-demo">
+				<iframe onload="Javascript:SetCwinHeight(this, 50)" frameborder="0" src="Demo/UtilitiesDemo/demo3.html"></iframe>
+			</div>
+			<!-- demo -->
+			<a class="demo" href="Demo/UtilitiesDemo/demo3.html" target="_blank">Demo</a>
+			<!-- 代码 -->
+<pre><code class="language-markup">&lt;div class=&quot;vertical-align box1&quot; style=&quot;height: 150px;&quot;&gt;
+    &lt;div class=&quot;vertical-align-middle&quot;&gt;
+        垂直居中对齐
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+			<h3>底部对齐</h3>
+			<p>底部对齐和垂直居中对齐的实现方法相同，在子元素上添加<code>.vertical-align-middle</code>类实现垂直居中对齐。</p>
+			<!-- 展示 -->
+			<div class="show-demo">
+				<iframe onload="Javascript:SetCwinHeight(this, 50)" frameborder="0" src="Demo/UtilitiesDemo/demo4.html"></iframe>
+			</div>
+			<!-- demo -->
+			<a class="demo" href="Demo/UtilitiesDemo/demo4.html" target="_blank">Demo</a>
+			<!-- 代码 -->
+<pre><code class="language-markup">&lt;div class=&quot;vertical-align box1&quot; style=&quot;height: 150px;&quot;&gt;
+    &lt;div class=&quot;vertical-align-bottom&quot;&gt;
+        底部对齐
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+			<h3>元素显示/隐藏</h3>
+			<p><code>.show</code>类用来显示元素。</p>
+			<p><code>.hide</code>类用来隐藏元素。</p>
+			<p><code>.invisible</code>隐藏元素，并保留文档流。</p>
+			<p><code>.hide</code>和<code>.invisible</code>都是隐藏元素，不同的是<code>.hide</code>隐藏元素不会保留文档流，<code>.invisible</code>隐藏元素会保留文档流，通俗点讲就是<code>.hide</code>是看不见摸不着，<code>.invisible</code>是看不见但摸得着。</p>
+			<p>例：蓝色背景中的文本被隐藏了。</p>
+
+			<!-- 展示 -->
+			<div class="show-demo">
+				<iframe onload="Javascript:SetCwinHeight(this, 50)" frameborder="0" src="Demo/UtilitiesDemo/demo5.html"></iframe>
+			</div>
+			<!-- demo -->
+			<a class="demo" href="Demo/UtilitiesDemo/demo5.html" target="_blank">Demo</a>
+			<!-- 代码 -->
+<pre><code class="language-markup">&lt;div class=&quot;layout&quot;&gt;
+    &lt;div class=&quot;flex-md-6 box1&quot;&gt;
+        &lt;p class=&quot;hide&quot;&gt;我被隐藏了&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;flex-md-6 box2&quot;&gt;
+        &lt;p class=&quot;show&quot;&gt;我被显示了&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+			<h3>水平滚动</h3>
+			<p>使用<code>.scrollable-horizontal</code>类实现内容超出容器宽度时显示水平滚动条。</p>
+			<!-- 展示 -->
+			<div class="show-demo">
+				<iframe onload="Javascript:SetCwinHeight(this, 50)" frameborder="0" src="Demo/UtilitiesDemo/demo6.html"></iframe>
+			</div>
+			<!-- demo -->
+			<a class="demo" href="Demo/UtilitiesDemo/demo6.html" target="_blank">Demo</a>
+			<!-- 代码 -->
+<pre><code class="language-markup">&lt;div class=&quot;layout&quot;&gt;
+    &lt;div class=&quot;flex-md-12 scrollable-horizontal&quot;&gt;
+        &lt;p class=&quot;text-nowrap&quot;&gt;四月，草长莺飞，燕语呢喃，花丛中的你追逐着一只漂亮的蝴蝶，微风掀起你的裙裾：四月，烟雨如丝，缠绵如梦，你依然是那个追梦的女孩，喜欢把自己放在雨中，伸手接住那雨丝，任那一片微凉划过心海，眉目间总是盈一弯浅笑。&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+			<h3>垂直滚动</h3>
+			<p>使用<code>.scrollable-vertical</code>类实现内容超出容器宽度时显示水平滚动条。</p>
+			<!-- 展示 -->
+			<div class="show-demo">
+				<iframe onload="Javascript:SetCwinHeight(this, 50)" frameborder="0" src="Demo/UtilitiesDemo/demo7.html"></iframe>
+			</div>
+			<!-- demo -->
+			<a class="demo" href="Demo/UtilitiesDemo/demo7.html" target="_blank">Demo</a>
+			<!-- 代码 -->
+<pre><code class="language-markup">&lt;div class=&quot;layout&quot;&gt;
+    &lt;div class=&quot;flex-md-12 scrollable-vertical&quot;&gt;
+        &lt;p&gt;一&lt;/p&gt;
+        &lt;p&gt;我行于路上。&lt;/p&gt;
+        &lt;p&gt;温室中的花儿，&lt;/p&gt;
+        &lt;p&gt;芳香吗？&lt;/p&gt;
+        &lt;p&gt;风雨中的花儿，&lt;/p&gt;
+        &lt;p&gt;残败吗？&lt;/p&gt;
+        &lt;p&gt;二&lt;/p&gt;
+        &lt;p&gt;太匆匆，&lt;/p&gt;
+        &lt;p&gt;太匆匆，&lt;/p&gt;
+        &lt;p&gt;岁月忘了谁的容。&lt;/p&gt;
+        &lt;p&gt;三&lt;/p&gt;
+        &lt;p&gt;活在自己编织的幸福中，&lt;/p&gt;
+        &lt;p&gt;也是一种快乐！&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+			<h3>屏幕方向</h3>
+			<p>使用一下几个类可实现横屏和竖屏的显示/隐藏。</p>
+			<!-- 表格 屏幕方向 -->
+			<table>
+				<thead>
+					<tr>
+						<th width="35%">类</th>
+						<th>说明</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><code>.show-landscape</code><code>.hide-portrait</code></td>
+						<td>横屏显示</td>
+					</tr>
+					<tr>
+						<td><code>.hide-landscape</code><code>.show-portrait</code></td>
+						<td>横屏隐藏</td>
+					</tr>
+					<tr>
+						<td><code>.show-portrait</code><code>.hide-landscape</code></td>
+						<td>竖屏显示</td>
+					</tr>
+					<tr>
+						<td><code>.hide-portrait</code><code>.show-landscape</code></td>
+						<td>竖屏隐藏</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+	</section>
+	</div>
+
+	<!-- 核心 JavaScript 文件 -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/highlight.pack.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script src="js/jquery.ztree.core-3.5.min.js"></script>
+	<script src="js/ztree_toc.min.js"></script>
+	<script>
+		$(function(){
+			/**
+			 * 加载完成后隐藏loading
+			 */
+			$('.loading').hide();
+
+			/**
+			 * 目录树
+			 */
+			$('#tree').ztree_toc({
+				is_auto_number: true,
+				documment_selector: '.container',
+				ztreeStyle: {
+					width:'240px',
+					overflow: 'auto',
+					position: 'fixed',
+					'z-index': 99999,
+					border: '0px none',
+					left: '0px',
+					bottom: '0px'
+				}
+			});
+
+			/**
+			 * 控制滚动条
+			 */
+			// $('#tree').mouseover(function() {
+			// 	document.documentElement.style.overflow='hidden';
+			// }).mouseout(function() {
+			// 	document.documentElement.style.overflow='auto';
+			// });
+
+		});
+
+		/**
+		 * 嵌入iframe
+		 */
+		function SetCwinHeight(iframeid, h) {
+			// var iframeid = document.getElementById(iframeId); //iframe id
+			if (document.getElementById) {
+				if (iframeid && !window.opera) {
+					if (iframeid.contentDocument && iframeid.contentDocument.body.offsetHeight) {
+						iframeid.height = iframeid.contentDocument.body.offsetHeight + h;
+					} else if (iframeid.Document && iframeid.Document.body.scrollHeight) {
+						iframeid.height = iframeid.Document.body.scrollHeight + h;
+					}
+				}
+			}
+		}
+	</script>
+</body>
+</html>
