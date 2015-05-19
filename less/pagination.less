@@ -9,11 +9,12 @@
 /* ============================== 分页(Pagination) =========================== */
 
 
-/**
+/*
  * 默认分页
  */
 
-.pagination {
+.pagination
+{
     padding-left: 0;
     margin: @line-height-computed 0;
     list-style: none;
@@ -21,11 +22,13 @@
 
     &:extend(.clear all);
 
-    > li {
+    > li
+    {
         display: inline-block;
 
         > a,
-        > span {
+        > span
+        {
             position: relative;
             display: block;
             padding: @padding-vertical-md @padding-horizontal-md;
@@ -38,102 +41,121 @@
         }
 
         > a,
-        > span {
+        > span
+        {
             &:hover,
-            &:focus {
+            &:focus
+            {
                 background-color: @pagination-hover-bg;
             }
         }
     }
 }
 
-/**
+/*
  * 紧凑型
  */
 
-.pagination-condensed {
-    > li {
+.pagination-condensed
+{
+    > li
+    {
         display: inline-block;
         float: left;
         margin-left: -1px;
 
-        &:first-child {
+        &:first-child
+        {
             > a,
-            > span {
+            > span
+            {
                 margin-left: 0;
                 .border-left-radius(@border-radius-md);
             }
         }
 
-        &:last-child {
+        &:last-child
+        {
             > a,
-            > span {
+            > span
+            {
                 .border-right-radius(@border-radius-md);
             }
         }
     }
 }
 
-/**
+/*
  * 圆角分页
  */
 
-.pagination-radius {
-    > li {
+.pagination-radius
+{
+    > li
+    {
         > a,
-        > span {
+        > span
+        {
             border-radius: @border-radius-md;
         }
     }
 }
 
-/**
+/*
  * 居中对齐的分页
  */
 
-.pagination-centered {
+.pagination-centered
+{
     text-align: center;
 }
 
-/**
+/*
  * 右对齐的分页
  */
 
-.pagination-right {
+.pagination-right
+{
     text-align: right;
 }
 
-/**
+/*
  * 小尺寸分页
  */
 
-.pagination-sm {
+.pagination-sm
+{
     .pagination-size(@padding-vertical-sm, @padding-horizontal-sm, @font-size-sm);
 }
 
-/**
+/*
  * 大尺寸分页
  */
 
-.pagination-lg {
+.pagination-lg
+{
     .pagination-size(@padding-vertical-lg, @padding-horizontal-lg, @font-size-lg);
 }
 
-/**
+/*
  * 左右分布
  */
 
-.pagination-prev {
+.pagination-prev
+{
     float: left;
 }
 
-.pagination-next {
+.pagination-next
+{
     float: right;
 }
 
-.pagination-bordered-radius {
+.pagination-bordered-radius
+{
     > a,
-    > span {
+    > span
+    {
         border-radius: @pagination-border-radius;
     }
 }
