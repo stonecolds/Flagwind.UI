@@ -1,0 +1,228 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="renderer" content="webkit" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Docs - Flagwind.UI</title>
+
+    <!-- 核心 CSS 文件 -->
+    <link rel="stylesheet" href="../css/flagwind.css" />
+
+    <style>
+    .box {
+    }
+    </style>
+
+    <!-- HTML5 & Media Queries 兼容文件 -->
+    <!--[if lt IE 9]>
+    <script src="../js/html5shiv.min.js"></script>
+    <script src="../js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <header>
+        <h1>表单 <small>Forms</small></h1>
+    </header>
+
+    <hr />
+
+    <div class="layout">
+        <form class="flex-md-8 flex-md-push-2 form-inline">
+            <fieldset>
+                <legend>行内排列</legend>
+
+                <div class="field field-icon">
+                    <input class="input" type="text" placeholder="用户名" />
+                    <span class="icon icon-user"></span>
+                </div>
+
+                <div class="field field-icon">
+                    <input class="input" type="password" placeholder="密码" />
+                    <span class="icon icon-lock"></span>
+                </div>
+
+                <button class="btn btn-success"> 登 录 </button>
+            </fieldset>
+        </form>
+    </div>
+
+    <br />
+    <br />
+    <br />
+
+    <div class="layout">
+        <form class="flex-md-8 flex-md-push-2 form-horizontal">
+            <fieldset>
+                <legend>水平排列</legend>
+
+                <div class="field field-icon">
+                    <label class="label flex-md-3">用户名</label>
+                    <div class="flex-md-6">
+                        <input class="input" type="text" />
+                        <span class="icon icon-user"></span>
+                    </div>
+                </div>
+
+                <div class="field field-icon">
+                    <label class="label flex-md-3">密码</label>
+                    <div class="flex-md-6">
+                        <input class="input" type="password" />
+                        <span class="icon icon-lock"></span>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="flex-md-6 flex-md-offset-3">
+                        <label class="checkbox"><input type="checkbox" /> 记住我</label>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="flex-md-6 flex-md-offset-3">
+                        <button class="btn btn-primary"> 登录系统 </button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+
+    <br />
+    <br />
+
+    <div class="layout">
+        <form class="flex-md-8 flex-md-push-2">
+            <fieldset>
+                <legend>修改用户</legend>
+
+                <div class="layout">
+                     <div class="flex-md-4">
+                        <img class="img-thumbnail circle center-block" width="120" height="120" src="http://img4.imgtn.bdimg.com/it/u=3973557761,2919192981&fm=21&gp=0.jpg" />
+                    </div>
+
+                    <div class="flex-md-8">
+                        <div class="field">
+                            <label class="label">用户名</label>
+                            <p>jasonsoop@gmail.com</p>
+                        </div>
+
+                        <div class="field">
+                            <label class="label">性别</label>
+
+                            <div class="radio-group-inline">
+                                <label class="radio"><input name="sex" type="radio" /> 男</label>
+                                <label class="radio"><input checked="checked" name="sex" type="radio" /> 女</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field field-icon">
+                    <label class="label">邮箱</label>
+                    <input class="input" id="txt-email" type="email" value="1346615@qq.com" placeholder="请输入邮箱地址" />
+                    <span class="icon icon-envelope-o"></span>
+                </div>
+
+                <div class="field">
+                    <label class="label">简介</label>
+                    <textarea class="textarea" rows="5"></textarea>
+                </div>
+
+                <div class="field">
+                    <label class="label">来源</label>
+                    <div class="checkbox-group disabled">
+                        <label class="checkbox disabled"><input type="checkbox"> 朋友介绍 </label>
+                        <label class="checkbox"><input type="checkbox"> 平面/户外广告 </label>
+                        <label class="checkbox"><input type="checkbox"> 报纸/微信/朋友圈 </label>
+                    </div>
+                </div>
+
+                <button class="btn btn-success btn-block"> 更新资料 </button>
+                <button class="btn btn-danger btn-block"> 删除档案 </button>
+            </fieldset>
+        </form>
+    </div>
+
+    <!--
+    <div class="container">
+        <div class="layout layout-fill">
+            <button class="btn btn-default btn-xs">默认按钮</button>
+            <button class="btn btn-primary btn-xs">主要按钮</button>
+            <button class="btn btn-secondary btn-xs">次要按钮</button>
+            <button class="btn btn-success btn-xs">成功按钮</button>
+            <button class="btn btn-warning btn-xs">警告按钮</button>
+            <button class="btn btn-danger btn-xs">危险按钮</button>
+        </div>
+
+        <hr />
+
+        <div class="layout layout-fill">
+            <button class="btn btn-default btn-sm">默认按钮</button>
+            <button class="btn btn-primary btn-sm">主要按钮</button>
+            <button class="btn btn-secondary btn-sm">次要按钮</button>
+            <button class="btn btn-success btn-sm">成功按钮</button>
+            <button class="btn btn-warning btn-sm">警告按钮</button>
+            <button class="btn btn-danger btn-sm">危险按钮</button>
+        </div>
+
+        <hr />
+
+        <div class="layout layout-fill">
+            <button class="btn btn-default">默认按钮</button>
+            <button class="btn btn-primary">主要按钮</button>
+            <button class="btn btn-secondary">次要按钮</button>
+            <button class="btn btn-success">成功按钮</button>
+            <button class="btn btn-warning">警告按钮</button>
+            <button class="btn btn-danger">危险按钮</button>
+            <button class="btn btn-link">链接按钮</button>
+        </div>
+
+        <hr />
+
+        <div class="layout layout-fill">
+            <button class="btn btn-default btn-lg">默认按钮</button>
+            <button class="btn btn-primary btn-lg">主要按钮</button>
+            <button class="btn btn-secondary btn-lg">次要按钮</button>
+            <button class="btn btn-success btn-lg">成功按钮</button>
+            <button class="btn btn-warning btn-lg">警告按钮</button>
+            <button class="btn btn-danger btn-lg">危险按钮</button>
+            <button class="btn btn-link btn-lg">链接按钮</button>
+        </div>
+
+        <hr />
+
+        <div class="layout layout-fill">
+            <button class="btn btn-primary btn-block">主要色按钮</button>
+            <button class="btn btn-success btn-block">成功色按钮</button>
+        </div>
+
+        <hr />
+
+        <div class="layout layout-fill">
+            <button class="btn btn-default" disabled="disabled">默认按钮</button>
+            <button class="btn btn-primary" disabled="disabled">主要按钮</button>
+            <button class="btn btn-secondary" disabled="disabled">次要按钮</button>
+            <button class="btn btn-success" disabled="disabled">成功按钮</button>
+            <button class="btn btn-warning" disabled="disabled">警告按钮</button>
+            <button class="btn btn-danger" disabled="disabled">危险按钮</button>
+            <button class="btn btn-link" disabled="disabled">链接按钮</button>
+        </div>
+
+        <hr />
+
+        <div class="layout layout-fill">
+            <span class="icon icon-skype icon-lg"></span>
+            <span class="icon icon-qq icon-lg"></span>
+            <span class="icon icon-weixin icon-lg"></span>
+            <span class="icon icon-weibo icon-lg"></span>
+        </div>
+    </div>
+    -->
+
+    <!-- 核心 JavaScript 文件 -->
+    <script src="../js/jquery.min.js"></script>
+</body>
+</html>
