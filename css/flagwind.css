@@ -5132,3 +5132,119 @@ table td[class*="col-"] {
   clip: rect(0, 0, 0, 0);
   pointer-events: none;
 }
+/* ============================== 按钮(Buttons) =========================== */
+/*
+ * 基本开关
+ */
+.switch {
+  position: relative;
+  display: inline-block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.switch input[type="checkbox"],
+.switch input[type="radio"] {
+  position: absolute;
+  top: 6px;
+  left: 10px;
+  display: none;
+}
+.switch input[type="checkbox"] + label,
+.switch input[type="radio"] + label {
+  position: relative;
+  color: transparent;
+  display: block;
+  cursor: pointer;
+  width: 68px;
+  height: 34px;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  background: #dddddd;
+  -webkit-transition-property: background-color;
+  -moz-transition-property: background-color;
+  transition-property: background-color;
+}
+.switch input[type="checkbox"] + label,
+.switch input[type="checkbox"] + label:after,
+.switch input[type="radio"] + label,
+.switch input[type="radio"] + label:after {
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  -moz-transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+.switch input[type="checkbox"] + label:after,
+.switch input[type="radio"] + label:after {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  display: block;
+  width: 26px;
+  height: 26px;
+  content: '';
+  background: #ffffff;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+}
+.switch input[type="checkbox"]:checked + label,
+.switch input[type="radio"]:checked + label {
+  background-color: #337ab7;
+}
+.switch input[type="checkbox"]:checked + label:after,
+.switch input[type="radio"]:checked + label:after {
+  left: 38px;
+}
+/*
+ * 圆角开关
+ */
+.switch-radius input[type="checkbox"] + label,
+.switch-radius input[type="radio"] + label {
+  border-radius: 2rem;
+}
+.switch-radius input[type="checkbox"] + label:after,
+.switch-radius input[type="radio"] + label:after {
+  border-radius: 2rem;
+}
+.switch-radius input[type="checkbox"]:checked + label,
+.switch-radius input[type="radio"]:checked + label {
+  border-radius: 2rem;
+}
+.switch-radius input[type="checkbox"]:checked + label:after,
+.switch-radius input[type="radio"]:checked + label:after {
+  border-radius: 2rem;
+}
+/*
+ * 开关尺寸
+ */
+.switch-sm input[type="checkbox"] + label,
+.switch-sm input[type="radio"] + label {
+  width: 60px;
+  height: 30px;
+}
+.switch-sm input[type="checkbox"] + label:after,
+.switch-sm input[type="radio"] + label:after {
+  width: 22px;
+  height: 22px;
+}
+.switch-sm input[type="checkbox"]:checked + label:after,
+.switch-sm input[type="radio"]:checked + label:after {
+  left: 34px;
+}
+.switch-lg input[type="checkbox"] + label,
+.switch-lg input[type="radio"] + label {
+  width: 92px;
+  height: 46px;
+}
+.switch-lg input[type="checkbox"] + label:after,
+.switch-lg input[type="radio"] + label:after {
+  width: 38px;
+  height: 38px;
+}
+.switch-lg input[type="checkbox"]:checked + label:after,
+.switch-lg input[type="radio"]:checked + label:after {
+  left: 50px;
+}
