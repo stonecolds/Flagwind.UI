@@ -275,11 +275,14 @@
 @input-border-radius-lg:          @border-radius-lg;
 
 @input-border-focus:              #66afe9;
-@input-color-placeholder:         #999;
+@input-placeholder-color:         #999;
 
 @input-height-sm:                 (floor(@font-size-sm * @line-height-sm) + (@padding-vertical-sm * 2) + 2);
 @input-height-md:                 (@line-height-computed + (@padding-vertical-md * 2) + 2);
 @input-height-lg:                 (ceil(@font-size-lg * @line-height-lg) + (@padding-vertical-lg * 2) + 2);
+
+@field-help-color:                lighten(@text-color, 25%);
+@field-icon-color:                @input-placeholder-color;
 
 @form-group-margin-bottom:        15px;
 @input-group-addon-bg:            @color-gray-lighter;
