@@ -31,7 +31,7 @@
     <hr />
 
     <div class="layout">
-        <form class="flex-md-8 flex-md-push-2 form-inline">
+        <form class="flex-md-8 flex-md-offset-2 form-inline">
             <fieldset>
                 <legend>行内排列</legend>
 
@@ -96,17 +96,54 @@
     <div class="layout">
         <form class="flex-md-8 flex-md-push-2">
             <fieldset>
+                <legend>输入框组</legend>
+
+                <div class="field-list">
+                    <div class="field field-icon">
+                        <input class="input" type="text" />
+                        <span class="icon icon-user"></span>
+                    </div>
+
+                    <div class="field field-icon">
+                        <input class="input" type="password" />
+                        <span class="icon icon-lock"></span>
+                    </div>
+
+                     <div class="field">
+                        <select class="select">
+                            <option value="1">北京市</option>
+                            <option value="2">上海市</option>
+                            <option value="3">深圳市</option>
+                            <option value="4">广州市</option>
+                        </select>
+                    </div>
+                </div>
+
+                 <div class="field">
+                    <button class="btn btn-block btn-secondary"> 登录系统 </button>
+                </div>
+
+            </fieldset>
+        </form>
+    </div>
+
+    <br />
+    <br />
+
+    <div class="layout">
+        <form class="flex-md-8 flex-md-push-2">
+            <fieldset>
                 <legend>修改用户</legend>
 
                 <div class="layout">
                      <div class="flex-md-4">
-                        <img class="img-thumbnail circle center-block" width="120" height="120" src="http://img4.imgtn.bdimg.com/it/u=3973557761,2919192981&fm=21&gp=0.jpg" />
+                        <img class="img-thumbnail circle center-block" width="120" height="120" src="http://img.qqbody.com/uploads/allimg/201407/29-144420_342.jpg" />
                     </div>
 
                     <div class="flex-md-8">
                         <div class="field">
                             <label class="label">用户名</label>
-                            <p>jasonsoop@gmail.com</p>
+                            <p class="text">jasonsoop@gmail.com</p>
                         </div>
 
                         <div class="field">
@@ -120,6 +157,19 @@
                     </div>
                 </div>
 
+                <div class="field">
+                    <label class="label">城市</label>
+
+                    <select class="select">
+                        <option value="1">北京市</option>
+                        <option value="2">上海市</option>
+                        <option value="3">深圳市</option>
+                        <option value="4">广州市</option>
+                    </select>
+
+                    <p class="help">请选择当前所在城市。</p>
+                </div>
+
                 <div class="field field-icon">
                     <label class="label">邮箱</label>
                     <input class="input" id="txt-email" type="email" value="1346615@qq.com" placeholder="请输入邮箱地址" />
@@ -128,13 +178,13 @@
 
                 <div class="field">
                     <label class="label">简介</label>
-                    <textarea class="textarea" rows="5"></textarea>
+                    <textarea class="input" rows="5"></textarea>
                 </div>
 
                 <div class="field">
                     <label class="label">来源</label>
-                    <div class="checkbox-group disabled">
-                        <label class="checkbox disabled"><input type="checkbox"> 朋友介绍 </label>
+                    <div class="checkbox-group">
+                        <label class="checkbox"><input type="checkbox"> 朋友介绍 </label>
                         <label class="checkbox"><input type="checkbox"> 平面/户外广告 </label>
                         <label class="checkbox"><input type="checkbox"> 报纸/微信/朋友圈 </label>
                     </div>
@@ -223,6 +273,6 @@
     -->
 
     <!-- 核心 JavaScript 文件 -->
-    <script src="../js/jquery.min.js"></script>
+    <!--<script src="../js/jquery.min.js"></script>-->
 </body>
 </html>
