@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8" />
+	<meta name="renderer" content="webkit" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<title>登陆页</title>
+
+	<!-- 核心 CSS 文件 -->
+	<link rel="stylesheet" href="../css/flagwind.css" />
+
+	<!-- HTML5 & Media Queries 兼容文件 -->
+	<!--[if lt IE 9]>
+	<script src="../js/html5shiv.min.js"></script>
+	<script src="../js/respond.min.js"></script>
+	<![endif]-->
+
+	<style>
+		.form-signin {
+			max-width: 330px;
+			margin: 0 auto;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="layout layout-fill">
+		<header>
+			<h1>登陆</h1>
+		</header>
+	</div>
+	<hr />
+
+	<div class="layout">
+		<form class="flex-md-8 flex-md-push-2 form-horizontal">
+			<div class="field field-icon">
+				<label class="label flex-md-3">用户名</label>
+				<div class="flex-md-6">
+					<input class="input" type="text" required="required" />
+					<span class="icon icon-user"></span>
+				</div>
+			</div>
+
+			<div class="field field-icon">
+				<label class="label flex-md-3">密码</label>
+				<div class="flex-md-6">
+					<input class="input" type="password" required="required" />
+					<span class="icon icon-lock"></span>
+				</div>
+			</div>
+
+			<div class="field">
+				<div class="flex-md-6 flex-md-offset-3">
+					<label class="checkbox"><input type="checkbox" /> 记住我</label>
+				</div>
+			</div>
+
+			<div class="field">
+				<div class="flex-md-6 flex-md-offset-3">
+					<button class="btn btn-success"> 登录系统 </button>
+				</div>
+			</div>
+		</form>
+	</div>
+	<hr />
+
+	<div class="layout layout-fill">
+		<form class="form-signin">
+			<div class="field field-icon">
+				<label class="label">Username</label>
+				<input class="input" type="text" required="required" />
+				<span class="icon icon-user"></span>
+			</div>
+
+			<div class="field field-icon">
+				<label class="label">Password</label>
+				<input class="input" type="password" required="required" />
+				<span class="icon icon-lock"></span>
+			</div>
+
+			<div class="field">
+				<div>
+					<label class="checkbox"><input type="checkbox" /> Remember me</label>
+				</div>
+			</div>
+
+			<div class="field">
+				<button class="btn btn-success btn-block"> Sign in </button>
+			</div>
+		</form>
+	</div>
+	<hr />
+
+	<div class="layout layout-fill">
+		<form class="form-signin">
+			<h2>Please sign in</h2>
+
+			<label for="inputEmail" class="sr-only">Email address</label>
+			<input class="input" type="email" id="inputEmail" placeholder="Email address" required="required" />
+
+			<label for="inputPassword" class="sr-only">Password</label>
+			<input class="input" type="password" id="inputPassword" placeholder="Password" required="required" />
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" value="remember-me"> Remember me
+				</label>
+			</div>
+
+			<button class="btn btn-success btn-block" type="submit">Sign in</button>
+		</form>
+	</div>
+	<hr />
+
+	<div class="layout layout-fill">
+		<form class="form-inline">
+			<div class="field field-icon">
+				<label class="label sr-only">Username</label>
+				<input class="input input-lg" type="text" required="required" />
+				<span class="icon icon-user"></span>
+			</div>
+
+			<div class="field field-icon">
+				<label class="label sr-only">Password</label>
+				<input class="input input-lg" type="password" required="required" />
+				<span class="icon icon-lock"></span>
+			</div>
+
+			<div class="field">
+				<div>
+					<label class="checkbox"><input type="checkbox" /> Remember me</label>
+				</div>
+			</div>
+
+			<div class="field">
+				<button class="btn btn-success btn-lg"> Sign in </button>
+			</div>
+		</form>
+	</div>
+	<hr />
+</body>
+</html>
