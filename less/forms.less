@@ -100,10 +100,18 @@ output
     vertical-align: middle;
 }
 
+/*
+ * 表单域.
+ */
+
 .field
 {
-    margin-bottom: @form-group-margin-bottom;
+    margin-bottom: @field-margin-bottom;
 }
+
+/*
+ * 标签。
+ */
 
 .label
 {
@@ -111,9 +119,12 @@ output
     font-weight: bold;
 }
 
+/*
+ * 输入框、下拉框。
+ */
+
 .input,
-.select,
-.textarea
+.select
 {
     display: block;
     width: 100%;
@@ -137,7 +148,7 @@ output
     &[readonly],
     fieldset[disabled] &
     {
-        background-color: @input-bg-disabled;
+        background-color: @input-disabled-bg;
         opacity: 1;
     }
 
@@ -148,36 +159,42 @@ output
     }
 }
 
-.textarea
+/*
+ * 下拉框。
+ */
+
+.select
+{
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    -webkit-border-radius: @input-border-radius-md;
+    background: #fff url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMTJweCIgeT0iMHB4IiB3aWR0aD0iMjRweCIgaGVpZ2h0PSIzcHgiIHZpZXdCb3g9IjAgMCA2IDMiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDYgMyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHBvbHlnb24gcG9pbnRzPSI1Ljk5MiwwIDIuOTkyLDMgLTAuMDA4LDAgIi8+PC9zdmc+') no-repeat 99.5% center;
+
+    &[multiple="multiple"]
+    {
+        background-image: none;
+    }
+}
+
+textarea.input
 {
     height: auto;
 }
 
-.file
-{
-    position: relative;
-    overflow: hidden;
-
-    input[type="file"]
-    {
-        position: absolute;
-        left: 0;
-        top: 0;
-        z-index: 1;
-        width: 100%;
-        height:100%;
-        opacity: 0;
-        cursor: pointer;
-    }
-}
+/*
+ * 文本域。
+ */
 
 .text
 {
     padding-top: (@padding-vertical-md + 1);
     padding-bottom: (@padding-vertical-md + 1);
     margin-bottom: 0;
-    //min-height: (@line-height-computed + @font-size-md);
 }
+
+/*
+ * 表单域提示。
+ */
 
 .help
 {
@@ -186,6 +203,10 @@ output
     margin-bottom: 10px;
     color: @field-help-color;
 }
+
+/*
+ * 单选、复选框。
+ */
 
 .radio,
 .checkbox
@@ -254,49 +275,74 @@ input[type="checkbox"]
     }
 }
 
-.input-sm
+
+/*
+ * 表单域大小(小尺寸sm)。
+ */
+
+.input-sm,
+.field-sm .input
 {
-    .input-size(@input-height-sm; @padding-vertical-sm; @padding-horizontal-sm; @font-size-sm; @line-height-sm; @input-border-radius-sm);
+    .field-size(@input-height-sm; @padding-vertical-sm; @padding-horizontal-sm; @font-size-sm; @line-height-sm; @input-border-radius-sm);
 }
 
-.field-sm
+.select-sm,
+.field-sm .select
 {
-    .input
-    {
-        .input-size(@input-height-sm; @padding-vertical-sm; @padding-horizontal-sm; @font-size-sm; @line-height-sm; @input-border-radius-sm);
-    }
-
-    .text
-    {
-        height: @input-height-sm;
-        padding: @padding-vertical-sm @padding-horizontal-sm;
-        font-size: @font-size-sm;
-        line-height: @line-height-sm;
-        //min-height: (@line-height-computed + @font-size-sm);
-    }
+    .field-size(@input-height-sm; @padding-vertical-sm; @padding-horizontal-sm; @font-size-sm; @input-height-sm; @input-border-radius-sm);
 }
 
-.input-lg
+.field-sm .text
 {
-    .input-size(@input-height-lg; @padding-vertical-lg; @padding-horizontal-lg; @font-size-lg; @line-height-lg; @input-border-radius-lg);
+    height: @input-height-sm;
+    padding: @padding-vertical-sm @padding-horizontal-sm;
+    font-size: @font-size-sm;
+    line-height: @line-height-sm;
 }
 
-.field-lg
+textarea.input-sm,
+select[multiple].select-sm,
+.field-sm textarea.input,
+.field-sm select[multiple].select
 {
-    .input
-    {
-        .input-size(@input-height-lg; @padding-vertical-lg; @padding-horizontal-lg; @font-size-lg; @line-height-lg; @input-border-radius-lg);
-    }
-
-    .text
-    {
-        height: @input-height-lg;
-        padding: @padding-vertical-lg @padding-horizontal-lg;
-        font-size: @font-size-lg;
-        line-height: @line-height-lg;
-        //min-height: (@line-height-computed + @font-size-lg);
-    }
+    height: auto;
 }
+
+/*
+ * 表单域大小(大尺寸lg)。
+ */
+
+.input-lg,
+.field-lg .input
+{
+    .field-size(@input-height-lg; @padding-vertical-lg; @padding-horizontal-lg; @font-size-lg; @line-height-lg; @input-border-radius-lg);
+}
+
+.select-lg,
+.field-lg .select
+{
+    .field-size(@input-height-lg; @padding-vertical-lg; @padding-horizontal-lg; @font-size-lg; @input-height-lg; @input-border-radius-lg);
+}
+
+.field-lg .text
+{
+    height: @input-height-lg;
+    padding: @padding-vertical-lg @padding-horizontal-lg;
+    font-size: @font-size-lg;
+    line-height: @line-height-lg;
+}
+
+textarea.input-lg,
+select[multiple].select-lg,
+.field-lg textarea.input,
+.field-lg select[multiple].select
+{
+    height: auto;
+}
+
+/*
+ * 带图标的表单域。
+ */
 
 .field-icon
 {
@@ -336,36 +382,52 @@ input[type="checkbox"]
     }
 }
 
-.input-sm + .icon,
-.field-sm .input + .icon
+.field-sm .icon,
+.input-sm + .icon
 {
     width: @input-height-sm;
     height: @input-height-sm;
     line-height: @input-height-sm;
 }
 
-.input-lg + .icon,
-.field-lg .input + .icon
+.field-lg .icon，
+.input-lg + .icon
 {
     width: @input-height-lg;
     height: @input-height-lg;
     line-height: @input-height-lg;
 }
 
+/*
+ * 表单域成功状态。
+ */
+
 .field-success
 {
     .field-validation(@state-success-text; @state-success-text; @state-success-bg);
 }
+
+/*
+ * 表单域警告状态。
+ */
 
 .field-warning
 {
     .field-validation(@state-warning-text; @state-warning-text; @state-warning-bg);
 }
 
+/*
+ * 表单域危险状态。
+ */
+
 .field-error
 {
     .field-validation(@state-danger-text; @state-danger-text; @state-danger-bg);
 }
+
+/*
+ * 行内排列表单。
+ */
 
 .form-inline
 {
@@ -378,7 +440,8 @@ input[type="checkbox"]
             vertical-align: middle;
         }
 
-        .input
+        .input,
+        .select
         {
             display: inline-block;
             width: auto;
@@ -388,24 +451,6 @@ input[type="checkbox"]
         .text
         {
             display: inline-block;
-        }
-
-        .input-group
-        {
-            display: inline-table;
-            vertical-align: middle;
-
-            .input-group-addon,
-            .input-group-btn,
-            .field
-            {
-                width: auto;
-            }
-        }
-
-        .input-group > .field
-        {
-            width: 100%;
         }
 
         .label
@@ -489,6 +534,53 @@ input[type="checkbox"]
             .label
             {
                 padding-top: ((@padding-vertical-lg * @line-height-lg) + 1);
+            }
+        }
+    }
+}
+
+/*
+ * 表单域列表。
+ */
+
+.field-list
+{
+    margin-bottom: @field-margin-bottom;
+
+    > .field
+    {
+        margin-bottom: 0;
+
+        .input,
+        .select
+        {
+            position: relative;
+            margin-top: -1px;
+            border-radius: 0 !important;
+
+            &:focus
+            {
+                z-index: 2;
+            }
+        }
+
+        &:first-child
+        {
+            .input,
+            .select
+            {
+                margin-top: 1px;
+                .border-top-radius(~"@{input-border-radius-md} !important");
+            }
+        }
+
+        &:last-child
+        {
+            .input,
+            .select
+            {
+                margin-top: -2px;
+                .border-bottom-radius(~"@{input-border-radius-md} !important");
             }
         }
     }
