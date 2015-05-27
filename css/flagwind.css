@@ -803,7 +803,8 @@ mark,
  * 缩略语。
  */
 abbr[title],
-abbr[data-original-title]， dfn[title],
+abbr[data-original-title],
+dfn[title],
 dfn[data-original-title] {
   cursor: help;
   border-bottom: 1px dotted #777777;
@@ -4159,6 +4160,34 @@ fieldset[disabled] .select {
 textarea.input {
   height: auto;
 }
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  input[type="date"],
+  input[type="time"],
+  input[type="datetime-local"],
+  input[type="month"] {
+    line-height: 34px;
+  }
+  input[type="date"].input-sm,
+  input[type="time"].input-sm,
+  input[type="datetime-local"].input-sm,
+  input[type="month"].input-sm,
+  .field-group-sm input[type="date"],
+  .field-group-sm input[type="time"],
+  .field-group-sm input[type="datetime-local"],
+  .field-group-sm input[type="month"] {
+    line-height: 30px;
+  }
+  input[type="date"].input-lg,
+  input[type="time"].input-lg,
+  input[type="datetime-local"].input-lg,
+  input[type="month"].input-lg,
+  .field-group-lg input[type="date"],
+  .field-group-lg input[type="time"],
+  .field-group-lg input[type="datetime-local"],
+  .field-group-lg input[type="month"] {
+    line-height: 46px;
+  }
+}
 /*
  * 文本域。
  */
@@ -4303,7 +4332,7 @@ select[multiple].select-lg,
 .field-icon .input {
   padding-right: 42.5px;
 }
-.field-icon .icon {
+.field-icon .input ~ .icon {
   position: absolute;
   top: 0;
   right: 0;
@@ -4322,13 +4351,14 @@ select[multiple].select-lg,
 .field-icon .label.sr-only ~ .icon {
   top: 0;
 }
-.field-sm .icon,
-.input-sm + .icon {
+.field-sm .input ~ .icon,
+.input-sm ~ .icon {
   width: 30px;
   height: 30px;
   line-height: 30px;
 }
-.field-lg .icon， .input-lg + .icon {
+.field-lg .input ~ .icon,
+.input-lg ~ .icon {
   width: 46px;
   height: 46px;
   line-height: 46px;
@@ -4336,74 +4366,92 @@ select[multiple].select-lg,
 /*
  * 表单域成功状态。
  */
-.field-success .help,
-.field-success .label,
-.field-success .radio,
-.field-success .checkbox {
+.has-success .help,
+.has-success .label,
+.has-success .radio,
+.has-success .checkbox {
   color: #3c763d;
 }
-.field-success .input,
-.field-success .select {
+.has-success .input,
+.has-success .select {
   border-color: #3c763d;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
 }
-.field-success .input:focus,
-.field-success .select:focus {
+.has-success .input:focus,
+.has-success .select:focus {
   border-color: #2b542c;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #67b168;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #67b168;
 }
-.field-success .icon {
+.has-success .icon {
+  color: #3c763d !important;
+}
+.has-success .field-group .label,
+.field-group.has-success .label {
   color: #3c763d;
+  border-color: #3c763d;
+  background-color: #dff0d8;
 }
 /*
  * 表单域警告状态。
  */
-.field-warning .help,
-.field-warning .label,
-.field-warning .radio,
-.field-warning .checkbox {
+.has-warning .help,
+.has-warning .label,
+.has-warning .radio,
+.has-warning .checkbox {
   color: #8a6d3b;
 }
-.field-warning .input,
-.field-warning .select {
+.has-warning .input,
+.has-warning .select {
   border-color: #8a6d3b;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
 }
-.field-warning .input:focus,
-.field-warning .select:focus {
+.has-warning .input:focus,
+.has-warning .select:focus {
   border-color: #66512c;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c0a16b;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c0a16b;
 }
-.field-warning .icon {
+.has-warning .icon {
+  color: #8a6d3b !important;
+}
+.has-warning .field-group .label,
+.field-group.has-warning .label {
   color: #8a6d3b;
+  border-color: #8a6d3b;
+  background-color: #fcf8e3;
 }
 /*
  * 表单域危险状态。
  */
-.field-error .help,
-.field-error .label,
-.field-error .radio,
-.field-error .checkbox {
+.has-error .help,
+.has-error .label,
+.has-error .radio,
+.has-error .checkbox {
   color: #a94442;
 }
-.field-error .input,
-.field-error .select {
+.has-error .input,
+.has-error .select {
   border-color: #a94442;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
 }
-.field-error .input:focus,
-.field-error .select:focus {
+.has-error .input:focus,
+.has-error .select:focus {
   border-color: #843534;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
 }
-.field-error .icon {
+.has-error .icon {
+  color: #a94442 !important;
+}
+.has-error .field-group .label,
+.field-group.has-error .label {
   color: #a94442;
+  border-color: #a94442;
+  background-color: #f2dede;
 }
 /*
  * 行内排列表单。
@@ -4423,6 +4471,18 @@ select[multiple].select-lg,
   .form-inline .text {
     display: inline-block;
   }
+  .form-inline .field-group {
+    display: inline-table;
+    vertical-align: middle;
+  }
+  .form-inline .field-group .label,
+  .form-inline .field-group .input,
+  .form-inline .field-group .addon {
+    width: auto;
+  }
+  .form-inline .field-group > .input {
+    width: 100%;
+  }
   .form-inline .label {
     margin-bottom: 0;
     vertical-align: middle;
@@ -4440,7 +4500,7 @@ select[multiple].select-lg,
     position: relative;
     margin-left: 0;
   }
-  .form-inline .field-icon .icon {
+  .form-inline .field-icon .input ~ .icon {
     top: 0;
   }
 }
@@ -4469,7 +4529,7 @@ select[multiple].select-lg,
     padding-top: 7px;
   }
 }
-.form-horizontal .field-icon .icon {
+.form-horizontal .field-icon .input ~ .icon {
   right: 15px;
 }
 @media (min-width: 768px) {
@@ -4512,6 +4572,201 @@ select[multiple].select-lg,
   margin-top: -2px;
   border-bottom-right-radius: 4px !important;
   border-bottom-left-radius: 4px !important;
+}
+/* ============================ 域组(Field group) ========================= */
+.field-group {
+  position: relative;
+  display: table;
+  border-collapse: separate;
+}
+.field-group[class*="flex-"] {
+  float: none;
+  padding-left: 0;
+  padding-right: 0;
+}
+.field-group .label {
+  font-weight: normal;
+  margin-bottom: 0;
+}
+.field-group .input {
+  position: relative;
+  z-index: 2;
+  float: left;
+  width: 100%;
+  margin-bottom: 0;
+}
+.field-group .label ~ .icon {
+  top: 0;
+}
+.field-group .label,
+.field-group .input,
+.field-group .addon {
+  display: table-cell;
+}
+.field-group .label:not(:first-child):not(:last-child),
+.field-group .input:not(:first-child):not(:last-child),
+.field-group .addon:not(:first-child):not(:last-child) {
+  border-radius: 0;
+}
+.field-group .label,
+.field-group .addon {
+  width: 1%;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+.field-icon .input {
+  border-bottom-right-radius: 4px !important;
+  border-top-right-radius: 4px !important;
+}
+.field-group-sm > .label,
+.field-group-sm > .input,
+.field-group-sm > .addon > .btn {
+  height: 30px;
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+.field-icon.field-group-sm .input,
+.field-icon .field-group-sm .input {
+  border-bottom-right-radius: 3px !important;
+  border-top-right-radius: 3px !important;
+}
+.field-icon.field-group-sm .input ~ .icon,
+.field-icon .field-group-sm .input ~ .icon {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+}
+.field-group-lg > .label,
+.field-group-lg > .input,
+.field-group-lg > .addon > .btn {
+  height: 46px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
+  border-radius: 6px;
+}
+.field-icon.field-group-lg .input,
+.field-icon .field-group-lg .input {
+  border-bottom-right-radius: 6px !important;
+  border-top-right-radius: 6px !important;
+}
+.field-icon.field-group-lg .input ~ .icon,
+.field-icon .field-group-lg .input ~ .icon {
+  width: 46px;
+  height: 46px;
+  line-height: 46px;
+}
+.field-group .label {
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1;
+  color: #555555;
+  text-align: center;
+  background-color: #eeeeee;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+}
+.field-group .label input[type="radio"],
+.field-group .label input[type="checkbox"] {
+  margin-top: 0;
+}
+.field-group .label:first-child,
+.field-group .input:first-child,
+.field-group .addon:first-child > .btn,
+.field-group .addon:first-child > .btn-group > .btn,
+.field-group .addon:first-child > .dropdown-toggle,
+.field-group .addon:last-child > .btn:not(:last-child):not(.dropdown-toggle),
+.field-group .addon:last-child > .btn-group:not(:last-child) > .btn {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+.field-group .label:first-child {
+  border-right: 0;
+}
+.field-group .label:last-child,
+.field-group .input:last-child,
+.field-group .addon:last-child > .btn,
+.field-group .addon:last-child > .btn-group > .btn,
+.field-group .addon:last-child > .dropdown-toggle,
+.field-group .addon:first-child > .btn:not(:first-child),
+.field-group .addon:first-child > .btn-group:not(:first-child) > .btn {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+.field-group .input ~ .label {
+  border-left: 0;
+}
+.field-group .addon {
+  position: relative;
+  font-size: 0;
+  white-space: nowrap;
+}
+.field-group .addon > .btn {
+  position: relative;
+}
+.field-group .addon > .btn + .btn {
+  margin-left: -1px;
+}
+.field-group .addon > .btn:hover,
+.field-group .addon > .btn:focus,
+.field-group .addon > .btn:active {
+  z-index: 2;
+}
+.field-group .addon:first-child > .btn,
+.field-group .addon:first-child > .btn-group {
+  margin-right: -1px;
+}
+.field-group .addon:last-child > .btn,
+.field-group .addon:last-child > .btn-group {
+  margin-left: -1px;
+}
+.field-group-primary .label {
+  background: #337ab7;
+  color: #ffffff;
+}
+.field-group-primary .label,
+.field-group-primary .input,
+.field-group-primary .addon > .btn {
+  border-color: #2d6da3;
+}
+.field-group-secondary .label {
+  background: #5bc0de;
+  color: #ffffff;
+}
+.field-group-secondary .label,
+.field-group-secondary .input,
+.field-group-secondary .addon > .btn {
+  border-color: #46b8da;
+}
+.field-group-success .label {
+  background: #5cb85c;
+  color: #ffffff;
+}
+.field-group-success .label,
+.field-group-success .input,
+.field-group-success .addon > .btn {
+  border-color: #4cae4c;
+}
+.field-group-warning .label {
+  background: #f0ad4e;
+  color: #ffffff;
+}
+.field-group-warning .label,
+.field-group-warning .input,
+.field-group-warning .addon > .btn {
+  border-color: #eea236;
+}
+.field-group-danger .label {
+  background: #d9534f;
+  color: #ffffff;
+}
+.field-group-danger .label,
+.field-group-danger .input,
+.field-group-danger .addon > .btn {
+  border-color: #d43f3a;
 }
 /* ============================ 辅助(Utilities) ========================== */
 /*

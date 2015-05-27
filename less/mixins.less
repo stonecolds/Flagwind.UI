@@ -834,6 +834,13 @@
     border-radius: @border-radius;
 }
 
+.field-icon-size(@width, @height, @line-height)
+{
+    width: @width;
+    height: @height;
+    line-height: @line-height;
+}
+
 .field-validation(@text-color: #555; @border-color: #ccc; @background-color: #f5f5f5)
 {
     .help,
@@ -860,7 +867,38 @@
 
     .icon
     {
-        color: @text-color;
+        color: @text-color !important;
+    }
+
+    .field-group,
+    .field-group&
+    {
+        .label
+        {
+            color: @text-color;
+            border-color: @border-color;
+            background-color: @background-color;
+        }
+    }
+}
+
+
+// ============================= 域组(Field group) ========================== //
+
+
+.field-group-variant(@color, @backcolor, @border-color)
+{
+    .label
+    {
+        background: @backcolor;
+        color: @color;
+    }
+
+    .label,
+    .input,
+    .addon > .btn
+    {
+        border-color: @border-color;
     }
 }
 

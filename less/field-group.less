@@ -1,0 +1,235 @@
+//
+// * Flagwind.UI v1.0.0
+// * Copyright 2014 Flagwind Inc. All rights reserved.
+// * Licensed under the MIT License.
+// * https://github.com/Flagwind/Flagwind.UI/blob/master/LICENSE
+//
+
+
+/* ============================ 域组(Field group) ========================= */
+
+
+.field-group
+{
+    position: relative;
+    display: table;
+    border-collapse: separate;
+
+    &[class*="flex-"]
+    {
+        float: none;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .label
+    {
+        font-weight: normal;
+        margin-bottom: 0;
+    }
+
+    .input
+    {
+        position: relative;
+        z-index: 2;
+        float: left;
+        width: 100%;
+        margin-bottom: 0;
+    }
+}
+
+.field-group .label ~ .icon
+{
+    top: 0;
+}
+
+.field-group .label,
+.field-group .input,
+.field-group .addon
+{
+    display: table-cell;
+
+    &:not(:first-child):not(:last-child)
+    {
+        border-radius: 0;
+    }
+}
+
+.field-group .label,
+.field-group .addon
+{
+    width: 1%;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+.field-icon .input
+{
+    .border-right-radius(~"@{input-border-radius-md} !important");
+}
+
+.field-group-sm
+{
+    > .label,
+    > .input,
+    > .addon > .btn
+    {
+        .input-sm();
+    }
+}
+
+.field-icon.field-group-sm,
+.field-icon .field-group-sm
+{
+    .input
+    {
+        .border-right-radius(~"@{input-border-radius-sm} !important");
+    }
+
+    .input ~ .icon
+    {
+        .field-icon-size(@input-height-sm, @input-height-sm, @input-height-sm);
+    }
+}
+
+.field-group-lg
+{
+    > .label,
+    > .input,
+    > .addon > .btn
+    {
+        .input-lg();
+    }
+}
+
+.field-icon.field-group-lg,
+.field-icon .field-group-lg
+{
+    .input
+    {
+        .border-right-radius(~"@{input-border-radius-lg} !important");
+    }
+
+    .input ~ .icon
+    {
+        .field-icon-size(@input-height-lg, @input-height-lg, @input-height-lg);
+    }
+}
+
+.field-group .label
+{
+    padding: @padding-vertical-md @padding-horizontal-md;
+    font-size: @font-size-md;
+    font-weight: normal;
+    line-height: 1;
+    color: @input-color;
+    text-align: center;
+    background-color: @field-group-addon-bg;
+    border: 1px solid @field-group-addon-border-color;
+    border-radius: @border-radius-md;
+
+    input[type="radio"],
+    input[type="checkbox"]
+    {
+        margin-top: 0;
+    }
+}
+
+.field-group .label:first-child,
+.field-group .input:first-child,
+.field-group .addon:first-child > .btn,
+.field-group .addon:first-child > .btn-group > .btn,
+.field-group .addon:first-child > .dropdown-toggle,
+.field-group .addon:last-child > .btn:not(:last-child):not(.dropdown-toggle),
+.field-group .addon:last-child > .btn-group:not(:last-child) > .btn
+{
+    .border-right-radius(0);
+}
+
+.field-group .label:first-child
+{
+    border-right: 0;
+}
+
+.field-group .label:last-child,
+.field-group .input:last-child,
+.field-group .addon:last-child > .btn,
+.field-group .addon:last-child > .btn-group > .btn,
+.field-group .addon:last-child > .dropdown-toggle,
+.field-group .addon:first-child > .btn:not(:first-child),
+.field-group .addon:first-child > .btn-group:not(:first-child) > .btn
+{
+    .border-left-radius(0);
+}
+
+.field-group .input ~ .label
+{
+    border-left: 0;
+}
+
+.field-group .addon
+{
+    position: relative;
+    font-size: 0;
+    white-space: nowrap;
+
+    > .btn
+    {
+        position: relative;
+
+        + .btn
+        {
+            margin-left: -1px;
+        }
+
+        &:hover,
+        &:focus,
+        &:active
+        {
+            z-index: 2;
+        }
+    }
+
+    &:first-child
+    {
+        > .btn,
+        > .btn-group
+        {
+            margin-right: -1px;
+        }
+    }
+
+    &:last-child
+    {
+        > .btn,
+        > .btn-group
+        {
+            margin-left: -1px;
+        }
+    }
+}
+
+.field-group-primary
+{
+    .field-group-variant(@btn-primary-color; @btn-primary-bg; @btn-primary-border);
+}
+
+.field-group-secondary
+{
+    .field-group-variant(@btn-secondary-color; @btn-secondary-bg; @btn-secondary-border);
+}
+
+.field-group-success
+{
+    .field-group-variant(@btn-success-color; @btn-success-bg; @btn-success-border);
+}
+
+.field-group-warning
+{
+    .field-group-variant(@btn-warning-color; @btn-warning-bg; @btn-warning-border);
+}
+
+.field-group-danger
+{
+    .field-group-variant(@btn-danger-color; @btn-danger-bg; @btn-danger-border);
+}

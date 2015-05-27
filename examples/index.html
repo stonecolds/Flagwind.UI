@@ -95,6 +95,67 @@
 
     <div class="layout">
         <form class="flex-md-8 flex-md-push-2">
+             <fieldset>
+                <legend>表单域组</legend>
+
+                <div class="field field-group">
+                    <label class="label"><input type="checkbox" /></label>
+                    <input class="input" type="text" />
+                </div>
+
+                <div class="field field-group">
+                    <label class="label"><input type="radio" /></label>
+                    <input class="input" type="text" />
+                </div>
+
+                <div class="field field-group field-group-secondary">
+                    <label class="label"> http:// </label>
+                    <input class="input" type="text" />
+                </div>
+
+                <div class="field field-group field-group-primary">
+                    <input class="input" type="text" />
+                    <div class="addon">
+                         <button class="btn btn-primary"> 查 找 </button>
+                    </div>
+                </div>
+
+                <div class="field field-group field-group-warning">
+                    <span class="label">人民币(￥)</span>
+                    <input class="input" type="text" />
+                    <span class="label">元</span>
+                </div>
+
+                <div class="field field-group field-group-danger">
+                    <label class="label"><span class="icon icon-user"></span></label>
+                    <input class="input" type="text" />
+                </div>
+
+                <div class="field field-group field-group-success">
+                    <div class="addon"><button class="btn btn-success"> 购物车 </button></div>
+                    <input class="input" type="text" />
+                    <span class="label">元</span>
+                </div>
+
+                <div class="field field-icon has-error">
+                    <label class="label">出错啦！</label>
+                    <div class="field-group">
+                        <label class="label"> 购物车 </label>
+                        <input class="input" type="text" />
+                        <span class="icon icon-remove"></span>
+                    </div>
+                    <p class="help">其实我也不知道错误在那里，我乱写的！</p>
+                </div>
+
+            </fieldset>
+        </form>
+    </div>
+
+    <br />
+    <br />
+
+    <div class="layout">
+        <form class="flex-md-8 flex-md-push-2">
             <fieldset>
                 <legend>输入框组</legend>
 
@@ -137,7 +198,7 @@
 
                 <div class="layout">
                      <div class="flex-md-4">
-                        <img class="img-thumbnail circle center-block" width="120" height="120" src="http://img.qqbody.com/uploads/allimg/201407/29-144420_342.jpg" />
+                        <!-- <img class="img-thumbnail circle center-block" width="120" height="120" src="http://img.qqbody.com/uploads/allimg/201407/29-144420_342.jpg" /> -->
                     </div>
 
                     <div class="flex-md-8">
@@ -174,6 +235,7 @@
                     <label class="label">邮箱</label>
                     <input class="input" id="txt-email" type="email" value="1346615@qq.com" placeholder="请输入邮箱地址" />
                     <span class="icon icon-envelope-o"></span>
+                    <p class="help">请选择当前所在城市。</p>
                 </div>
 
                 <div class="field">
@@ -195,6 +257,8 @@
             </fieldset>
         </form>
     </div>
+
+    <br />
 
     <!--
     <div class="container">
