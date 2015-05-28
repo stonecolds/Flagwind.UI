@@ -70,11 +70,12 @@
 
 .field-group-sm
 {
+    .field-sm();
+
     > .label,
-    > .input,
     > .addon > .btn
     {
-        .input-sm();
+        .field-size(@input-height-sm; @padding-vertical-sm; @padding-horizontal-sm; @font-size-sm; @line-height-sm; @input-border-radius-sm);
     }
 }
 
@@ -94,11 +95,12 @@
 
 .field-group-lg
 {
+    .field-lg();
+
     > .label,
-    > .input,
     > .addon > .btn
     {
-        .input-lg();
+        .field-size(@input-height-lg; @padding-vertical-lg; @padding-horizontal-lg; @font-size-lg; @line-height-lg; @input-border-radius-lg);
     }
 }
 

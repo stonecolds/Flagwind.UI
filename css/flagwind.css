@@ -4264,62 +4264,108 @@ fieldset[disabled] .checkbox-group-inline {
 /*
  * 表单域大小(小尺寸sm)。
  */
-.input-sm,
-.field-sm .input {
+.input-sm {
   height: 30px;
   padding: 5px 10px;
-  font-size: 12px;
+  font-size: 12px !important;
   line-height: 1.5;
   border-radius: 3px;
 }
-.select-sm,
-.field-sm .select {
+.select-sm {
   height: 30px;
   padding: 5px 10px;
-  font-size: 12px;
+  font-size: 12px !important;
   line-height: 30px;
   border-radius: 3px;
+}
+.field-sm .checkbox,
+.field-sm .radio,
+.field-sm .label,
+.field-sm .text,
+.field-sm .help,
+.field-sm .input,
+.field-sm .select {
+  font-size: 12px !important;
+}
+.field-sm input[type="radio"],
+.field-sm input[type="checkbox"] {
+  margin-top: 2px;
 }
 .field-sm .text {
   height: 30px;
   padding: 5px 10px;
-  font-size: 12px;
   line-height: 1.5;
 }
-textarea.input-sm,
-select[multiple].select-sm,
-.field-sm textarea.input,
-.field-sm select[multiple].select {
-  height: auto;
+.field-sm .input {
+  height: 30px;
+  padding: 5px 10px;
+  font-size: 12px !important;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+.field-sm .select {
+  height: 30px;
+  padding: 5px 10px;
+  font-size: 12px !important;
+  line-height: 30px;
+  border-radius: 3px;
 }
 /*
  * 表单域大小(大尺寸lg)。
  */
-.input-lg,
-.field-lg .input {
+.input-lg {
   height: 46px;
   padding: 10px 16px;
-  font-size: 18px;
+  font-size: 18px !important;
   line-height: 1.3333333;
   border-radius: 6px;
 }
-.select-lg,
+.select-lg {
+  height: 46px;
+  padding: 10px 16px;
+  font-size: 18px !important;
+  line-height: 46px;
+  border-radius: 6px;
+}
+.field-lg .checkbox,
+.field-lg .radio,
+.field-lg .label,
+.field-lg .text,
+.field-lg .help,
+.field-lg .input,
+.field-lg .select {
+  font-size: 18px !important;
+}
+.field-lg input[type="radio"],
+.field-lg input[type="checkbox"] {
+  margin-top: 6px;
+}
+.field-lg .input {
+  height: 46px;
+  padding: 10px 16px;
+  font-size: 18px !important;
+  line-height: 1.3333333;
+  border-radius: 6px;
+}
 .field-lg .select {
   height: 46px;
   padding: 10px 16px;
-  font-size: 18px;
+  font-size: 18px !important;
   line-height: 46px;
   border-radius: 6px;
 }
 .field-lg .text {
   height: 46px;
   padding: 10px 16px;
-  font-size: 18px;
   line-height: 1.3333333;
 }
+textarea.input-sm,
 textarea.input-lg,
+select[multiple].select-sm,
 select[multiple].select-lg,
+.field-sm textarea.input,
 .field-lg textarea.input,
+.field-sm select[multiple].select,
 .field-lg select[multiple].select {
   height: auto;
 }
@@ -4618,12 +4664,43 @@ select[multiple].select-lg,
   border-bottom-right-radius: 4px !important;
   border-top-right-radius: 4px !important;
 }
+.field-group-sm .checkbox,
+.field-group-sm .radio,
+.field-group-sm .label,
+.field-group-sm .text,
+.field-group-sm .help,
+.field-group-sm .input,
+.field-group-sm .select {
+  font-size: 12px !important;
+}
+.field-group-sm input[type="radio"],
+.field-group-sm input[type="checkbox"] {
+  margin-top: 2px;
+}
+.field-group-sm .text {
+  height: 30px;
+  padding: 5px 10px;
+  line-height: 1.5;
+}
+.field-group-sm .input {
+  height: 30px;
+  padding: 5px 10px;
+  font-size: 12px !important;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+.field-group-sm .select {
+  height: 30px;
+  padding: 5px 10px;
+  font-size: 12px !important;
+  line-height: 30px;
+  border-radius: 3px;
+}
 .field-group-sm > .label,
-.field-group-sm > .input,
 .field-group-sm > .addon > .btn {
   height: 30px;
   padding: 5px 10px;
-  font-size: 12px;
+  font-size: 12px !important;
   line-height: 1.5;
   border-radius: 3px;
 }
@@ -4638,12 +4715,43 @@ select[multiple].select-lg,
   height: 30px;
   line-height: 30px;
 }
+.field-group-lg .checkbox,
+.field-group-lg .radio,
+.field-group-lg .label,
+.field-group-lg .text,
+.field-group-lg .help,
+.field-group-lg .input,
+.field-group-lg .select {
+  font-size: 18px !important;
+}
+.field-group-lg input[type="radio"],
+.field-group-lg input[type="checkbox"] {
+  margin-top: 6px;
+}
+.field-group-lg .input {
+  height: 46px;
+  padding: 10px 16px;
+  font-size: 18px !important;
+  line-height: 1.3333333;
+  border-radius: 6px;
+}
+.field-group-lg .select {
+  height: 46px;
+  padding: 10px 16px;
+  font-size: 18px !important;
+  line-height: 46px;
+  border-radius: 6px;
+}
+.field-group-lg .text {
+  height: 46px;
+  padding: 10px 16px;
+  line-height: 1.3333333;
+}
 .field-group-lg > .label,
-.field-group-lg > .input,
 .field-group-lg > .addon > .btn {
   height: 46px;
   padding: 10px 16px;
-  font-size: 18px;
+  font-size: 18px !important;
   line-height: 1.3333333;
   border-radius: 6px;
 }
