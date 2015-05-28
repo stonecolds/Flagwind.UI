@@ -1658,12 +1658,71 @@
 			<h2>按钮</h2>
 			<h3>基本按钮</h3>
 			为 <code>&lt;a&gt;</code>、<code>&lt;button&gt;</code> 或 <code>&lt;input&gt;</code> 元素添加按钮类即可表现为按钮样式。
+			<p class="tips">
+				注意：如果 <code>&lt;a&gt;</code> 元素被作为按钮使用，并用于在当前页面触发某些功能，而不是用于链接其他页面或链接当前页面中的其他部分，那么务必为其设置<code>role="button"</code>属性。
+			</p>
 			<!-- 展示 -->
 			<div class="show-demo">
 				<iframe onload="Javascript:SetCwinHeight(this, 50)" frameborder="0" src="Demo/ButtonDemo/demo1.html"></iframe>
 			</div>
 			<!-- demo -->
 			<a class="demo" href="Demo/ButtonDemo/demo1.html" target="_blank">Demo</a>
+			<!-- 代码 -->
+<pre><code class="language-markup">&lt;div class=&quot;layout layout-fill&quot;&gt;
+    &lt;a class=&quot;btn btn-default&quot; href=&quot;#&quot; role=&quot;button&quot;&gt;基本按钮&lt;/a&gt;
+    &lt;button class=&quot;btn btn-default&quot;&gt;基本按钮&lt;/button&gt;
+    &lt;input class=&quot;btn btn-default&quot; type=&quot;button&quot; value=&quot;基本按钮&quot; /&gt;
+    &lt;input class=&quot;btn btn-default&quot; type=&quot;submit&quot; value=&quot;基本按钮&quot; /&gt;
+&lt;/div&gt;</code></pre>
+
+			<h3>按钮颜色</h3>
+			<!-- 表格 文本对齐 -->
+			<table>
+				<thead>
+					<tr>
+						<th width="15%">类</th>
+						<th>说明</th>
+						<th>样式</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><code>.btn-default</code></td>
+						<td>默认样式</td>
+						<td><button class="btn btn-default">基本</button></td>
+					</tr>
+					<tr>
+						<td><code>.text-right</code></td>
+						<td>文本右对齐</td>
+					</tr>
+					<tr>
+						<td><code>.text-center</code></td>
+						<td>文本居中对齐</td>
+					</tr>
+					<tr>
+						<td><code>.text-justify</code></td>
+						<td>文本自适应</td>
+					</tr>
+					<tr>
+						<td><code>.text-top</code></td>
+						<td>文本顶部对齐</td>
+					</tr>
+					<tr>
+						<td><code>.text-middle</code></td>
+						<td>文本垂直居中对齐</td>
+					</tr>
+					<tr>
+						<td><code>.text-bottom</code></td>
+						<td>文本底部对齐</td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- 展示 -->
+			<div class="show-demo">
+				<iframe onload="Javascript:SetCwinHeight(this, 50)" frameborder="0" src="Demo/ButtonDemo/demo2.html"></iframe>
+			</div>
+			<!-- demo -->
+			<a class="demo" href="Demo/ButtonDemo/demo2.html" target="_blank">Demo</a>
 			<!-- 代码 -->
 <pre><code class="language-markup">&lt;div class=&quot;layout layout-fill&quot;&gt;
     &lt;a class=&quot;btn btn-default&quot; href=&quot;#&quot; role=&quot;button&quot;&gt;基本按钮&lt;/a&gt;

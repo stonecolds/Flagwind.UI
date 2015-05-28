@@ -135,7 +135,7 @@ output
     color: @input-color;
     background-color: @input-bg;
     background-image: none;
-    border: 1px solid @input-border;
+    border: 1px solid @input-border-color;
     border-radius: @input-border-radius-md;
     -webkit-appearance: none;
 
@@ -179,6 +179,29 @@ output
 textarea.input
 {
     height: auto;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0)
+{
+    input[type="date"],
+    input[type="time"],
+    input[type="datetime-local"],
+    input[type="month"]
+    {
+        line-height: @input-height-md;
+
+        &.input-sm,
+        .field-group-sm &
+        {
+            line-height: @input-height-sm;
+        }
+
+        &.input-lg,
+        .field-group-lg &
+        {
+            line-height: @input-height-lg;
+        }
+    }
 }
 
 /*
@@ -354,7 +377,7 @@ select[multiple].select-lg,
     }
 }
 
-.field-icon .icon
+.field-icon .input ~ .icon
 {
     position: absolute;
     top: 0;
@@ -382,27 +405,23 @@ select[multiple].select-lg,
     }
 }
 
-.field-sm .icon,
-.input-sm + .icon
+.field-sm .input ~ .icon,
+.input-sm ~ .icon
 {
-    width: @input-height-sm;
-    height: @input-height-sm;
-    line-height: @input-height-sm;
+    .field-icon-size(@input-height-sm, @input-height-sm, @input-height-sm);
 }
 
-.field-lg .icon，
-.input-lg + .icon
+.field-lg .input ~ .icon,
+.input-lg ~ .icon
 {
-    width: @input-height-lg;
-    height: @input-height-lg;
-    line-height: @input-height-lg;
+    .field-icon-size(@input-height-lg, @input-height-lg, @input-height-lg);
 }
 
 /*
  * 表单域成功状态。
  */
 
-.field-success
+.has-success
 {
     .field-validation(@state-success-text; @state-success-text; @state-success-bg);
 }
@@ -411,7 +430,7 @@ select[multiple].select-lg,
  * 表单域警告状态。
  */
 
-.field-warning
+.has-warning
 {
     .field-validation(@state-warning-text; @state-warning-text; @state-warning-bg);
 }
@@ -420,7 +439,7 @@ select[multiple].select-lg,
  * 表单域危险状态。
  */
 
-.field-error
+.has-error
 {
     .field-validation(@state-danger-text; @state-danger-text; @state-danger-bg);
 }
@@ -453,6 +472,24 @@ select[multiple].select-lg,
             display: inline-block;
         }
 
+        .field-group
+        {
+            display: inline-table;
+            vertical-align: middle;
+
+            .label,
+            .input,
+            .addon
+            {
+                width: auto;
+            }
+        }
+
+        .field-group > .input
+        {
+            width: 100%;
+        }
+
         .label
         {
             margin-bottom: 0;
@@ -476,7 +513,7 @@ select[multiple].select-lg,
             margin-left: 0;
         }
 
-        .field-icon .icon
+        .field-icon .input ~ .icon
         {
           top: 0;
         }
@@ -511,7 +548,7 @@ select[multiple].select-lg,
         }
     }
 
-    .field-icon .icon
+    .field-icon .input ~ .icon
     {
         right: (@layout-gutter-width / 2);
     }
