@@ -220,11 +220,19 @@
     table-layout: fixed;
     border-collapse: separate;
 
+    > .btn:first-child ~ .btn {
+        border-left: 0;
+    }
+
     > .btn,
     > .btn-group
     {
         display: table-cell;
         float: none;
+    }
+
+    > .btn-group:first-child ~ .btn-group > .btn {
+        border-left: 0;
     }
 
     > .btn-group
