@@ -9,7 +9,7 @@
 	<title>Flagwind.UI 参考文档</title>
 
 	<!-- 核心 CSS 文件 -->
-	<link rel="stylesheet" href="css/flagwind.min.css" />
+	<link rel="stylesheet" href="css/flagwind.css" />
 	<link rel="stylesheet" href="css/layout.min.css" />
 
 	<!-- 代码高亮css文件 -->
@@ -1304,6 +1304,375 @@
 				</tbody>
 			</table>
 		</section>
+
+		<!-- ***************************** 表格 ************************************** -->
+		<section>
+			<h2>表格</h2>
+			<h3>基本表格</h3>
+			<!-- 展示 -->
+			<div class="show-demo">
+				<iframe onload="Javascript:SetCwinHeight(this, 150)" frameborder="0" src="Demo/TableDemo/demo1.html"></iframe>
+			</div>
+			<!-- demo -->
+			<a class="demo" href="Demo/TableDemo/demo1.html" target="_blank">Demo</a>
+			<!-- 代码 -->
+<pre><code class="language-markup">&lt;div class=&quot;layout layout-fill&quot;&gt;
+    &lt;table class=&quot;table&quot;&gt;
+        &lt;caption&gt;基本表格&lt;/caption&gt;
+        &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th&gt;框架名称&lt;/th&gt;
+                &lt;th&gt;网址&lt;/th&gt;
+                &lt;th&gt;创建时间&lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Flagwind.UI&lt;/td&gt;
+                &lt;td&gt;https://github.com/Flagwind&lt;/td&gt;
+                &lt;td&gt;2015&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr class=&quot;bg-active&quot;&gt;
+                &lt;td&gt;Flagwind.UI&lt;/td&gt;
+                &lt;td&gt;https://github.com/Flagwind&lt;/td&gt;
+                &lt;td&gt;2015&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Flagwind.UI&lt;/td&gt;
+                &lt;td&gt;https://github.com/Flagwind&lt;/td&gt;
+                &lt;td&gt;2015&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Flagwind.UI&lt;/td&gt;
+                &lt;td&gt;https://github.com/Flagwind&lt;/td&gt;
+                &lt;td&gt;2015&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Flagwind.UI&lt;/td&gt;
+                &lt;td class=&quot;bg-active&quot;&gt;https://github.com/Flagwind&lt;/td&gt;
+                &lt;td&gt;2015&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+&lt;/div&gt;</code></pre>
+
+			<h3>鼠标悬停</h3>
+			<!-- 展示 -->
+			<div class="show-demo">
+				<iframe onload="Javascript:SetCwinHeight(this, 150)" frameborder="0" src="Demo/TableDemo/demo2.html"></iframe>
+			</div>
+			<!-- demo -->
+			<a class="demo" href="Demo/TableDemo/demo2.html" target="_blank">Demo</a>
+			<!-- 代码 -->
+<pre><code class="language-markup">&lt;div class=&quot;layout layout-fill&quot;&gt;
+    &lt;table class=&quot;table table-hover&quot;&gt;
+        &lt;caption&gt;基本表格&lt;/caption&gt;
+        &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th&gt;框架名称&lt;/th&gt;
+                &lt;th&gt;网址&lt;/th&gt;
+                &lt;th&gt;创建时间&lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Flagwind.UI&lt;/td&gt;
+                &lt;td&gt;https://github.com/Flagwind&lt;/td&gt;
+                &lt;td&gt;2015&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr class=&quot;bg-active&quot;&gt;
+                &lt;td&gt;Flagwind.UI&lt;/td&gt;
+                &lt;td&gt;https://github.com/Flagwind&lt;/td&gt;
+                &lt;td&gt;2015&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Flagwind.UI&lt;/td&gt;
+                &lt;td&gt;https://github.com/Flagwind&lt;/td&gt;
+                &lt;td&gt;2015&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Flagwind.UI&lt;/td&gt;
+                &lt;td&gt;https://github.com/Flagwind&lt;/td&gt;
+                &lt;td&gt;2015&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Flagwind.UI&lt;/td&gt;
+                &lt;td class=&quot;bg-active&quot;&gt;https://github.com/Flagwind&lt;/td&gt;
+                &lt;td&gt;2015&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+&lt;/div&gt;</code></pre>
+
+			<h3>条纹状表格</h3>
+			<p>使用<code>.table-striped</code>类实现隔行变色的表格。</p>
+			<p class="tips">注意：条纹状表格是依赖 :nth-of-type CSS 选择器实现的，Internet Explorer 8 不支持。</p>
+			<!-- 展示 -->
+			<div class="show-demo">
+				<iframe onload="Javascript:SetCwinHeight(this, 150)" frameborder="0" src="Demo/TableDemo/demo3.html"></iframe>
+			</div>
+			<!-- demo -->
+			<a class="demo" href="Demo/TableDemo/demo3.html" target="_blank">Demo</a>
+			<!-- 代码 -->
+<pre><code class="language-markup">&lt;div class=&quot;layout layout-fill&quot;&gt;
+    &lt;table class=&quot;table table-striped table-hover&quot;&gt;
+        &lt;caption&gt;基本表格&lt;/caption&gt;
+        &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th&gt;框架名称&lt;/th&gt;
+                &lt;th&gt;网址&lt;/th&gt;
+                &lt;th&gt;创建时间&lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Flagwind.UI&lt;/td&gt;
+                &lt;td&gt;https://github.com/Flagwind&lt;/td&gt;
+                &lt;td&gt;2015&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Flagwind.UI&lt;/td&gt;
+                &lt;td&gt;https://github.com/Flagwind&lt;/td&gt;
+                &lt;td&gt;2015&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Flagwind.UI&lt;/td&gt;
+                &lt;td&gt;https://github.com/Flagwind&lt;/td&gt;
+                &lt;td&gt;2015&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Flagwind.UI&lt;/td&gt;
+                &lt;td&gt;https://github.com/Flagwind&lt;/td&gt;
+                &lt;td&gt;2015&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Flagwind.UI&lt;/td&gt;
+                &lt;td&gt;https://github.com/Flagwind&lt;/td&gt;
+                &lt;td&gt;2015&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+&lt;/div&gt;</code></pre>
+
+			<h3>紧凑型表格</h3>
+			<p>使用<code>.table-condensed</code>类可以使表格变得更加紧凑。</p>
+			<!-- 展示 -->
+			<div class="show-demo">
+				<iframe onload="Javascript:SetCwinHeight(this, 150)" frameborder="0" src="Demo/TableDemo/demo4.html"></iframe>
+			</div>
+			<!-- demo -->
+			<a class="demo" href="Demo/TableDemo/demo4.html" target="_blank">Demo</a>
+			<!-- 代码 -->
+<pre><code class="language-markup">&lt;div class=&quot;layout layout-fill&quot;&gt;
+    &lt;table class=&quot;table table-condensed table-striped&quot;&gt;
+        &lt;caption&gt;紧凑型表格&lt;/caption&gt;
+        &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th&gt;框架名称&lt;/th&gt;
+                &lt;th&gt;网址&lt;/th&gt;
+                &lt;th&gt;创建时间&lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Flagwind.UI&lt;/td&gt;
+                &lt;td&gt;https://github.com/Flagwind&lt;/td&gt;
+                &lt;td&gt;2015&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Flagwind.UI&lt;/td&gt;
+                &lt;td&gt;https://github.com/Flagwind&lt;/td&gt;
+                &lt;td&gt;2015&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Flagwind.UI&lt;/td&gt;
+                &lt;td&gt;https://github.com/Flagwind&lt;/td&gt;
+                &lt;td&gt;2015&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Flagwind.UI&lt;/td&gt;
+                &lt;td&gt;https://github.com/Flagwind&lt;/td&gt;
+                &lt;td&gt;2015&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Flagwind.UI&lt;/td&gt;
+                &lt;td&gt;https://github.com/Flagwind&lt;/td&gt;
+                &lt;td&gt;2015&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+&lt;/div&gt;</code></pre>
+
+			<h3>带基本边框的表格</h3>
+			<p>使用<code>.table-bordered</code>类可实现带基本边框的表格。</p>
+			<!-- 展示 -->
+			<div class="show-demo">
+				<iframe onload="Javascript:SetCwinHeight(this, 150)" frameborder="0" src="Demo/TableDemo/demo5.html"></iframe>
+			</div>
+			<!-- demo -->
+			<a class="demo" href="Demo/TableDemo/demo5.html" target="_blank">Demo</a>
+			<!-- 代码 -->
+<pre><code class="language-markup">&lt;div class=&quot;layout layout-fill&quot;&gt;
+    &lt;table class=&quot;table table-striped table-bordered&quot;&gt;
+        &lt;caption&gt;带基本边框的表格&lt;/caption&gt;
+        &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th&gt;框架名称&lt;/th&gt;
+                &lt;th&gt;网址&lt;/th&gt;
+                &lt;th&gt;创建时间&lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Flagwind.UI&lt;/td&gt;
+                &lt;td&gt;https://github.com/Flagwind&lt;/td&gt;
+                &lt;td&gt;2015&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Flagwind.UI&lt;/td&gt;
+                &lt;td&gt;https://github.com/Flagwind&lt;/td&gt;
+                &lt;td&gt;2015&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Flagwind.UI&lt;/td&gt;
+                &lt;td&gt;https://github.com/Flagwind&lt;/td&gt;
+                &lt;td&gt;2015&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Flagwind.UI&lt;/td&gt;
+                &lt;td&gt;https://github.com/Flagwind&lt;/td&gt;
+                &lt;td&gt;2015&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Flagwind.UI&lt;/td&gt;
+                &lt;td&gt;https://github.com/Flagwind&lt;/td&gt;
+                &lt;td&gt;2015&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+&lt;/div&gt;</code></pre>
+
+			<h3>带圆角边框的表格</h3>
+			<p>使用<code>.table-bordered-radius</code>类可实现带圆角边框的表格。</p>
+			<!-- 展示 -->
+			<div class="show-demo">
+				<iframe onload="Javascript:SetCwinHeight(this, 150)" frameborder="0" src="Demo/TableDemo/demo6.html"></iframe>
+			</div>
+			<!-- demo -->
+			<a class="demo" href="Demo/TableDemo/demo6.html" target="_blank">Demo</a>
+			<!-- 代码 -->
+<pre><code class="language-markup">&lt;div class=&quot;layout layout-fill&quot;&gt;
+    &lt;table class=&quot;table table-bordered-radius&quot;&gt;
+        &lt;caption&gt;带圆角边框的表格&lt;/caption&gt;
+        &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th&gt;框架名称&lt;/th&gt;
+                &lt;th&gt;网址&lt;/th&gt;
+                &lt;th&gt;创建时间&lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Flagwind.UI&lt;/td&gt;
+                &lt;td&gt;https://github.com/Flagwind&lt;/td&gt;
+                &lt;td&gt;2015&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Flagwind.UI&lt;/td&gt;
+                &lt;td&gt;https://github.com/Flagwind&lt;/td&gt;
+                &lt;td&gt;2015&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Flagwind.UI&lt;/td&gt;
+                &lt;td&gt;https://github.com/Flagwind&lt;/td&gt;
+                &lt;td&gt;2015&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Flagwind.UI&lt;/td&gt;
+                &lt;td&gt;https://github.com/Flagwind&lt;/td&gt;
+                &lt;td&gt;2015&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Flagwind.UI&lt;/td&gt;
+                &lt;td&gt;https://github.com/Flagwind&lt;/td&gt;
+                &lt;td&gt;2015&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+&lt;/div&gt;</code></pre>
+
+			<h3>响应式表格</h3>
+			<p>使用<code>.scrollable-horizontal</code>类和<code>.text-nowrap</code>类可实现响应式表格。其会在小屏幕设备上（小于768px）水平滚动。当屏幕大于 768px 宽度时，水平滚动条消失</p>
+			<!-- 展示 -->
+			<div class="show-demo">
+				<iframe onload="Javascript:SetCwinHeight(this, 150)" frameborder="0" src="Demo/TableDemo/demo7.html"></iframe>
+			</div>
+			<!-- demo -->
+			<a class="demo" href="Demo/TableDemo/demo7.html" target="_blank">Demo</a>
+			<!-- 代码 -->
+<pre><code class="language-markup">&lt;div class=&quot;layout layout-fill&quot;&gt;
+    &lt;div class=&quot;scrollable-horizontal&quot;&gt;
+        &lt;table class=&quot;table text-nowrap&quot;&gt;
+            &lt;caption&gt;响应式表格&lt;/caption&gt;
+            &lt;thead&gt;
+                &lt;tr&gt;
+                    &lt;th&gt;框架名称&lt;/th&gt;
+                    &lt;th&gt;网址&lt;/th&gt;
+                    &lt;th&gt;创建时间&lt;/th&gt;
+                &lt;/tr&gt;
+            &lt;/thead&gt;
+            &lt;tbody&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;Flagwind.UI&lt;/td&gt;
+                    &lt;td&gt;https://github.com/Flagwind&lt;/td&gt;
+                    &lt;td&gt;2015&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;Flagwind.UI&lt;/td&gt;
+                    &lt;td&gt;https://github.com/Flagwind&lt;/td&gt;
+                    &lt;td&gt;2015&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;Flagwind.UI&lt;/td&gt;
+                    &lt;td&gt;https://github.com/Flagwind&lt;/td&gt;
+                    &lt;td&gt;2015&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;Flagwind.UI&lt;/td&gt;
+                    &lt;td&gt;https://github.com/Flagwind&lt;/td&gt;
+                    &lt;td&gt;2015&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;Flagwind.UI&lt;/td&gt;
+                    &lt;td&gt;https://github.com/Flagwind&lt;/td&gt;
+                    &lt;td&gt;2015&lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/tbody&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+		</section>
+
+		<!-- ***************************** 表格 ************************************** -->
+		<section>
+			<h2>按钮</h2>
+			<h3>基本按钮</h3>
+			为 <code>&lt;a&gt;</code>、<code>&lt;button&gt;</code> 或 <code>&lt;input&gt;</code> 元素添加按钮类即可表现为按钮样式。
+			<!-- 展示 -->
+			<div class="show-demo">
+				<iframe onload="Javascript:SetCwinHeight(this, 50)" frameborder="0" src="Demo/ButtonDemo/demo1.html"></iframe>
+			</div>
+			<!-- demo -->
+			<a class="demo" href="Demo/ButtonDemo/demo1.html" target="_blank">Demo</a>
+			<!-- 代码 -->
+<pre><code class="language-markup">&lt;div class=&quot;layout layout-fill&quot;&gt;
+    &lt;a class=&quot;btn btn-default&quot; href=&quot;#&quot; role=&quot;button&quot;&gt;基本按钮&lt;/a&gt;
+    &lt;button class=&quot;btn btn-default&quot;&gt;基本按钮&lt;/button&gt;
+    &lt;input class=&quot;btn btn-default&quot; type=&quot;button&quot; value=&quot;基本按钮&quot; /&gt;
+    &lt;input class=&quot;btn btn-default&quot; type=&quot;submit&quot; value=&quot;基本按钮&quot; /&gt;
+&lt;/div&gt;</code></pre>
+		</section>
+
 	</section>
 	</div>
 
