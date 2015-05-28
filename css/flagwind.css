@@ -1890,6 +1890,152 @@ blockquote small:before {
   overflow: visible;
   clip: auto;
 }
+/* ============================== 表格(Tables) =========================== */
+table {
+  max-width: 100%;
+  background-color: transparent;
+}
+caption {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  color: #333333;
+  text-align: left;
+}
+th {
+  text-align: left;
+}
+/*
+ * 基本样式
+ */
+.table {
+  width: 100%;
+  margin-bottom: 20px;
+}
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+  padding: 8px;
+  line-height: 1.42857143;
+  vertical-align: top;
+  border-top: 1px solid #dddddd;
+}
+.table > thead > tr > th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #dddddd;
+}
+.table > caption + thead > tr:first-child > th,
+.table > colgroup + thead > tr:first-child > th,
+.table > thead:first-child > tr:first-child > th,
+.table > caption + thead > tr:first-child > td,
+.table > colgroup + thead > tr:first-child > td,
+.table > thead:first-child > tr:first-child > td {
+  border-top: 0;
+}
+.table > tbody + tbody {
+  border-top: 2px solid #dddddd;
+}
+/*
+ * 条纹状表格
+ */
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: #f9f9f9;
+}
+/*
+ * 紧凑型表格
+ */
+.table-condensed > thead > tr > th,
+.table-condensed > tbody > tr > th,
+.table-condensed > tfoot > tr > th,
+.table-condensed > thead > tr > td,
+.table-condensed > tbody > tr > td,
+.table-condensed > tfoot > tr > td {
+  padding: 5px;
+}
+/*
+ * 带基本边框的表格
+ */
+.table-bordered {
+  border: 1px solid #dddddd;
+}
+.table-bordered > thead > tr > th,
+.table-bordered > tbody > tr > th,
+.table-bordered > tfoot > tr > th,
+.table-bordered > thead > tr > td,
+.table-bordered > tbody > tr > td,
+.table-bordered > tfoot > tr > td {
+  border: 1px solid #dddddd;
+}
+.table-bordered > thead > tr > th,
+.table-bordered > thead > tr > td {
+  border-bottom-width: 2px;
+}
+/*
+ * 带圆角边框的表格
+ */
+.table-bordered-radius {
+  border-collapse: separate;
+  border: 1px solid #dddddd;
+  border-radius: 2px;
+}
+.table-bordered-radius > thead > tr > th,
+.table-bordered-radius > tbody > tr > th,
+.table-bordered-radius > thead > tr > td,
+.table-bordered-radius > tbody > tr > td {
+  border-left: 1px solid #dddddd;
+}
+.table-bordered-radius > thead > tr > th,
+.table-bordered-radius > thead > tr > td {
+  border-bottom-width: 1px;
+}
+.table-bordered-radius > thead > tr:first-child > th:first-child,
+.table-bordered-radius > thead > tr:first-child > td:first-child {
+  border-top-left-radius: 2px;
+  border-left: none;
+}
+.table-bordered-radius > thead > tr:first-child > th:last-child,
+.table-bordered-radius > thead > tr:first-child > td:last-child {
+  border-top-right-radius: 2px;
+  border-right: none;
+}
+.table-bordered-radius > tbody > tr > th:first-child,
+.table-bordered-radius > tbody > tr > td:first-child {
+  border-left: none;
+}
+.table-bordered-radius > tbody > tr > th:last-child,
+.table-bordered-radius > tbody > tr > td:last-child {
+  border-right: none;
+}
+.table-bordered-radius > tbody > tr:last-child > th,
+.table-bordered-radius > tbody > tr:last-child > td {
+  border-bottom: none;
+}
+.table-bordered-radius > tbody > tr:last-child > th:first-child,
+.table-bordered-radius > tbody > tr:last-child > td:first-child {
+  border-bottom-left-radius: 2px;
+}
+.table-bordered-radius > tbody > tr:last-child > th:last-child,
+.table-bordered-radius > tbody > tr:last-child > td:last-child {
+  border-bottom-right-radius: 2px;
+}
+/*
+ * 鼠标悬浮效果
+ */
+.table-hover > tbody > tr:hover {
+  background-color: #f5f5f5;
+}
+table col[class*="col-"] {
+  position: static;
+  display: table-column;
+}
+table th[class*="col-"],
+table td[class*="col-"] {
+  position: static;
+  float: none;
+  display: table-cell;
+}
 /* ============================== 图片(Images) =========================== */
 /*
  * 响应式图片。
@@ -4267,62 +4413,108 @@ fieldset[disabled] .checkbox-group-inline {
 /*
  * 表单域大小(小尺寸sm)。
  */
-.input-sm,
-.field-sm .input {
+.input-sm {
   height: 30px;
   padding: 5px 10px;
-  font-size: 12px;
+  font-size: 12px !important;
   line-height: 1.5;
   border-radius: 3px;
 }
-.select-sm,
-.field-sm .select {
+.select-sm {
   height: 30px;
   padding: 5px 10px;
-  font-size: 12px;
+  font-size: 12px !important;
   line-height: 30px;
   border-radius: 3px;
+}
+.field-sm .checkbox,
+.field-sm .radio,
+.field-sm .label,
+.field-sm .text,
+.field-sm .help,
+.field-sm .input,
+.field-sm .select {
+  font-size: 12px !important;
+}
+.field-sm input[type="radio"],
+.field-sm input[type="checkbox"] {
+  margin-top: 2px;
 }
 .field-sm .text {
   height: 30px;
   padding: 5px 10px;
-  font-size: 12px;
   line-height: 1.5;
 }
-textarea.input-sm,
-select[multiple].select-sm,
-.field-sm textarea.input,
-.field-sm select[multiple].select {
-  height: auto;
+.field-sm .input {
+  height: 30px;
+  padding: 5px 10px;
+  font-size: 12px !important;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+.field-sm .select {
+  height: 30px;
+  padding: 5px 10px;
+  font-size: 12px !important;
+  line-height: 30px;
+  border-radius: 3px;
 }
 /*
  * 表单域大小(大尺寸lg)。
  */
-.input-lg,
-.field-lg .input {
+.input-lg {
   height: 46px;
   padding: 10px 16px;
-  font-size: 18px;
+  font-size: 18px !important;
   line-height: 1.3333333;
   border-radius: 6px;
 }
-.select-lg,
+.select-lg {
+  height: 46px;
+  padding: 10px 16px;
+  font-size: 18px !important;
+  line-height: 46px;
+  border-radius: 6px;
+}
+.field-lg .checkbox,
+.field-lg .radio,
+.field-lg .label,
+.field-lg .text,
+.field-lg .help,
+.field-lg .input,
+.field-lg .select {
+  font-size: 18px !important;
+}
+.field-lg input[type="radio"],
+.field-lg input[type="checkbox"] {
+  margin-top: 6px;
+}
+.field-lg .input {
+  height: 46px;
+  padding: 10px 16px;
+  font-size: 18px !important;
+  line-height: 1.3333333;
+  border-radius: 6px;
+}
 .field-lg .select {
   height: 46px;
   padding: 10px 16px;
-  font-size: 18px;
+  font-size: 18px !important;
   line-height: 46px;
   border-radius: 6px;
 }
 .field-lg .text {
   height: 46px;
   padding: 10px 16px;
-  font-size: 18px;
   line-height: 1.3333333;
 }
+textarea.input-sm,
 textarea.input-lg,
+select[multiple].select-sm,
 select[multiple].select-lg,
+.field-sm textarea.input,
 .field-lg textarea.input,
+.field-sm select[multiple].select,
 .field-lg select[multiple].select {
   height: auto;
 }
@@ -4576,6 +4768,166 @@ select[multiple].select-lg,
   border-bottom-right-radius: 4px !important;
   border-bottom-left-radius: 4px !important;
 }
+/* ============================== 按钮组(Button groups) =========================== */
+.btn-group,
+.btn-group-vertical {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+}
+.btn-group > .btn,
+.btn-group-vertical > .btn {
+  position: relative;
+  float: left;
+}
+.btn-group > .btn:hover,
+.btn-group-vertical > .btn:hover,
+.btn-group > .btn:focus,
+.btn-group-vertical > .btn:focus,
+.btn-group > .btn:active,
+.btn-group-vertical > .btn:active,
+.btn-group > .btn.active,
+.btn-group-vertical > .btn.active {
+  z-index: 2;
+}
+/*
+ * 默认按钮组
+ */
+.btn-group .btn + .btn,
+.btn-group .btn + .btn-group,
+.btn-group .btn-group + .btn,
+.btn-group .btn-group + .btn-group {
+  margin-left: -1px;
+}
+.btn-group > .btn:first-child {
+  margin-left: 0;
+}
+.btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle) {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+  border-radius: 0;
+}
+.btn-group > .btn:last-child:not(:first-child),
+.btn-group > .dropdown-toggle:not(:first-child) {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+/*
+ * 嵌套按钮组
+ */
+.btn-group > .btn-group {
+  float: left;
+}
+.btn-group > .btn-group:first-child:not(:last-child) > .btn:last-child,
+.btn-group > .btn-group:first-child:not(:last-child) > .dropdown-toggle {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn {
+  border-radius: 0;
+}
+.btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+/*
+ * 垂直按钮组
+ */
+.btn-group-vertical > .btn,
+.btn-group-vertical > .btn-group,
+.btn-group-vertical > .btn-group > .btn {
+  display: block;
+  float: none;
+  width: 100%;
+}
+.btn-group-vertical .btn + .btn,
+.btn-group-vertical .btn + .btn-group,
+.btn-group-vertical .btn-group + .btn,
+.btn-group-vertical .btn-group + .btn-group {
+  margin-top: -1px;
+  margin-left: 0;
+}
+.btn-group-vertical > .btn:first-child:not(:last-child) {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.btn-group-vertical > .btn:not(:first-child):not(:last-child) {
+  border-radius: 0;
+}
+.btn-group-vertical > .btn:last-child:not(:first-child) {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+/*
+ * 垂直嵌套按钮组
+ */
+.btn-group-vertical > .btn-group-vertical > .btn {
+  float: none;
+}
+.btn-group-vertical > .btn-group-vertical:first-child:not(:last-child) > .btn:last-child,
+.btn-group-vertical > .btn-group-vertical:first-child:not(:last-child) > .dropdown-toggle {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.btn-group-vertical > .btn-group-vertical:not(:first-child):not(:last-child) > .btn {
+  border-radius: 0;
+}
+.btn-group-vertical > .btn-group-vertical:last-child:not(:first-child) > .btn:first-child {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+/*
+ * 自适应宽度的按钮组
+ */
+.btn-group-justify {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: separate;
+}
+.btn-group-justify > .btn:first-child ~ .btn {
+  border-left: 0;
+}
+.btn-group-justify > .btn,
+.btn-group-justify > .btn-group {
+  display: table-cell;
+  float: none;
+}
+.btn-group-justify > .btn-group:first-child ~ .btn-group > .btn {
+  border-left: 0;
+}
+.btn-group-justify > .btn-group > .btn {
+  width: 100%;
+}
+.btn-group-justify > .btn-group .dropdown-menu {
+  left: auto;
+}
+/*
+ * 工具栏按钮组
+ */
+.btn-toolbar {
+  margin-left: -5px;
+}
+.btn-toolbar .btn-group {
+  float: left;
+}
+.btn-toolbar > .btn,
+.btn-toolbar > .btn-group {
+  margin-left: 5px;
+}
+/*
+ * 按钮组尺寸
+ */
+[data-toggle="buttons"] > .btn input[type="radio"],
+[data-toggle="buttons"] > .btn-group > .btn input[type="radio"],
+[data-toggle="buttons"] > .btn input[type="checkbox"],
+[data-toggle="buttons"] > .btn-group > .btn input[type="checkbox"] {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  pointer-events: none;
+}
 /* ============================ 域组(Field group) ========================= */
 .field-group {
   position: relative;
@@ -4621,12 +4973,43 @@ select[multiple].select-lg,
   border-bottom-right-radius: 4px !important;
   border-top-right-radius: 4px !important;
 }
+.field-group-sm .checkbox,
+.field-group-sm .radio,
+.field-group-sm .label,
+.field-group-sm .text,
+.field-group-sm .help,
+.field-group-sm .input,
+.field-group-sm .select {
+  font-size: 12px !important;
+}
+.field-group-sm input[type="radio"],
+.field-group-sm input[type="checkbox"] {
+  margin-top: 2px;
+}
+.field-group-sm .text {
+  height: 30px;
+  padding: 5px 10px;
+  line-height: 1.5;
+}
+.field-group-sm .input {
+  height: 30px;
+  padding: 5px 10px;
+  font-size: 12px !important;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+.field-group-sm .select {
+  height: 30px;
+  padding: 5px 10px;
+  font-size: 12px !important;
+  line-height: 30px;
+  border-radius: 3px;
+}
 .field-group-sm > .label,
-.field-group-sm > .input,
 .field-group-sm > .addon > .btn {
   height: 30px;
   padding: 5px 10px;
-  font-size: 12px;
+  font-size: 12px !important;
   line-height: 1.5;
   border-radius: 3px;
 }
@@ -4641,12 +5024,43 @@ select[multiple].select-lg,
   height: 30px;
   line-height: 30px;
 }
+.field-group-lg .checkbox,
+.field-group-lg .radio,
+.field-group-lg .label,
+.field-group-lg .text,
+.field-group-lg .help,
+.field-group-lg .input,
+.field-group-lg .select {
+  font-size: 18px !important;
+}
+.field-group-lg input[type="radio"],
+.field-group-lg input[type="checkbox"] {
+  margin-top: 6px;
+}
+.field-group-lg .input {
+  height: 46px;
+  padding: 10px 16px;
+  font-size: 18px !important;
+  line-height: 1.3333333;
+  border-radius: 6px;
+}
+.field-group-lg .select {
+  height: 46px;
+  padding: 10px 16px;
+  font-size: 18px !important;
+  line-height: 46px;
+  border-radius: 6px;
+}
+.field-group-lg .text {
+  height: 46px;
+  padding: 10px 16px;
+  line-height: 1.3333333;
+}
 .field-group-lg > .label,
-.field-group-lg > .input,
 .field-group-lg > .addon > .btn {
   height: 46px;
   padding: 10px 16px;
-  font-size: 18px;
+  font-size: 18px !important;
   line-height: 1.3333333;
   border-radius: 6px;
 }
@@ -4771,6 +5185,221 @@ select[multiple].select-lg,
 .field-group-danger .addon > .btn {
   border-color: #d43f3a;
 }
+/* ============================== 分页(Pagination) =========================== */
+/*
+ * 默认分页
+ */
+.pagination {
+  padding-left: 0;
+  margin: 20px 0;
+  list-style: none;
+  text-align: left;
+}
+.pagination > li {
+  display: inline-block;
+}
+.pagination > li > a,
+.pagination > li > span {
+  position: relative;
+  display: block;
+  padding: 6px 12px;
+  line-height: 1.42857143;
+  text-decoration: none;
+  color: #337ab7;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  margin-bottom: 5px;
+  transition: background-color 300ms ease-out, border-color 300ms ease-out;
+}
+.pagination > li > a:hover,
+.pagination > li > span:hover,
+.pagination > li > a:focus,
+.pagination > li > span:focus {
+  background-color: #eeeeee;
+}
+/*
+ * 紧凑型
+ */
+.pagination-condensed > li {
+  display: inline-block;
+  float: left;
+  margin-left: -1px;
+}
+.pagination-condensed > li:first-child > a,
+.pagination-condensed > li:first-child > span {
+  margin-left: 0;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+}
+.pagination-condensed > li:last-child > a,
+.pagination-condensed > li:last-child > span {
+  border-bottom-right-radius: 4px;
+  border-top-right-radius: 4px;
+}
+/*
+ * 圆角分页
+ */
+.pagination-radius > li > a,
+.pagination-radius > li > span {
+  border-radius: 4px;
+}
+/*
+ * 居中对齐的分页
+ */
+.pagination-centered {
+  text-align: center;
+}
+/*
+ * 右对齐的分页
+ */
+.pagination-right {
+  text-align: right;
+}
+/*
+ * 小尺寸分页
+ */
+.pagination-sm > li > a,
+.pagination-sm > li > span {
+  padding: 5px 10px;
+  font-size: 12px;
+}
+/*
+ * 大尺寸分页
+ */
+.pagination-lg > li > a,
+.pagination-lg > li > span {
+  padding: 10px 16px;
+  font-size: 18px;
+}
+/*
+ * 左右分布
+ */
+.pagination-prev {
+  float: left;
+}
+.pagination-next {
+  float: right;
+}
+.pagination-bordered-radius > a,
+.pagination-bordered-radius > span {
+  border-radius: 15px;
+}
+/* ============================== 按钮(Buttons) =========================== */
+/*
+ * 基本开关
+ */
+.switch {
+  position: relative;
+  display: inline-block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.switch input[type="checkbox"],
+.switch input[type="radio"] {
+  position: absolute;
+  top: 6px;
+  left: 10px;
+  display: none;
+}
+.switch input[type="checkbox"] + label,
+.switch input[type="radio"] + label {
+  position: relative;
+  color: transparent;
+  display: block;
+  cursor: pointer;
+  width: 68px;
+  height: 34px;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  background: #dddddd;
+  -webkit-transition-property: background-color;
+  -moz-transition-property: background-color;
+  transition-property: background-color;
+}
+.switch input[type="checkbox"] + label,
+.switch input[type="checkbox"] + label:after,
+.switch input[type="radio"] + label,
+.switch input[type="radio"] + label:after {
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  -moz-transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+.switch input[type="checkbox"] + label:after,
+.switch input[type="radio"] + label:after {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  display: block;
+  width: 26px;
+  height: 26px;
+  content: '';
+  background: #ffffff;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+}
+.switch input[type="checkbox"]:checked + label,
+.switch input[type="radio"]:checked + label {
+  background-color: #337ab7;
+}
+.switch input[type="checkbox"]:checked + label:after,
+.switch input[type="radio"]:checked + label:after {
+  left: 38px;
+}
+/*
+ * 圆角开关
+ */
+.switch-radius input[type="checkbox"] + label,
+.switch-radius input[type="radio"] + label {
+  border-radius: 2rem;
+}
+.switch-radius input[type="checkbox"] + label:after,
+.switch-radius input[type="radio"] + label:after {
+  border-radius: 2rem;
+}
+.switch-radius input[type="checkbox"]:checked + label,
+.switch-radius input[type="radio"]:checked + label {
+  border-radius: 2rem;
+}
+.switch-radius input[type="checkbox"]:checked + label:after,
+.switch-radius input[type="radio"]:checked + label:after {
+  border-radius: 2rem;
+}
+/*
+ * 开关尺寸
+ */
+.switch-sm input[type="checkbox"] + label,
+.switch-sm input[type="radio"] + label {
+  width: 60px;
+  height: 30px;
+}
+.switch-sm input[type="checkbox"] + label:after,
+.switch-sm input[type="radio"] + label:after {
+  width: 22px;
+  height: 22px;
+}
+.switch-sm input[type="checkbox"]:checked + label:after,
+.switch-sm input[type="radio"]:checked + label:after {
+  left: 34px;
+}
+.switch-lg input[type="checkbox"] + label,
+.switch-lg input[type="radio"] + label {
+  width: 92px;
+  height: 46px;
+}
+.switch-lg input[type="checkbox"] + label:after,
+.switch-lg input[type="radio"] + label:after {
+  width: 38px;
+  height: 38px;
+}
+.switch-lg input[type="checkbox"]:checked + label:after,
+.switch-lg input[type="radio"]:checked + label:after {
+  left: 50px;
+}
 /* ============================ 辅助(Utilities) ========================== */
 /*
  * 清除浮动。
@@ -4783,12 +5412,12 @@ select[multiple].select-lg,
 .layout:after,
 .form-horizontal .field:before,
 .form-horizontal .field:after,
-.pagination:before,
-.pagination:after,
 .btn-group-vertical > .btn-group-vertical:before,
 .btn-group-vertical > .btn-group-vertical:after,
 .btn-toolbar:before,
-.btn-toolbar:after {
+.btn-toolbar:after,
+.pagination:before,
+.pagination:after {
   display: table;
   content: " ";
 }
@@ -4796,9 +5425,9 @@ select[multiple].select-lg,
 .dl-horizontal dd:after,
 .layout:after,
 .form-horizontal .field:after,
-.pagination:after,
 .btn-group-vertical > .btn-group-vertical:after,
-.btn-toolbar:after {
+.btn-toolbar:after,
+.pagination:after {
   clear: both;
 }
 /*
@@ -4945,529 +5574,4 @@ select[multiple].select-lg,
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
   resize: vertical;
-}
-/* ============================== 表格(Tables) =========================== */
-table {
-  max-width: 100%;
-  background-color: transparent;
-}
-caption {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  color: #333333;
-  text-align: left;
-}
-th {
-  text-align: left;
-}
-/*
- * 基本样式
- */
-.table {
-  width: 100%;
-  margin-bottom: 20px;
-}
-.table > thead > tr > th,
-.table > tbody > tr > th,
-.table > tfoot > tr > th,
-.table > thead > tr > td,
-.table > tbody > tr > td,
-.table > tfoot > tr > td {
-  padding: 8px;
-  line-height: 1.42857143;
-  vertical-align: top;
-  border-top: 1px solid #dddddd;
-}
-.table > thead > tr > th {
-  vertical-align: bottom;
-  border-bottom: 2px solid #dddddd;
-}
-.table > caption + thead > tr:first-child > th,
-.table > colgroup + thead > tr:first-child > th,
-.table > thead:first-child > tr:first-child > th,
-.table > caption + thead > tr:first-child > td,
-.table > colgroup + thead > tr:first-child > td,
-.table > thead:first-child > tr:first-child > td {
-  border-top: 0;
-}
-.table > tbody + tbody {
-  border-top: 2px solid #dddddd;
-}
-/*
- * 条纹状表格
- */
-.table-striped > tbody > tr:nth-of-type(odd) {
-  background-color: #f9f9f9;
-}
-/*
- * 紧凑型表格
- */
-.table-condensed > thead > tr > th,
-.table-condensed > tbody > tr > th,
-.table-condensed > tfoot > tr > th,
-.table-condensed > thead > tr > td,
-.table-condensed > tbody > tr > td,
-.table-condensed > tfoot > tr > td {
-  padding: 5px;
-}
-/*
- * 带基本边框的表格
- */
-.table-bordered {
-  border: 1px solid #dddddd;
-}
-.table-bordered > thead > tr > th,
-.table-bordered > tbody > tr > th,
-.table-bordered > tfoot > tr > th,
-.table-bordered > thead > tr > td,
-.table-bordered > tbody > tr > td,
-.table-bordered > tfoot > tr > td {
-  border: 1px solid #dddddd;
-}
-.table-bordered > thead > tr > th,
-.table-bordered > thead > tr > td {
-  border-bottom-width: 2px;
-}
-/*
- * 带圆角边框的表格
- */
-.table-bordered-radius {
-  border-collapse: separate;
-  border: 1px solid #dddddd;
-  border-radius: 2px;
-}
-.table-bordered-radius > thead > tr > th,
-.table-bordered-radius > tbody > tr > th,
-.table-bordered-radius > thead > tr > td,
-.table-bordered-radius > tbody > tr > td {
-  border-left: 1px solid #dddddd;
-}
-.table-bordered-radius > thead > tr > th,
-.table-bordered-radius > thead > tr > td {
-  border-bottom-width: 1px;
-}
-.table-bordered-radius > thead > tr:first-child > th:first-child,
-.table-bordered-radius > thead > tr:first-child > td:first-child {
-  border-top-left-radius: 2px;
-  border-left: none;
-}
-.table-bordered-radius > thead > tr:first-child > th:last-child,
-.table-bordered-radius > thead > tr:first-child > td:last-child {
-  border-top-right-radius: 2px;
-  border-right: none;
-}
-.table-bordered-radius > tbody > tr > th:first-child,
-.table-bordered-radius > tbody > tr > td:first-child {
-  border-left: none;
-}
-.table-bordered-radius > tbody > tr > th:last-child,
-.table-bordered-radius > tbody > tr > td:last-child {
-  border-right: none;
-}
-.table-bordered-radius > tbody > tr:last-child > th,
-.table-bordered-radius > tbody > tr:last-child > td {
-  border-bottom: none;
-}
-.table-bordered-radius > tbody > tr:last-child > th:first-child,
-.table-bordered-radius > tbody > tr:last-child > td:first-child {
-  border-bottom-left-radius: 2px;
-}
-.table-bordered-radius > tbody > tr:last-child > th:last-child,
-.table-bordered-radius > tbody > tr:last-child > td:last-child {
-  border-bottom-right-radius: 2px;
-}
-/*
- * 鼠标悬浮效果
- */
-.table-hover > tbody > tr:hover {
-  background-color: #f5f5f5;
-}
-table col[class*="col-"] {
-  position: static;
-  display: table-column;
-}
-table th[class*="col-"],
-table td[class*="col-"] {
-  position: static;
-  float: none;
-  display: table-cell;
-}
-/* ============================== 分页(Pagination) =========================== */
-/*
- * 默认分页
- */
-.pagination {
-  padding-left: 0;
-  margin: 20px 0;
-  list-style: none;
-  text-align: left;
-}
-.pagination > li {
-  display: inline-block;
-}
-.pagination > li > a,
-.pagination > li > span {
-  position: relative;
-  display: block;
-  padding: 6px 12px;
-  line-height: 1.42857143;
-  text-decoration: none;
-  color: #337ab7;
-  background-color: #ffffff;
-  border: 1px solid #dddddd;
-  margin-bottom: 5px;
-  transition: background-color 300ms ease-out, border-color 300ms ease-out;
-}
-.pagination > li > a:hover,
-.pagination > li > span:hover,
-.pagination > li > a:focus,
-.pagination > li > span:focus {
-  background-color: #eeeeee;
-}
-/*
- * 紧凑型
- */
-.pagination-condensed > li {
-  display: inline-block;
-  float: left;
-  margin-left: -1px;
-}
-.pagination-condensed > li:first-child > a,
-.pagination-condensed > li:first-child > span {
-  margin-left: 0;
-  border-bottom-left-radius: 4px;
-  border-top-left-radius: 4px;
-}
-.pagination-condensed > li:last-child > a,
-.pagination-condensed > li:last-child > span {
-  border-bottom-right-radius: 4px;
-  border-top-right-radius: 4px;
-}
-/*
- * 圆角分页
- */
-.pagination-radius > li > a,
-.pagination-radius > li > span {
-  border-radius: 4px;
-}
-/*
- * 居中对齐的分页
- */
-.pagination-centered {
-  text-align: center;
-}
-/*
- * 右对齐的分页
- */
-.pagination-right {
-  text-align: right;
-}
-/*
- * 小尺寸分页
- */
-.pagination-sm > li > a,
-.pagination-sm > li > span {
-  padding: 5px 10px;
-  font-size: 12px;
-}
-/*
- * 大尺寸分页
- */
-.pagination-lg > li > a,
-.pagination-lg > li > span {
-  padding: 10px 16px;
-  font-size: 18px;
-}
-/*
- * 左右分布
- */
-.pagination-prev {
-  float: left;
-}
-.pagination-next {
-  float: right;
-}
-.pagination-bordered-radius > a,
-.pagination-bordered-radius > span {
-  border-radius: 15px;
-}
-/* ============================== 按钮组(Button groups) =========================== */
-.btn-group,
-.btn-group-vertical {
-  position: relative;
-  display: inline-block;
-  vertical-align: middle;
-}
-.btn-group > .btn,
-.btn-group-vertical > .btn {
-  position: relative;
-  float: left;
-}
-.btn-group > .btn:hover,
-.btn-group-vertical > .btn:hover,
-.btn-group > .btn:focus,
-.btn-group-vertical > .btn:focus,
-.btn-group > .btn:active,
-.btn-group-vertical > .btn:active,
-.btn-group > .btn.active,
-.btn-group-vertical > .btn.active {
-  z-index: 2;
-}
-.btn-group > .btn:focus,
-.btn-group-vertical > .btn:focus {
-  outline: 0;
-}
-/*
- * 默认按钮组
- */
-.btn-group .btn + .btn,
-.btn-group .btn + .btn-group,
-.btn-group .btn-group + .btn,
-.btn-group .btn-group + .btn-group {
-  margin-left: -1px;
-}
-.btn-group > .btn:first-child {
-  margin-left: 0;
-}
-.btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle) {
-  border-bottom-right-radius: 0;
-  border-top-right-radius: 0;
-}
-.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
-  border-radius: 0;
-}
-.btn-group > .btn:last-child:not(:first-child),
-.btn-group > .dropdown-toggle:not(:first-child) {
-  border-bottom-left-radius: 0;
-  border-top-left-radius: 0;
-}
-/*
- * 嵌套按钮组
- */
-.btn-group > .btn-group {
-  float: left;
-}
-.btn-group > .btn-group:first-child:not(:last-child) > .btn:last-child,
-.btn-group > .btn-group:first-child:not(:last-child) > .dropdown-toggle {
-  border-bottom-right-radius: 0;
-  border-top-right-radius: 0;
-}
-.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn {
-  border-radius: 0;
-}
-.btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child {
-  border-bottom-left-radius: 0;
-  border-top-left-radius: 0;
-}
-/*
- * 垂直按钮组
- */
-.btn-group-vertical > .btn,
-.btn-group-vertical > .btn-group,
-.btn-group-vertical > .btn-group > .btn {
-  display: block;
-  float: none;
-  width: 100%;
-}
-.btn-group-vertical .btn + .btn,
-.btn-group-vertical .btn + .btn-group,
-.btn-group-vertical .btn-group + .btn,
-.btn-group-vertical .btn-group + .btn-group {
-  margin-top: -1px;
-  margin-left: 0;
-}
-.btn-group-vertical > .btn:first-child:not(:last-child) {
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-}
-.btn-group-vertical > .btn:not(:first-child):not(:last-child) {
-  border-radius: 0;
-}
-.btn-group-vertical > .btn:last-child:not(:first-child) {
-  border-top-right-radius: 0;
-  border-top-left-radius: 0;
-}
-/*
- * 垂直嵌套按钮组
- */
-.btn-group-vertical > .btn-group-vertical > .btn {
-  float: none;
-}
-.btn-group-vertical > .btn-group-vertical:first-child:not(:last-child) > .btn:last-child,
-.btn-group-vertical > .btn-group-vertical:first-child:not(:last-child) > .dropdown-toggle {
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-}
-.btn-group-vertical > .btn-group-vertical:not(:first-child):not(:last-child) > .btn {
-  border-radius: 0;
-}
-.btn-group-vertical > .btn-group-vertical:last-child:not(:first-child) > .btn:first-child {
-  border-top-right-radius: 0;
-  border-top-left-radius: 0;
-}
-/*
- * 自适应宽度的按钮组
- */
-.btn-group-justify {
-  display: table;
-  width: 100%;
-  table-layout: fixed;
-  border-collapse: separate;
-}
-.btn-group-justify > .btn:first-child ~ .btn {
-  border-left: 0;
-}
-.btn-group-justify > .btn,
-.btn-group-justify > .btn-group {
-  display: table-cell;
-  float: none;
-}
-.btn-group-justify > .btn-group:first-child ~ .btn-group > .btn {
-  border-left: 0;
-}
-.btn-group-justify > .btn-group > .btn {
-  width: 100%;
-}
-.btn-group-justify > .btn-group .dropdown-menu {
-  left: auto;
-}
-/*
- * 工具栏按钮组
- */
-.btn-toolbar {
-  margin-left: -5px;
-}
-.btn-toolbar .btn-group {
-  float: left;
-}
-.btn-toolbar > .btn,
-.btn-toolbar > .btn-group {
-  margin-left: 5px;
-}
-/*
- * 按钮组尺寸
- */
-[data-toggle="buttons"] > .btn input[type="radio"],
-[data-toggle="buttons"] > .btn-group > .btn input[type="radio"],
-[data-toggle="buttons"] > .btn input[type="checkbox"],
-[data-toggle="buttons"] > .btn-group > .btn input[type="checkbox"] {
-  position: absolute;
-  clip: rect(0, 0, 0, 0);
-  pointer-events: none;
-}
-/* ============================== 按钮(Buttons) =========================== */
-/*
- * 基本开关
- */
-.switch {
-  position: relative;
-  display: inline-block;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-.switch input[type="checkbox"],
-.switch input[type="radio"] {
-  position: absolute;
-  top: 6px;
-  left: 10px;
-  display: none;
-}
-.switch input[type="checkbox"] + label,
-.switch input[type="radio"] + label {
-  position: relative;
-  color: transparent;
-  display: block;
-  cursor: pointer;
-  width: 68px;
-  height: 34px;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-  background: #dddddd;
-  -webkit-transition-property: background-color;
-  -moz-transition-property: background-color;
-  transition-property: background-color;
-}
-.switch input[type="checkbox"] + label,
-.switch input[type="checkbox"] + label:after,
-.switch input[type="radio"] + label,
-.switch input[type="radio"] + label:after {
-  -webkit-transition-duration: 0.3s;
-  -moz-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
-  -moz-transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
-  transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
-}
-.switch input[type="checkbox"] + label:after,
-.switch input[type="radio"] + label:after {
-  position: absolute;
-  top: 4px;
-  left: 4px;
-  display: block;
-  width: 26px;
-  height: 26px;
-  content: '';
-  background: #ffffff;
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
-}
-.switch input[type="checkbox"]:checked + label,
-.switch input[type="radio"]:checked + label {
-  background-color: #337ab7;
-}
-.switch input[type="checkbox"]:checked + label:after,
-.switch input[type="radio"]:checked + label:after {
-  left: 38px;
-}
-/*
- * 圆角开关
- */
-.switch-radius input[type="checkbox"] + label,
-.switch-radius input[type="radio"] + label {
-  border-radius: 2rem;
-}
-.switch-radius input[type="checkbox"] + label:after,
-.switch-radius input[type="radio"] + label:after {
-  border-radius: 2rem;
-}
-.switch-radius input[type="checkbox"]:checked + label,
-.switch-radius input[type="radio"]:checked + label {
-  border-radius: 2rem;
-}
-.switch-radius input[type="checkbox"]:checked + label:after,
-.switch-radius input[type="radio"]:checked + label:after {
-  border-radius: 2rem;
-}
-/*
- * 开关尺寸
- */
-.switch-sm input[type="checkbox"] + label,
-.switch-sm input[type="radio"] + label {
-  width: 60px;
-  height: 30px;
-}
-.switch-sm input[type="checkbox"] + label:after,
-.switch-sm input[type="radio"] + label:after {
-  width: 22px;
-  height: 22px;
-}
-.switch-sm input[type="checkbox"]:checked + label:after,
-.switch-sm input[type="radio"]:checked + label:after {
-  left: 34px;
-}
-.switch-lg input[type="checkbox"] + label,
-.switch-lg input[type="radio"] + label {
-  width: 92px;
-  height: 46px;
-}
-.switch-lg input[type="checkbox"] + label:after,
-.switch-lg input[type="radio"] + label:after {
-  width: 38px;
-  height: 38px;
-}
-.switch-lg input[type="checkbox"]:checked + label:after,
-.switch-lg input[type="radio"]:checked + label:after {
-  left: 50px;
 }

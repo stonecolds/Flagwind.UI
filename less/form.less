@@ -303,61 +303,111 @@ input[type="checkbox"]
  * 表单域大小(小尺寸sm)。
  */
 
-.input-sm,
-.field-sm .input
+.input-sm
 {
     .field-size(@input-height-sm; @padding-vertical-sm; @padding-horizontal-sm; @font-size-sm; @line-height-sm; @input-border-radius-sm);
 }
 
-.select-sm,
-.field-sm .select
+.select-sm
 {
     .field-size(@input-height-sm; @padding-vertical-sm; @padding-horizontal-sm; @font-size-sm; @input-height-sm; @input-border-radius-sm);
 }
 
-.field-sm .text
+.field-sm
 {
-    height: @input-height-sm;
-    padding: @padding-vertical-sm @padding-horizontal-sm;
-    font-size: @font-size-sm;
-    line-height: @line-height-sm;
-}
+    .checkbox,
+    .radio,
+    .label,
+    .text,
+    .help,
+    .input,
+    .select
+    {
+        font-size: @font-size-sm !important;
+    }
 
-textarea.input-sm,
-select[multiple].select-sm,
-.field-sm textarea.input,
-.field-sm select[multiple].select
-{
-    height: auto;
+    input[type="radio"],
+    input[type="checkbox"]
+    {
+        margin-top: 2px;
+    }
+
+    .text
+    {
+        height: @input-height-sm;
+        padding: @padding-vertical-sm @padding-horizontal-sm;
+        line-height: @line-height-sm;
+    }
+
+    .input
+    {
+        .field-size(@input-height-sm; @padding-vertical-sm; @padding-horizontal-sm; @font-size-sm; @line-height-sm; @input-border-radius-sm);
+    }
+
+    .select
+    {
+        .field-size(@input-height-sm; @padding-vertical-sm; @padding-horizontal-sm; @font-size-sm; @input-height-sm; @input-border-radius-sm);
+    }
 }
 
 /*
  * 表单域大小(大尺寸lg)。
  */
 
-.input-lg,
-.field-lg .input
+.input-lg
 {
     .field-size(@input-height-lg; @padding-vertical-lg; @padding-horizontal-lg; @font-size-lg; @line-height-lg; @input-border-radius-lg);
 }
 
-.select-lg,
-.field-lg .select
+.select-lg
 {
     .field-size(@input-height-lg; @padding-vertical-lg; @padding-horizontal-lg; @font-size-lg; @input-height-lg; @input-border-radius-lg);
 }
 
-.field-lg .text
+.field-lg
 {
-    height: @input-height-lg;
-    padding: @padding-vertical-lg @padding-horizontal-lg;
-    font-size: @font-size-lg;
-    line-height: @line-height-lg;
+    .checkbox,
+    .radio,
+    .label,
+    .text,
+    .help,
+    .input,
+    .select
+    {
+        font-size: @font-size-lg !important;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"]
+    {
+        margin-top: 6px;
+    }
+
+    .input
+    {
+        .field-size(@input-height-lg; @padding-vertical-lg; @padding-horizontal-lg; @font-size-lg; @line-height-lg; @input-border-radius-lg);
+    }
+
+    .select
+    {
+        .field-size(@input-height-lg; @padding-vertical-lg; @padding-horizontal-lg; @font-size-lg; @input-height-lg; @input-border-radius-lg);
+    }
+
+    .text
+    {
+        height: @input-height-lg;
+        padding: @padding-vertical-lg @padding-horizontal-lg;
+        line-height: @line-height-lg;
+    }
 }
 
+textarea.input-sm,
 textarea.input-lg,
+select[multiple].select-sm,
 select[multiple].select-lg,
+.field-sm textarea.input,
 .field-lg textarea.input,
+.field-sm select[multiple].select,
 .field-lg select[multiple].select
 {
     height: auto;
