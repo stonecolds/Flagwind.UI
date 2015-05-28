@@ -89,7 +89,7 @@ audio:not([controls]) {
 template {
   display: none !important;
 }
-/* ============================== 链接(Links) ============================= */
+/* ============================== 链接(Link) ============================= */
 /*
  * 删除 IE 10 中激活链接的背景颜色。
  */
@@ -342,7 +342,7 @@ textarea {
 optgroup {
   font-weight: bold;
 }
-/* ============================== 表格(Tables) ============================ */
+/* ============================== 表格(Table) ============================ */
 /*
  * 删除表格里单元格间的间距。
  */
@@ -714,7 +714,7 @@ a.bg-danger:hover {
   margin-left: 10px;
   float: right;
 }
-/* ============================== 标题(Headings) =========================== */
+/* ============================== 标题(Heading) =========================== */
 h1,
 h2,
 h3,
@@ -1719,7 +1719,7 @@ blockquote small:before {
     margin-left: 0%;
   }
 }
-/* ======================= 布局辅助(Layout utilities) ===================== */
+/* ======================= 布局辅助(Layout utility) ===================== */
 @-ms-viewport {
   width: device-width;
 }
@@ -1890,7 +1890,7 @@ blockquote small:before {
   overflow: visible;
   clip: auto;
 }
-/* ============================== 表格(Tables) =========================== */
+/* ============================== 表格(Table) =========================== */
 table {
   max-width: 100%;
   background-color: transparent;
@@ -2036,7 +2036,7 @@ table td[class*="col-"] {
   float: none;
   display: table-cell;
 }
-/* ============================== 图片(Images) =========================== */
+/* ============================== 图片(Image) =========================== */
 /*
  * 响应式图片。
  */
@@ -2061,7 +2061,7 @@ table td[class*="col-"] {
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-/* =============================== 图标(Icons) ============================ */
+/* =============================== 图标(Icon) ============================ */
 /*
  * FontAwesome
  *
@@ -3741,7 +3741,7 @@ table td[class*="col-"] {
 .icon-medium:before {
   content: "\f23a";
 }
-/* ============================== 按钮(Buttons) =========================== */
+/* ============================== 按钮(Button) =========================== */
 .btn {
   display: inline-block;
   margin-bottom: 0;
@@ -4154,7 +4154,7 @@ input[type="reset"].btn-block,
 input[type="button"].btn-block {
   width: 100%;
 }
-/* =============================== 表单(Forms) ============================ */
+/* =============================== 表单(Form) ============================ */
 fieldset {
   padding: 0;
   margin: 0;
@@ -4768,7 +4768,7 @@ select[multiple].select-lg,
   border-bottom-right-radius: 4px !important;
   border-bottom-left-radius: 4px !important;
 }
-/* ============================== 按钮组(Button groups) =========================== */
+/* ============================== 按钮组(Button group) =========================== */
 .btn-group,
 .btn-group-vertical {
   position: relative;
@@ -5284,7 +5284,7 @@ select[multiple].select-lg,
 .pagination-bordered-radius > span {
   border-radius: 15px;
 }
-/* ============================== 按钮(Buttons) =========================== */
+/* ============================== 按钮(Switch) =========================== */
 /*
  * 基本开关
  */
@@ -5400,7 +5400,7 @@ select[multiple].select-lg,
 .switch-lg input[type="radio"]:checked + label:after {
   left: 50px;
 }
-/* ============================ 辅助(Utilities) ========================== */
+/* ============================ 辅助(Utility) ========================== */
 /*
  * 清除浮动。
  */
