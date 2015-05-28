@@ -3973,19 +3973,22 @@ fieldset[disabled] .btn-danger.active {
   color: #d9534f;
   background-color: #ffffff;
 }
-.btn-xs {
+.btn-xs,
+.btn-group-xs > .btn {
   padding: 1px 5px;
   font-size: 12px;
   line-height: 1.5;
   border-radius: 3px;
 }
-.btn-sm {
+.btn-sm,
+.btn-group-sm > .btn {
   padding: 5px 10px;
   font-size: 12px;
   line-height: 1.5;
   border-radius: 3px;
 }
-.btn-lg {
+.btn-lg,
+.btn-group-lg > .btn {
   padding: 10px 16px;
   font-size: 18px;
   line-height: 1.3333333;
@@ -4004,6 +4007,166 @@ input[type="submit"].btn-block,
 input[type="reset"].btn-block,
 input[type="button"].btn-block {
   width: 100%;
+}
+/* ============================== 按钮组(Button groups) =========================== */
+.btn-group,
+.btn-group-vertical {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+}
+.btn-group > .btn,
+.btn-group-vertical > .btn {
+  position: relative;
+  float: left;
+}
+.btn-group > .btn:hover,
+.btn-group-vertical > .btn:hover,
+.btn-group > .btn:focus,
+.btn-group-vertical > .btn:focus,
+.btn-group > .btn:active,
+.btn-group-vertical > .btn:active,
+.btn-group > .btn.active,
+.btn-group-vertical > .btn.active {
+  z-index: 2;
+}
+/*
+ * 默认按钮组
+ */
+.btn-group .btn + .btn,
+.btn-group .btn + .btn-group,
+.btn-group .btn-group + .btn,
+.btn-group .btn-group + .btn-group {
+  margin-left: -1px;
+}
+.btn-group > .btn:first-child {
+  margin-left: 0;
+}
+.btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle) {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+  border-radius: 0;
+}
+.btn-group > .btn:last-child:not(:first-child),
+.btn-group > .dropdown-toggle:not(:first-child) {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+/*
+ * 嵌套按钮组
+ */
+.btn-group > .btn-group {
+  float: left;
+}
+.btn-group > .btn-group:first-child:not(:last-child) > .btn:last-child,
+.btn-group > .btn-group:first-child:not(:last-child) > .dropdown-toggle {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn {
+  border-radius: 0;
+}
+.btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+/*
+ * 垂直按钮组
+ */
+.btn-group-vertical > .btn,
+.btn-group-vertical > .btn-group,
+.btn-group-vertical > .btn-group > .btn {
+  display: block;
+  float: none;
+  width: 100%;
+}
+.btn-group-vertical .btn + .btn,
+.btn-group-vertical .btn + .btn-group,
+.btn-group-vertical .btn-group + .btn,
+.btn-group-vertical .btn-group + .btn-group {
+  margin-top: -1px;
+  margin-left: 0;
+}
+.btn-group-vertical > .btn:first-child:not(:last-child) {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.btn-group-vertical > .btn:not(:first-child):not(:last-child) {
+  border-radius: 0;
+}
+.btn-group-vertical > .btn:last-child:not(:first-child) {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+/*
+ * 垂直嵌套按钮组
+ */
+.btn-group-vertical > .btn-group-vertical > .btn {
+  float: none;
+}
+.btn-group-vertical > .btn-group-vertical:first-child:not(:last-child) > .btn:last-child,
+.btn-group-vertical > .btn-group-vertical:first-child:not(:last-child) > .dropdown-toggle {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.btn-group-vertical > .btn-group-vertical:not(:first-child):not(:last-child) > .btn {
+  border-radius: 0;
+}
+.btn-group-vertical > .btn-group-vertical:last-child:not(:first-child) > .btn:first-child {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+/*
+ * 自适应宽度的按钮组
+ */
+.btn-group-justify {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: separate;
+}
+.btn-group-justify > .btn:first-child ~ .btn {
+  border-left: 0;
+}
+.btn-group-justify > .btn,
+.btn-group-justify > .btn-group {
+  display: table-cell;
+  float: none;
+}
+.btn-group-justify > .btn-group:first-child ~ .btn-group > .btn {
+  border-left: 0;
+}
+.btn-group-justify > .btn-group > .btn {
+  width: 100%;
+}
+.btn-group-justify > .btn-group .dropdown-menu {
+  left: auto;
+}
+/*
+ * 工具栏按钮组
+ */
+.btn-toolbar {
+  margin-left: -5px;
+}
+.btn-toolbar .btn-group {
+  float: left;
+}
+.btn-toolbar > .btn,
+.btn-toolbar > .btn-group {
+  margin-left: 5px;
+}
+/*
+ * 按钮组尺寸
+ */
+[data-toggle="buttons"] > .btn input[type="radio"],
+[data-toggle="buttons"] > .btn-group > .btn input[type="radio"],
+[data-toggle="buttons"] > .btn input[type="checkbox"],
+[data-toggle="buttons"] > .btn-group > .btn input[type="checkbox"] {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  pointer-events: none;
 }
 /* =============================== 表单(Forms) ============================ */
 fieldset {
@@ -4886,6 +5049,10 @@ select[multiple].select-lg,
 .dl-horizontal dd:after,
 .layout:before,
 .layout:after,
+.btn-group-vertical > .btn-group-vertical:before,
+.btn-group-vertical > .btn-group-vertical:after,
+.btn-toolbar:before,
+.btn-toolbar:after,
 .form-horizontal .field:before,
 .form-horizontal .field:after,
 .pagination:before,
@@ -4896,6 +5063,8 @@ select[multiple].select-lg,
 .clear:after,
 .dl-horizontal dd:after,
 .layout:after,
+.btn-group-vertical > .btn-group-vertical:after,
+.btn-toolbar:after,
 .form-horizontal .field:after,
 .pagination:after {
   clear: both;
@@ -5289,4 +5458,120 @@ table td[class*="col-"] {
 .pagination-bordered-radius > a,
 .pagination-bordered-radius > span {
   border-radius: 15px;
+}
+/* ============================== 按钮(Buttons) =========================== */
+/*
+ * 基本开关
+ */
+.switch {
+  position: relative;
+  display: inline-block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.switch input[type="checkbox"],
+.switch input[type="radio"] {
+  position: absolute;
+  top: 6px;
+  left: 10px;
+  display: none;
+}
+.switch input[type="checkbox"] + label,
+.switch input[type="radio"] + label {
+  position: relative;
+  color: transparent;
+  display: block;
+  cursor: pointer;
+  width: 68px;
+  height: 34px;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  background: #dddddd;
+  -webkit-transition-property: background-color;
+  -moz-transition-property: background-color;
+  transition-property: background-color;
+}
+.switch input[type="checkbox"] + label,
+.switch input[type="checkbox"] + label:after,
+.switch input[type="radio"] + label,
+.switch input[type="radio"] + label:after {
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  -moz-transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+.switch input[type="checkbox"] + label:after,
+.switch input[type="radio"] + label:after {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  display: block;
+  width: 26px;
+  height: 26px;
+  content: '';
+  background: #ffffff;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+}
+.switch input[type="checkbox"]:checked + label,
+.switch input[type="radio"]:checked + label {
+  background-color: #337ab7;
+}
+.switch input[type="checkbox"]:checked + label:after,
+.switch input[type="radio"]:checked + label:after {
+  left: 38px;
+}
+/*
+ * 圆角开关
+ */
+.switch-radius input[type="checkbox"] + label,
+.switch-radius input[type="radio"] + label {
+  border-radius: 2rem;
+}
+.switch-radius input[type="checkbox"] + label:after,
+.switch-radius input[type="radio"] + label:after {
+  border-radius: 2rem;
+}
+.switch-radius input[type="checkbox"]:checked + label,
+.switch-radius input[type="radio"]:checked + label {
+  border-radius: 2rem;
+}
+.switch-radius input[type="checkbox"]:checked + label:after,
+.switch-radius input[type="radio"]:checked + label:after {
+  border-radius: 2rem;
+}
+/*
+ * 开关尺寸
+ */
+.switch-sm input[type="checkbox"] + label,
+.switch-sm input[type="radio"] + label {
+  width: 60px;
+  height: 30px;
+}
+.switch-sm input[type="checkbox"] + label:after,
+.switch-sm input[type="radio"] + label:after {
+  width: 22px;
+  height: 22px;
+}
+.switch-sm input[type="checkbox"]:checked + label:after,
+.switch-sm input[type="radio"]:checked + label:after {
+  left: 34px;
+}
+.switch-lg input[type="checkbox"] + label,
+.switch-lg input[type="radio"] + label {
+  width: 92px;
+  height: 46px;
+}
+.switch-lg input[type="checkbox"] + label:after,
+.switch-lg input[type="radio"] + label:after {
+  width: 38px;
+  height: 38px;
+}
+.switch-lg input[type="checkbox"]:checked + label:after,
+.switch-lg input[type="radio"]:checked + label:after {
+  left: 50px;
 }

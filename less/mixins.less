@@ -922,3 +922,34 @@
         }
     }
 }
+
+
+// ============================= 开关(Switch) =========================== //
+
+
+//
+// #public 开关尺寸。
+//
+
+.switch-size(@switch-height)
+{
+    input[type="checkbox"] + label,
+    input[type="radio"] + label
+    {
+        width: @switch-height * 2;
+        height: @switch-height;
+    }
+
+    input[type="checkbox"] + label:after,
+    input[type="radio"] + label:after
+    {
+        width: @switch-height - 8;
+        height: @switch-height - 8;
+    }
+
+    input[type="checkbox"]:checked + label:after,
+    input[type="radio"]:checked + label:after
+    {
+        left: @switch-height + 4;
+    }
+}
