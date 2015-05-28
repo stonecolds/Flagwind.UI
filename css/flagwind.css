@@ -1890,6 +1890,152 @@ blockquote small:before {
   overflow: visible;
   clip: auto;
 }
+/* ============================== 表格(Tables) =========================== */
+table {
+  max-width: 100%;
+  background-color: transparent;
+}
+caption {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  color: #333333;
+  text-align: left;
+}
+th {
+  text-align: left;
+}
+/*
+ * 基本样式
+ */
+.table {
+  width: 100%;
+  margin-bottom: 20px;
+}
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+  padding: 8px;
+  line-height: 1.42857143;
+  vertical-align: top;
+  border-top: 1px solid #dddddd;
+}
+.table > thead > tr > th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #dddddd;
+}
+.table > caption + thead > tr:first-child > th,
+.table > colgroup + thead > tr:first-child > th,
+.table > thead:first-child > tr:first-child > th,
+.table > caption + thead > tr:first-child > td,
+.table > colgroup + thead > tr:first-child > td,
+.table > thead:first-child > tr:first-child > td {
+  border-top: 0;
+}
+.table > tbody + tbody {
+  border-top: 2px solid #dddddd;
+}
+/*
+ * 条纹状表格
+ */
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: #f9f9f9;
+}
+/*
+ * 紧凑型表格
+ */
+.table-condensed > thead > tr > th,
+.table-condensed > tbody > tr > th,
+.table-condensed > tfoot > tr > th,
+.table-condensed > thead > tr > td,
+.table-condensed > tbody > tr > td,
+.table-condensed > tfoot > tr > td {
+  padding: 5px;
+}
+/*
+ * 带基本边框的表格
+ */
+.table-bordered {
+  border: 1px solid #dddddd;
+}
+.table-bordered > thead > tr > th,
+.table-bordered > tbody > tr > th,
+.table-bordered > tfoot > tr > th,
+.table-bordered > thead > tr > td,
+.table-bordered > tbody > tr > td,
+.table-bordered > tfoot > tr > td {
+  border: 1px solid #dddddd;
+}
+.table-bordered > thead > tr > th,
+.table-bordered > thead > tr > td {
+  border-bottom-width: 2px;
+}
+/*
+ * 带圆角边框的表格
+ */
+.table-bordered-radius {
+  border-collapse: separate;
+  border: 1px solid #dddddd;
+  border-radius: 2px;
+}
+.table-bordered-radius > thead > tr > th,
+.table-bordered-radius > tbody > tr > th,
+.table-bordered-radius > thead > tr > td,
+.table-bordered-radius > tbody > tr > td {
+  border-left: 1px solid #dddddd;
+}
+.table-bordered-radius > thead > tr > th,
+.table-bordered-radius > thead > tr > td {
+  border-bottom-width: 1px;
+}
+.table-bordered-radius > thead > tr:first-child > th:first-child,
+.table-bordered-radius > thead > tr:first-child > td:first-child {
+  border-top-left-radius: 2px;
+  border-left: none;
+}
+.table-bordered-radius > thead > tr:first-child > th:last-child,
+.table-bordered-radius > thead > tr:first-child > td:last-child {
+  border-top-right-radius: 2px;
+  border-right: none;
+}
+.table-bordered-radius > tbody > tr > th:first-child,
+.table-bordered-radius > tbody > tr > td:first-child {
+  border-left: none;
+}
+.table-bordered-radius > tbody > tr > th:last-child,
+.table-bordered-radius > tbody > tr > td:last-child {
+  border-right: none;
+}
+.table-bordered-radius > tbody > tr:last-child > th,
+.table-bordered-radius > tbody > tr:last-child > td {
+  border-bottom: none;
+}
+.table-bordered-radius > tbody > tr:last-child > th:first-child,
+.table-bordered-radius > tbody > tr:last-child > td:first-child {
+  border-bottom-left-radius: 2px;
+}
+.table-bordered-radius > tbody > tr:last-child > th:last-child,
+.table-bordered-radius > tbody > tr:last-child > td:last-child {
+  border-bottom-right-radius: 2px;
+}
+/*
+ * 鼠标悬浮效果
+ */
+.table-hover > tbody > tr:hover {
+  background-color: #f5f5f5;
+}
+table col[class*="col-"] {
+  position: static;
+  display: table-column;
+}
+table th[class*="col-"],
+table td[class*="col-"] {
+  position: static;
+  float: none;
+  display: table-cell;
+}
 /* ============================== 图片(Images) =========================== */
 /*
  * 响应式图片。
@@ -4008,166 +4154,6 @@ input[type="reset"].btn-block,
 input[type="button"].btn-block {
   width: 100%;
 }
-/* ============================== 按钮组(Button groups) =========================== */
-.btn-group,
-.btn-group-vertical {
-  position: relative;
-  display: inline-block;
-  vertical-align: middle;
-}
-.btn-group > .btn,
-.btn-group-vertical > .btn {
-  position: relative;
-  float: left;
-}
-.btn-group > .btn:hover,
-.btn-group-vertical > .btn:hover,
-.btn-group > .btn:focus,
-.btn-group-vertical > .btn:focus,
-.btn-group > .btn:active,
-.btn-group-vertical > .btn:active,
-.btn-group > .btn.active,
-.btn-group-vertical > .btn.active {
-  z-index: 2;
-}
-/*
- * 默认按钮组
- */
-.btn-group .btn + .btn,
-.btn-group .btn + .btn-group,
-.btn-group .btn-group + .btn,
-.btn-group .btn-group + .btn-group {
-  margin-left: -1px;
-}
-.btn-group > .btn:first-child {
-  margin-left: 0;
-}
-.btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle) {
-  border-bottom-right-radius: 0;
-  border-top-right-radius: 0;
-}
-.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
-  border-radius: 0;
-}
-.btn-group > .btn:last-child:not(:first-child),
-.btn-group > .dropdown-toggle:not(:first-child) {
-  border-bottom-left-radius: 0;
-  border-top-left-radius: 0;
-}
-/*
- * 嵌套按钮组
- */
-.btn-group > .btn-group {
-  float: left;
-}
-.btn-group > .btn-group:first-child:not(:last-child) > .btn:last-child,
-.btn-group > .btn-group:first-child:not(:last-child) > .dropdown-toggle {
-  border-bottom-right-radius: 0;
-  border-top-right-radius: 0;
-}
-.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn {
-  border-radius: 0;
-}
-.btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child {
-  border-bottom-left-radius: 0;
-  border-top-left-radius: 0;
-}
-/*
- * 垂直按钮组
- */
-.btn-group-vertical > .btn,
-.btn-group-vertical > .btn-group,
-.btn-group-vertical > .btn-group > .btn {
-  display: block;
-  float: none;
-  width: 100%;
-}
-.btn-group-vertical .btn + .btn,
-.btn-group-vertical .btn + .btn-group,
-.btn-group-vertical .btn-group + .btn,
-.btn-group-vertical .btn-group + .btn-group {
-  margin-top: -1px;
-  margin-left: 0;
-}
-.btn-group-vertical > .btn:first-child:not(:last-child) {
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-}
-.btn-group-vertical > .btn:not(:first-child):not(:last-child) {
-  border-radius: 0;
-}
-.btn-group-vertical > .btn:last-child:not(:first-child) {
-  border-top-right-radius: 0;
-  border-top-left-radius: 0;
-}
-/*
- * 垂直嵌套按钮组
- */
-.btn-group-vertical > .btn-group-vertical > .btn {
-  float: none;
-}
-.btn-group-vertical > .btn-group-vertical:first-child:not(:last-child) > .btn:last-child,
-.btn-group-vertical > .btn-group-vertical:first-child:not(:last-child) > .dropdown-toggle {
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-}
-.btn-group-vertical > .btn-group-vertical:not(:first-child):not(:last-child) > .btn {
-  border-radius: 0;
-}
-.btn-group-vertical > .btn-group-vertical:last-child:not(:first-child) > .btn:first-child {
-  border-top-right-radius: 0;
-  border-top-left-radius: 0;
-}
-/*
- * 自适应宽度的按钮组
- */
-.btn-group-justify {
-  display: table;
-  width: 100%;
-  table-layout: fixed;
-  border-collapse: separate;
-}
-.btn-group-justify > .btn:first-child ~ .btn {
-  border-left: 0;
-}
-.btn-group-justify > .btn,
-.btn-group-justify > .btn-group {
-  display: table-cell;
-  float: none;
-}
-.btn-group-justify > .btn-group:first-child ~ .btn-group > .btn {
-  border-left: 0;
-}
-.btn-group-justify > .btn-group > .btn {
-  width: 100%;
-}
-.btn-group-justify > .btn-group .dropdown-menu {
-  left: auto;
-}
-/*
- * 工具栏按钮组
- */
-.btn-toolbar {
-  margin-left: -5px;
-}
-.btn-toolbar .btn-group {
-  float: left;
-}
-.btn-toolbar > .btn,
-.btn-toolbar > .btn-group {
-  margin-left: 5px;
-}
-/*
- * 按钮组尺寸
- */
-[data-toggle="buttons"] > .btn input[type="radio"],
-[data-toggle="buttons"] > .btn-group > .btn input[type="radio"],
-[data-toggle="buttons"] > .btn input[type="checkbox"],
-[data-toggle="buttons"] > .btn-group > .btn input[type="checkbox"] {
-  position: absolute;
-  clip: rect(0, 0, 0, 0);
-  pointer-events: none;
-}
 /* =============================== 表单(Forms) ============================ */
 fieldset {
   padding: 0;
@@ -4782,6 +4768,166 @@ select[multiple].select-lg,
   border-bottom-right-radius: 4px !important;
   border-bottom-left-radius: 4px !important;
 }
+/* ============================== 按钮组(Button groups) =========================== */
+.btn-group,
+.btn-group-vertical {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+}
+.btn-group > .btn,
+.btn-group-vertical > .btn {
+  position: relative;
+  float: left;
+}
+.btn-group > .btn:hover,
+.btn-group-vertical > .btn:hover,
+.btn-group > .btn:focus,
+.btn-group-vertical > .btn:focus,
+.btn-group > .btn:active,
+.btn-group-vertical > .btn:active,
+.btn-group > .btn.active,
+.btn-group-vertical > .btn.active {
+  z-index: 2;
+}
+/*
+ * 默认按钮组
+ */
+.btn-group .btn + .btn,
+.btn-group .btn + .btn-group,
+.btn-group .btn-group + .btn,
+.btn-group .btn-group + .btn-group {
+  margin-left: -1px;
+}
+.btn-group > .btn:first-child {
+  margin-left: 0;
+}
+.btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle) {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+  border-radius: 0;
+}
+.btn-group > .btn:last-child:not(:first-child),
+.btn-group > .dropdown-toggle:not(:first-child) {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+/*
+ * 嵌套按钮组
+ */
+.btn-group > .btn-group {
+  float: left;
+}
+.btn-group > .btn-group:first-child:not(:last-child) > .btn:last-child,
+.btn-group > .btn-group:first-child:not(:last-child) > .dropdown-toggle {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn {
+  border-radius: 0;
+}
+.btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+/*
+ * 垂直按钮组
+ */
+.btn-group-vertical > .btn,
+.btn-group-vertical > .btn-group,
+.btn-group-vertical > .btn-group > .btn {
+  display: block;
+  float: none;
+  width: 100%;
+}
+.btn-group-vertical .btn + .btn,
+.btn-group-vertical .btn + .btn-group,
+.btn-group-vertical .btn-group + .btn,
+.btn-group-vertical .btn-group + .btn-group {
+  margin-top: -1px;
+  margin-left: 0;
+}
+.btn-group-vertical > .btn:first-child:not(:last-child) {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.btn-group-vertical > .btn:not(:first-child):not(:last-child) {
+  border-radius: 0;
+}
+.btn-group-vertical > .btn:last-child:not(:first-child) {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+/*
+ * 垂直嵌套按钮组
+ */
+.btn-group-vertical > .btn-group-vertical > .btn {
+  float: none;
+}
+.btn-group-vertical > .btn-group-vertical:first-child:not(:last-child) > .btn:last-child,
+.btn-group-vertical > .btn-group-vertical:first-child:not(:last-child) > .dropdown-toggle {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.btn-group-vertical > .btn-group-vertical:not(:first-child):not(:last-child) > .btn {
+  border-radius: 0;
+}
+.btn-group-vertical > .btn-group-vertical:last-child:not(:first-child) > .btn:first-child {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+/*
+ * 自适应宽度的按钮组
+ */
+.btn-group-justify {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: separate;
+}
+.btn-group-justify > .btn:first-child ~ .btn {
+  border-left: 0;
+}
+.btn-group-justify > .btn,
+.btn-group-justify > .btn-group {
+  display: table-cell;
+  float: none;
+}
+.btn-group-justify > .btn-group:first-child ~ .btn-group > .btn {
+  border-left: 0;
+}
+.btn-group-justify > .btn-group > .btn {
+  width: 100%;
+}
+.btn-group-justify > .btn-group .dropdown-menu {
+  left: auto;
+}
+/*
+ * 工具栏按钮组
+ */
+.btn-toolbar {
+  margin-left: -5px;
+}
+.btn-toolbar .btn-group {
+  float: left;
+}
+.btn-toolbar > .btn,
+.btn-toolbar > .btn-group {
+  margin-left: 5px;
+}
+/*
+ * 按钮组尺寸
+ */
+[data-toggle="buttons"] > .btn input[type="radio"],
+[data-toggle="buttons"] > .btn-group > .btn input[type="radio"],
+[data-toggle="buttons"] > .btn input[type="checkbox"],
+[data-toggle="buttons"] > .btn-group > .btn input[type="checkbox"] {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  pointer-events: none;
+}
 /* ============================ 域组(Field group) ========================= */
 .field-group {
   position: relative;
@@ -5039,327 +5185,6 @@ select[multiple].select-lg,
 .field-group-danger .addon > .btn {
   border-color: #d43f3a;
 }
-/* ============================ 辅助(Utilities) ========================== */
-/*
- * 清除浮动。
- */
-.clear:before,
-.clear:after,
-.dl-horizontal dd:before,
-.dl-horizontal dd:after,
-.layout:before,
-.layout:after,
-.btn-group-vertical > .btn-group-vertical:before,
-.btn-group-vertical > .btn-group-vertical:after,
-.btn-toolbar:before,
-.btn-toolbar:after,
-.form-horizontal .field:before,
-.form-horizontal .field:after,
-.pagination:before,
-.pagination:after {
-  display: table;
-  content: " ";
-}
-.clear:after,
-.dl-horizontal dd:after,
-.layout:after,
-.btn-group-vertical > .btn-group-vertical:after,
-.btn-toolbar:after,
-.form-horizontal .field:after,
-.pagination:after {
-  clear: both;
-}
-/*
- * 左浮动。
- */
-.pull-left {
-  float: left !important;
-}
-/*
- * 右浮动。
- */
-.pull-right {
-  float: right !important;
-}
-/*
- * 内容块居中。
- */
-.center-block {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-/*
- * 垂直对齐。
- */
-.vertical-align {
-  font-size: 0.001px;
-}
-.vertical-align:before {
-  content: '';
-  display: inline-block;
-  height: 100%;
-  vertical-align: middle;
-}
-.vertical-align-middle,
-.vertical-align-bottom {
-  display: inline-block;
-  font-size: 14px;
-  max-width: 100%;
-}
-/*
- * 垂直居中对齐。
- */
-.vertical-align-middle {
-  vertical-align: middle;
-}
-/*
- * 垂直底部对齐。
- */
-.vertical-align-bottom {
-  vertical-align: bottom;
-}
-/*
- * 响应式宽度。
- */
-.responsive-width {
-  box-sizing: border-box;
-  max-width: 100%;
-  height: auto;
-}
-/*
- * 显示元素。
- */
-.show {
-  display: block !important;
-}
-/*
- * 隐藏元素。
- */
-.hide {
-  display: none !important;
-}
-/*
- * 隐藏元素，并保留文档流。
- */
-.invisible {
-  visibility: hidden;
-}
-/*
- * 横屏(显示/隐藏)辅助。
- */
-@media only screen and (orientation: landscape) {
-  .show-landscape,
-  .hide-portrait {
-    display: inherit !important;
-  }
-  .hide-landscape,
-  .show-portrait {
-    display: none !important;
-  }
-}
-/*
- * 竖屏(显示/隐藏)辅助。
- */
-@media only screen and (orientation: portrait) {
-  .show-portrait,
-  .hide-landscape {
-    display: inherit !important;
-  }
-  .hide-portrait,
-  .show-landscape {
-    display: none !important;
-  }
-}
-/*
- * 正方形。
- */
-.square {
-  border-radius: 0;
-}
-/*
- * 圆角。
- */
-.radius {
-  border-radius: 4px;
-}
-/*
- * 椭圆。
- */
-.round {
-  border-radius: 1000px;
-}
-/*
- * 圆形。
- */
-.circle {
-  border-radius: 50%;
-}
-/*
- * 水平滚动，内容超出容器宽度时显示水平滚动条。
- */
-.scrollable-horizontal {
-  width: 100%;
-  overflow-y: hidden;
-  overflow-x: auto;
-  -ms-overflow-style: -ms-autohiding-scrollbar;
-  -webkit-overflow-scrolling: touch;
-}
-/*
- * 垂直滚动，内容超出容器高度时显示垂直滚动条。
- */
-.scrollable-vertical {
-  height: 240px;
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
-  resize: vertical;
-}
-/* ============================== 表格(Tables) =========================== */
-table {
-  max-width: 100%;
-  background-color: transparent;
-}
-caption {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  color: #333333;
-  text-align: left;
-}
-th {
-  text-align: left;
-}
-/*
- * 基本样式
- */
-.table {
-  width: 100%;
-  margin-bottom: 20px;
-}
-.table > thead > tr > th,
-.table > tbody > tr > th,
-.table > tfoot > tr > th,
-.table > thead > tr > td,
-.table > tbody > tr > td,
-.table > tfoot > tr > td {
-  padding: 8px;
-  line-height: 1.42857143;
-  vertical-align: top;
-  border-top: 1px solid #dddddd;
-}
-.table > thead > tr > th {
-  vertical-align: bottom;
-  border-bottom: 2px solid #dddddd;
-}
-.table > caption + thead > tr:first-child > th,
-.table > colgroup + thead > tr:first-child > th,
-.table > thead:first-child > tr:first-child > th,
-.table > caption + thead > tr:first-child > td,
-.table > colgroup + thead > tr:first-child > td,
-.table > thead:first-child > tr:first-child > td {
-  border-top: 0;
-}
-.table > tbody + tbody {
-  border-top: 2px solid #dddddd;
-}
-/*
- * 条纹状表格
- */
-.table-striped > tbody > tr:nth-of-type(odd) {
-  background-color: #f9f9f9;
-}
-/*
- * 紧凑型表格
- */
-.table-condensed > thead > tr > th,
-.table-condensed > tbody > tr > th,
-.table-condensed > tfoot > tr > th,
-.table-condensed > thead > tr > td,
-.table-condensed > tbody > tr > td,
-.table-condensed > tfoot > tr > td {
-  padding: 5px;
-}
-/*
- * 带基本边框的表格
- */
-.table-bordered {
-  border: 1px solid #dddddd;
-}
-.table-bordered > thead > tr > th,
-.table-bordered > tbody > tr > th,
-.table-bordered > tfoot > tr > th,
-.table-bordered > thead > tr > td,
-.table-bordered > tbody > tr > td,
-.table-bordered > tfoot > tr > td {
-  border: 1px solid #dddddd;
-}
-.table-bordered > thead > tr > th,
-.table-bordered > thead > tr > td {
-  border-bottom-width: 2px;
-}
-/*
- * 带圆角边框的表格
- */
-.table-bordered-radius {
-  border-collapse: separate;
-  border: 1px solid #dddddd;
-  border-radius: 2px;
-}
-.table-bordered-radius > thead > tr > th,
-.table-bordered-radius > tbody > tr > th,
-.table-bordered-radius > thead > tr > td,
-.table-bordered-radius > tbody > tr > td {
-  border-left: 1px solid #dddddd;
-}
-.table-bordered-radius > thead > tr > th,
-.table-bordered-radius > thead > tr > td {
-  border-bottom-width: 1px;
-}
-.table-bordered-radius > thead > tr:first-child > th:first-child,
-.table-bordered-radius > thead > tr:first-child > td:first-child {
-  border-top-left-radius: 2px;
-  border-left: none;
-}
-.table-bordered-radius > thead > tr:first-child > th:last-child,
-.table-bordered-radius > thead > tr:first-child > td:last-child {
-  border-top-right-radius: 2px;
-  border-right: none;
-}
-.table-bordered-radius > tbody > tr > th:first-child,
-.table-bordered-radius > tbody > tr > td:first-child {
-  border-left: none;
-}
-.table-bordered-radius > tbody > tr > th:last-child,
-.table-bordered-radius > tbody > tr > td:last-child {
-  border-right: none;
-}
-.table-bordered-radius > tbody > tr:last-child > th,
-.table-bordered-radius > tbody > tr:last-child > td {
-  border-bottom: none;
-}
-.table-bordered-radius > tbody > tr:last-child > th:first-child,
-.table-bordered-radius > tbody > tr:last-child > td:first-child {
-  border-bottom-left-radius: 2px;
-}
-.table-bordered-radius > tbody > tr:last-child > th:last-child,
-.table-bordered-radius > tbody > tr:last-child > td:last-child {
-  border-bottom-right-radius: 2px;
-}
-/*
- * 鼠标悬浮效果
- */
-.table-hover > tbody > tr:hover {
-  background-color: #f5f5f5;
-}
-table col[class*="col-"] {
-  position: static;
-  display: table-column;
-}
-table th[class*="col-"],
-table td[class*="col-"] {
-  position: static;
-  float: none;
-  display: table-cell;
-}
 /* ============================== 分页(Pagination) =========================== */
 /*
  * 默认分页
@@ -5574,4 +5399,179 @@ table td[class*="col-"] {
 .switch-lg input[type="checkbox"]:checked + label:after,
 .switch-lg input[type="radio"]:checked + label:after {
   left: 50px;
+}
+/* ============================ 辅助(Utilities) ========================== */
+/*
+ * 清除浮动。
+ */
+.clear:before,
+.clear:after,
+.dl-horizontal dd:before,
+.dl-horizontal dd:after,
+.layout:before,
+.layout:after,
+.form-horizontal .field:before,
+.form-horizontal .field:after,
+.btn-group-vertical > .btn-group-vertical:before,
+.btn-group-vertical > .btn-group-vertical:after,
+.btn-toolbar:before,
+.btn-toolbar:after,
+.pagination:before,
+.pagination:after {
+  display: table;
+  content: " ";
+}
+.clear:after,
+.dl-horizontal dd:after,
+.layout:after,
+.form-horizontal .field:after,
+.btn-group-vertical > .btn-group-vertical:after,
+.btn-toolbar:after,
+.pagination:after {
+  clear: both;
+}
+/*
+ * 左浮动。
+ */
+.pull-left {
+  float: left !important;
+}
+/*
+ * 右浮动。
+ */
+.pull-right {
+  float: right !important;
+}
+/*
+ * 内容块居中。
+ */
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+/*
+ * 垂直对齐。
+ */
+.vertical-align {
+  font-size: 0.001px;
+}
+.vertical-align:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+.vertical-align-middle,
+.vertical-align-bottom {
+  display: inline-block;
+  font-size: 14px;
+  max-width: 100%;
+}
+/*
+ * 垂直居中对齐。
+ */
+.vertical-align-middle {
+  vertical-align: middle;
+}
+/*
+ * 垂直底部对齐。
+ */
+.vertical-align-bottom {
+  vertical-align: bottom;
+}
+/*
+ * 响应式宽度。
+ */
+.responsive-width {
+  box-sizing: border-box;
+  max-width: 100%;
+  height: auto;
+}
+/*
+ * 显示元素。
+ */
+.show {
+  display: block !important;
+}
+/*
+ * 隐藏元素。
+ */
+.hide {
+  display: none !important;
+}
+/*
+ * 隐藏元素，并保留文档流。
+ */
+.invisible {
+  visibility: hidden;
+}
+/*
+ * 横屏(显示/隐藏)辅助。
+ */
+@media only screen and (orientation: landscape) {
+  .show-landscape,
+  .hide-portrait {
+    display: inherit !important;
+  }
+  .hide-landscape,
+  .show-portrait {
+    display: none !important;
+  }
+}
+/*
+ * 竖屏(显示/隐藏)辅助。
+ */
+@media only screen and (orientation: portrait) {
+  .show-portrait,
+  .hide-landscape {
+    display: inherit !important;
+  }
+  .hide-portrait,
+  .show-landscape {
+    display: none !important;
+  }
+}
+/*
+ * 正方形。
+ */
+.square {
+  border-radius: 0;
+}
+/*
+ * 圆角。
+ */
+.radius {
+  border-radius: 4px;
+}
+/*
+ * 椭圆。
+ */
+.round {
+  border-radius: 1000px;
+}
+/*
+ * 圆形。
+ */
+.circle {
+  border-radius: 50%;
+}
+/*
+ * 水平滚动，内容超出容器宽度时显示水平滚动条。
+ */
+.scrollable-horizontal {
+  width: 100%;
+  overflow-y: hidden;
+  overflow-x: auto;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  -webkit-overflow-scrolling: touch;
+}
+/*
+ * 垂直滚动，内容超出容器高度时显示垂直滚动条。
+ */
+.scrollable-vertical {
+  height: 240px;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  resize: vertical;
 }
