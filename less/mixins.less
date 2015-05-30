@@ -197,6 +197,11 @@
             box-sizing: @boxmodel;
 }
 
+.reset-filter()
+{
+    filter: e(%("progid:DXImageTransform.Microsoft.gradient(enabled = false)"));
+}
+
 //
 // #public 圆角边框。
 //
@@ -223,6 +228,14 @@
 {
     border-bottom-left-radius: @radius;
     border-top-left-radius: @radius;
+}
+
+.nav-divider(@color: #e5e5e5, @margin: ((@line-height-computed / 2) - 1))
+{
+    height: 1px;
+    margin: @margin 0;
+    overflow: hidden;
+    background-color: @color;
 }
 
 
@@ -899,6 +912,127 @@
     .addon > .btn
     {
         border-color: @border-color;
+    }
+}
+
+
+// ================================ 角快(Angle) ============================= //
+
+
+.angle-base()
+{
+    &:before,
+    &:after
+    {
+        position: absolute;
+        display: block;
+        content: "";
+        width: 0;
+        height: 0;
+        border: 8px dashed transparent;
+        z-index: 1;
+    }
+}
+
+.angle-up-variant(@border-color: #ddd; @bg-color: #fff; @border-width: 8px)
+{
+    .angle-base();
+
+    &:before,
+    &:after
+    {
+        border-bottom-style: solid;
+        border-width: 0 @border-width @border-width;
+    }
+
+    &:before
+    {
+        border-bottom-color: @border-color;
+        bottom: 0;
+    }
+
+    &:after
+    {
+        border-bottom-color: @bg-color;
+        bottom: -1px;
+    }
+}
+
+.angle-down-variant(@border-color: #ddd; @bg-color: #fff; @border-width: 8px)
+{
+    .angle-base();
+
+    bottom: -(@border-width + 1);
+
+    &:before,
+    &:after
+    {
+        border-top-style: solid;
+        border-width: @border-width @border-width 0;
+    }
+
+    &:before
+    {
+        border-top-color: @border-color;
+        bottom: 0;
+    }
+
+    &:after
+    {
+        border-top-color: @bg-color;
+        bottom: 1px;
+    }
+}
+
+.angle-left-variant(@border-color: #ddd; @bg-color: #fff; @border-width: 8px)
+{
+    .angle-base();
+
+    left: -(@border-width + 1);
+
+    &:before,
+    &:after
+    {
+        border-right-style: solid;
+        border-width: @border-width @border-width @border-width 0;
+    }
+
+    &:before
+    {
+        border-right-color: @border-color;
+        left: 0;
+    }
+
+    &:after
+    {
+        border-right-color: @bg-color;
+        left: 1px;
+    }
+}
+
+.angle-right-variant(@border-color: #ddd; @bg-color: #fff; @border-width: 8px)
+{
+    .angle-base();
+
+    right: 0;
+
+    &:before,
+    &:after
+    {
+        border-left-style: solid;
+        border-width: @border-width 0 @border-width @border-width;
+    }
+
+    &:before
+    {
+        border-left-color: @border-color;
+        left: 0;
+    }
+
+    &:after
+    {
+        border-left-color: @bg-color;
+        left: -1px;
     }
 }
 
