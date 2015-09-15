@@ -1,0 +1,932 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"bind",
+				"bindKeyboardEvents〔function〕"
+			],
+			[
+				"has",
+				"hasTouch"
+			],
+			[
+				"parse",
+				"parseDuration"
+			],
+			[
+				"su",
+				"support"
+			],
+			[
+				"show",
+				"show"
+			],
+			[
+				"remove",
+				"removeAnimation"
+			],
+			[
+				"setDi",
+				"setDisplay"
+			],
+			[
+				"removea",
+				"removeAnimating"
+			],
+			[
+				"resto",
+				"restoreConditions"
+			],
+			[
+				"removeAni",
+				"removeAnimationCallbacks"
+			],
+			[
+				"fa",
+				"failSafeDelay"
+			],
+			[
+				"use",
+				"useFailSafe"
+			],
+			[
+				"disa",
+				"displayType"
+			],
+			[
+				"dis",
+				"displayType"
+			],
+			[
+				"lo",
+				"looping"
+			],
+			[
+				"ele",
+				"element"
+			],
+			[
+				"sel",
+				"self"
+			],
+			[
+				"visi",
+				"visible"
+			],
+			[
+				"ev",
+				"eventSuffix"
+			],
+			[
+				"evet",
+				"eventNamespace〔variable〕"
+			],
+			[
+				"_",
+				"_animationStart〔variable〕"
+			],
+			[
+				"conv",
+				"convertSpeed〔function〕"
+			],
+			[
+				"dela",
+				"delay〔variable〕"
+			],
+			[
+				"delay",
+				"delay〔variable〕"
+			],
+			[
+				"unde",
+				"undefined"
+			],
+			[
+				"prop",
+				"properties〔variable〕"
+			],
+			[
+				"out",
+				"outward"
+			],
+			[
+				"claa",
+				"className"
+			],
+			[
+				"class",
+				"className"
+			],
+			[
+				"clas",
+				"clasName"
+			],
+			[
+				"an",
+				"animations〔variable〕"
+			],
+			[
+				"method",
+				"methodInvoked〔variable〕"
+			],
+			[
+				"_ani",
+				"_animationEnd〔variable〕"
+			],
+			[
+				"cla",
+				"className〔variable〕"
+			],
+			[
+				"anima",
+				"animation"
+			],
+			[
+				"get",
+				"_getAnimationName〔function〕"
+			],
+			[
+				"_get",
+				"_getAnimationEnd"
+			],
+			[
+				"fade",
+				"fadeOut	.fadeOut()"
+			],
+			[
+				"conte",
+				"content"
+			],
+			[
+				"pro",
+				"prototype"
+			],
+			[
+				"fun",
+				"function〔keyword〕"
+			],
+			[
+				"border-",
+				"border-radius"
+			],
+			[
+				"file",
+				"field-group"
+			],
+			[
+				"border-co",
+				"border-color"
+			],
+			[
+				"margin-",
+				"margin-bottom"
+			],
+			[
+				"fiel",
+				"field"
+			],
+			[
+				"text",
+				"textarea"
+			],
+			[
+				"ui-ra",
+				"ui-radio-group-inline"
+			],
+			[
+				"di",
+				"disabled	Attr"
+			],
+			[
+				"marg",
+				"margin-top"
+			],
+			[
+				"margin",
+				"margin-bottom"
+			],
+			[
+				"fil",
+				"field"
+			],
+			[
+				"field-",
+				"field-radio"
+			],
+			[
+				"op",
+				"option	Tag"
+			],
+			[
+				"inline",
+				"inline-block〔value〕"
+			],
+			[
+				"font-",
+				"font-family"
+			],
+			[
+				"padding",
+				"padding-right"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "examples/index.html",
+			"settings":
+			{
+				"buffer_size": 14777,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "js/dropdown.js",
+			"settings":
+			{
+				"buffer_size": 6385,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "/*!\n * # Semantic UI 1.12.3 - Dropdown\n * http://github.com/semantic-org/semantic-ui/\n *\n *\n * Copyright 2014 Contributors\n * Released under the MIT license\n * http://opensource.org/licenses/MIT\n *\n */\n\n;(function ( $, window, document, undefined ) {\n\n\"use strict\";\n\n$.fn.dropdown = function(parameters) {\n  var\n    $allModules    = $(this),\n    $document      = $(document),\n\n    moduleSelector = $allModules.selector || '',\n\n    hasTouch       = ('ontouchstart' in document.documentElement),\n    time           = new Date().getTime(),\n    performance    = [],\n\n    query          = arguments[0],\n    methodInvoked  = (typeof query == 'string'),\n    queryArguments = [].slice.call(arguments, 1),\n    returnedValue\n  ;\n\n  $allModules\n    .each(function() {\n      var\n        settings          = ( $.isPlainObject(parameters) )\n          ? $.extend(true, {}, $.fn.dropdown.settings, parameters)\n          : $.extend({}, $.fn.dropdown.settings),\n\n        className       = settings.className,\n        metadata        = settings.metadata,\n        namespace       = settings.namespace,\n        selector        = settings.selector,\n        error           = settings.error,\n\n        eventNamespace  = '.' + namespace,\n        moduleNamespace = 'module-' + namespace,\n\n        $module         = $(this),\n        $text           = $module.find(selector.text),\n        $search         = $module.find(selector.search),\n        $input          = $module.find(selector.input),\n\n        $combo = ($module.prev().find(selector.text).length > 0)\n          ? $module.prev().find(selector.text)\n          : $module.prev(),\n\n        $menu           = $module.children(selector.menu),\n        $item           = $menu.find(selector.item),\n\n        activated       = false,\n        itemActivated   = false,\n        element         = this,\n        instance        = $module.data(moduleNamespace),\n\n        elementNamespace,\n        id,\n        observer,\n        module\n      ;\n\n      module = {\n\n        initialize: function() {\n          module.debug('Initializing dropdown', settings);\n\n          if( module.is.alreadySetup() ) {\n            module.setup.reference();\n          }\n          else {\n            module.setup.layout();\n\n            module.save.defaults();\n            module.set.selected();\n\n            module.create.id();\n\n            if(hasTouch) {\n              module.bind.touchEvents();\n            }\n            module.bind.mouseEvents();\n            module.bind.keyboardEvents();\n\n            module.observeChanges();\n            module.instantiate();\n          }\n        },\n\n        instantiate: function() {\n          module.verbose('Storing instance of dropdown', module);\n          instance = module;\n          $module\n            .data(moduleNamespace, module)\n          ;\n        },\n\n        destroy: function() {\n          module.verbose('Destroying previous dropdown for', $module);\n          module.remove.tabbable();\n          $module\n            .off(eventNamespace)\n            .removeData(moduleNamespace)\n          ;\n          $menu\n            .off(eventNamespace)\n          ;\n          $document\n            .off(elementNamespace)\n          ;\n        },\n\n        observeChanges: function() {\n          if('MutationObserver' in window) {\n            observer = new MutationObserver(function(mutations) {\n              if( module.is.selectMutation(mutations) ) {\n                module.debug('<select> modified, recreating menu');\n                module.setup.select();\n              }\n              else {\n                module.debug('DOM tree modified, updating selector cache');\n                module.refresh();\n              }\n            });\n            observer.observe(element, {\n              childList : true,\n              subtree   : true\n            });\n            module.debug('Setting up mutation observer', observer);\n          }\n        },\n\n        create: {\n          id: function() {\n            id = (Math.random().toString(16) + '000000000').substr(2,8);\n            elementNamespace = '.' + id;\n            module.verbose('Creating unique id for element', id);\n          }\n        },\n\n        search: function() {\n          var\n            query\n          ;\n          query = $search.val();\n\n          module.verbose('Searching for query', query);\n          module.filter(query);\n          if(module.is.searchSelection() && module.can.show() ) {\n            module.show();\n          }\n        },\n\n        setup: {\n          layout: function() {\n            if( $module.is('select') ) {\n              module.setup.select();\n            }\n            if( module.is.search() && !module.is.searchable() ) {\n              $search = $('<input />')\n                .addClass(className.search)\n                .insertBefore($text)\n              ;\n            }\n            if(settings.allowTab) {\n              module.set.tabbable();\n            }\n          },\n          select: function() {\n            var\n              selectValues  = module.get.selectValues()\n            ;\n            module.debug('Dropdown initialized on a select', selectValues);\n            if( $module.is('select') ) {\n              $input = $module;\n            }\n            // see if select is placed correctly already\n            if($input.parent(selector.dropdown).length > 0) {\n              module.debug('UI dropdown already exists. Creating dropdown menu only');\n              $module = $input.closest(selector.dropdown);\n              $menu   = $module.children(selector.menu);\n              if($menu.length === 0) {\n                $menu = $('<div />')\n                  .addClass(className.menu)\n                  .appendTo($module)\n                ;\n              }\n              $menu.html( settings.templates.menu( selectValues ));\n            }\n            else {\n              module.debug('Creating entire dropdown from select');\n              $module = $('<div />')\n                .attr('class', $input.attr('class') )\n                .addClass(className.selection)\n                .addClass(className.dropdown)\n                .html( settings.templates.dropdown(selectValues) )\n                .insertBefore($input)\n              ;\n              $input\n                .removeAttr('class')\n                .prependTo($module)\n              ;\n            }\n            module.refresh();\n          },\n          reference: function() {\n            var\n              index = $allModules.index($module),\n              $firstModules,\n              $lastModules\n            ;\n            module.debug('Dropdown behavior was called on select, replacing with closest dropdown');\n            // replace module reference\n            $module = $module.parent(selector.dropdown);\n            module.refresh();\n            // adjust all modules\n            $firstModules = $allModules.slice(0, index);\n            $lastModules  = $allModules.slice(index + 1);\n            $allModules   = $firstModules.add($module).add($lastModules);\n            // invoke method in context of current instance\n            if(methodInvoked) {\n              instance = module;\n              module.invoke(query);\n            }\n          }\n        },\n\n        refresh: function() {\n          module.verbose('Refreshing selector cache');\n          $text   = $module.find(selector.text);\n          $search = $module.find(selector.search);\n          $input  = $module.find(selector.input);\n          $combo  = ($module.prev().find(selector.text).length > 0)\n            ? $module.prev().find(selector.text)\n            : $module.prev()\n          ;\n          $menu   = $module.children(selector.menu);\n          $item   = $menu.find(selector.item);\n        },\n\n        toggle: function() {\n          module.verbose('Toggling menu visibility');\n          if( !module.is.active() ) {\n            module.show();\n          }\n          else {\n            module.hide();\n          }\n        },\n\n        show: function(callback) {\n          callback = $.isFunction(callback)\n            ? callback\n            : function(){}\n          ;\n          if( module.is.searchSelection() && module.is.allFiltered() ) {\n            return;\n          }\n          if( module.can.show() && !module.is.active() ) {\n            module.debug('Showing dropdown');\n            module.animate.show(function() {\n              if( module.can.click() ) {\n                module.bind.intent();\n              }\n              module.set.visible();\n              callback.call(element);\n            });\n            settings.onShow.call(element);\n          }\n        },\n\n        hide: function(callback) {\n          callback = $.isFunction(callback)\n            ? callback\n            : function(){}\n          ;\n          if( module.is.active() ) {\n            module.debug('Hiding dropdown');\n            module.animate.hide(function() {\n              module.remove.visible();\n              callback.call(element);\n            });\n            settings.onHide.call(element);\n          }\n        },\n\n        hideOthers: function() {japppgaop\n          module.verbose('Finding other dropdowns to hide');\n          $allModules\n            .not($module)\n              .has(selector.menu + ':visible:not(.' + className.animating + ')')\n                .dropdown('hide')\n          ;\n        },\n\n        hideSubMenus: function() {\n          var\n            $subMenus = $menu.find(selector.menu)\n          ;\n          $subMenus.transition('hide');\n        },\n\n        bind: {\n          keyboardEvents: function() {\n            module.debug('Binding keyboard events');\n            $module\n              .on('keydown' + eventNamespace, module.event.keydown)\n            ;\n            if( module.is.searchable() ) {\n              $module\n                .on(module.get.inputEvent(), selector.search, module.event.input)\n              ;\n            }\n          },\n          touchEvents: function() {\n            module.debug('Touch device detected binding additional touch events');\n            if( module.is.searchSelection() ) {\n              // do nothing special yet\n            }\n            else {\n              $module\n                .on('touchstart' + eventNamespace, module.event.test.toggle)\n              ;\n            }\n            $menu\n              .on('touchstart' + eventNamespace, selector.item, module.event.item.mouseenter)\n            ;\n          },\n          mouseEvents: function() {\n            module.verbose('Mouse detected binding mouse events');\n            if( module.is.searchSelection() ) {\n              $module\n                .on('mousedown' + eventNamespace, selector.menu, module.event.menu.activate)\n                .on('mouseup'   + eventNamespace, selector.menu, module.event.menu.deactivate)\n                .on('click'     + eventNamespace, selector.search, module.show)\n                .on('focus'     + eventNamespace, selector.search, module.event.searchFocus)\n                .on('blur'      + eventNamespace, selector.search, module.event.searchBlur)\n                .on('click'     + eventNamespace, selector.text, module.event.searchTextFocus)\n              ;\n            }\n            else {\n              if(settings.on == 'click') {\n                $module\n                  .on('click' + eventNamespace, module.event.test.toggle)\n                ;\n              }\n              else if(settings.on == 'hover') {\n                $module\n                  .on('mouseenter' + eventNamespace, module.delay.show)\n                  .on('mouseleave' + eventNamespace, module.delay.hide)\n                ;\n              }\n              else {\n                $module\n                  .on(settings.on + eventNamespace, module.toggle)\n                ;\n              }\n              $module\n                .on('mousedown' + eventNamespace, module.event.mousedown)\n                .on('mouseup'   + eventNamespace, module.event.mouseup)\n                .on('focus'     + eventNamespace, module.event.focus)\n                .on('blur'      + eventNamespace, module.event.blur)\n              ;\n            }\n            $menu\n              .on('mouseenter' + eventNamespace, selector.item, module.event.item.mouseenter)\n              .on('mouseleave' + eventNamespace, selector.item, module.event.item.mouseleave)\n              .on('click'      + eventNamespace, selector.item, module.event.item.click)\n            ;\n          },\n          intent: function() {\n            module.verbose('Binding hide intent event to document');\n            if(hasTouch) {\n              $document\n                .on('touchstart' + elementNamespace, module.event.test.touch)\n                .on('touchmove'  + elementNamespace, module.event.test.touch)\n              ;\n            }\n            $document\n              .on('click' + elementNamespace, module.event.test.hide)\n            ;\n          }\n        },\n\n        unbind: {\n          intent: function() {\n            module.verbose('Removing hide intent event from document');\n            if(hasTouch) {\n              $document\n                .off('touchstart' + elementNamespace)\n                .off('touchmove' + elementNamespace)\n              ;\n            }\n            $document\n              .off('click' + elementNamespace)\n            ;\n          }\n        },\n\n        filter: function(searchTerm) {\n          var\n            $results       = $(),\n            escapedTerm    = module.escape.regExp(searchTerm),\n            exactRegExp    = new RegExp('^' + escapedTerm, 'igm'),\n            fullTextRegExp = new RegExp(escapedTerm, 'ig'),\n            allItemsFiltered\n          ;\n          module.verbose('Searching for matching values');\n          $item\n            .each(function(){\n              var\n                $choice = $(this),\n                text    = String(module.get.choiceText($choice, false)),\n                value   = String(module.get.choiceValue($choice, text))\n              ;\n              if( text.match(exactRegExp) || value.match(exactRegExp) ) {\n                $results = $results.add($choice);\n              }\n              else if(settings.fullTextSearch) {\n                if( text.match(fullTextRegExp) || value.match(fullTextRegExp) ) {\n                  $results = $results.add($choice);\n                }\n              }\n            })\n          ;\n\n          module.debug('Setting filter', searchTerm);\n          module.remove.filteredItem();\n          $item\n            .not($results)\n            .addClass(className.filtered)\n          ;\n\n          module.verbose('Selecting first non-filtered element');\n          module.remove.selectedItem();\n          $item\n            .not('.' + className.filtered)\n              .eq(0)\n              .addClass(className.selected)\n          ;\n          if( module.is.allFiltered() ) {\n            module.debug('All items filtered, hiding dropdown', searchTerm);\n            if(module.is.searchSelection()) {\n              module.hide();\n            }\n            settings.onNoResults.call(element, searchTerm);\n          }\n        },\n\n        focusSearch: function() {\n          if( module.is.search() ) {\n            $search\n              .focus()\n            ;\n          }\n        },\n\n        forceSelection: function() {\n          var\n            $currentlySelected = $item.not(className.filtered).filter('.' + className.selected).eq(0),\n            $activeItem        = $item.filter('.' + className.active).eq(0),\n            $selectedItem      = ($currentlySelected.length > 0)\n              ? $currentlySelected\n              : $activeItem,\n            hasSelected = ($selectedItem.size() > 0)\n          ;\n          if(hasSelected) {\n            module.event.item.click.call($selectedItem);\n            module.remove.filteredItem();\n          }\n          else {\n            module.hide();\n          }\n        },\n\n        event: {\n          // prevents focus callback from occuring on mousedown\n          mousedown: function() {\n            activated = true;\n          },\n          mouseup: function() {\n            activated = false;\n          },\n          focus: function() {\n            if(!activated && module.is.hidden()) {\n              module.show();\n            }\n          },\n          blur: function(event) {\n            var\n              pageLostFocus = (document.activeElement === this)\n            ;\n            if(!activated && !pageLostFocus) {\n              module.hide();\n            }\n          },\n          searchFocus: function() {\n            activated = true;\n            module.show();\n          },\n          searchBlur: function(event) {\n            var\n              pageLostFocus = (document.activeElement === this)\n            ;\n            if(!itemActivated && !pageLostFocus) {\n              if(settings.forceSelection) {\n                module.forceSelection();\n              }\n              else {\n                module.hide();\n              }\n            }\n          },\n          searchTextFocus: function(event) {\n            activated = true;\n            $search.focus();\n          },\n          input: function(event) {\n            if(module.is.searchSelection()) {\n              module.set.filtered();\n            }\n            clearTimeout(module.timer);\n            module.timer = setTimeout(module.search, settings.delay.search);\n          },\n          keydown: function(event) {\n            var\n              $currentlySelected = $item.not(className.filtered).filter('.' + className.selected).eq(0),\n              $activeItem        = $menu.children('.' + className.active).eq(0),\n              $selectedItem      = ($currentlySelected.length > 0)\n                ? $currentlySelected\n                : $activeItem,\n              $visibleItems = ($selectedItem.length > 0)\n                ? $selectedItem.siblings(':not(.' + className.filtered +')').andSelf()\n                : $menu.children(':not(.' + className.filtered +')'),\n              $subMenu      = $selectedItem.children(selector.menu),\n              $parentMenu   = $selectedItem.closest(selector.menu),\n              isSubMenuItem = $parentMenu[0] !== $menu[0],\n              inVisibleMenu = $parentMenu.is(':visible'),\n              pressedKey    = event.which,\n              keys          = {\n                enter      : 13,\n                escape     : 27,\n                leftArrow  : 37,\n                upArrow    : 38,\n                rightArrow : 39,\n                downArrow  : 40\n              },\n              hasSubMenu       = ($subMenu.length> 0),\n              hasSelectedItem  = ($selectedItem.length > 0),\n              lastVisibleIndex = ($visibleItems.size() - 1),\n              $nextItem,\n              newIndex\n            ;\n            // visible menu keyboard shortcuts\n            if(module.is.visible()) {\n              // enter (select or sub-menu)\n              if(pressedKey == keys.enter && hasSelectedItem) {\n                if(hasSubMenu && !settings.allowCategorySelection) {\n                  module.verbose('Pressed enter on unselectable category, opening sub menu');\n                  pressedKey = keys.rightArrow;\n                }\n                else {\n                  module.verbose('Enter key pressed, choosing selected item');\n                  module.event.item.click.call($selectedItem, event);\n                }\n              }\n              // left arrow (hide sub-menu)\n              if(pressedKey == keys.leftArrow) {\n                if(isSubMenuItem) {\n                  module.verbose('Left key pressed, closing sub-menu');\n                  module.animate.hide(false,  $parentMenu);\n                  $selectedItem\n                    .removeClass(className.selected)\n                  ;\n                  $parentMenu\n                    .closest(selector.item)\n                      .addClass(className.selected)\n                  ;\n                  event.preventDefault();\n                }\n              }\n              // right arrow (show sub-menu)\n              if(pressedKey == keys.rightArrow) {\n                if(hasSubMenu) {\n                  module.verbose('Right key pressed, opening sub-menu');\n                  module.animate.show(false,  $subMenu);\n                  $selectedItem\n                    .removeClass(className.selected)\n                  ;\n                  $subMenu\n                    .find(selector.item).eq(0)\n                      .addClass(className.selected)\n                  ;\n                  event.preventDefault();\n                }\n              }\n              // up arrow (traverse menu up)\n              if(pressedKey == keys.upArrow) {\n                $nextItem = (hasSelectedItem && inVisibleMenu)\n                  ? $selectedItem.prevAll(selector.item + ':not(.' + className.filtered + ')').eq(0)\n                  : $item.eq(0)\n                ;\n                if($visibleItems.index( $nextItem ) < 0) {\n                  module.verbose('Up key pressed but reached top of current menu');\n                  return;\n                }\n                else {\n                  module.verbose('Up key pressed, changing active item');\n                  $selectedItem\n                    .removeClass(className.selected)\n                  ;\n                  $nextItem\n                    .addClass(className.selected)\n                  ;\n                  module.set.scrollPosition($nextItem);\n                }\n                event.preventDefault();\n              }\n              // down arrow (traverse menu down)\n              if(pressedKey == keys.downArrow) {\n                $nextItem = (hasSelectedItem && inVisibleMenu)\n                  ? $nextItem = $selectedItem.nextAll(selector.item + ':not(.' + className.filtered + ')').eq(0)\n                  : $item.eq(0)\n                ;\n                if($nextItem.length === 0) {\n                  module.verbose('Down key pressed but reached bottom of current menu');\n                  return;\n                }\n                else {\n                  module.verbose('Down key pressed, changing active item');\n                  $item\n                    .removeClass(className.selected)\n                  ;\n                  $nextItem\n                    .addClass(className.selected)\n                  ;\n                  module.set.scrollPosition($nextItem);\n                }\n                event.preventDefault();\n              }\n            }\n            else {\n              // enter (open menu)\n              if(pressedKey == keys.enter) {\n                module.verbose('Enter key pressed, showing dropdown');\n                module.show();\n              }\n              // escape (close menu)\n              if(pressedKey == keys.escape) {\n                module.verbose('Escape key pressed, closing dropdown');\n                module.hide();\n              }\n              // down arrow (open menu)\n              if(pressedKey == keys.downArrow) {\n                module.verbose('Down key pressed, showing dropdown');\n                module.show();\n              }\n            }\n          },\n          test: {\n            toggle: function(event) {\n              if( module.determine.eventInMenu(event, module.toggle) ) {\n                event.preventDefault();\n              }\n            },\n            touch: function(event) {\n              module.determine.eventInMenu(event, function() {\n                if(event.type == 'touchstart') {\n                  module.timer = setTimeout(module.hide, settings.delay.touch);\n                }\n                else if(event.type == 'touchmove') {\n                  clearTimeout(module.timer);\n                }\n              });\n              event.stopPropagation();\n            },\n            hide: function(event) {\n              module.determine.eventInModule(event, module.hide);\n            }\n          },\n\n          menu: {\n            activate: function() {\n              itemActivated = true;\n            },\n            deactivate: function() {\n              itemActivated = false;\n            }\n          },\n          item: {\n            mouseenter: function(event) {\n              var\n                $subMenu    = $(this).children(selector.menu),\n                $otherMenus = $(this).siblings(selector.item).children(selector.menu)\n              ;\n              if( $subMenu.length > 0 ) {\n                clearTimeout(module.itemTimer);\n                module.itemTimer = setTimeout(function() {\n                  module.verbose('Showing sub-menu', $subMenu);\n                  $.each($otherMenus, function() {\n                    module.animate.hide(false, $(this));\n                  });\n                  module.animate.show(false,  $subMenu);\n                }, settings.delay.show);\n                event.preventDefault();\n              }\n            },\n            mouseleave: function(event) {\n              var\n                $subMenu = $(this).children(selector.menu)\n              ;\n              if($subMenu.length > 0) {\n                clearTimeout(module.itemTimer);\n                module.itemTimer = setTimeout(function() {\n                  module.verbose('Hiding sub-menu', $subMenu);\n                  module.animate.hide(false,  $subMenu);\n                }, settings.delay.hide);\n              }\n            },\n            click: function (event) {\n              var\n                $choice  = $(this),\n                $target  = (event)\n                  ? $(event.target)\n                  : $(''),\n                $subMenu = $choice.find(selector.menu),\n                text     = module.get.choiceText($choice),\n                value    = module.get.choiceValue($choice, text),\n                callback = function() {\n                  module.remove.searchTerm();\n                  module.determine.selectAction(text, value);\n                },\n                hasSubMenu     = ($subMenu.length > 0),\n                isBubbledEvent = ($subMenu.find($target).length > 0)\n              ;\n              if(!isBubbledEvent && (!hasSubMenu || settings.allowCategorySelection)) {\n                callback();\n              }\n            }\n          },\n          resetStyle: function() {\n            $(this).removeAttr('style');\n          }\n        },\n\n        determine: {\n          selectAction: function(text, value) {\n            module.verbose('Determining action', settings.action);\n            if( $.isFunction( module.action[settings.action] ) ) {\n              module.verbose('Triggering preset action', settings.action, text, value);\n              module.action[ settings.action ](text, value);\n            }\n            else if( $.isFunction(settings.action) ) {\n              module.verbose('Triggering user action', settings.action, text, value);\n              settings.action(text, value);\n            }\n            else {\n              module.error(error.action, settings.action);\n            }\n          },\n          eventInModule: function(event, callback) {\n            callback = $.isFunction(callback)\n              ? callback\n              : function(){}\n            ;\n            if( $(event.target).closest($module).length === 0 ) {\n              module.verbose('Triggering event', callback);\n              callback();\n              return true;\n            }\n            else {\n              module.verbose('Event occurred in dropdown, canceling callback');\n              return false;\n            }\n          },\n          eventInMenu: function(event, callback) {\n            callback = $.isFunction(callback)\n              ? callback\n              : function(){}\n            ;\n            if( $(event.target).closest($menu).length === 0 ) {\n              module.verbose('Triggering event', callback);\n              callback();\n              return true;\n            }\n            else {\n              module.verbose('Event occurred in dropdown menu, canceling callback');\n              return false;\n            }\n          }\n        },\n\n        action: {\n\n          nothing: function() {},\n\n          activate: function(text, value) {\n            value = (value !== undefined)\n              ? value\n              : text\n            ;\n            module.set.selected(value);\n            module.hide(function() {\n              module.remove.filteredItem();\n            });\n          },\n\n          select: function(text, value) {\n            value = (value !== undefined)\n              ? value\n              : text\n            ;\n            module.set.selected(value);\n            module.hide(function() {\n              module.remove.filteredItem();\n            });\n          },\n\n          combo: function(text, value) {\n            value = (value !== undefined)\n              ? value\n              : text\n            ;\n            module.set.selected(value);\n            module.hide(function() {\n              module.remove.filteredItem();\n            });\n          },\n\n          hide: function() {\n            module.hide(function() {\n              module.remove.filteredItem();\n            });\n          }\n\n        },\n\n        get: {\n          id: function() {\n            return id;\n          },\n          text: function() {\n            return $text.text();\n          },\n          value: function() {\n            return ($input.length > 0)\n              ? $input.val()\n              : $module.data(metadata.value)\n            ;\n          },\n          choiceText: function($choice, preserveHTML) {\n            preserveHTML = (preserveHTML !== undefined)\n              ? preserveHTML\n              : settings.preserveHTML\n            ;\n            if($choice !== undefined) {\n              if($choice.find(selector.menu).length > 0) {\n                module.verbose('Retreiving text of element with sub-menu');\n                $choice = $choice.clone();\n                $choice.find(selector.menu).remove();\n                $choice.find(selector.menuIcon).remove();\n              }\n              return ($choice.data(metadata.text) !== undefined)\n                ? $choice.data(metadata.text)\n                : (preserveHTML)\n                  ? $choice.html().trim()\n                  : $choice.text().trim()\n              ;\n            }\n          },\n          choiceValue: function($choice, choiceText) {\n            choiceText = choiceText || module.get.choiceText($choice);\n            return ($choice.data(metadata.value) !== undefined)\n              ? $choice.data(metadata.value)\n              : (typeof choiceText === 'string')\n                ? choiceText.toLowerCase().trim()\n                : choiceText.trim()\n            ;\n          },\n          inputEvent: function() {\n            var\n              input = $search[0]\n            ;\n            if(input) {\n              return (input.oninput !== undefined)\n                ? 'input'\n                : (input.onpropertychange !== undefined)\n                  ? 'propertychange'\n                  : 'keyup'\n              ;\n            }\n            return false;\n          },\n          selectValues: function() {\n            var\n              select = {}\n            ;\n            select.values = (settings.sortSelect)\n              ? {} // properties will be sorted in object when re-accessed\n              : [] // properties will keep original order in array\n            ;\n            $module\n              .find('option')\n                .each(function() {\n                  var\n                    name  = $(this).html(),\n                    value = ( $(this).attr('value') !== undefined )\n                      ? $(this).attr('value')\n                      : name\n                  ;\n                  if(value === '') {\n                    select.placeholder = name;\n                  }\n                  else {\n                    if(settings.sortSelect) {\n                      select.values[value] = {\n                        name  : name,\n                        value : value\n                      };\n                    }\n                    else {\n                      select.values.push({\n                        name: name,\n                        value: value\n                      });\n                    }\n                  }\n                })\n            ;\n            if(settings.sortSelect) {\n              module.debug('Retrieved and sorted values from select', select);\n            }\n            else {\n              module.debug('Retreived values from select', select);\n            }\n            return select;\n          },\n          activeItem: function() {\n            return $item.filter('.'  + className.active);\n          },\n          item: function(value, strict) {\n            var\n              $selectedItem = false\n            ;\n            value = (value !== undefined)\n              ? value\n              : ( module.get.value() !== undefined)\n                ? module.get.value()\n                : module.get.text()\n            ;\n            strict = (value === '' || value === 0)\n              ? true\n              : strict || false\n            ;\n            if(value !== undefined) {\n              $item\n                .each(function() {\n                  var\n                    $choice       = $(this),\n                    optionText    = module.get.choiceText($choice),\n                    optionValue   = module.get.choiceValue($choice, optionText)\n                  ;\n                  if(strict) {\n                    module.verbose('Ambiguous dropdown value using strict type check', $choice, value);\n                    if( optionValue === value ) {\n                      $selectedItem = $(this);\n                      return true;\n                    }\n                    else if( !$selectedItem && optionText === value ) {\n                      $selectedItem = $(this);\n                      return true;\n                    }\n                  }\n                  else {\n                    if( optionValue == value ) {\n                      module.verbose('Found select item by value', optionValue, value);\n                      $selectedItem = $(this);\n                      return true;\n                    }\n                    else if( !$selectedItem && optionText == value ) {\n                      module.verbose('Found select item by text', optionText, value);\n                      $selectedItem = $(this);\n                      return true;\n                    }\n                  }\n                })\n              ;\n            }\n            else {\n              value = module.get.text();\n            }\n            return $selectedItem || false;\n          }\n        },\n\n        restore: {\n          defaults: function() {\n            module.restore.defaultText();\n            module.restore.defaultValue();\n          },\n          defaultText: function() {\n            var\n              defaultText = $module.data(metadata.defaultText)\n            ;\n            module.debug('Restoring default text', defaultText);\n            module.set.text(defaultText);\n            $text.addClass(className.placeholder);\n          },\n          defaultValue: function() {\n            var\n              defaultValue = $module.data(metadata.defaultValue)\n            ;\n            if(defaultValue !== undefined) {\n              module.debug('Restoring default value', defaultValue);\n              if(defaultValue.length) {\n                module.set.selected(defaultValue);\n              }\n              else {\n                module.remove.activeItem();\n                module.remove.selectedItem();\n              }\n            }\n          }\n        },\n\n        save: {\n          defaults: function() {\n            module.save.defaultText();\n            module.save.placeholderText();\n            module.save.defaultValue();\n          },\n          defaultValue: function() {\n            $module.data(metadata.defaultValue, module.get.value() );\n          },\n          defaultText: function() {\n            $module.data(metadata.defaultText, $text.text() );\n          },\n          placeholderText: function() {\n            if($text.hasClass(className.placeholder)) {\n              $module.data(metadata.placeholderText, $text.text());\n            }\n          }\n        },\n\n        clear: function() {\n          var\n            placeholderText = $module.data(metadata.placeholderText)\n          ;\n          module.set.text(placeholderText);\n          module.set.value('');\n          module.remove.activeItem();\n          module.remove.selectedItem();\n          $text.addClass(className.placeholder);\n        },\n\n        set: {\n          filtered: function() {\n            var\n              searchValue    = $search.val(),\n              hasSearchValue = (typeof searchValue === 'string' && searchValue.length > 0)\n            ;\n            if(hasSearchValue) {\n              $text.addClass(className.filtered);\n            }\n            else {\n              $text.removeClass(className.filtered);\n            }\n          },\n          tabbable: function() {\n            if( module.is.searchable() ) {\n              module.debug('Searchable dropdown initialized');\n              $search\n                .val('')\n                .attr('tabindex', 0)\n              ;\n              $menu\n                .attr('tabindex', '-1')\n              ;\n            }\n            else {\n              module.debug('Simple selection dropdown initialized');\n              if(!$module.attr('tabindex') ) {\n                $module\n                  .attr('tabindex', 0)\n                ;\n                $menu\n                  .attr('tabindex', '-1')\n                ;\n              }\n            }\n          },\n          scrollPosition: function($item, forceScroll) {\n            var\n              edgeTolerance = 5,\n              hasActive,\n              offset,\n              itemHeight,\n              itemOffset,\n              menuOffset,\n              menuScroll,\n              menuHeight,\n              abovePage,\n              belowPage\n            ;\n\n            $item       = $item || module.get.activeItem();\n            hasActive   = ($item && $item.length > 0);\n            forceScroll = (forceScroll !== undefined)\n              ? forceScroll\n              : false\n            ;\n\n            if($item && hasActive) {\n\n              if(!$menu.hasClass(className.visible)) {\n                $menu.addClass(className.loading);\n              }\n\n              menuHeight = $menu.height();\n              itemHeight = $item.height();\n              menuScroll = $menu.scrollTop();\n              menuOffset = $menu.offset().top;\n              itemOffset = $item.offset().top;\n              offset     = menuScroll - menuOffset + itemOffset;\n              belowPage  = menuScroll + menuHeight < (offset + edgeTolerance);\n              abovePage  = ((offset - edgeTolerance) < menuScroll);\n              module.debug('Scrolling to active item', offset);\n              if(abovePage || belowPage || forceScroll) {\n                $menu\n                  .scrollTop(offset)\n                  .removeClass(className.loading)\n                ;\n              }\n            }\n          },\n          text: function(text) {\n            if(settings.action == 'combo') {\n              module.debug('Changing combo button text', text, $combo);\n              if(settings.preserveHTML) {\n                $combo.html(text);\n              }\n              else {\n                $combo.text(text);\n              }\n            }\n            else if(settings.action !== 'select') {\n              module.debug('Changing text', text, $text);\n              $text\n                .removeClass(className.filtered)\n                .removeClass(className.placeholder)\n              ;\n              if(settings.preserveHTML) {\n                $text.html(text);\n              }\n              else {\n                $text.text(text);\n              }\n            }\n          },\n          value: function(value) {\n            module.debug('Adding selected value to hidden input', value, $input);\n            if($input.length > 0) {\n              $input\n                .val(value)\n                .trigger('change')\n              ;\n            }\n            else {\n              $module.data(metadata.value, value);\n            }\n          },\n          active: function() {\n            $module\n              .addClass(className.active)\n            ;\n          },\n          visible: function() {\n            $module.addClass(className.visible);\n          },\n          selected: function(value) {\n            var\n              $selectedItem = module.get.item(value),\n              selectedText,\n              selectedValue\n            ;\n            if($selectedItem && !$selectedItem.hasClass(className.active) ) {\n              module.debug('Setting selected menu item to', $selectedItem);\n              module.remove.activeItem();\n              module.remove.selectedItem();\n              $selectedItem\n                .addClass(className.active)\n                .addClass(className.selected)\n              ;\n              selectedText  = module.get.choiceText($selectedItem);\n              selectedValue = module.get.choiceValue($selectedItem, selectedText);\n              module.set.text(selectedText);\n              module.set.value(selectedValue);\n              settings.onChange.call(element, value, selectedText, $selectedItem);\n            }\n          }\n        },\n\n        remove: {\n          active: function() {\n            $module.removeClass(className.active);\n          },\n          visible: function() {\n            $module.removeClass(className.visible);\n          },\n          activeItem: function() {\n            $item.removeClass(className.active);\n          },\n          filteredItem: function() {\n            $item.removeClass(className.filtered);\n          },\n          searchTerm: function() {\n            $search.val('');\n          },\n          selectedItem: function() {\n            $item.removeClass(className.selected);\n          },\n          tabbable: function() {\n            if( module.is.searchable() ) {\n              module.debug('Searchable dropdown initialized');\n              $search\n                .attr('tabindex', '-1')\n              ;\n              $menu\n                .attr('tabindex', '-1')\n              ;\n            }\n            else {\n              module.debug('Simple selection dropdown initialized');\n              $module\n                .attr('tabindex', '-1')\n              ;\n              $menu\n                .attr('tabindex', '-1')\n              ;\n            }\n          }\n        },\n\n        is: {\n          active: function() {\n            return $module.hasClass(className.active);\n          },\n          alreadySetup: function() {\n            return ($module.is('select') && $module.parent(selector.dropdown).length > 0);\n          },\n          animating: function($subMenu) {\n            return ($subMenu)\n              ? $subMenu.is(':animated') || $subMenu.transition && $subMenu.transition('is animating')\n              : $menu.is(':animated') || $menu.transition && $menu.transition('is animating')\n            ;\n          },\n          allFiltered: function() {\n            return ($item.filter('.' + className.filtered).length === $item.length);\n          },\n          hidden: function($subMenu) {\n            return ($subMenu)\n              ? $subMenu.is(':hidden')\n              : $menu.is(':hidden')\n            ;\n          },\n          selectMutation: function(mutations) {\n            var\n              selectChanged = false\n            ;\n            $.each(mutations, function(index, mutation) {\n              if(mutation.target && $(mutation.target).is('select')) {\n                selectChanged = true;\n                return true;\n              }\n            });\n            return selectChanged;\n          },\n          search: function() {\n            return $module.hasClass(className.search);\n          },\n          searchable: function() {\n            return ($search.length > 0);\n          },\n          searchSelection: function() {\n            return ( module.is.searchable() && $search.parent().is($module) );\n          },\n          selection: function() {\n            return $module.hasClass(className.selection);\n          },\n          upward: function() {\n            return $module.hasClass(className.upward);\n          },\n          visible: function($subMenu) {\n            return ($subMenu)\n              ? $subMenu.is(':visible')\n              : $menu.is(':visible')\n            ;\n          }\n        },\n\n        can: {\n          click: function() {\n            return (hasTouch || settings.on == 'click');\n          },\n          show: function() {\n            return !$module.hasClass(className.disabled);\n          }\n        },\n\n        animate: {\n          show: function(callback, $subMenu) {\n            var\n              $currentMenu = $subMenu || $menu,\n              start = ($subMenu)\n                ? function() {}\n                : function() {\n                  module.hideSubMenus();\n                  module.hideOthers();\n                  module.set.active();\n                }\n            ;\n            callback = $.isFunction(callback)\n              ? callback\n              : function(){}\n            ;\n            module.set.scrollPosition(module.get.activeItem(), true);\n            module.verbose('Doing menu show animation', $currentMenu);\n            if( module.is.hidden($currentMenu) || module.is.animating($currentMenu) ) {\n\n              if(settings.transition == 'auto') {\n                settings.transition = module.is.upward()\n                  ? 'slide up'\n                  : 'slide down'\n                ;\n                module.verbose('Automatically determining animation based on animation direction', settings.transition);\n              }\n              if(settings.transition == 'none') {\n                callback.call(element);\n              }\n              else if($.fn.transition !== undefined && $module.transition('is supported')) \n              {\n                $currentMenu\n                  .transition({\n                    animation  : settings.transition + ' in',\n                    debug      : settings.debug,\n                    verbose    : settings.verbose,\n                    duration   : settings.duration,\n                    queue      : true,\n                    onStart    : start,\n                    onComplete : function() {\n                      callback.call(element);\n                    }\n                  })\n                ;\n              }\n              else if(settings.transition == 'slide down') {\n                start();\n                $currentMenu\n                  .hide()\n                  .clearQueue()\n                  .children()\n                    .clearQueue()\n                    .css('opacity', 0)\n                    .delay(50)\n                    .animate({\n                      opacity : 1\n                    }, settings.duration, 'easeOutQuad', module.event.resetStyle)\n                    .end()\n                  .slideDown(100, 'easeOutQuad', function() {\n                    module.event.resetStyle.call(this);\n                    callback.call(element);\n                  })\n                ;\n              }\n              else if(settings.transition == 'fade') {\n                start();\n                $currentMenu\n                  .hide()\n                  .clearQueue()\n                  .fadeIn(settings.duration, function() {\n                    module.event.resetStyle.call(this);\n                    callback.call(element);\n                  })\n                ;\n              }\n              else {\n                module.error(error.transition, settings.transition);\n              }\n            }\n          },\n          hide: function(callback, $subMenu) {\n            var\n              $currentMenu = $subMenu || $menu,\n              duration = ($subMenu)\n                ? (settings.duration * 0.9)\n                : settings.duration,\n              start = ($subMenu)\n                ? function() {}\n                : function() {\n                  if( module.can.click() ) {\n                    module.unbind.intent();\n                  }\n                  module.focusSearch();\n                  module.remove.active();\n                }\n            ;\n            callback = $.isFunction(callback)\n              ? callback\n              : function(){}\n            ;\n            if( module.is.visible($currentMenu) || module.is.animating($currentMenu) ) {\n              module.verbose('Doing menu hide animation', $currentMenu);\n\n              if(settings.transition == 'auto') {\n                settings.transition = module.is.upward()\n                  ? 'slide up'\n                  : 'slide down'\n                ;\n              }\n\n              $input.trigger('blur');\n\n              if(settings.transition == 'none') {\n                callback.call(element);\n              }\n              else if($.fn.transition !== undefined && $module.transition('is supported')) \n              {\n\n                console.log(settings.transition + ' out');\n\n                $currentMenu\n                  .transition({\n                    animation  : settings.transition + ' out',\n                    duration   : settings.duration,\n                    debug      : settings.debug,\n                    verbose    : settings.verbose,\n                    queue      : true,\n                    onStart    : start,\n                    onComplete : function() {\n                      callback.call(element);\n                    }\n                  })\n                ;\n              }\n              else if(settings.transition == 'slide down') {\n                start();\n                $currentMenu\n                  .show()\n                  .clearQueue()\n                  .children()\n                    .clearQueue()\n                    .css('opacity', 1)\n                    .animate({\n                      opacity : 0\n                    }, 100, 'easeOutQuad', module.event.resetStyle)\n                    .end()\n                  .delay(50)\n                  .slideUp(100, 'easeOutQuad', function() {\n                    module.event.resetStyle.call(this);\n                    callback.call(element);\n                  })\n                ;\n              }\n              else if(settings.transition == 'fade') {\n                start();\n                $currentMenu\n                  .show()\n                  .clearQueue()\n                  .fadeOut(150, function() {\n                    module.event.resetStyle.call(this);\n                    callback.call(element);\n                  })\n                ;\n              }\n              else {\n                module.error(error.transition);\n              }\n            }\n          }\n        },\n\n        delay: {\n          show: function() {\n            module.verbose('Delaying show event to ensure user intent');\n            clearTimeout(module.timer);\n            module.timer = setTimeout(module.show, settings.delay.show);\n          },\n          hide: function() {\n            module.verbose('Delaying hide event to ensure user intent');\n            clearTimeout(module.timer);\n            module.timer = setTimeout(module.hide, settings.delay.hide);\n          }\n        },\n\n        escape: {\n          regExp: function(text) {\n            text =  String(text);\n            return text.replace(/[-[\\]{}()*+?.,\\\\^$|#\\s]/g, '\\\\$&');\n          }\n        },\n\n        setting: function(name, value) {\n          module.debug('Changing setting', name, value);\n          if( $.isPlainObject(name) ) {\n            $.extend(true, settings, name);\n          }\n          else if(value !== undefined) {\n            settings[name] = value;\n          }\n          else {\n            return settings[name];\n          }\n        },\n        internal: function(name, value) {\n          if( $.isPlainObject(name) ) {\n            $.extend(true, module, name);\n          }\n          else if(value !== undefined) {\n            module[name] = value;\n          }\n          else {\n            return module[name];\n          }\n        },\n        debug: function() {\n          if(settings.debug) {\n            if(settings.performance) {\n              module.performance.log(arguments);\n            }\n            else {\n              module.debug = Function.prototype.bind.call(console.info, console, settings.name + ':');\n              module.debug.apply(console, arguments);\n            }\n          }\n        },\n        verbose: function() {\n          if(settings.verbose && settings.debug) {\n            if(settings.performance) {\n              module.performance.log(arguments);\n            }\n            else {\n              module.verbose = Function.prototype.bind.call(console.info, console, settings.name + ':');\n              module.verbose.apply(console, arguments);\n            }\n          }\n        },\n        error: function() {\n          module.error = Function.prototype.bind.call(console.error, console, settings.name + ':');\n          module.error.apply(console, arguments);\n        },\n        performance: {\n          log: function(message) {\n            var\n              currentTime,\n              executionTime,\n              previousTime\n            ;\n            if(settings.performance) {\n              currentTime   = new Date().getTime();\n              previousTime  = time || currentTime;\n              executionTime = currentTime - previousTime;\n              time          = currentTime;\n              performance.push({\n                'Name'           : message[0],\n                'Arguments'      : [].slice.call(message, 1) || '',\n                'Element'        : element,\n                'Execution Time' : executionTime\n              });\n            }\n            clearTimeout(module.performance.timer);\n            module.performance.timer = setTimeout(module.performance.display, 500);\n          },\n          display: function() {\n            var\n              title = settings.name + ':',\n              totalTime = 0\n            ;\n            time = false;\n            clearTimeout(module.performance.timer);\n            $.each(performance, function(index, data) {\n              totalTime += data['Execution Time'];\n            });\n            title += ' ' + totalTime + 'ms';\n            if(moduleSelector) {\n              title += ' \\'' + moduleSelector + '\\'';\n            }\n            if( (console.group !== undefined || console.table !== undefined) && performance.length > 0) {\n              console.groupCollapsed(title);\n              if(console.table) {\n                console.table(performance);\n              }\n              else {\n                $.each(performance, function(index, data) {\n                  console.log(data['Name'] + ': ' + data['Execution Time']+'ms');\n                });\n              }\n              console.groupEnd();\n            }\n            performance = [];\n          }\n        },\n        invoke: function(query, passedArguments, context) {\n          var\n            object = instance,\n            maxDepth,\n            found,\n            response\n          ;\n          passedArguments = passedArguments || queryArguments;\n          context         = element         || context;\n          if(typeof query == 'string' && object !== undefined) {\n            query    = query.split(/[\\. ]/);\n            maxDepth = query.length - 1;\n            $.each(query, function(depth, value) {\n              var camelCaseValue = (depth != maxDepth)\n                ? value + query[depth + 1].charAt(0).toUpperCase() + query[depth + 1].slice(1)\n                : query\n              ;\n              if( $.isPlainObject( object[camelCaseValue] ) && (depth != maxDepth) ) {\n                object = object[camelCaseValue];\n              }\n              else if( object[camelCaseValue] !== undefined ) {\n                found = object[camelCaseValue];\n                return false;\n              }\n              else if( $.isPlainObject( object[value] ) && (depth != maxDepth) ) {\n                object = object[value];\n              }\n              else if( object[value] !== undefined ) {\n                found = object[value];\n                return false;\n              }\n              else {\n                module.error(error.method, query);\n                return false;\n              }\n            });\n          }\n          if ( $.isFunction( found ) ) {\n            response = found.apply(context, passedArguments);\n          }\n          else if(found !== undefined) {\n            response = found;\n          }\n          if($.isArray(returnedValue)) {\n            returnedValue.push(response);\n          }\n          else if(returnedValue !== undefined) {\n            returnedValue = [returnedValue, response];\n          }\n          else if(response !== undefined) {\n            returnedValue = response;\n          }\n          return found;\n        }\n      };\n\n      if(methodInvoked) {\n        if(instance === undefined) {\n          module.initialize();\n        }\n        module.invoke(query);\n      }\n      else {\n        if(instance !== undefined) {\n          instance.invoke('destroy');\n        }\n        module.initialize();\n      }\n    })\n  ;\n  return (returnedValue !== undefined)\n    ? returnedValue\n    : $allModules\n  ;\n};\n\n$.fn.dropdown.settings = {\n\n  debug                  : false,\n  verbose                : true,\n  performance            : true,\n\n  on                     : 'click',\n  action                 : 'activate',\n\n  allowTab               : true,\n  fullTextSearch         : false,\n  preserveHTML           : true,\n  sortSelect             : false,\n\n  allowCategorySelection : false,\n\n  delay                  : {\n    hide   : 300,\n    show   : 200,\n    search : 50,\n    touch  : 50\n  },\n\n  forceSelection: true,\n\n  transition : 'auto',\n  duration   : 250,\n\n  /* Callbacks */\n  onNoResults : function(searchTerm){},\n  onChange    : function(value, text){},\n  onShow      : function(){},\n  onHide      : function(){},\n\n  /* Component */\n\n  name           : 'Dropdown',\n  namespace      : 'dropdown',\n\n  error   : {\n    action       : 'You called a dropdown action that was not defined',\n    alreadySetup : 'Once a select has been initialized behaviors must be called on the created ui dropdown',\n    method       : 'The method you called is not defined.',\n    transition   : 'The requested transition was not found'\n  },\n\n  metadata: {\n    defaultText     : 'defaultText',\n    defaultValue    : 'defaultValue',\n    placeholderText : 'placeholderText',\n    text            : 'text',\n    value           : 'value'\n  },\n\n  selector : {\n    dropdown : '.ui.dropdown',\n    input    : '> input[type=\"hidden\"], > select',\n    item     : '.item',\n    menu     : '.menu',\n    menuIcon : '.dropdown.icon',\n    search   : '> input.search, .menu > .search > input, .menu > input.search',\n    text     : '> .text:not(.icon)'\n  },\n\n  className : {\n    active      : 'active',\n    animating   : 'animating',\n    disabled    : 'disabled',\n    dropdown    : 'ui dropdown',\n    filtered    : 'filtered',\n    loading     : 'loading',\n    menu        : 'menu',\n    placeholder : 'default',\n    search      : 'search',\n    selected    : 'selected',\n    selection   : 'selection',\n    upward      : 'upward',\n    visible     : 'visible'\n  }\n\n};\n\n/* Templates */\n$.fn.dropdown.settings.templates = {\n  menu: function(select) {\n    var\n      placeholder = select.placeholder || false,\n      values      = select.values || {},\n      html        = ''\n    ;\n    $.each(select.values, function(index, option) {\n      html += '<div class=\"item\" data-value=\"' + option.value + '\">' + option.name + '</div>';\n    });\n    return html;\n  },\n  dropdown: function(select) {\n    var\n      placeholder = select.placeholder || false,\n      values      = select.values || {},\n      html        = ''\n    ;\n    html +=  '<i class=\"dropdown icon\"></i>';\n    if(select.placeholder) {\n      html += '<div class=\"default text\">' + placeholder + '</div>';\n    }\n    else {\n      html += '<div class=\"text\"></div>';\n    }\n    html += '<div class=\"menu\">';\n    $.each(select.values, function(index, option) {\n      html += '<div class=\"item\" data-value=\"' + option.value + '\">' + option.name + '</div>';\n    });\n    html += '</div>';\n    return html;\n  }\n};\n\n\n/* Dependencies */\n$.extend( $.easing, {\n  easeOutQuad: function (x, t, b, c, d) {\n    return -c *(t/=d)*(t-2) + b;\n  },\n});\n\n\n})( jQuery, window , document );\n",
+			"file": "/Volumes/Develop/UI/Semantic/dist/components/dropdown.js",
+			"file_size": 60056,
+			"file_write_time": 130846178810000000,
+			"settings":
+			{
+				"buffer_size": 60065,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 127.0,
+		"last_filter": "list pack",
+		"selected_items":
+		[
+			[
+				"list pack",
+				"Package Control: List Packages"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"package",
+				"Package Control: Remove Package"
+			]
+		],
+		"width": 593.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Volumes/Develop/Flagwind/Flagwind.UI",
+		"/Volumes/Develop/Flagwind/Flagwind.UI/css",
+		"/Volumes/Develop/Flagwind/Flagwind.UI/examples",
+		"/Volumes/Develop/Flagwind/Flagwind.UI/js",
+		"/Volumes/Develop/Flagwind/Flagwind.UI/less"
+	],
+	"file_history":
+	[
+		"/Users/jason/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/jason/Library/Application Support/Sublime Text 3/Packages/Default/Default (OSX).sublime-keymap",
+		"/Users/jason/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Volumes/Develop/Flagwind/Flagwind.UI/js/dropdown.js",
+		"/Volumes/Develop/Flagwind/Flagwind.UI/less/animation.less",
+		"/Volumes/Develop/UI/Semantic/dist/components/transition.css",
+		"/Volumes/Develop/Flagwind/Flagwind.UI/js/animation.js",
+		"/Volumes/Develop/UI/Semantic/dist/components/dropdown.js",
+		"/Volumes/Develop/UI/Amazeui/js/ui.dropdown.js",
+		"/Volumes/Develop/UI/Bootstrap/js/dropdown.js",
+		"/Volumes/Develop/Flagwind/Flagwind.UI/less/dropdown.less",
+		"/Volumes/Develop/UI/Amazeui/less/ui.dropdown.less",
+		"/Volumes/Develop/UI/Semantic/dist/components/transition.js",
+		"/Users/jason/Desktop/jquery.transit-master/jquery.transit.js",
+		"/Volumes/Develop/UI/Semantic/dist/components/transition.min.css",
+		"/Users/jason/Desktop/备份动画",
+		"/Users/jason/Library/Application Support/Sublime Text 3/Packages/Alignment/Default (OSX).sublime-keymap",
+		"/Volumes/Develop/Flagwind/Flagwind.UI/less/table.less",
+		"/Volumes/Develop/UI/Amazeui/js/core.js",
+		"/Volumes/Develop/Flagwind/Flagwind.UI/examples/layout/js/jquery.ztree.core-3.5.min.js",
+		"/Volumes/Develop/Flagwind/Flagwind.UI/less/flagwind.less",
+		"/Volumes/Develop/Flagwind/Flagwind.UI/js/transition.js",
+		"/Volumes/Develop/Flagwind/Flagwind.UI/js/flagwind.js",
+		"/Volumes/Develop/UI/Semantic/index.html",
+		"/Users/jason/Library/Application Support/Sublime Text 3/Packages/CTags/Default.sublime-keymap",
+		"/Volumes/Develop/Flagwind/Flagwind.UI/js/flagwind.min.js",
+		"/Volumes/Develop/Flagwind/Flagwind.UI/examples/index.html",
+		"/Volumes/Develop/Flagwind/Flagwind.UI/js/core.js",
+		"/Volumes/Develop/Flagwind/Flagwind.UI/less/button.less",
+		"/Users/jason/Downloads/Semantic-UI-master/dist/components/transition.js",
+		"/Volumes/Develop/Flagwind/Flagwind.UI/less/variables.less",
+		"/Volumes/Develop/Flagwind/Flagwind.UI/less/ui-dropdown.less",
+		"/Volumes/Develop/Flagwind/Flagwind.UI/css/flagwind.css",
+		"/Volumes/Develop/Flagwind/Flagwind.UI/css/animation.css",
+		"/Volumes/Develop/Flagwind/Flagwind.UI/less/mixins.less",
+		"/Users/jason/Downloads/Semantic-UI-master/dist/components/dropdown.js",
+		"/Users/jason/Downloads/201502141811/js/bootstrap-treeview.js",
+		"/Volumes/Develop/Flagwind/Flagwind.UI/untitled",
+		"/Volumes/Develop/Flagwind/Flagwind.UI/js/ui-dropdown.js",
+		"/Volumes/Develop/Flagwind/Flagwind.UI/js/min/flagwind-min.js",
+		"/Volumes/Develop/Flagwind/Flagwind.UI/less/ui-switch.less",
+		"/Volumes/Develop/Flagwind/Flagwind.UI/less/utilities.less",
+		"/Volumes/Develop/Flagwind/Flagwind.UI/less/field-group.less",
+		"/Volumes/Develop/Flagwind/Flagwind.UI/less/button-groups.less",
+		"/Volumes/Develop/Flagwind/Flagwind.UI/less/forms.less",
+		"/Volumes/Develop/Flagwind/Flagwind.UI/less/icons.less",
+		"/Volumes/Develop/Flagwind/Flagwind.UI/less/buttons.less",
+		"/Volumes/Develop/Flagwind/Flagwind.UI/css/field-group.css",
+		"/Volumes/Develop/Flagwind/Flagwind.UI/less/typography.less",
+		"/Volumes/Develop/Flagwind/Flagwind.UI/less/layout.less",
+		"/Volumes/Develop/Flagwind/Flagwind.UI/field-group.less",
+		"/Users/jason/Desktop/表单",
+		"/Volumes/Develop/Flagwind/Flagwind.UI/docs/index.html",
+		"/Volumes/Develop/Flagwind/Flagwind.UI/less/print.less",
+		"/Volumes/Develop/Flagwind/Flagwind.UI/less/ui.radio",
+		"/Volumes/Develop/Flagwind/Flagwind.UI/less/base.less",
+		"/Volumes/Develop/Flagwind/Examples/Bootstrap/3.1.html",
+		"/Volumes/Develop/Flagwind/Flagwind.UI/examples/layout/index.html",
+		"/Volumes/Develop/Flagwind/Flagwind.UI/css/icon.css",
+		"/Volumes/Develop/Flagwind/Flagwind.UI/less/icon.less",
+		"/Volumes/Develop/Flagwind/Examples/Bootstrap/3.6.html",
+		"/Volumes/Develop/Flagwind/Flagwind.UI/less/images.less",
+		"/Volumes/Develop/Flagwind/Flagwind.UI/js/respond.min.js",
+		"/Users/jason/Library/Application Support/Sublime Text 3/Packages/User/Default ().sublime-keymap",
+		"/Users/jason/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"expand",
+			".transition",
+			".transition {",
+			"transition",
+			".transition",
+			"console",
+			".transition",
+			"transition",
+			"event",
+			"envents",
+			"console.log",
+			"Duration",
+			"setDuration",
+			"getDuration",
+			"allowRepeats",
+			"isSupported",
+			"support",
+			"Animation.animations",
+			"self.className",
+			"_anima",
+			"animationStart",
+			"animationName",
+			"this._animation",
+			"support.",
+			"_animationName",
+			"_animationStart",
+			"className",
+			"'",
+			"inlineDisplay",
+			"duration",
+			"queue",
+			"destroy",
+			"transition",
+			"module",
+			".cache",
+			"self.cache",
+			"restore",
+			"failSafe",
+			"animating",
+			"go",
+			"transition",
+			"go",
+			"'",
+			"transition",
+			"'",
+			"propertyMap",
+			"toMS",
+			"unit",
+			"side",
+			"className",
+			"transition",
+			"slide",
+			"settings.transition",
+			"transition",
+			"slideInY",
+			"console.log",
+			"transitionExists",
+			"metadata",
+			"transitionExists",
+			"animating",
+			"supported",
+			"，",
+			"queryArguments",
+			"moduleArguments",
+			".invoke",
+			"moduleNamespace",
+			"invoke",
+			"console.log",
+			"transition",
+			"transitionExists",
+			"exists",
+			"transitionExists",
+			"transition",
+			"hideSubMenus",
+			"padding",
+			"margin",
+			"caret-width-base",
+			"angle",
+			"animation",
+			"广东物资集团",
+			"广东物资集团汽车贸易公司",
+			"广物",
+			".addon",
+			"input-lg",
+			".field-group .label",
+			"not(",
+			"+ .icon",
+			".input + .icon",
+			".icon",
+			"&",
+			"input-group",
+			"input-border",
+			"color: input-border",
+			"input-border",
+			"input-group",
+			"，",
+			"group",
+			"-sm",
+			"field-",
+			"filed",
+			"static",
+			"Remember me",
+			"label",
+			"disabled",
+			"form-field",
+			"form-help",
+			"has-feedback",
+			"control-label",
+			"help-block",
+			"form-control",
+			".am-icon",
+			".@{fa-css-prefix}",
+			"@{",
+			"@{fa",
+			".@{fa",
+			"'{fa-css-prefix}'",
+			"{fa-css-prefix}",
+			".@{fa-css-prefix}",
+			"@{fa-css-prefix}",
+			"@icon-font-path",
+			"fa-version",
+			"padding-xs-vertical",
+			"box-sizing",
+			"success",
+			"line-height",
+			"base",
+			"select_line",
+			"border-radius"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			".animation",
+			"isSupport",
+			"\"",
+			"animation",
+			".input ~ .icon",
+			"field-group",
+			"-lg",
+			"ui-",
+			"field",
+			"Remember",
+			"field",
+			"filed-help",
+			"form-feedback",
+			"form-label",
+			"form-help",
+			"form-field",
+			".icon",
+			"icon",
+			"@{icon-font-path}",
+			"icon-font-version",
+			"padding-vertical-xs",
+			"ctrl"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "examples/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 14777,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								624,
+								624
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "js/dropdown.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6385,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5142,
+								5142
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 2829.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/Volumes/Develop/UI/Semantic/dist/components/dropdown.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 60065,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								8997,
+								8997
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content"
+							],
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 4687.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "Flagwind.UI.sublime-project",
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"js/respond.min.js"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"@screen-md-min"
+			]
+		],
+		"width": 392.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 242.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
