@@ -1,5 +1,5 @@
 //
-// * Flagwind.UI v1.0.0
+// * Flagwind.UI v1.0.1
 // * Copyright 2014 Flagwind Inc. All rights reserved.
 // * Licensed under the MIT License.
 // * https://github.com/Flagwind/Flagwind.UI/blob/master/LICENSE
@@ -8,24 +8,51 @@
 
 /* ================================ 下拉组件(Dropdown) ============================ */
 
+/*
+ * 下拉组件。
+ */
 
 .dropdown
 {
     position: relative;
 
-    > .btn
+    .text
     {
-        .icon
+        text-align: left;
+
+        &.filtered
         {
-            margin-left:2px;
+            visibility: hidden;
         }
+    }
+
+    .filtered
+    {
+        display: none;
     }
 }
 
-.dropdown-toggle:focus
+/*
+ * 触发元素。
+ */
+
+.dropdown-toggle
 {
-    outline: 0;
+    &:focus
+    {
+        outline: 0;
+    }
+
+    .icon
+    {
+        height: 0;
+        display: inline-block;
+    }
 }
+
+/*
+ * 下拉内容。
+ */
 
 .dropdown-content
 {
@@ -35,33 +62,18 @@
     z-index: @z-index-dropdown;
     display: none;
     float: left;
-    min-width: 160px;
+    min-width: 200px;
+    width: 100%;
     padding: 15px;
-    margin: 10px 0 0;
+    margin: 2px 0 0;
     text-align: left;
     line-height: @line-height-md;
     background-color: @dropdown-bg;
     border: 1px solid @dropdown-border-color;
     border-radius: @border-radius-md;
     background-clip: padding-box;
-    //animation-duration: .15s;
 
     .box-shadow(0 6px 12px rgba(0,0,0,.175));
-
-    .angle-up-variant(@dropdown-border-color, @dropdown-bg, @angle-border-width);
-
-    &:before,
-    &:after
-    {
-        left: 10px;
-        top: -8px;
-        pointer-events: none;
-    }
-
-    &:after
-    {
-        top: -7px;
-    }
 
     .active > &
     {
@@ -74,100 +86,9 @@
     }
 }
 
-.dropdown-up .dropdown-content
-{
-    top: auto;
-    bottom: 100%;
-    margin: 0 0 10px;
-
-    &:before,
-    &:after
-    {
-        border-bottom: none;
-        border-top: 8px solid @dropdown-border-color;
-        top: auto;
-        bottom: -8px;
-    }
-
-    &:after
-    {
-        bottom: -7px;
-        border-top-color: @dropdown-bg;
-    }
-}
-
-.dropdown-header
-{
-    display: block;
-    padding: @dropdown-item-space 20px;
-    font-size: @font-size-sm;
-    color: @dropdown-header-color;
-}
-
-ul.dropdown-content
-{
-    list-style: none;
-    padding: 5px 0;
-
-    .divider
-    {
-        .nav-divider(@dropdown-divider-bg, @dropdown-item-space);
-    }
-
-    > li > a
-    {
-        display: block;
-        padding: @dropdown-item-space 20px;
-        clear: both;
-        font-weight: normal;
-        color: @dropdown-link-color;
-        white-space: nowrap;
-
-        &:hover,
-        &:focus
-        {
-            text-decoration: none;
-            color: @dropdown-link-hover-color;
-            background-color: @dropdown-link-hover-bg;
-        }
-    }
-
-    > .active > a
-    {
-        &,
-        &:hover,
-        &:focus
-        {
-            color: @dropdown-link-active-color;
-            text-decoration: none;
-            outline: 0;
-            background-color: @dropdown-link-active-bg;
-        }
-    }
-
-    > .disabled > a
-    {
-        &,
-        &:hover,
-        &:focus
-        {
-            color: @dropdown-link-disabled-color;
-        }
-    }
-
-    > .disabled > a
-    {
-        &:hover,
-        &:focus
-        {
-            text-decoration: none;
-            background-color: transparent;
-            background-image: none;
-            .reset-filter();
-            cursor: not-allowed;
-        }
-    }
-}
+/*
+ * 下拉内容激活样式。
+ */
 
 .active
 {
@@ -182,28 +103,344 @@ ul.dropdown-content
     }
 }
 
+/*
+ * 下拉内容靠左。
+ */
+
 .dropdown-content-left
 {
     left: 0;
     right: auto;
 }
 
+/*
+ * 下拉内容靠右。
+ */
+
 .dropdown-content-right
 {
     left: auto;
     right: 0;
+}
 
-    &:before,
-    &:after
+/*
+ * 下拉菜单。
+ */
+
+ul.dropdown-content
+{
+    list-style: none;
+    padding: 5px 0;
+
+    > li
     {
-        left: auto;
-        right: 10px;
-        top: -8px;
-        pointer-events: none;
+        display: block;
+        padding: @dropdown-item-space 20px;
+        clear: both;
+        font-weight: normal;
+        color: @dropdown-link-color;
+        white-space: nowrap;
+        cursor: pointer;
+
+        > a
+        {
+            color: @dropdown-link-color;
+        }
+
+        &:hover,
+        &:focus
+        {
+            color: @dropdown-link-hover-color;
+            background-color: @dropdown-link-hover-bg;
+
+            > a
+            {
+                color: @dropdown-link-hover-color;
+                text-decoration: none;
+            }
+        }
     }
 
-    &:after
+    > .divider
     {
-        top: -7px;
+        .nav-divider(@dropdown-divider-bg, @dropdown-item-space);
+        padding: 0;
+        cursor: default;
+
+        &:hover,
+        &:focus
+        {
+            background-color: @dropdown-divider-bg;
+        }
+    }
+
+    // > .active
+    // {
+    //     font-weight: bold;
+    // }
+
+    > .selected
+    {
+        &,
+        &:hover,
+        &:focus
+        {
+            color: @dropdown-link-active-color;
+            background-color: @dropdown-link-active-bg;
+
+            > a
+            {
+                outline: 0;
+                color: @dropdown-link-active-color;
+                text-decoration: none;
+            }
+        }
+    }
+
+    > .disabled
+    {
+        &,
+        &:hover,
+        &:focus
+        {
+            color: @dropdown-link-disabled-color;
+
+            > a
+            {
+                color: @dropdown-link-disabled-color;
+            }
+        }
+
+        &:hover,
+        &:focus
+        {
+            background-color: transparent;
+            background-image: none;
+            .reset-filter();
+            cursor: not-allowed;
+
+            > a
+            {
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+/*
+ * 方向朝上的下拉组件。 
+ */
+
+.dropdown-up
+{
+    .dropdown-content
+    {
+        top: auto;
+        bottom: 100%;
+        margin: 0 0 2px;
+    }
+}
+
+/*
+ * 带指示标的下拉组件。
+ */
+
+.dropdown-angle
+{
+    .dropdown-content
+    {
+        margin: 10px 0 0;
+        
+        .angle-up-variant(@dropdown-border-color, @dropdown-bg, @angle-border-width);
+
+        &:before,
+        &:after
+        {
+            left: 10px;
+            top: -8px;
+            pointer-events: none;
+        }
+
+        &:after
+        {
+            top: -7px;
+        }
+    }
+
+    .dropdown-content-right
+    {
+        &:before,
+        &:after
+        {
+            left: auto;
+            right: 10px;
+            top: -8px;
+            pointer-events: none;
+        }
+
+        &:after
+        {
+            top: -7px;
+        }
+    }
+
+    &.dropdown-up
+    {
+        .dropdown-content
+        {
+            margin: 0 0 10px;
+
+            &:before,
+            &:after
+            {
+                border-bottom: none;
+                border-top: 8px solid @dropdown-border-color;
+                top: auto;
+                bottom: -8px;
+            }
+
+            &:after
+            {
+                bottom: -7px;
+                border-top-color: @dropdown-bg;
+            }
+        }
+    }
+}
+
+/*
+ * 可选择的下拉组件。
+ */
+
+.dropdown-selection
+{
+    .dropdown-toggle
+    {
+        .input();
+
+        padding-right: (@input-height-md * 1.25);
+
+        .icon
+        {
+            .input-icon();
+        }
+    }
+
+    .dropdown-content
+    {
+        .input-focus();
+        margin: 0;
+        border-top-width: 0 !important;
+        border-top-left-radius: 0 !important;
+        border-top-right-radius: 0 !important;
+
+    }
+
+    ul.dropdown-content
+    {
+        max-height: 120px;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    &.active
+    {
+        .dropdown-toggle
+        {
+            border-bottom-left-radius: 0 !important;
+            border-bottom-right-radius: 0 !important;
+        }
+    }
+}
+
+/*
+ * 小屏幕(sm)可选择的下拉组件。
+ */
+
+@media (min-width: @screen-sm-min)
+{
+    .dropdown-selection
+    {
+        ul.dropdown-content
+        {
+            max-height: 160px;
+        }
+    }
+}
+
+/*
+ * 中等屏幕(md)可选择的下拉组件。
+ */
+
+@media (min-width: @screen-md-min)
+{
+    .dropdown-selection
+    {
+        ul.dropdown-content
+        {
+            max-height: 240px;
+        }
+    }
+}
+
+/*
+ * 大屏幕(lg)可选择的下下拉组件。
+ */
+
+@media (min-width: @screen-lg-min)
+{
+    .dropdown-selection
+    {
+        ul.dropdown-content
+        {
+            max-height: 320px;
+        }
+    }
+}
+
+/*
+ * 带搜素的下拉组件。
+ */
+
+.dropdown-search
+{
+    .search
+    {
+        position: absolute;
+        z-index: 2;
+        display: block;
+        height: @input-height-md;
+        padding: @padding-vertical-md @padding-horizontal-md;
+        font-size: @font-size-md;
+        line-height: @line-height-md;
+        background: none transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        top: 0;
+        left: 0;
+        width: 100%;
+        outline: none;
+        -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    }
+
+    .dropdown-toggle
+    {
+        &.disabled,
+        &[disabled],
+        &[readonly],
+        fieldset[disabled] &
+        {
+            .search
+            {
+                display: none;
+            }
+        }
+    }
+
+    .text
+    {
+        position: relative;
+        z-index: 3;
     }
 }

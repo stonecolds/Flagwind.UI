@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="renderer" content="webkit" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>下拉菜单 - Flagwind.UI</title>
+
+    <!-- 核心 CSS 文件 -->
+    <link rel="stylesheet" href="../css/flagwind.css" />
+
+    <!-- HTML5 & Media Queries 兼容文件 -->
+    <!--[if lt IE 9]>
+    <script src="../js/html5shiv.min.js"></script>
+    <script src="../js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <header>
+        <h1>下拉菜单 <small>Dropdown</small></h1>
+    </header>
+
+    <hr />
+
+    <!-- 下拉选框 -->
+    <div class="layout">
+        <form>
+            <fieldset>
+                <legend>下拉选框</legend>
+
+                <div class="dropdown dropdown-selection">
+                    <input type="hidden" name="sex" />
+                    <div class="dropdown-toggle">
+                        <span class="text">请选择...</span>
+                        <i class="icon icon-caret-down"></i>
+                    </div>
+                    <ul class="dropdown-content">
+                        <li data-value="1">Action</li>
+                        <li data-value="2">Another action</li>
+                        <li data-value="3">Something else here</li>
+                        <li data-value="4" role="separator" class="divider"></li>
+                        <li data-value="5">Separated link</li>
+                    </ul>
+                </div>
+
+            </fieldset>
+        </form>
+    </div>
+    <br />
+    <br />
+
+    <!-- 带搜素下拉框 -->
+    <div class="layout">
+        <form>
+            <fieldset>
+                <legend>带搜素下拉框</legend>
+    
+                <div class="dropdown dropdown-selection dropdown-search">
+                    <input type="hidden" name="gender" />
+                    <div class="dropdown-toggle">
+                        <input class="search" />
+                        <span class="text">请选择...</span>
+                        <i class="icon icon-caret-down"></i>
+                    </div>
+                    <ul class="dropdown-content">
+                        <li data-value="css">CSS</li>
+                        <li data-value="design">Graphic Design</li>
+                        <li data-value="ember">Ember</li>
+                        <li data-value="html">HTML</li>
+                        <li data-value="ia">Information Architecture</li>
+                        <li data-value="javascript">Javascript</li>
+                        <li data-value="mech">Mechanical Engineering</li>
+                        <li data-value="meteor">Meteor</li>
+                        <li data-value="node">NodeJS</li>
+                        <li data-value="plumbing">Plumbing</li>
+                        <li data-value="python">Python</li>
+                        <li data-value="rails">Rails</li>
+                        <li data-value="react">React</li>
+                        <li data-value="repair">Kitchen Repair</li>
+                        <li data-value="ruby">Ruby</li>
+                        <li data-value="ui">UI Design</li>
+                        <li data-value="ux">User Experience</li>
+                    </ul>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+
+    <br />
+    <br />
+
+    <!-- 下拉内容 -->
+    <div class="layout">
+        <form>
+            <fieldset>
+                <legend>下拉内容</legend>
+
+                <div class="btn-group dropdown">
+                    <button class="btn btn-default dropdown-toggle"> 普通样式 <i class="icon icon-caret-down"></i></button>
+                    <div class="dropdown-content" style="width:450px;">
+                        <h3>Always add labels</h3>
+                        <p>Screen readers will have trouble with your forms if you don't include a label for every input. For these input groups, ensure that any additional label or functionality is conveyed to assistive technologies.</p>
+                    </div>
+                </div>
+
+                <div class="btn-group dropdown dropdown-angle">
+                    <button class="btn btn-default dropdown-toggle"> 带角靠左 <i class="icon icon-caret-down"></i></button>
+                    <div class="dropdown-content" style="width:450px;">
+                        <h3>Always add labels</h3>
+                        <p>Screen readers will have trouble with your forms if you don't include a label for every input. For these input groups, ensure that any additional label or functionality is conveyed to assistive technologies.</p>
+                    </div>
+                </div>
+
+                <div class="btn-group dropdown dropdown-angle">
+                    <button class="btn btn-default dropdown-toggle"> 带角靠右 <i class="icon icon-caret-down"></i></button>
+                    <div class="dropdown-content dropdown-content-right" style="width:450px;">
+                        <h3>Always add labels</h3>
+                        <p>Screen readers will have trouble with your forms if you don't include a label for every input. For these input groups, ensure that any additional label or functionality is conveyed to assistive technologies.</p>
+                    </div>
+                </div>
+
+                <div class="btn-group dropdown dropdown-up dropdown-angle">
+                    <button class="btn btn-default dropdown-toggle disabled"> 带角内容向上 <i class="icon icon-caret-up"></i></button>
+                    <div class="dropdown-content dropdown-content-right" style="width:450px;">
+                        <h3>Always add labels</h3>
+                        <p>Screen readers will have trouble with your forms if you don't include a label for every input. For these input groups, ensure that any additional label or functionality is conveyed to assistive technologies.</p>
+                    </div>
+                </div>
+
+            </fieldset>
+        </form>
+    </div>
+
+    <br />
+    <br />
+
+    <!-- 单按钮下拉菜单 -->
+    <div class="layout">
+        <form>
+            <fieldset>
+                <legend>单按钮下拉菜单</legend>
+
+                <div class="btn-group dropdown">
+                    <button class="btn btn-default dropdown-toggle"> 普通样式 <i class="icon icon-caret-down"></i></button>
+                    <ul class="dropdown-content">
+                        <li>CSS 参考手册</li>
+                        <li>CSS 选择器</li>
+                        <li class="divider"></li>
+                        <li>CSS 网络安全字体</li>
+                        <li class="disabled">CSS 单位</li>
+                        <li>CSS 颜色十六进制</li>
+                    </ul>
+                </div>
+
+                <div class="btn-group dropdown dropdown-angle">
+                    <button class="btn btn-primary dropdown-toggle"> 带角靠左 <i class="icon icon-caret-down"></i></button>
+                    <ul class="dropdown-content">
+                        <li>Action</li>
+                        <li>Another action</li>
+                        <li>Something else here</li>
+                        <li class="divider"></li>
+                        <li>Separated link</li>
+                    </ul>
+                </div>
+
+                <div class="btn-group dropdown dropdown-angle">
+                    <button class="btn btn-secondary dropdown-toggle"> 带角靠右 <i class="icon icon-caret-down"></i></button>
+                    <ul class="dropdown-content dropdown-content-right">
+                        <li>Action</li>
+                        <li>Another action</li>
+                        <li>Something else here</li>
+                        <li class="divider"></li>
+                        <li>Separated link</li>
+                    </ul>
+                </div>
+
+                <div class="btn-group dropdown dropdown-up dropdown-angle">
+                    <button class="btn btn-success dropdown-toggle"> 上拉靠左 <i class="icon icon-caret-up"></i></button>
+                    <ul class="dropdown-content">
+                        <li>Action</li>
+                        <li>Another action</li>
+                        <li>Something else here</li>
+                        <li class="divider"></li>
+                        <li>Separated link</li>
+                    </ul>
+                </div>
+
+                <div class="btn-group dropdown dropdown-up dropdown-angle">
+                    <button class="btn btn-warning dropdown-toggle"> 上拉靠右 <i class="icon icon-caret-up"></i></button>
+                    <ul class="dropdown-content dropdown-content-right">
+                        <li>Action</li>
+                        <li>Another action</li>
+                        <li>Something else here</li>
+                        <li class="divider"></li>
+                        <li>Separated link</li>
+                    </ul>
+                </div>
+
+                <div class="btn-group dropdown dropdown-up">
+                    <button class="btn btn-danger dropdown-toggle disabled"> 普通上拉 <i class="icon icon-caret-up"></i></button>
+                    <ul class="dropdown-content">
+                        <li>Action</li>
+                        <li>Another action</li>
+                        <li>Something else here</li>
+                        <li class="divider"></li>
+                        <li>Separated link</li>
+                    </ul>
+                </div>
+
+            </fieldset>
+        </form>
+    </div>
+
+    <br />
+    <br />
+
+    <!-- 分裂式按钮下拉菜单 -->
+    <div class="layout">
+        <form>
+            <fieldset>
+                <legend>分裂式按钮下拉菜单</legend>
+
+                <div class="btn-group dropdown">
+                    <button class="btn btn-default text"> 普通下拉 </button>
+                    <button class="btn btn-default dropdown-toggle"><i class="icon icon-caret-down"></i></button>
+                    <ul class="dropdown-content">
+                        <li>Action</li>
+                        <li>Another action</li>
+                        <li>Something else here</li>
+                        <li class="divider"></li>
+                        <li>Separated link</li>
+                    </ul>
+                </div>
+
+                <div class="btn-group dropdown dropdown-angle">
+                    <button class="btn btn-primary text"> 带角靠左 </button>
+                    <button class="btn btn-primary dropdown-toggle"><i class="icon icon-caret-down"></i></button>
+                    <ul class="dropdown-content">
+                        <li>Action</li>
+                        <li>Another action</li>
+                        <li>Something else here</li>
+                        <li class="divider"></li>
+                        <li>Separated link</li>
+                    </ul>
+                </div>
+
+                <div class="btn-group dropdown dropdown-angle">
+                    <button class="btn btn-secondary text"> 带角靠右 </button>
+                    <button class="btn btn-secondary dropdown-toggle"><i class="icon icon-caret-down"></i></button>
+                    <ul class="dropdown-content dropdown-content-right">
+                        <li>Action</li>
+                        <li>Another action</li>
+                        <li>Something else here</li>
+                        <li class="divider"></li>
+                        <li>Separated link</li>
+                    </ul>
+                </div>
+
+                <div class="btn-group dropdown dropdown-angle dropdown-up">
+                    <button class="btn btn-success text"> 上拉靠左 </button>
+                    <button class="btn btn-success dropdown-toggle"><i class="icon icon-caret-up"></i></button>
+                    <ul class="dropdown-content">
+                        <li>Action</li>
+                        <li>Another action</li>
+                        <li>Something else here</li>
+                        <li class="divider"></li>
+                        <li>Separated link</li>
+                    </ul>
+                </div>
+
+                <div class="btn-group dropdown dropdown-angle dropdown-up">
+                    <button class="btn btn-warning text"> 上拉靠右 </button>
+                    <button class="btn btn-warning dropdown-toggle"><i class="icon icon-caret-up"></i></button>
+                    <ul class="dropdown-content dropdown-content-right">
+                        <li>Action</li>
+                        <li>Another action</li>
+                        <li>Something else here</li>
+                        <li class="divider"></li>
+                        <li>Separated link</li>
+                    </ul>
+                </div>
+
+                <div class="btn-group dropdown dropdown-up">
+                    <button class="btn btn-danger text disabled"> 普通上拉 </button>
+                    <button class="btn btn-danger dropdown-toggle disabled"><i class="icon icon-caret-up"></i></button>
+                    <ul class="dropdown-content">
+                        <li>Action</li>
+                        <li>Another action</li>
+                        <li>Something else here</li>
+                        <li class="divider"></li>
+                        <li>Separated link</li>
+                    </ul>
+                </div>
+
+            </fieldset>
+        </form>
+    </div>
+
+    <br />
+    <br />
+
+    <!-- 核心 JavaScript 文件 -->
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/flagwind.min.js"></script>
+</body>
+</html>

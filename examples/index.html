@@ -31,16 +31,121 @@
     <hr />
 
     <div class="layout">
+
+        <div class="layout">
+            <form class="flex-md-8 flex-md-push-2 form-horizontal">
+                <fieldset>
+                    <legend>水平排列</legend>
+
+                    <div class="field field-icon">
+                        <label class="label flex-md-3">用户名</label>
+                        <div class="flex-md-6">
+                            <input class="input" type="text" />
+                            <span class="icon icon-user"></span>
+                        </div>
+                    </div>
+
+                    <div class="field field-icon">
+                        <label class="label flex-md-3">密码</label>
+                        <div class="flex-md-6">
+                            <input class="input" type="password" />
+                            <span class="icon icon-lock"></span>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label class="label flex-md-3">性别</label>
+
+                        <div class="flex-md-6">
+                            <div class="btn-group dropdown">
+
+                                <button class="btn btn-default ">Default</button>
+                                <button class="btn btn-default dropdown-toggle"><span class="icon icon-caret-down"></span></button>
+
+                                <input type="hidden" name="gender" value="0">
+
+                                <ul class="dropdown-content">
+                                    <li data-text="男" data-value="1">男</li>
+                                    <li data-text="女" data-value="0">女</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="field">
+                        <label class="label flex-md-3">性别</label>
+
+                        <div class="flex-md-6">
+                            <div class="btn-group dropdown">
+
+                                <button class="btn btn-default ">Default</button>
+                                <button class="btn btn-default dropdown-toggle"><span class="icon icon-caret-down"></span></button>
+
+                                <ul class="dropdown-content">
+                                    <li data-text="男" data-value="1">男</li>
+                                    <li data-text="女" data-value="0">女</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <div class="flex-md-6 flex-md-offset-3">
+                            <label class="checkbox"><input type="checkbox" /> 记住我</label>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <div class="flex-md-6 flex-md-offset-3">
+                            <button class="btn btn-primary"> 登录系统 </button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+
+            <hr />
+
         <div class="flex-md-4 flex-md-offset-2">
 
-            <div class="dropdown">
+        
+
+            <div class="dropdown pull-left">
                
-                <button class="btn btn-primary dropdown-toggle"> 下拉列表 <span class="icon icon-caret-down"></span></button>
+                <button class="btn btn-primary dropdown-toggle"> 下拉内容 <span class="icon icon-caret-down"></span></button>
+
+                <div class="dropdown-content" style="width:400px;">
+                    <h3>Always add labels</h3>
+                      <p>
+                        Screen readers will have trouble with your forms if you don't include a label for every input. For these input groups, ensure that any additional label or functionality is conveyed to assistive technologies.
+                      </p>
+                </div>
+            </div>
+
+             <div class="dropdown pull-left">
+               
+                <button class="btn btn-success dropdown-toggle"> 下拉列表 <span class="icon icon-caret-down"></span></button>
+
+                <ul class="dropdown-content">
+                    <li>我曾经拥有着一切</li>
+                    <li>转眼都飘散如烟</li>
+                    <li data-text="AAAA" data-value="123">我曾经堕入无边黑暗</li>
+                    <li>想挣扎无法自拔</li>
+                    <li>直到看见平凡才是唯一的答案</li>
+                    <li>想挣扎无法自拔</li>
+                    <li>直到看见平凡才是唯一的答案</li>
+                </ul>
+            </div>
+
+             <div class="dropdown pull-left">
+               
+                <button class="btn btn-warning dropdown-toggle"> 下拉列表 <span class="icon icon-caret-down"></span></button>
 
                 <ul class="dropdown-content">
                     <li><a href="javascript:void(0);">我曾经拥有着一切</a></li>
                     <li class="active"><a href="javascript:void(0);">转眼都飘散如烟</a></li>
-                    <li class="disabled"><a href="javascript:void(0);">我曾经堕入无边黑暗</a></li>
+                    <li><a href="javascript:void(0);">我曾经堕入无边黑暗</a></li>
                     <li><a href="javascript:void(0);">想挣扎无法自拔</a></li>
                     <li><a href="javascript:void(0);">直到看见平凡才是唯一的答案</a></li>
                 </ul>

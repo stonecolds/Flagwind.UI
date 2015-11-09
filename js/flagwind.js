@@ -5,5 +5,6 @@
  * https://github.com/Flagwind/Flagwind.UI/blob/master/LICENSE
 !*/
 
+// @codekit-append "core.js";
 // @codekit-append "animation.js";
 // @codekit-append "dropdown.js";
