@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"dro",
+				"dropdown"
+			],
+			[
+				"drop",
+				"dropdownContent"
+			],
+			[
+				"dr",
+				"dropdown-content"
+			],
+			[
 				"ac",
 				"action	Attr"
 			],
@@ -142,10 +154,6 @@
 			[
 				"text",
 				"text-align"
-			],
-			[
-				"dr",
-				"dropdown-content"
 			],
 			[
 				"next",
@@ -451,7 +459,7 @@
 			"file": "examples/dropdown.html",
 			"settings":
 			{
-				"buffer_size": 13347,
+				"buffer_size": 13518,
 				"line_ending": "Windows",
 				"name": "d"
 			}
@@ -460,15 +468,56 @@
 			"file": "less/dropdown.less",
 			"settings":
 			{
-				"buffer_size": 6531,
+				"buffer_size": 6841,
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "js/dropdown.js",
+			"settings":
+			{
+				"buffer_size": 34735,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "js/dropdown.content.js",
+			"settings":
+			{
+				"buffer_size": 2825,
+				"line_ending": "Windows",
+				"name": "d"
 			}
 		},
 		{
 			"file": "less/form.less",
 			"settings":
 			{
-				"buffer_size": 11291,
+				"buffer_size": 11424,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "examples/index.html",
+			"settings":
+			{
+				"buffer_size": 19081,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/E/UI/Semantic/index.html",
+			"settings":
+			{
+				"buffer_size": 5245,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "less/mixins.less",
+			"settings":
+			{
+				"buffer_size": 19325,
 				"line_ending": "Unix"
 			}
 		}
@@ -636,6 +685,36 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"hide :",
+			"bindMouseEnvents",
+			"cursor",
+			"canShow",
+			"onKeydown",
+			"itemClick",
+			"isDisabled(",
+			"isDisabled",
+			"isDsi",
+			"bindMouseEvents",
+			"onFocus",
+			"onSearchClick",
+			"onKeydown",
+			"bindKeyboardEvents",
+			"onSearch",
+			"bindKeyboardEvents",
+			"onKeydown",
+			"bindMouseEvents",
+			"focus",
+			"onSearchClick",
+			"bindMouseEvents",
+			"click",
+			"addClass(\"fo",
+			"onFocus",
+			"disabled",
+			"canShow",
+			"isdisabled",
+			"isdisabled()",
+			"isdisabled",
+			"disabled",
 			"onSearch",
 			"focusSearch",
 			"hide :",
@@ -733,37 +812,7 @@
 			"itemActivated",
 			"searchTextFocus",
 			"onSearchTextFocus",
-			"onSearchFocus",
-			"onFocus",
-			"onSearchFocus",
-			"setTabbable",
-			"onSearchFocus",
-			"setTabbable",
-			"onSearchFocus",
-			"onMenuActivate",
-			"bindMouseEvents",
-			"bindKeyboardEvents",
-			"search",
-			"focusSearch",
-			"onStart",
-			"focusSearch",
-			"onItemClick",
-			"forceSelection",
-			"onItemClick",
-			"forceSelection:",
-			"searchTextFocus",
-			"mouseEvents",
-			"forceSelection",
-			"itemActivated",
-			"pageLostFocus",
-			"onSearchFocus",
-			"bindMouseEvents",
-			"bindMouse",
-			"onActi",
-			"onMenuActivate",
-			"searchSelection",
-			"mouseEvents",
-			"getItem"
+			"onSearchFocus"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -813,7 +862,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -822,15 +871,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 13347,
+						"buffer_size": 13518,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1936,
-								1936
+								3443,
+								3443
 							]
 						],
 						"settings":
@@ -839,10 +888,10 @@
 							"syntax": "Packages/HTML/HTML.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 627.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -851,15 +900,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6531,
+						"buffer_size": 6841,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6080,
-								6080
+								1565,
+								1585
 							]
 						],
 						"settings":
@@ -869,27 +918,86 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 7356.0,
+						"translation.y": 1377.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "less/form.less",
+					"file": "js/dropdown.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 11291,
+						"buffer_size": 34735,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1726,
-								1732
+								255,
+								255
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "js/dropdown.content.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2825,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								2825
+							]
+						],
+						"settings":
+						{
+							"auto_name": "d",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "less/form.less",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11424,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1903,
+								1932
 							]
 						],
 						"settings":
@@ -898,11 +1006,101 @@
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": -0.0,
-						"translation.y": 2167.0,
+						"translation.x": 0.0,
+						"translation.y": 2319.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "examples/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 19081,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1099,
+								1099
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 456.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/E/UI/Semantic/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5245,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1152,
+								1160
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 627.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "less/mixins.less",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 19325,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								14388,
+								14347
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LESS/LESS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 15288.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
 					"type": "text"
 				}
 			]
